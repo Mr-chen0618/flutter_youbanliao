@@ -1,0 +1,188 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/bc91cb97-5107-4ee0-8fb5-181ec805f53e";
+const imgDown = `${assetPathPrefix}/8853a.svg`;
+const img = `${assetPathPrefix}/b749f.svg`;
+const imgBattery = `${assetPathPrefix}/f80d4.svg`;
+const imgWifi = `${assetPathPrefix}/eb198.svg`;
+const imgCellularConnection = `${assetPathPrefix}/d5602.svg`;
+const imgImage10 = `${assetPathPrefix}/85ca4.png`;
+
+function Down({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[20px]"} data-node-id="2065:15113" data-name="Down (下)">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDown} />
+    </div>
+  );
+}
+
+type ComponentProps = {
+  className?: string;
+  type?: "center";
+};
+
+function Component({ className, type = "center" }: ComponentProps) {
+  return (
+    <div className={className || "content-stretch flex flex-col h-px items-start px-[16px] relative w-[375px]"} data-node-id="192:1939">
+      <div className="bg-[#f1f1f1] h-[0.5px] relative shrink-0 w-full" data-node-id="192:1934" />
+    </div>
+  );
+}
+
+type IconProps = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon({ className, propValue = "左" }: IconProps) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+type Component1Props = {
+  className?: string;
+  style?: "Light";
+};
+
+function Component1({ className, style = "Light" }: Component1Props) {
+  return (
+    <div className={className || "h-[48px] relative w-[375px]"} data-node-id="1:989">
+      <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="1:946" data-name="矩形" />
+      <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+          <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I1:947;0:182" data-name="Battery">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+          </div>
+          <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I1:947;0:188" data-name="Wifi">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+          </div>
+          <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I1:947;0:192" data-name="Cellular Connection">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+          </div>
+          <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I1:947;0:195" data-name="Time Style">
+            <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I1:947;0:196" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                9:4
+              </span>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                1
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Component2() {
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start justify-between relative size-full" data-node-id="3162:6037" data-name="设置">
+      <div className="absolute h-[242px] left-0 overflow-clip top-0 w-[375px]" data-node-id="3162:6038" data-name="浅黄色氛围">
+        <div className="absolute bg-gradient-to-b from-[#fffbbf] inset-0 to-white" data-node-id="I3162:6038;3109:19306" />
+        <div className="absolute aspect-[274/360] left-[56.27%] opacity-25 right-[-4.27%] top-[-39px]" data-node-id="I3162:6038;3109:19311" data-name="image 10">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+        </div>
+        <div className="absolute aspect-[236.5010055239154/280.49248874424575] flex items-center justify-center left-[-10.93%] right-[47.87%] top-[-98px]" data-node-id="I3162:6038;3109:19313" style={{ containerType: "size" }}>
+          <div className="-scale-x-100 flex-none h-[hypot(-23.1311cqw,85.1558cqh)] rotate-[12.9deg] w-[hypot(-76.8689cqw,-14.8442cqh)]">
+            <div className="opacity-25 relative size-full" data-name="image 11">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3162:6042" data-name="页面内容">
+        <Component1 className="h-[48px] relative shrink-0 w-[375px]" />
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3162:6064" data-name="返回导航">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3162:6064;9:464" />
+          <Icon className="absolute h-[24px] left-[4.27%] right-[89.33%] top-[12px]" />
+          <p className="[word-break:break-word] absolute font-['PingFang_SC:Semibold'] inset-[27.08%_45.87%_27.08%_45.6%] leading-[normal] not-italic text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3162:6064;9:473">
+            设置
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip pb-[24px] pt-[16px] px-[16px] relative shrink-0 w-full" data-node-id="3162:6075" data-name="主体">
+          <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:962" data-name="账号管理">
+            <p className="[word-break:break-word] font-['PingFang_SC:Semibold'] leading-[1.5] not-italic relative shrink-0 text-[#333] text-[16px] w-full" data-node-id="3165:963">
+              账号管理
+            </p>
+            <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col items-start overflow-clip p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3165:964" data-name="内容卡片">
+              <div className="content-stretch flex gap-[12px] items-center min-h-[52px] overflow-clip relative shrink-0 w-full" data-node-id="3165:965" data-name="列表项">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[15px] whitespace-nowrap" data-node-id="3165:966">
+                  黑名单
+                </p>
+                <div className="content-stretch flex flex-[1_0_0] gap-[8px] items-center justify-end min-w-px overflow-clip relative" data-node-id="3165:967" data-name="项目内容">
+                  <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#999] text-[13px] whitespace-nowrap" data-node-id="3165:968">
+                    0 人
+                  </p>
+                  <Down className="flex items-center justify-center relative shrink-0 size-[20px]" />
+                </div>
+              </div>
+              <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+              <div className="content-stretch flex gap-[12px] items-center min-h-[52px] overflow-clip relative shrink-0 w-full" data-node-id="3165:973" data-name="列表项">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[15px] whitespace-nowrap" data-node-id="3165:974">
+                  版本更新
+                </p>
+                <div className="content-stretch flex flex-[1_0_0] gap-[8px] items-center justify-end min-w-px overflow-clip relative" data-node-id="3165:975" data-name="项目内容">
+                  <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#999] text-[13px] whitespace-nowrap" data-node-id="3165:976">
+                    v1.0.0
+                  </p>
+                  <Down className="flex items-center justify-center relative shrink-0 size-[20px]" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:979" data-name="账号操作">
+            <p className="[word-break:break-word] font-['PingFang_SC:Semibold'] leading-[1.5] not-italic relative shrink-0 text-[#333] text-[16px] w-full" data-node-id="3165:980">
+              账号操作
+            </p>
+            <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col items-start overflow-clip p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3165:981" data-name="内容卡片">
+              <div className="content-stretch flex gap-[12px] items-center min-h-[52px] overflow-clip relative shrink-0 w-full" data-node-id="3165:982" data-name="列表项">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[15px] whitespace-nowrap" data-node-id="3165:983">
+                  退出登录
+                </p>
+                <div className="content-stretch flex flex-[1_0_0] gap-[8px] items-center justify-end min-w-px overflow-clip relative" data-node-id="3165:984" data-name="项目内容">
+                  <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#999] text-[13px] whitespace-nowrap" data-node-id="3165:985">
+                    确认退出
+                  </p>
+                  <Down className="flex items-center justify-center relative shrink-0 size-[20px]" />
+                </div>
+              </div>
+              <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+              <div className="content-stretch flex gap-[12px] items-center min-h-[52px] overflow-clip relative shrink-0 w-full" data-node-id="3165:990" data-name="列表项">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#db6464] text-[15px] whitespace-nowrap" data-node-id="3165:991">
+                  注销账号
+                </p>
+                <div className="content-stretch flex flex-[1_0_0] gap-[8px] items-center justify-end min-w-px overflow-clip relative" data-node-id="3165:992" data-name="项目内容">
+                  <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#999] text-[13px] whitespace-nowrap" data-node-id="3165:993">
+                    请谨慎操作
+                  </p>
+                  <Down className="flex items-center justify-center relative shrink-0 size-[20px]" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[1.5] not-italic relative shrink-0 text-[#999] text-[11px] text-center w-full" data-node-id="3162:6141">
+            友伴 v1.0.0 · 用心守护你的每一次相遇
+          </p>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3162:6142" data-name="底部安全区">
+        <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3162:6143" data-name="手势条">
+          <div className="absolute bg-white inset-0" data-node-id="I3162:6143;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3162:6143;7122:3671" />
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/主要文字: #333333, 灰色/辅助文字: #999999, 灰色/白色: #FFFFFF.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

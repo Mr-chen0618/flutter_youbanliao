@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'app_cached_image.dart';
 
@@ -93,6 +94,9 @@ class _AppImageState extends State<AppImage> {
     if (src.startsWith('http://') || src.startsWith('https://')) {
       return _ImageType.network;
     }
+    if (src.startsWith('/') || src.startsWith('file://')) {
+      return _ImageType.file;
+    }
     if (src.startsWith('data:image/')) return _ImageType.base64;
 
     return _ImageType.asset;
@@ -119,7 +123,12 @@ class _AppImageState extends State<AppImage> {
 
     switch (_imageType) {
       case _ImageType.file:
-        image = _buildFileImage(widget.file!);
+        image = _buildFileImage(
+          widget.file ??
+              (widget.src!.startsWith('file://')
+                  ? File.fromUri(Uri.parse(widget.src!))
+                  : File(widget.src!)),
+        );
         break;
       case _ImageType.network:
         image = _buildNetworkImage(widget.src!);
@@ -160,6 +169,20 @@ class _AppImageState extends State<AppImage> {
   Widget _buildAssetImage(String asset, {BoxFit? fit}) {
     if (asset.isEmpty) return _buildErrorWidget();
 
+    // 发布页等业务图标使用 SVG，必须交给矢量解码器渲染。
+    if (asset.toLowerCase().endsWith('.svg')) {
+      return SvgPicture.asset(
+        asset,
+        width: widget.width,
+        height: widget.height,
+        fit: fit ?? widget.fit ?? BoxFit.contain,
+        colorFilter: widget.iconColor == null
+            ? null
+            : ColorFilter.mode(widget.iconColor!, BlendMode.srcIn),
+        errorBuilder: (_, _, _) => _buildErrorWidget(),
+      );
+    }
+
     return Image.asset(
       asset,
       width: widget.width,
@@ -167,7 +190,7 @@ class _AppImageState extends State<AppImage> {
       fit: fit ?? widget.fit ?? _defaultFit,
       color: widget.iconColor,
       gaplessPlayback: true,
-      errorBuilder: (_, __, ___) => _buildErrorWidget(),
+      errorBuilder: (_, _, _) => _buildErrorWidget(),
     );
   }
 
@@ -178,7 +201,7 @@ class _AppImageState extends State<AppImage> {
       height: widget.height,
       fit: widget.fit ?? _defaultFit,
       gaplessPlayback: true,
-      errorBuilder: (_, __, ___) => _buildErrorWidget(),
+      errorBuilder: (_, _, _) => _buildErrorWidget(),
     );
   }
 
@@ -191,7 +214,7 @@ class _AppImageState extends State<AppImage> {
       height: widget.height,
       fit: widget.fit ?? _defaultFit,
       gaplessPlayback: true,
-      errorBuilder: (_, __, ___) => _buildErrorWidget(),
+      errorBuilder: (_, _, _) => _buildErrorWidget(),
     );
   }
 

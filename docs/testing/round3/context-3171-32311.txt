@@ -1,0 +1,253 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/3f2cb15f-8dbe-44a3-bb1c-89c191e04858";
+const imgBattery = `${assetPathPrefix}/45436.svg`;
+const imgWifi = `${assetPathPrefix}/6f597.svg`;
+const imgCellularConnection = `${assetPathPrefix}/a2970.svg`;
+const imgRectangle4276 = `${assetPathPrefix}/bb825.png`;
+const imgRectangle4277 = `${assetPathPrefix}/b9765.png`;
+const imgRectangle2 = `${assetPathPrefix}/8f505.png`;
+const imgIcon2 = `${assetPathPrefix}/6a16c.png`;
+const imgEllipse25 = `${assetPathPrefix}/7666f.png`;
+const imgEllipse26 = `${assetPathPrefix}/f1dc4.png`;
+const imgEllipse27 = `${assetPathPrefix}/329ec.png`;
+const imgIcon = `${assetPathPrefix}/88a86.svg`;
+const imgIcon1 = `${assetPathPrefix}/f6b34.svg`;
+const imgRectangle4251 = `${assetPathPrefix}/70a28.svg`;
+const imgRectangle4186 = `${assetPathPrefix}/39374.svg`;
+const imgMapDraw = `${assetPathPrefix}/b3874.svg`;
+const imgPublicToilet = `${assetPathPrefix}/7b69c.svg`;
+const imgAlarmClock = `${assetPathPrefix}/2288a.svg`;
+const imgRectangle4187 = `${assetPathPrefix}/c704d.svg`;
+const imgGroup5390 = `${assetPathPrefix}/357f2.svg`;
+
+type ComponentProps = {
+  className?: string;
+  type?: "center";
+};
+
+function Component({ className, type = "center" }: ComponentProps) {
+  return (
+    <div className={className || "content-stretch flex flex-col h-px items-start px-[16px] relative w-[375px]"} data-node-id="192:1939">
+      <div className="bg-[#f1f1f1] h-[0.5px] relative shrink-0 w-full" data-node-id="192:1934" />
+    </div>
+  );
+}
+
+type Component1Props = {
+  className?: string;
+  style?: "Dark";
+};
+
+function Component1({ className, style = "Dark" }: Component1Props) {
+  return (
+    <div className={className || "h-[48px] relative w-[375px]"} data-node-id="1:988">
+      <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="1:968" data-name="矩形" />
+      <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I1:969;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I1:969;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+          <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I1:969;0:182" data-name="Battery">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+          </div>
+          <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I1:969;0:188" data-name="Wifi">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+          </div>
+          <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I1:969;0:192" data-name="Cellular Connection">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+          </div>
+          <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I1:969;0:195" data-name="Time Style">
+            <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[0] left-[27px] text-[14px] text-center text-white top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I1:969;0:196" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                9:4
+              </span>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                1
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Component2() {
+  return (
+    <div className="bg-white relative size-full" data-node-id="3171:32311" data-name="活动详情">
+      <div className="-translate-x-1/2 absolute h-[257px] left-1/2 rounded-[16px] top-[842px] w-[343px]" data-node-id="3171:32636">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgRectangle4276} />
+      </div>
+      <div className="-translate-x-1/2 absolute h-[257px] left-1/2 rounded-[16px] top-[1107px] w-[343px]" data-node-id="3171:32637">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgRectangle4277} />
+      </div>
+      <div className="-translate-x-1/2 absolute h-[257px] left-1/2 rounded-[16px] top-[1372px] w-[343px]" data-node-id="3171:32638">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgRectangle4277} />
+      </div>
+      <div className="absolute h-[368px] left-0 top-0 w-[375px]" data-node-id="3171:32322">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <img alt="" className="absolute h-[135.82%] left-0 max-w-none top-[-18.86%] w-full" src={imgRectangle2} />
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute bg-gradient-to-b from-[rgba(0,0,0,0.7)] h-[98px] left-1/2 to-[rgba(0,0,0,0)] top-0 w-[375px]" data-node-id="3171:32323" />
+      <Component1 className="absolute h-[48px] left-0 top-0 w-[375px]" />
+      <div className="-translate-x-1/2 absolute h-[48px] left-1/2 top-[48px] w-[375px]" data-node-id="3171:32325" data-name="基础控件/Bar">
+        <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3171:32325;9:464" />
+        <div className="absolute content-stretch flex h-[24px] items-center left-[4.27%] right-[89.33%] top-[12px]" data-node-id="I3171:32325;9:467" data-name="icon/占位" />
+        <div className="absolute content-stretch flex h-[24px] items-center left-[89.33%] right-[4.27%] top-[12px]" data-node-id="I3171:32325;9:469" data-name="icon/占位" />
+        <div className="absolute content-stretch flex h-[24px] items-center left-[79.73%] right-[13.87%] top-[12px]" data-node-id="I3171:32325;9:471" data-name="icon/占位" />
+        <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] inset-[27.08%_50.13%_27.08%_49.87%] leading-[normal] not-italic text-[16px] text-center text-white whitespace-nowrap" data-node-id="I3171:32325;9:473">
+          ​
+        </p>
+      </div>
+      <div className="absolute contents left-[16px] top-[56px]" data-node-id="3171:32326">
+        <div className="absolute bg-[rgba(0,0,0,0.7)] left-[16px] rounded-[21px] size-[32px] top-[56px]" data-node-id="3171:32327" />
+        <div className="absolute left-[19px] size-[24px] top-[60px]" data-node-id="3171:32328" data-name="icon/箭头">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+        </div>
+      </div>
+      <div className="absolute contents left-[327px] top-[56px]" data-node-id="3171:32329">
+        <div className="absolute bg-[rgba(0,0,0,0.7)] left-[327px] rounded-[42px] size-[32px] top-[56px]" data-node-id="3171:32330" />
+        <div className="absolute left-[331px] size-[24px] top-[60px]" data-node-id="3171:32331" data-name="icon/更多">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon1} />
+        </div>
+      </div>
+      <p className="[word-break:break-word] absolute font-['PingFang_SC:Medium'] leading-[normal] left-[16px] not-italic text-[#333] text-[18px] top-[385px] whitespace-nowrap" data-node-id="3171:32332">
+        美食探店
+      </p>
+      <div className="absolute bottom-0 contents left-0" data-node-id="3171:32632">
+        <div className="-translate-x-1/2 absolute contents left-[calc(50%+79.5px)] top-[1731px]" data-node-id="3171:32384">
+          <div className="-translate-x-1/2 absolute h-[52px] left-[calc(50%+79.5px)] rounded-[59px] top-[1731px] w-[184px]" data-node-id="3171:32385" style={{ backgroundImage: "linear-gradient(113.5397233318244deg, rgb(255, 223, 135) 0%, rgb(255, 206, 69) 100%), linear-gradient(90deg, rgb(255, 206, 69) 0%, rgb(255, 206, 69) 100%)" }} />
+          <p className="[word-break:break-word] absolute font-['PingFang_SC:Medium'] leading-[normal] left-[calc(50%+55.5px)] not-italic text-[16px] text-black top-[1746px] whitespace-nowrap" data-node-id="3171:32386">
+            聊一聊
+          </p>
+        </div>
+        <div className="-translate-x-1/2 absolute contents left-[calc(50%-98px)] top-[1731px]" data-node-id="3171:32439">
+          <div className="-translate-x-1/2 absolute h-[52px] left-[calc(50%-98px)] top-[1731px] w-[155px]" data-node-id="3171:32440">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle4251} />
+          </div>
+          <p className="-translate-x-1/2 [word-break:break-word] absolute font-['PingFang_SC:Medium'] leading-[normal] left-[calc(50%-98.5px)] not-italic text-[16px] text-center text-white top-[1746px] whitespace-nowrap" data-node-id="3171:32441">
+            报名
+          </p>
+        </div>
+        <div className="absolute bottom-0 h-[32px] left-0 right-[-0.27%]" data-node-id="3171:32387" data-name="系统控件/Home">
+          <div className="absolute bg-white inset-0" data-node-id="I3171:32387;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3171:32387;7122:3671" />
+        </div>
+      </div>
+      <div className="absolute contents left-[16px] top-[536px]" data-node-id="3171:32559">
+        <div className="-translate-x-1/2 absolute h-[102px] left-1/2 top-[560px] w-[343px]" data-node-id="3171:32486">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle4186} />
+        </div>
+        <div className="absolute contents left-[28px] top-[572px]" data-node-id="3171:32491">
+          <div className="absolute contents left-[28px] top-[602px]" data-node-id="3171:32492">
+            <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[52px] not-italic text-[#999] text-[13px] top-[602px] whitespace-nowrap" data-node-id="3171:32493">
+              地址：深圳市｜宝安区
+            </p>
+            <div className="absolute left-[28px] size-[16px] top-[603px]" data-node-id="3171:32494" data-name="Map-draw (地图)">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMapDraw} />
+            </div>
+          </div>
+          <div className="absolute contents left-[28px] top-[632px]" data-node-id="3171:32533">
+            <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[52px] not-italic text-[#999] text-[13px] top-[632px] whitespace-nowrap" data-node-id="3171:32534">
+              性别限制：仅女生
+            </p>
+            <div className="absolute left-[28px] size-[16px] top-[633px]" data-node-id="3171:32553" data-name="Public-toilet (卫生间)">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPublicToilet} />
+            </div>
+          </div>
+          <div className="absolute contents left-[28px] top-[572px]" data-node-id="3171:32495">
+            <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[52px] not-italic text-[#999] text-[13px] top-[572px] whitespace-nowrap" data-node-id="3171:32496">
+              时间：12月12日 12:00-13:00
+            </p>
+            <div className="absolute left-[28px] size-[16px] top-[573px]" data-node-id="3171:32497" data-name="Alarm-clock (闹钟)">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAlarmClock} />
+            </div>
+          </div>
+        </div>
+        <p className="[word-break:break-word] absolute font-['PingFang_SC:Medium'] leading-[normal] left-[16px] not-italic text-[#333] text-[14px] top-[536px] whitespace-nowrap" data-node-id="3171:32488">
+          发布的活动
+        </p>
+      </div>
+      <p className="[word-break:break-word] absolute font-['PingFang_SC:Medium'] leading-[normal] left-[16px] not-italic text-[#333] text-[14px] top-[818px] whitespace-nowrap" data-node-id="3171:32634">
+        发布的活动
+      </p>
+      <div className="-translate-x-1/2 absolute h-[101px] left-1/2 top-[701px] w-[343px]" data-node-id="3171:32575">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle4187} />
+      </div>
+      <p className="[word-break:break-word] absolute font-['PingFang_SC:Medium'] leading-[normal] left-[16px] not-italic text-[#333] text-[14px] top-[677px] whitespace-nowrap" data-node-id="3171:32586">
+        已报名（1/10）
+      </p>
+      <div className="absolute bg-[#fff0e6] content-stretch flex gap-[4px] items-center justify-center left-[16px] px-[8px] py-[3px] rounded-[8px] top-[417px]" data-node-id="3171:32560">
+        <div className="relative shrink-0 size-[18px]" data-node-id="3171:32561" data-name="首页icon">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute h-[355.56%] left-[-18.63%] max-w-none top-[-19.01%] w-[378.86%]" src={imgIcon2} />
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['PingFang_SC:Medium'] leading-[normal] not-italic relative shrink-0 text-[#fb5749] text-[12px] whitespace-nowrap" data-node-id="3171:32562">
+          运动
+        </p>
+      </div>
+      <div className="absolute left-[16px] size-[28px] top-[475px]" data-node-id="3171:32565">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" height="28" src={imgEllipse25} width="28" />
+      </div>
+      <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[48px] not-italic text-[#333] text-[12px] top-[481px] whitespace-nowrap" data-node-id="3171:32566">
+        发布人：铁铁
+      </p>
+      <div className="absolute content-stretch flex items-center justify-center left-[309px] px-[12px] py-[6px] rounded-[26px] top-[474px]" data-node-id="3171:32567" style={{ backgroundImage: "linear-gradient(101.595646793079deg, rgb(255, 223, 135) 0%, rgb(255, 206, 69) 100%), linear-gradient(90deg, rgb(255, 206, 69) 0%, rgb(255, 206, 69) 100%)" }}>
+        <p className="[word-break:break-word] font-['PingFang_SC:Medium'] leading-[normal] not-italic relative shrink-0 text-[13px] text-black whitespace-nowrap" data-node-id="3171:32568">
+          关注
+        </p>
+      </div>
+      <Component className="-translate-x-1/2 absolute content-stretch flex flex-col h-px items-start left-1/2 px-[16px] top-[457px] w-[375px]" />
+      <Component className="-translate-x-1/2 absolute content-stretch flex flex-col h-px items-start left-1/2 px-[16px] top-[519px] w-[375px]" />
+      <div className="absolute left-[32px] size-[48px] top-[717px]" data-node-id="3171:32600">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" height="48" src={imgEllipse26} width="48" />
+      </div>
+      <div className="absolute left-[100px] size-[48px] top-[717px]" data-node-id="3171:32606">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" height="48" src={imgEllipse27} width="48" />
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[56px] not-italic text-[#333] text-[12px] text-center top-[769px] whitespace-nowrap" data-node-id="3171:32601">
+        人间拾...
+      </p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[124px] not-italic text-[#333] text-[12px] text-center top-[769px] whitespace-nowrap" data-node-id="3171:32607">
+        偷一束...
+      </p>
+      <div className="absolute bg-[#ffd151] border border-solid border-white content-stretch flex items-center justify-center left-[42px] px-[4px] py-px rounded-[6px] top-[751px]" data-node-id="3171:32604">
+        <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[10px] whitespace-nowrap" data-node-id="3171:32603">
+          领队
+        </p>
+      </div>
+      <div className="absolute contents left-[164px] top-[717px]" data-node-id="3171:32617">
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[188px] not-italic text-[#333] text-[12px] text-center top-[769px] whitespace-nowrap" data-node-id="3171:32611">
+          参加
+        </p>
+        <div className="absolute left-[164px] size-[48px] top-[717px]" data-node-id="3171:32616">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup5390} />
+        </div>
+      </div>
+      <div className="absolute contents left-[220px] top-[717px]" data-node-id="3171:32618">
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[244px] not-italic text-[#333] text-[12px] text-center top-[769px] whitespace-nowrap" data-node-id="3171:32619">
+          参加
+        </p>
+        <div className="absolute left-[220px] size-[48px] top-[717px]" data-node-id="3171:32620">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup5390} />
+        </div>
+      </div>
+      <div className="absolute contents left-[276px] top-[717px]" data-node-id="3171:32625">
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[300px] not-italic text-[#333] text-[12px] text-center top-[769px] whitespace-nowrap" data-node-id="3171:32626">
+          参加
+        </p>
+        <div className="absolute left-[276px] size-[48px] top-[717px]" data-node-id="3171:32627">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup5390} />
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/白色: #FFFFFF.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

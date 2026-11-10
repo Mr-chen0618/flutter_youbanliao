@@ -1,0 +1,94 @@
+{
+  "threads": [
+    {
+      "id": "sunny",
+      "name": "晴天队长",
+      "avatar": "assets/messages/messages_avatar_sunny.png",
+      "unread": 0,
+      "entries": [
+        {
+          "content": "这周有空不？去爬山啊"
+        }
+      ]
+    },
+    {
+      "id": "mint",
+      "name": "薄荷同学",
+      "avatar": "assets/messages/messages_avatar_mint.png",
+      "unread": 0,
+      "entries": [
+        {
+          "content": "12月12日中午，约羽毛球吗？"
+        },
+        {
+          "content": "约！我把球局封面发你～",
+          "isMine": true
+        },
+        {
+          "content": "assets/messages/messages_chat_badminton_image.png",
+          "isMine": true,
+          "kind": "photo",
+          "continuesGroup": true,
+          "showDelivery": true
+        },
+        {
+          "content": "发你邀约，球馆入口集合～"
+        },
+        {
+          "content": "羽毛球组局",
+          "kind": "invitation",
+          "continuesGroup": true,
+          "invitation": {
+            "activityId": "A010",
+            "title": "周末羽毛球局",
+            "description": "羽毛球组局副标题",
+            "category": "运动",
+            "date": "2026年12月12日",
+            "time": "12:00–13:00",
+            "district": "深圳市南山区",
+            "meetingPoint": "人才公园"
+          }
+        },
+        {
+          "content": "收到！我提前十分钟到入口等你。",
+          "isMine": true
+        }
+      ],
+      "chatAvatar": "assets/messages/messages_chat_mint_avatar.png",
+      "historyLabel": "2026年12月11日 18:30",
+      "initialPreview": "周五有网球局，报名不？"
+    },
+    {
+      "id": "xinghe",
+      "name": "星河设计师",
+      "avatar": "assets/messages/messages_avatar_xinghe.png",
+      "unread": 0,
+      "entries": [
+        {
+          "content": "看你偷偷报名了"
+        }
+      ]
+    },
+    {
+      "id": "xinghe_alt",
+      "name": "星河设计师",
+      "avatar": "assets/messages/messages_avatar_xinghe_alt.png",
+      "unread": 0,
+      "entries": [
+        {
+          "content": "啥水平啊？"
+        }
+      ]
+    }
+  ],
+  "notices": {
+    "system": "欢迎加入友伴，去广场发现兴趣相投的朋友吧！",
+    "interaction": "薄荷同学赞了你的动态",
+    "visitor": "晴天队长看过你的资料"
+  },
+  "noticeUnread": {
+    "system": 0,
+    "interaction": 0,
+    "visitor": 0
+  }
+}

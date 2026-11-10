@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../logger/app_logger.dart';
 
 import '../offline_queue/offline_queue_manager.dart';
 import 'dio_provider.dart';
@@ -24,7 +25,9 @@ final offlineQueueManagerProvider = Provider<OfflineQueueManager>((ref) {
   );
 
   // 不能 await，但要触发
-  manager.init();
+  manager.init().catchError((Object error, StackTrace stack) {
+    AppLogger.error('离线队列初始化失败', error, stack);
+  });
 
   /// 释放资源
   ref.onDispose(manager.dispose);

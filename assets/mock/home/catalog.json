@@ -1,0 +1,1056 @@
+{
+  "categories": [
+    {
+      "id": "outdoors",
+      "label": "户外搭子"
+    },
+    {
+      "id": "shops",
+      "label": "探店搭子"
+    },
+    {
+      "id": "sports",
+      "label": "运动搭子"
+    },
+    {
+      "id": "food",
+      "label": "美食搭子"
+    },
+    {
+      "id": "study",
+      "label": "研学搭子"
+    },
+    {
+      "id": "games",
+      "label": "桌游搭子"
+    },
+    {
+      "id": "travel",
+      "label": "旅游搭子"
+    },
+    {
+      "id": "photo",
+      "label": "摄影搭子"
+    }
+  ],
+  "companions": [
+    {
+      "id": "U001",
+      "name": "橘子汽水",
+      "gender": "男",
+      "age": 21,
+      "heightCm": 168,
+      "weightKg": 58,
+      "city": "深圳·南山区",
+      "signature": "周末有空，喜欢把日子过得有趣。",
+      "interests": [
+        "美食探店",
+        "街头小吃",
+        "登山露营"
+      ],
+      "tags": [
+        "守时靠谱",
+        "咖啡爱好者",
+        "饭量在线"
+      ],
+      "avatar": "assets/mock/media/IMG025.jpg",
+      "photos": [
+        "assets/mock/media/IMG113.jpg",
+        "assets/mock/media/IMG114.jpg",
+        "assets/mock/media/IMG115.jpg"
+      ],
+      "categoryIds": [
+        "food",
+        "study"
+      ]
+    },
+    {
+      "id": "U002",
+      "name": "海盐芝士",
+      "gender": "男",
+      "age": 28,
+      "heightCm": 173,
+      "weightKg": 61,
+      "city": "深圳·福田区",
+      "signature": "慢热但好相处，欢迎一起探索深圳。",
+      "interests": [
+        "早茶茶点",
+        "登山露营",
+        "羽毛球"
+      ],
+      "tags": [
+        "新手友好",
+        "慢热熟络",
+        "环保出行"
+      ],
+      "avatar": "assets/mock/media/IMG026.jpg",
+      "photos": [
+        "assets/mock/media/IMG116.jpg",
+        "assets/mock/media/IMG117.jpg",
+        "assets/mock/media/IMG118.jpg"
+      ],
+      "categoryIds": [
+        "food",
+        "games"
+      ]
+    },
+    {
+      "id": "U003",
+      "name": "小满同学",
+      "gender": "男",
+      "age": 22,
+      "heightCm": 178,
+      "weightKg": 64,
+      "city": "深圳·宝安区",
+      "signature": "喜欢拍照，也喜欢认真吃饭。",
+      "interests": [
+        "户外徒步",
+        "羽毛球",
+        "周边旅行"
+      ],
+      "tags": [
+        "轻松社交",
+        "性格开朗",
+        "愿意尝鲜"
+      ],
+      "avatar": "assets/mock/media/IMG027.jpg",
+      "photos": [
+        "assets/mock/media/IMG119.jpg",
+        "assets/mock/media/IMG120.jpg",
+        "assets/mock/media/IMG121.jpg"
+      ],
+      "categoryIds": [
+        "food",
+        "games"
+      ]
+    },
+    {
+      "id": "U004",
+      "name": "晚风有信",
+      "gender": "男",
+      "age": 29,
+      "heightCm": 183,
+      "weightKg": 67,
+      "city": "深圳·龙岗区",
+      "signature": "生活要有计划，也要有惊喜。",
+      "interests": [
+        "骑行绿道",
+        "周边旅行",
+        "摄影记录"
+      ],
+      "tags": [
+        "爱拍照",
+        "细心周到",
+        "沟通直接"
+      ],
+      "avatar": "assets/mock/media/IMG028.jpg",
+      "photos": [
+        "assets/mock/media/IMG122.jpg",
+        "assets/mock/media/IMG123.jpg",
+        "assets/mock/media/IMG124.jpg"
+      ],
+      "categoryIds": [
+        "shops",
+        "games"
+      ]
+    },
+    {
+      "id": "U005",
+      "name": "栗子拿铁",
+      "gender": "女",
+      "age": 23,
+      "heightCm": 167,
+      "weightKg": 59,
+      "city": "深圳·罗湖区",
+      "signature": "不赶时间，沿途看看风景。",
+      "interests": [
+        "瑜伽普拉提",
+        "摄影记录",
+        "自然观察"
+      ],
+      "tags": [
+        "路线规划",
+        "计划控",
+        "行动派"
+      ],
+      "avatar": "assets/mock/media/IMG029.jpg",
+      "photos": [
+        "assets/mock/media/IMG125.jpg",
+        "assets/mock/media/IMG126.jpg",
+        "assets/mock/media/IMG127.jpg"
+      ],
+      "categoryIds": [
+        "shops"
+      ]
+    },
+    {
+      "id": "U006",
+      "name": "桃桃乌龙",
+      "gender": "女",
+      "age": 30,
+      "heightCm": 158,
+      "weightKg": 46,
+      "city": "深圳·盐田区",
+      "signature": "运动新手，欢迎友好带带。",
+      "interests": [
+        "城市建筑",
+        "自然观察",
+        "海洋科普"
+      ],
+      "tags": [
+        "户外新人",
+        "饭量在线",
+        "搭子长期有效"
+      ],
+      "avatar": "assets/mock/media/IMG030.jpg",
+      "photos": [
+        "assets/mock/media/IMG128.jpg",
+        "assets/mock/media/IMG129.jpg",
+        "assets/mock/media/IMG130.jpg"
+      ],
+      "categoryIds": [
+        "shops"
+      ]
+    },
+    {
+      "id": "U007",
+      "name": "薄荷日记",
+      "gender": "女",
+      "age": 24,
+      "heightCm": 165,
+      "weightKg": 50,
+      "city": "深圳·龙华区",
+      "signature": "热爱分享路线和小店。",
+      "interests": [
+        "街拍扫街",
+        "海洋科普",
+        "电影观影"
+      ],
+      "tags": [
+        "主动分享",
+        "环保出行",
+        "随和好相处"
+      ],
+      "avatar": "assets/mock/media/IMG031.jpg",
+      "photos": [
+        "assets/mock/media/IMG131.jpg",
+        "assets/mock/media/IMG132.jpg",
+        "assets/mock/media/IMG133.jpg"
+      ],
+      "categoryIds": [
+        "outdoors"
+      ]
+    },
+    {
+      "id": "U008",
+      "name": "云朵散步",
+      "gender": "女",
+      "age": 31,
+      "heightCm": 156,
+      "weightKg": 54,
+      "city": "深圳·坪山区",
+      "signature": "保持好奇，常常出发。",
+      "interests": [
+        "植物园打卡",
+        "电影观影",
+        "手作DIY"
+      ],
+      "tags": [
+        "安静倾听",
+        "愿意尝鲜",
+        "热爱生活"
+      ],
+      "avatar": "assets/mock/media/IMG032.jpg",
+      "photos": [
+        "assets/mock/media/IMG134.jpg",
+        "assets/mock/media/IMG135.jpg",
+        "assets/mock/media/IMG136.jpg"
+      ],
+      "categoryIds": [
+        "outdoors"
+      ]
+    },
+    {
+      "id": "U009",
+      "name": "南风知我",
+      "gender": "女",
+      "age": 25,
+      "heightCm": 163,
+      "weightKg": 58,
+      "city": "深圳·光明区",
+      "signature": "想认识有趣的人，一起做有趣的事。",
+      "interests": [
+        "剧本杀",
+        "手作DIY",
+        "火锅烧烤"
+      ],
+      "tags": [
+        "说走就走",
+        "沟通直接",
+        "周末活跃"
+      ],
+      "avatar": "assets/mock/media/IMG033.jpg",
+      "photos": [
+        "assets/mock/media/IMG137.jpg",
+        "assets/mock/media/IMG138.jpg",
+        "assets/mock/media/IMG139.jpg"
+      ],
+      "categoryIds": [
+        "outdoors"
+      ]
+    },
+    {
+      "id": "U010",
+      "name": "柚子不酸",
+      "gender": "女",
+      "age": 32,
+      "heightCm": 170,
+      "weightKg": 45,
+      "city": "深圳·大鹏新区",
+      "signature": "把普通周末过成小旅行。",
+      "interests": [
+        "宠物陪伴",
+        "火锅烧烤",
+        "街头小吃"
+      ],
+      "tags": [
+        "氛围担当",
+        "行动派",
+        "不鸽搭子"
+      ],
+      "avatar": "assets/mock/media/IMG034.jpg",
+      "photos": [
+        "assets/mock/media/IMG140.jpg",
+        "assets/mock/media/IMG141.jpg",
+        "assets/mock/media/IMG142.jpg"
+      ],
+      "categoryIds": [
+        "sports"
+      ]
+    },
+    {
+      "id": "U011",
+      "name": "星河漫游",
+      "gender": "女",
+      "age": 26,
+      "heightCm": 161,
+      "weightKg": 49,
+      "city": "深圳·南山区",
+      "signature": "喜欢安静，也喜欢热闹的桌游局。",
+      "interests": [
+        "美食探店",
+        "街头小吃",
+        "登山露营"
+      ],
+      "tags": [
+        "运动打卡",
+        "搭子长期有效",
+        "咖啡爱好者"
+      ],
+      "avatar": "assets/mock/media/IMG035.jpg",
+      "photos": [
+        "assets/mock/media/IMG143.jpg",
+        "assets/mock/media/IMG144.jpg",
+        "assets/mock/media/IMG145.jpg"
+      ],
+      "categoryIds": [
+        "sports"
+      ]
+    },
+    {
+      "id": "U012",
+      "name": "小岛晴天",
+      "gender": "女",
+      "age": 33,
+      "heightCm": 168,
+      "weightKg": 53,
+      "city": "深圳·福田区",
+      "signature": "相机在手，快乐加倍。",
+      "interests": [
+        "早茶茶点",
+        "登山露营",
+        "羽毛球"
+      ],
+      "tags": [
+        "审美在线",
+        "随和好相处",
+        "慢热熟络"
+      ],
+      "avatar": "assets/mock/media/IMG036.jpg",
+      "photos": [
+        "assets/mock/media/IMG146.jpg",
+        "assets/mock/media/IMG147.jpg",
+        "assets/mock/media/IMG148.jpg"
+      ],
+      "categoryIds": [
+        "sports"
+      ]
+    },
+    {
+      "id": "U013",
+      "name": "木木有光",
+      "gender": "女",
+      "age": 27,
+      "heightCm": 159,
+      "weightKg": 57,
+      "city": "深圳·宝安区",
+      "signature": "爱山海，也爱城市烟火气。",
+      "interests": [
+        "户外徒步",
+        "羽毛球",
+        "周边旅行"
+      ],
+      "tags": [
+        "尊重边界",
+        "热爱生活",
+        "性格开朗"
+      ],
+      "avatar": "assets/mock/media/IMG037.jpg",
+      "photos": [
+        "assets/mock/media/IMG149.jpg",
+        "assets/mock/media/IMG150.jpg",
+        "assets/mock/media/IMG151.jpg"
+      ],
+      "categoryIds": [
+        "travel"
+      ]
+    },
+    {
+      "id": "U014",
+      "name": "阿葵",
+      "gender": "女",
+      "age": 21,
+      "heightCm": 166,
+      "weightKg": 44,
+      "city": "深圳·龙岗区",
+      "signature": "有空就走走，没空就期待下次。",
+      "interests": [
+        "骑行绿道",
+        "周边旅行",
+        "摄影记录"
+      ],
+      "tags": [
+        "乐于助人",
+        "周末活跃",
+        "细心周到"
+      ],
+      "avatar": "assets/mock/media/IMG038.jpg",
+      "photos": [
+        "assets/mock/media/IMG152.jpg",
+        "assets/mock/media/IMG153.jpg",
+        "assets/mock/media/IMG154.jpg"
+      ],
+      "categoryIds": [
+        "travel"
+      ]
+    },
+    {
+      "id": "U015",
+      "name": "山野青",
+      "gender": "女",
+      "age": 28,
+      "heightCm": 157,
+      "weightKg": 48,
+      "city": "深圳·罗湖区",
+      "signature": "吃饭散步拍照都可以。",
+      "interests": [
+        "瑜伽普拉提",
+        "摄影记录",
+        "自然观察"
+      ],
+      "tags": [
+        "生活记录者",
+        "不鸽搭子",
+        "计划控"
+      ],
+      "avatar": "assets/mock/media/IMG039.jpg",
+      "photos": [
+        "assets/mock/media/IMG155.jpg",
+        "assets/mock/media/IMG156.jpg",
+        "assets/mock/media/IMG157.jpg"
+      ],
+      "categoryIds": [
+        "travel"
+      ]
+    },
+    {
+      "id": "U016",
+      "name": "可乐加冰",
+      "gender": "女",
+      "age": 22,
+      "heightCm": 164,
+      "weightKg": 52,
+      "city": "深圳·盐田区",
+      "signature": "不鸽不迟到，认真参加每一场活动。",
+      "interests": [
+        "城市建筑",
+        "自然观察",
+        "海洋科普"
+      ],
+      "tags": [
+        "守时靠谱",
+        "咖啡爱好者",
+        "饭量在线"
+      ],
+      "avatar": "assets/mock/media/IMG040.jpg",
+      "photos": [
+        "assets/mock/media/IMG158.jpg",
+        "assets/mock/media/IMG159.jpg",
+        "assets/mock/media/IMG160.jpg"
+      ],
+      "categoryIds": [
+        "photo"
+      ]
+    },
+    {
+      "id": "U017",
+      "name": "林间拾光",
+      "gender": "女",
+      "age": 29,
+      "heightCm": 155,
+      "weightKg": 56,
+      "city": "深圳·龙华区",
+      "signature": "来深圳后开始爱上户外。",
+      "interests": [
+        "街拍扫街",
+        "海洋科普",
+        "电影观影"
+      ],
+      "tags": [
+        "新手友好",
+        "慢热熟络",
+        "环保出行"
+      ],
+      "avatar": "assets/mock/media/IMG041.jpg",
+      "photos": [
+        "assets/mock/media/IMG161.jpg",
+        "assets/mock/media/IMG162.jpg",
+        "assets/mock/media/IMG163.jpg"
+      ],
+      "categoryIds": [
+        "photo"
+      ]
+    },
+    {
+      "id": "U018",
+      "name": "七分甜",
+      "gender": "女",
+      "age": 23,
+      "heightCm": 162,
+      "weightKg": 43,
+      "city": "深圳·坪山区",
+      "signature": "记录日常的小确幸。",
+      "interests": [
+        "植物园打卡",
+        "电影观影",
+        "手作DIY"
+      ],
+      "tags": [
+        "轻松社交",
+        "性格开朗",
+        "愿意尝鲜"
+      ],
+      "avatar": "assets/mock/media/IMG042.jpg",
+      "photos": [
+        "assets/mock/media/IMG164.jpg",
+        "assets/mock/media/IMG165.jpg",
+        "assets/mock/media/IMG166.jpg"
+      ],
+      "categoryIds": [
+        "photo"
+      ]
+    },
+    {
+      "id": "U019",
+      "name": "蓝调周末",
+      "gender": "女",
+      "age": 30,
+      "heightCm": 169,
+      "weightKg": 47,
+      "city": "深圳·光明区",
+      "signature": "喜欢轻松自在的相处。",
+      "interests": [
+        "剧本杀",
+        "手作DIY",
+        "火锅烧烤"
+      ],
+      "tags": [
+        "爱拍照",
+        "细心周到",
+        "沟通直接"
+      ],
+      "avatar": "assets/mock/media/IMG043.jpg",
+      "photos": [
+        "assets/mock/media/IMG167.jpg",
+        "assets/mock/media/IMG168.jpg",
+        "assets/mock/media/IMG169.jpg"
+      ],
+      "categoryIds": [
+        "study"
+      ]
+    },
+    {
+      "id": "U020",
+      "name": "米粒呀",
+      "gender": "女",
+      "age": 24,
+      "heightCm": 160,
+      "weightKg": 51,
+      "city": "深圳·大鹏新区",
+      "signature": "生活在别处，也在脚下。",
+      "interests": [
+        "宠物陪伴",
+        "火锅烧烤",
+        "街头小吃"
+      ],
+      "tags": [
+        "路线规划",
+        "计划控",
+        "行动派"
+      ],
+      "avatar": "assets/mock/media/IMG044.jpg",
+      "photos": [
+        "assets/mock/media/IMG170.jpg",
+        "assets/mock/media/IMG171.jpg",
+        "assets/mock/media/IMG172.jpg"
+      ],
+      "categoryIds": [
+        "study"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "A001",
+      "ownerId": "U001",
+      "title": "海鲜大排档",
+      "category": "美食",
+      "categoryId": "food",
+      "description": "仅女生",
+      "gender": "仅女生",
+      "time": "2026-11-04T01:00:00.000Z",
+      "location": "南山区·海岸城",
+      "image": "assets/mock/media/IMG001.jpg",
+      "avatar": "assets/mock/media/IMG025.jpg",
+      "photos": [
+        "assets/mock/media/IMG001.jpg",
+        "assets/mock/media/IMG065.jpg",
+        "assets/mock/media/IMG066.jpg"
+      ]
+    },
+    {
+      "id": "A002",
+      "ownerId": "U002",
+      "title": "潮汕牛肉火锅",
+      "category": "美食",
+      "categoryId": "food",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-03T04:00:00.000Z",
+      "location": "福田区·卓悦中心",
+      "image": "assets/mock/media/IMG002.jpg",
+      "avatar": "assets/mock/media/IMG026.jpg",
+      "photos": [
+        "assets/mock/media/IMG002.jpg",
+        "assets/mock/media/IMG067.jpg",
+        "assets/mock/media/IMG068.jpg"
+      ]
+    },
+    {
+      "id": "A003",
+      "ownerId": "U003",
+      "title": "早茶拼桌",
+      "category": "美食",
+      "categoryId": "food",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-02T07:00:00.000Z",
+      "location": "宝安区·欢乐港湾",
+      "image": "assets/mock/media/IMG003.jpg",
+      "avatar": "assets/mock/media/IMG027.jpg",
+      "photos": [
+        "assets/mock/media/IMG003.jpg",
+        "assets/mock/media/IMG069.jpg",
+        "assets/mock/media/IMG070.jpg"
+      ]
+    },
+    {
+      "id": "A004",
+      "ownerId": "U004",
+      "title": "花园咖啡探店",
+      "category": "探店",
+      "categoryId": "shops",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-03T01:05:00.000Z",
+      "location": "龙岗区·大运中心",
+      "image": "assets/mock/media/IMG004.jpg",
+      "avatar": "assets/mock/media/IMG028.jpg",
+      "photos": [
+        "assets/mock/media/IMG004.jpg",
+        "assets/mock/media/IMG071.jpg",
+        "assets/mock/media/IMG072.jpg"
+      ]
+    },
+    {
+      "id": "A005",
+      "ownerId": "U005",
+      "title": "东门小吃地图",
+      "category": "探店",
+      "categoryId": "shops",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-02T04:05:00.000Z",
+      "location": "罗湖区·东门老街",
+      "image": "assets/mock/media/IMG005.jpg",
+      "avatar": "assets/mock/media/IMG029.jpg",
+      "photos": [
+        "assets/mock/media/IMG005.jpg",
+        "assets/mock/media/IMG073.jpg",
+        "assets/mock/media/IMG074.jpg"
+      ]
+    },
+    {
+      "id": "A006",
+      "ownerId": "U006",
+      "title": "复古街区打卡",
+      "category": "探店",
+      "categoryId": "shops",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-01T07:05:00.000Z",
+      "location": "盐田区·大梅沙",
+      "image": "assets/mock/media/IMG006.jpg",
+      "avatar": "assets/mock/media/IMG030.jpg",
+      "photos": [
+        "assets/mock/media/IMG006.jpg",
+        "assets/mock/media/IMG075.jpg",
+        "assets/mock/media/IMG076.jpg"
+      ]
+    },
+    {
+      "id": "A007",
+      "ownerId": "U007",
+      "title": "梅沙尖轻徒步",
+      "category": "户外",
+      "categoryId": "outdoors",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-04T01:10:00.000Z",
+      "location": "龙华区·观澜湖",
+      "image": "assets/mock/media/IMG007.jpg",
+      "avatar": "assets/mock/media/IMG031.jpg",
+      "photos": [
+        "assets/mock/media/IMG007.jpg",
+        "assets/mock/media/IMG077.jpg",
+        "assets/mock/media/IMG078.jpg"
+      ]
+    },
+    {
+      "id": "A008",
+      "ownerId": "U008",
+      "title": "海岸线徒步",
+      "category": "户外",
+      "categoryId": "outdoors",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-03T04:10:00.000Z",
+      "location": "大鹏新区·较场尾",
+      "image": "assets/mock/media/IMG008.jpg",
+      "avatar": "assets/mock/media/IMG032.jpg",
+      "photos": [
+        "assets/mock/media/IMG008.jpg",
+        "assets/mock/media/IMG079.jpg",
+        "assets/mock/media/IMG080.jpg"
+      ]
+    },
+    {
+      "id": "A009",
+      "ownerId": "U009",
+      "title": "梧桐山看日出",
+      "category": "户外",
+      "categoryId": "outdoors",
+      "description": "仅女生",
+      "gender": "仅女生",
+      "time": "2026-11-02T07:10:00.000Z",
+      "location": "福田区·莲花山公园",
+      "image": "assets/mock/media/IMG009.jpg",
+      "avatar": "assets/mock/media/IMG033.jpg",
+      "photos": [
+        "assets/mock/media/IMG009.jpg",
+        "assets/mock/media/IMG081.jpg",
+        "assets/mock/media/IMG082.jpg"
+      ]
+    },
+    {
+      "id": "A010",
+      "ownerId": "U010",
+      "title": "周末羽毛球局",
+      "category": "运动",
+      "categoryId": "sports",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-03T01:15:00.000Z",
+      "location": "南山区·人才公园",
+      "image": "assets/mock/media/IMG010.jpg",
+      "avatar": "assets/mock/media/IMG034.jpg",
+      "photos": [
+        "assets/mock/media/IMG010.jpg",
+        "assets/mock/media/IMG083.jpg",
+        "assets/mock/media/IMG084.jpg"
+      ]
+    },
+    {
+      "id": "A011",
+      "ownerId": "U011",
+      "title": "海边慢跑约伴",
+      "category": "运动",
+      "categoryId": "sports",
+      "description": "仅女生",
+      "gender": "仅女生",
+      "time": "2026-11-02T04:15:00.000Z",
+      "location": "罗湖区·梧桐山",
+      "image": "assets/mock/media/IMG011.jpg",
+      "avatar": "assets/mock/media/IMG035.jpg",
+      "photos": [
+        "assets/mock/media/IMG011.jpg",
+        "assets/mock/media/IMG085.jpg",
+        "assets/mock/media/IMG086.jpg"
+      ]
+    },
+    {
+      "id": "A012",
+      "ownerId": "U012",
+      "title": "新手骑行小队",
+      "category": "运动",
+      "categoryId": "sports",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-01T07:15:00.000Z",
+      "location": "龙岗区·甘坑古镇",
+      "image": "assets/mock/media/IMG012.jpg",
+      "avatar": "assets/mock/media/IMG036.jpg",
+      "photos": [
+        "assets/mock/media/IMG012.jpg",
+        "assets/mock/media/IMG087.jpg",
+        "assets/mock/media/IMG088.jpg"
+      ]
+    },
+    {
+      "id": "A013",
+      "ownerId": "U013",
+      "title": "大鹏一日慢游",
+      "category": "旅游",
+      "categoryId": "travel",
+      "description": "仅女生",
+      "gender": "仅女生",
+      "time": "2026-11-04T01:20:00.000Z",
+      "location": "南山区·海岸城",
+      "image": "assets/mock/media/IMG013.jpg",
+      "avatar": "assets/mock/media/IMG037.jpg",
+      "photos": [
+        "assets/mock/media/IMG013.jpg",
+        "assets/mock/media/IMG089.jpg",
+        "assets/mock/media/IMG090.jpg"
+      ]
+    },
+    {
+      "id": "A014",
+      "ownerId": "U014",
+      "title": "深圳湾日落行",
+      "category": "旅游",
+      "categoryId": "travel",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-03T04:20:00.000Z",
+      "location": "福田区·卓悦中心",
+      "image": "assets/mock/media/IMG014.jpg",
+      "avatar": "assets/mock/media/IMG038.jpg",
+      "photos": [
+        "assets/mock/media/IMG014.jpg",
+        "assets/mock/media/IMG091.jpg",
+        "assets/mock/media/IMG092.jpg"
+      ]
+    },
+    {
+      "id": "A015",
+      "ownerId": "U015",
+      "title": "周末古镇漫游",
+      "category": "旅游",
+      "categoryId": "travel",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-02T07:20:00.000Z",
+      "location": "宝安区·欢乐港湾",
+      "image": "assets/mock/media/IMG015.jpg",
+      "avatar": "assets/mock/media/IMG039.jpg",
+      "photos": [
+        "assets/mock/media/IMG015.jpg",
+        "assets/mock/media/IMG093.jpg",
+        "assets/mock/media/IMG094.jpg"
+      ]
+    },
+    {
+      "id": "A016",
+      "ownerId": "U016",
+      "title": "夜景人像练习",
+      "category": "摄影",
+      "categoryId": "photo",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-03T01:25:00.000Z",
+      "location": "龙岗区·大运中心",
+      "image": "assets/mock/media/IMG016.jpg",
+      "avatar": "assets/mock/media/IMG040.jpg",
+      "photos": [
+        "assets/mock/media/IMG016.jpg",
+        "assets/mock/media/IMG095.jpg",
+        "assets/mock/media/IMG096.jpg"
+      ]
+    },
+    {
+      "id": "A017",
+      "ownerId": "U017",
+      "title": "海边日落取景",
+      "category": "摄影",
+      "categoryId": "photo",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-02T04:25:00.000Z",
+      "location": "罗湖区·东门老街",
+      "image": "assets/mock/media/IMG017.jpg",
+      "avatar": "assets/mock/media/IMG041.jpg",
+      "photos": [
+        "assets/mock/media/IMG017.jpg",
+        "assets/mock/media/IMG097.jpg",
+        "assets/mock/media/IMG098.jpg"
+      ]
+    },
+    {
+      "id": "A018",
+      "ownerId": "U018",
+      "title": "老街光影采集",
+      "category": "摄影",
+      "categoryId": "photo",
+      "description": "仅男生",
+      "gender": "仅男生",
+      "time": "2026-11-01T07:25:00.000Z",
+      "location": "盐田区·大梅沙",
+      "image": "assets/mock/media/IMG018.jpg",
+      "avatar": "assets/mock/media/IMG042.jpg",
+      "photos": [
+        "assets/mock/media/IMG018.jpg",
+        "assets/mock/media/IMG099.jpg",
+        "assets/mock/media/IMG100.jpg"
+      ]
+    },
+    {
+      "id": "A019",
+      "ownerId": "U019",
+      "title": "海洋馆自然课",
+      "category": "研学",
+      "categoryId": "study",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-04T01:30:00.000Z",
+      "location": "龙华区·观澜湖",
+      "image": "assets/mock/media/IMG019.jpg",
+      "avatar": "assets/mock/media/IMG043.jpg",
+      "photos": [
+        "assets/mock/media/IMG019.jpg",
+        "assets/mock/media/IMG101.jpg",
+        "assets/mock/media/IMG102.jpg"
+      ]
+    },
+    {
+      "id": "A020",
+      "ownerId": "U020",
+      "title": "城市建筑观察",
+      "category": "研学",
+      "categoryId": "study",
+      "description": "仅男生",
+      "gender": "仅男生",
+      "time": "2026-11-03T04:30:00.000Z",
+      "location": "大鹏新区·较场尾",
+      "image": "assets/mock/media/IMG020.jpg",
+      "avatar": "assets/mock/media/IMG044.jpg",
+      "photos": [
+        "assets/mock/media/IMG020.jpg",
+        "assets/mock/media/IMG103.jpg",
+        "assets/mock/media/IMG104.jpg"
+      ]
+    },
+    {
+      "id": "A021",
+      "ownerId": "U001",
+      "title": "植物园自然笔记",
+      "category": "研学",
+      "categoryId": "study",
+      "description": "仅女生",
+      "gender": "仅女生",
+      "time": "2026-11-02T07:30:00.000Z",
+      "location": "福田区·莲花山公园",
+      "image": "assets/mock/media/IMG021.jpg",
+      "avatar": "assets/mock/media/IMG025.jpg",
+      "photos": [
+        "assets/mock/media/IMG021.jpg",
+        "assets/mock/media/IMG105.jpg",
+        "assets/mock/media/IMG106.jpg"
+      ]
+    },
+    {
+      "id": "A022",
+      "ownerId": "U002",
+      "title": "周末桌游拼桌",
+      "category": "桌游",
+      "categoryId": "games",
+      "description": "仅男生",
+      "gender": "仅男生",
+      "time": "2026-11-03T01:34:59.999Z",
+      "location": "南山区·人才公园",
+      "image": "assets/mock/media/IMG022.jpg",
+      "avatar": "assets/mock/media/IMG026.jpg",
+      "photos": [
+        "assets/mock/media/IMG022.jpg",
+        "assets/mock/media/IMG107.jpg",
+        "assets/mock/media/IMG108.jpg"
+      ]
+    },
+    {
+      "id": "A023",
+      "ownerId": "U003",
+      "title": "轻松推理夜",
+      "category": "桌游",
+      "categoryId": "games",
+      "description": "仅女生",
+      "gender": "仅女生",
+      "time": "2026-11-02T04:34:59.999Z",
+      "location": "罗湖区·梧桐山",
+      "image": "assets/mock/media/IMG023.jpg",
+      "avatar": "assets/mock/media/IMG027.jpg",
+      "photos": [
+        "assets/mock/media/IMG023.jpg",
+        "assets/mock/media/IMG109.jpg",
+        "assets/mock/media/IMG110.jpg"
+      ]
+    },
+    {
+      "id": "A024",
+      "ownerId": "U004",
+      "title": "新手桌游体验",
+      "category": "桌游",
+      "categoryId": "games",
+      "description": "不限",
+      "gender": "不限",
+      "time": "2026-11-01T07:34:59.999Z",
+      "location": "龙岗区·甘坑古镇",
+      "image": "assets/mock/media/IMG024.jpg",
+      "avatar": "assets/mock/media/IMG028.jpg",
+      "photos": [
+        "assets/mock/media/IMG024.jpg",
+        "assets/mock/media/IMG111.jpg",
+        "assets/mock/media/IMG112.jpg"
+      ]
+    }
+  ]
+}

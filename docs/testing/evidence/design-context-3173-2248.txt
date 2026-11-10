@@ -1,0 +1,229 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/164b1d74-1e60-47a7-8363-f8944994c7d9";
+const imgMapDraw = `${assetPathPrefix}/b66dd.svg`;
+const imgTime = `${assetPathPrefix}/76daa.svg`;
+const img = `${assetPathPrefix}/b749f.svg`;
+const imgImage10 = `${assetPathPrefix}/85ca4.png`;
+const img1 = `${assetPathPrefix}/894ae.png`;
+const imgBattery = `${assetPathPrefix}/f80d4.svg`;
+const imgWifi = `${assetPathPrefix}/eb198.svg`;
+const imgCellularConnection = `${assetPathPrefix}/d5602.svg`;
+const img2 = `${assetPathPrefix}/7082b.svg`;
+const img3 = `${assetPathPrefix}/74759.svg`;
+
+type ComponentProps = {
+  className?: string;
+  propValue?: "off";
+};
+
+function Component({ className, propValue = "off" }: ComponentProps) {
+  return (
+    <div className={className || "relative size-[16px]"} data-node-id="4:144">
+      <div className="absolute aspect-[18/18] bg-[#efefef] border border-[#d5d5d5] border-solid left-0 right-0 rounded-[6px] top-0" data-node-id="4:106" />
+    </div>
+  );
+}
+
+function MapDraw({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[16px]"} data-node-id="1831:10958" data-name="Map-draw (地图)">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMapDraw} />
+    </div>
+  );
+}
+
+function Time({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[20px]"} data-node-id="2207:987" data-name="Time (时间)">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTime} />
+    </div>
+  );
+}
+
+type IconProps = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon({ className, propValue = "左" }: IconProps) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+export default function Component1() {
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start justify-between relative size-full" data-node-id="3173:2248" data-name="报名确认 · 美化版">
+      <div className="absolute h-[242px] left-0 overflow-clip top-0 w-[375px]" data-node-id="3173:2249" data-name="页面氛围">
+        <div className="absolute bg-gradient-to-b from-[#fffbbf] inset-0 to-white" data-node-id="I3173:2249;3109:19306" />
+        <div className="absolute aspect-[274/360] left-[56.27%] opacity-25 right-[-4.27%] top-[-39px]" data-node-id="I3173:2249;3109:19311" data-name="image 10">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+        </div>
+        <div className="absolute aspect-[236.5010055239154/280.49248874424575] flex items-center justify-center left-[-10.93%] right-[47.87%] top-[-98px]" data-node-id="I3173:2249;3109:19313" style={{ containerType: "size" }}>
+          <div className="-scale-x-100 flex-none h-[hypot(-23.1311cqw,85.1558cqh)] rotate-[12.9deg] w-[hypot(-76.8689cqw,-14.8442cqh)]">
+            <div className="opacity-25 relative size-full" data-name="image 11">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3173:2250" data-name="报名核对内容">
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3173:2251" data-name="状态栏">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3173:2251;1:946" data-name="矩形" />
+          <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I3173:2251;1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I3173:2251;1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+              <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I3173:2251;1:947;0:182" data-name="Battery">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+              </div>
+              <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I3173:2251;1:947;0:188" data-name="Wifi">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+              </div>
+              <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I3173:2251;1:947;0:192" data-name="Cellular Connection">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+              </div>
+              <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I3173:2251;1:947;0:195" data-name="Time Style">
+                <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I3173:2251;1:947;0:196">
+                  <span className="leading-[normal]">9:4</span>
+                  <span className="leading-[normal]">1</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex h-[44px] items-center overflow-clip px-[16px] relative shrink-0 w-full" data-node-id="3173:2252" data-name="返回导航">
+          <Icon className="relative shrink-0 size-[24px]" />
+          <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Bold'] font-bold leading-[normal] min-w-px relative text-[#333] text-[17px] text-center" data-node-id="3173:2254">
+            报名确认
+          </p>
+          <div className="relative shrink-0 size-[24px]" data-node-id="3173:2255" data-name="导航留白" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[12px] items-start overflow-clip px-[16px] py-[12px] relative shrink-0 w-full" data-node-id="3173:2256" data-name="核对信息">
+          <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3173:2269" data-name="活动核对">
+            <div className="bg-white border border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[14px] items-start overflow-clip p-[16px] relative rounded-[16px] shrink-0 w-full" data-node-id="3173:2270" data-name="活动信息卡片">
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Medium'] font-medium leading-[18px] min-w-full relative shrink-0 text-[#888] text-[12px] w-[min-content]" data-node-id="3173:2271">
+                请确认本次活动安排
+              </p>
+              <div className="content-stretch flex gap-[16px] h-[64px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3173:2272" data-name="活动摘要">
+                <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[5px] items-start min-w-px overflow-clip relative" data-node-id="3173:2274" data-name="活动简介">
+                  <p className="font-['Noto_Sans_SC:Bold'] font-bold leading-[30px] relative shrink-0 text-[#333] text-[20px] w-full" data-node-id="3173:2275">
+                    羽毛球组局
+                  </p>
+                  <p className="font-['Noto_Sans_SC:Regular'] font-normal leading-[18px] relative shrink-0 text-[#999] text-[12px] w-full" data-node-id="3173:2276">
+                    休闲娱乐，放松一下
+                  </p>
+                </div>
+                <div className="relative rounded-[12px] shrink-0 size-[64px]" data-node-id="3173:2273" data-name="活动封面">
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[12px]">
+                    <img alt="" className="absolute h-[225.02%] left-[-36.66%] max-w-none top-[-50.86%] w-[149.99%]" src={img1} />
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#f8f9fa] content-stretch flex gap-[10px] items-start overflow-clip p-[12px] relative rounded-[12px] shrink-0 w-[311px]" data-node-id="3173:2278" data-name="活动时间">
+                <Time className="relative shrink-0 size-[20px]" />
+                <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[3px] items-start min-w-px overflow-clip relative" data-node-id="3173:2280" data-name="时间内容">
+                  <p className="font-['Noto_Sans_SC:Regular'] font-normal leading-[17px] relative shrink-0 text-[#999] text-[11px] w-[44px]" data-node-id="3173:2281">
+                    活动时间
+                  </p>
+                  <p className="font-['Noto_Sans_SC:Medium'] font-medium leading-[20px] min-w-full relative shrink-0 text-[#333] text-[13px] w-[min-content]" data-node-id="3173:2282">
+                    2026年12月12日（周六）
+                  </p>
+                  <p className="font-['Noto_Sans_SC:Bold'] font-bold leading-[27px] min-w-full relative shrink-0 text-[#333] text-[18px] w-[min-content]" data-node-id="3173:2283">
+                    12:00–13:00
+                  </p>
+                </div>
+              </div>
+              <div className="bg-[#f8f9fa] content-stretch flex gap-[10px] items-start overflow-clip p-[12px] relative rounded-[12px] shrink-0 w-[311px]" data-node-id="3173:2284" data-name="集合地点">
+                <MapDraw className="relative shrink-0 size-[16px]" />
+                <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[3px] items-start min-w-px overflow-clip relative" data-node-id="3173:2286" data-name="地点内容">
+                  <p className="font-['Noto_Sans_SC:Regular'] font-normal leading-[17px] relative shrink-0 text-[#999] text-[11px] w-[44px]" data-node-id="3173:2287">
+                    集合地点
+                  </p>
+                  <p className="font-['Noto_Sans_SC:Medium'] font-medium leading-[20px] min-w-full relative shrink-0 text-[#333] text-[13px] w-[min-content]" data-node-id="3173:2288">
+                    宝安体育馆羽毛球馆入口
+                  </p>
+                  <p className="font-['Noto_Sans_SC:Medium'] font-medium leading-[20px] min-w-full relative shrink-0 text-[#333] text-[13px] w-[min-content]" data-node-id="3173:2289">
+                    深圳市 · 宝安区
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-[#fff7e3] content-stretch flex gap-[8px] items-start overflow-clip p-[12px] relative rounded-[10px] shrink-0 w-[343px]" data-node-id="3173:2290" data-name="守约提醒">
+              <div className="h-[14px] relative shrink-0 w-[12px]" data-node-id="3173:2291" data-name="提醒标识">
+                <div className="absolute bottom-1/4 left-0 right-0 top-0">
+                  <img alt="" className="block max-w-none size-full" src={img2} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="3173:2292" data-name="提醒内容">
+                <p className="font-['Noto_Sans_SC:Medium'] font-medium leading-[0] relative shrink-0 text-[#9a711f] text-[0px] w-full" data-node-id="3173:2293">
+                  <span className="leading-[17px] text-[11px]">如期到达不扣分，爽约</span>
+                  <span className="leading-[17px] text-[11px]">扣10分/次</span>
+                </p>
+                <p className="font-['Noto_Sans_SC:Regular'] font-normal leading-[17px] relative shrink-0 text-[#a28c61] text-[11px] w-full" data-node-id="3173:2294">
+                  请预留出行时间，行程有变请提前沟通。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[#f8f9fa] content-stretch flex gap-[12px] h-[68px] items-center overflow-clip p-[12px] relative rounded-[12px] shrink-0 w-full" data-node-id="3173:2257" data-name="直接报名资格">
+            <div className="[word-break:break-word] content-stretch flex flex-col items-start relative shrink-0 w-[70px]" data-node-id="3173:2258" data-name="当前信誉">
+              <p className="font-['Noto_Sans_SC:Regular'] font-normal leading-[15px] relative shrink-0 text-[#999] text-[10px] w-[50px]" data-node-id="3173:2259">
+                当前信誉分
+              </p>
+              <p className="font-['Noto_Sans_SC:Bold'] font-bold leading-[33px] relative shrink-0 text-[#333] text-[22px] w-[66px]" data-node-id="3173:2260">
+                100 分
+              </p>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[3px] items-start min-w-px overflow-clip relative" data-node-id="3173:2261" data-name="报名资格">
+              <div className="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="3173:2262" data-name="信誉状态">
+                <div className="h-[17px] relative shrink-0 w-[14px]" data-node-id="3173:2263" data-name="信誉盾牌">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={img3} />
+                </div>
+                <p className="[word-break:break-word] font-['Noto_Sans_SC:Medium'] font-medium leading-[20px] relative shrink-0 text-[#333] text-[13px] w-[52px]" data-node-id="3173:2264">
+                  信誉良好
+                </p>
+              </div>
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[17px] min-w-full relative shrink-0 text-[#888] text-[11px] w-[min-content]" data-node-id="3173:2268">
+                可直接报名，无需审核或额外认证
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white border border-[#f1f1f1] border-solid content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3173:2295" data-name="报名操作">
+        <div className="content-stretch flex flex-col gap-[9px] items-start overflow-clip pb-[8px] pt-[14px] px-[16px] relative shrink-0 w-full" data-node-id="3173:2296" data-name="确认与提交">
+          <div className="content-stretch flex gap-[10px] items-start overflow-clip relative shrink-0 w-[299px]" data-node-id="3173:2297" data-name="时间地点确认">
+            <div className="content-stretch flex flex-col items-start overflow-clip pt-[3px] relative shrink-0" data-node-id="3173:2298" data-name="未勾选状态">
+              <Component className="relative shrink-0 size-[16px]" />
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Regular'] font-normal leading-[20px] min-w-px relative text-[#555] text-[13px]" data-node-id="3173:2300">
+              我已核对活动时间与集合地点，确认可按时到达
+            </p>
+          </div>
+          <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[15px] min-w-full relative shrink-0 text-[#999] text-[10px] w-[min-content]" data-node-id="3173:2301">
+            勾选确认后，即可提交报名
+          </p>
+          <div className="bg-[#fff0bc] content-stretch flex gap-[10px] h-[48px] items-center justify-center px-[76px] py-[15px] relative rounded-[16px] shrink-0 w-full" data-node-id="3173:2302" data-name="提交报名 · 禁用">
+            <p className="[word-break:break-word] font-['Noto_Sans_SC:Medium'] font-medium leading-[normal] relative shrink-0 text-[#b2a477] text-[16px] whitespace-nowrap" data-node-id="I3173:2302;9:423">
+              提交报名
+            </p>
+          </div>
+        </div>
+        <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3173:2303" data-name="底部安全区">
+          <div className="absolute bg-white inset-0" data-node-id="I3173:2303;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3173:2303;7122:3671" />
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/主要文字: #333333.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

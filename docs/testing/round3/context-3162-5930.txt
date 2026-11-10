@@ -1,0 +1,254 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/d576b843-157b-47ba-a549-b0aa252a4c2e";
+const imgDown = `${assetPathPrefix}/8853a.svg`;
+const imgHeadsetOne = `${assetPathPrefix}/4152b.svg`;
+const imgProtect = `${assetPathPrefix}/3b4fb.svg`;
+const imgPlanet = `${assetPathPrefix}/ea7c4.svg`;
+const img = `${assetPathPrefix}/b749f.svg`;
+const imgBattery = `${assetPathPrefix}/f80d4.svg`;
+const imgWifi = `${assetPathPrefix}/eb198.svg`;
+const imgCellularConnection = `${assetPathPrefix}/d5602.svg`;
+const imgImage10 = `${assetPathPrefix}/85ca4.png`;
+
+type ComponentProps = {
+  className?: string;
+  type?: "center";
+};
+
+function Component({ className, type = "center" }: ComponentProps) {
+  return (
+    <div className={className || "content-stretch flex flex-col h-px items-start px-[16px] relative w-[375px]"} data-node-id="192:1939">
+      <div className="bg-[#f1f1f1] h-[0.5px] relative shrink-0 w-full" data-node-id="192:1934" />
+    </div>
+  );
+}
+
+function Down({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[20px]"} data-node-id="2065:15113" data-name="Down (下)">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDown} />
+    </div>
+  );
+}
+
+function HeadsetOne({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[28px]"} data-node-id="3157:21050" data-name="Headset-one (耳机)">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgHeadsetOne} />
+    </div>
+  );
+}
+
+function Protect({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[28px]"} data-node-id="3157:21035" data-name="Protect (保护)">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgProtect} />
+    </div>
+  );
+}
+
+function Planet({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[28px]"} data-node-id="3157:21041" data-name="Planet (星球)">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPlanet} />
+    </div>
+  );
+}
+
+type IconProps = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon({ className, propValue = "左" }: IconProps) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+type Component1Props = {
+  className?: string;
+  style?: "Light";
+};
+
+function Component1({ className, style = "Light" }: Component1Props) {
+  return (
+    <div className={className || "h-[48px] relative w-[375px]"} data-node-id="1:989">
+      <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="1:946" data-name="矩形" />
+      <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+          <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I1:947;0:182" data-name="Battery">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+          </div>
+          <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I1:947;0:188" data-name="Wifi">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+          </div>
+          <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I1:947;0:192" data-name="Cellular Connection">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+          </div>
+          <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I1:947;0:195" data-name="Time Style">
+            <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I1:947;0:196" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                9:4
+              </span>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                1
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Component2() {
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start justify-between relative size-full" data-node-id="3162:5930" data-name="关于我们">
+      <div className="absolute h-[242px] left-0 overflow-clip top-0 w-[375px]" data-node-id="3162:5931" data-name="浅黄色氛围">
+        <div className="absolute bg-gradient-to-b from-[#fffbbf] inset-0 to-white" data-node-id="I3162:5931;3109:19306" />
+        <div className="absolute aspect-[274/360] left-[56.27%] opacity-25 right-[-4.27%] top-[-39px]" data-node-id="I3162:5931;3109:19311" data-name="image 10">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+        </div>
+        <div className="absolute aspect-[236.5010055239154/280.49248874424575] flex items-center justify-center left-[-10.93%] right-[47.87%] top-[-98px]" data-node-id="I3162:5931;3109:19313" style={{ containerType: "size" }}>
+          <div className="-scale-x-100 flex-none h-[hypot(-23.1311cqw,85.1558cqh)] rotate-[12.9deg] w-[hypot(-76.8689cqw,-14.8442cqh)]">
+            <div className="opacity-25 relative size-full" data-name="image 11">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3162:5935" data-name="页面内容">
+        <Component1 className="h-[48px] relative shrink-0 w-[375px]" />
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3162:5957" data-name="返回导航">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3162:5957;9:464" />
+          <Icon className="absolute h-[24px] left-[4.27%] right-[89.33%] top-[12px]" />
+          <p className="[word-break:break-word] absolute font-['PingFang_SC:Semibold'] inset-[27.08%_41.6%_27.08%_41.33%] leading-[normal] not-italic text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3162:5957;9:473">
+            关于我们
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip pb-[24px] pt-[16px] px-[16px] relative shrink-0 w-full" data-node-id="3162:5968" data-name="主体">
+          <div className="content-stretch flex flex-col gap-[12px] items-center overflow-clip py-[20px] relative shrink-0 w-full" data-node-id="3162:5969" data-name="品牌介绍">
+            <div className="bg-[#ffe583] content-stretch flex flex-col items-center justify-center overflow-clip relative rounded-[24px] shrink-0 size-[76px]" data-node-id="3162:5970" data-name="品牌标识">
+              <Planet className="relative shrink-0 size-[42px]" />
+            </div>
+            <p className="[word-break:break-word] font-['PingFang_SC:Semibold'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[28px] whitespace-nowrap" data-node-id="3162:5975">
+              友伴
+            </p>
+            <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[1.5] min-w-full not-italic relative shrink-0 text-[#333] text-[16px] text-center w-[min-content]" data-node-id="3162:5976">
+              有趣的生活，不必一个人
+            </p>
+            <div className="bg-[#f7f7f7] content-stretch flex items-start overflow-clip px-[8px] py-[3px] relative rounded-[6px] shrink-0" data-node-id="3162:5977" data-name="状态标签">
+              <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[1.5] not-italic relative shrink-0 text-[#888] text-[11px] whitespace-nowrap" data-node-id="3162:5978">
+                版本 1.0.0
+              </p>
+            </div>
+          </div>
+          <div className="[word-break:break-word] bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[10px] items-start not-italic overflow-clip p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3162:5979" data-name="内容卡片">
+            <p className="font-['PingFang_SC:Semibold'] leading-[1.5] relative shrink-0 text-[#333] text-[16px] w-full" data-node-id="3162:5980">
+              从共同的喜欢，到真实的相遇
+            </p>
+            <p className="font-['PingFang_SC:Regular'] leading-[20px] relative shrink-0 text-[#666] text-[length:var(--typography\/body-md\/font-size,14px)] w-full" data-node-id="3162:5981">
+              友伴是一个从兴趣出发的社交组队社区。无论是山野徒步、城市探店，还是一场轻松的桌游局，我们希望帮你遇见合拍的搭子，让每个「想去」都变成「一起去」。
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3162:5982" data-name="社区主张">
+            <p className="[word-break:break-word] font-['PingFang_SC:Semibold'] leading-[1.5] not-italic relative shrink-0 text-[#333] text-[16px] w-full" data-node-id="3162:5983">
+              我们相信
+            </p>
+            <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[16px] items-start overflow-clip p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3162:5984" data-name="内容卡片">
+              <div className="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3162:5985" data-name="社区理念">
+                <Planet className="relative shrink-0 size-[28px]" />
+                <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start leading-[1.5] min-w-px not-italic overflow-clip relative" data-node-id="3162:5990" data-name="理念说明">
+                  <p className="font-['PingFang_SC:Semibold'] relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3162:5991">
+                    同频，比热闹更重要
+                  </p>
+                  <p className="font-['PingFang_SC:Regular'] relative shrink-0 text-[#999] text-[12px] w-full" data-node-id="3162:5992">
+                    从共同热爱出发，自然找到话题。
+                  </p>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3162:5993" data-name="社区理念">
+                <Protect className="relative shrink-0 size-[28px]" />
+                <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start leading-[1.5] min-w-px not-italic overflow-clip relative" data-node-id="3162:5997" data-name="理念说明">
+                  <p className="font-['PingFang_SC:Semibold'] relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3162:5998">
+                    真实，是相遇的起点
+                  </p>
+                  <p className="font-['PingFang_SC:Regular'] relative shrink-0 text-[#999] text-[12px] w-full" data-node-id="3162:5999">
+                    认真认证、真诚表达，放心做自己。
+                  </p>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3162:6000" data-name="社区理念">
+                <HeadsetOne className="relative shrink-0 size-[28px]" />
+                <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start leading-[1.5] min-w-px not-italic overflow-clip relative" data-node-id="3162:6007" data-name="理念说明">
+                  <p className="font-['PingFang_SC:Semibold'] relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3162:6008">
+                    友善，让连接更长久
+                  </p>
+                  <p className="font-['PingFang_SC:Regular'] relative shrink-0 text-[#999] text-[12px] w-full" data-node-id="3162:6009">
+                    尊重不同，守时赴约，彼此照顾。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col items-start overflow-clip p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3162:6010" data-name="内容卡片">
+            <div className="content-stretch flex gap-[12px] items-center min-h-[52px] overflow-clip relative shrink-0 w-full" data-node-id="3162:6011" data-name="列表项">
+              <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[15px] whitespace-nowrap" data-node-id="3162:6012">
+                用户协议
+              </p>
+              <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px overflow-clip relative" data-node-id="3162:6013" data-name="项目内容">
+                <Down className="flex items-center justify-center relative shrink-0 size-[20px]" />
+              </div>
+            </div>
+            <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+            <div className="content-stretch flex gap-[12px] items-center min-h-[52px] overflow-clip relative shrink-0 w-full" data-node-id="3162:6018" data-name="列表项">
+              <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[15px] whitespace-nowrap" data-node-id="3162:6019">
+                隐私政策
+              </p>
+              <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px overflow-clip relative" data-node-id="3162:6020" data-name="项目内容">
+                <Down className="flex items-center justify-center relative shrink-0 size-[20px]" />
+              </div>
+            </div>
+            <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+            <div className="content-stretch flex gap-[12px] items-center min-h-[52px] overflow-clip relative shrink-0 w-full" data-node-id="3162:6025" data-name="列表项">
+              <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[15px] whitespace-nowrap" data-node-id="3162:6026">
+                检查更新
+              </p>
+              <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px overflow-clip relative" data-node-id="3162:6027" data-name="项目内容">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#999] text-[13px] whitespace-nowrap" data-node-id="3162:6028">
+                  已是最新版本
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3162:6029" data-name="底部安全区">
+        <div className="[word-break:break-word] content-stretch flex flex-col font-['PingFang_SC:Regular'] gap-[5px] items-start leading-[1.5] not-italic overflow-clip relative shrink-0 text-[#999] text-center w-full" data-node-id="3162:6030" data-name="版权信息">
+          <p className="relative shrink-0 text-[11px] w-full" data-node-id="3162:6031">
+            友伴 · 让每个热爱都有同行的人
+          </p>
+          <p className="relative shrink-0 text-[10px] w-full" data-node-id="3162:6032">
+            Copyright © 2026 友伴 All Rights Reserved.
+          </p>
+        </div>
+        <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3162:6033" data-name="手势条">
+          <div className="absolute bg-white inset-0" data-node-id="I3162:6033;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3162:6033;7122:3671" />
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/主要文字: #333333, 灰色/白色: #FFFFFF, 灰色/辅助文字: #999999.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

@@ -1,0 +1,7 @@
+<canvas id="546:5869" name="参考" x="0" y="0" width="0" height="0">
+  <rounded-rectangle id="546:5870" name="image 7" x="-281" y="-172" width="561" height="344" />
+  <symbol id="546:5879" name="Cake (蛋糕)" x="308" y="-217" width="16" height="16" />
+  <frame id="546:5900" name="Cake (蛋糕)" x="354" y="-217" width="16" height="16" />
+  <symbol id="546:5894" name="Ruler (尺子)" x="330" y="-217" width="16" height="16" />
+</canvas>
+IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

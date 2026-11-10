@@ -1,0 +1,308 @@
+{
+  "posts": [
+    {
+      "id": "D001",
+      "authorId": "U001",
+      "author": "橘子汽水",
+      "avatar": "assets/mock/media/IMG025.jpg",
+      "text": "周末想去试试这家海鲜小店，找两位饭搭子一起点菜，边吃边聊不赶时间。",
+      "photos": [
+        "assets/mock/media/IMG045.jpg"
+      ],
+      "location": "深圳·南山区",
+      "category": "美食",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0,
+      "activityId": "A001"
+    },
+    {
+      "id": "D002",
+      "authorId": "U002",
+      "author": "海盐芝士",
+      "avatar": "assets/mock/media/IMG026.jpg",
+      "text": "东门边走边吃路线已整理好，想来一场不做攻略也能开心的小探店。",
+      "photos": [
+        "assets/mock/media/IMG046.jpg"
+      ],
+      "location": "深圳·福田区",
+      "category": "探店",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D003",
+      "authorId": "U003",
+      "author": "小满同学",
+      "avatar": "assets/mock/media/IMG027.jpg",
+      "text": "早起爬山看日出，天气合适就出发，结束后找地方吃早餐。",
+      "photos": [
+        "assets/mock/media/IMG047.jpg"
+      ],
+      "location": "深圳·宝安区",
+      "category": "户外",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D004",
+      "authorId": "U004",
+      "author": "晚风有信",
+      "avatar": "assets/mock/media/IMG028.jpg",
+      "text": "周末羽毛球缺两位搭档，水平不限，主要开心出汗。",
+      "photos": [
+        "assets/mock/media/IMG048.jpg"
+      ],
+      "location": "深圳·龙岗区",
+      "category": "运动",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D005",
+      "authorId": "U005",
+      "author": "栗子拿铁",
+      "avatar": "assets/mock/media/IMG029.jpg",
+      "text": "傍晚去深圳湾看日落，带上相机和好心情，结束后附近吃饭。",
+      "photos": [
+        "assets/mock/media/IMG049.jpg"
+      ],
+      "location": "深圳·罗湖区",
+      "category": "旅游",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D006",
+      "authorId": "U006",
+      "author": "桃桃乌龙",
+      "avatar": "assets/mock/media/IMG030.jpg",
+      "text": "老街光影采集，边走边拍，发现城市里容易错过的小细节。",
+      "photos": [
+        "assets/mock/media/IMG050.jpg"
+      ],
+      "location": "深圳·盐田区",
+      "category": "摄影",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D007",
+      "authorId": "U007",
+      "author": "薄荷日记",
+      "avatar": "assets/mock/media/IMG031.jpg",
+      "text": "一起去看海洋生物展，边逛边做观察记录，轻松学习不考试。",
+      "photos": [
+        "assets/mock/media/IMG051.jpg"
+      ],
+      "location": "深圳·龙华区",
+      "category": "研学",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D008",
+      "authorId": "U008",
+      "author": "云朵散步",
+      "avatar": "assets/mock/media/IMG032.jpg",
+      "text": "推理主题桌游夜，人数够就开局，欢迎喜欢互动和讲故事的朋友。",
+      "photos": [
+        "assets/mock/media/IMG052.jpg"
+      ],
+      "location": "深圳·坪山区",
+      "category": "桌游",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D009",
+      "authorId": "U009",
+      "author": "南风知我",
+      "avatar": "assets/mock/media/IMG033.jpg",
+      "text": "早茶局开放报名，虾饺烧卖都想吃，AA轻松吃一顿。",
+      "photos": [
+        "assets/mock/media/IMG053.jpg"
+      ],
+      "location": "深圳·光明区",
+      "category": "美食",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D010",
+      "authorId": "U010",
+      "author": "柚子不酸",
+      "avatar": "assets/mock/media/IMG034.jpg",
+      "text": "发现一家绿意很足的咖啡馆，适合晒太阳聊天，想找同频朋友一起去。",
+      "photos": [
+        "assets/mock/media/IMG054.jpg"
+      ],
+      "location": "深圳·大鹏新区",
+      "category": "探店",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D011",
+      "authorId": "U011",
+      "author": "星河漫游",
+      "avatar": "assets/mock/media/IMG035.jpg",
+      "text": "想沿海岸线走走看海，边徒步边拍照，欢迎新手一起出发。",
+      "photos": [
+        "assets/mock/media/IMG055.jpg"
+      ],
+      "location": "深圳·南山区",
+      "category": "户外",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D012",
+      "authorId": "U012",
+      "author": "小岛晴天",
+      "avatar": "assets/mock/media/IMG036.jpg",
+      "text": "新手友好骑行小队，沿绿道骑一圈，中途补水休息。",
+      "photos": [
+        "assets/mock/media/IMG056.jpg"
+      ],
+      "location": "深圳·福田区",
+      "category": "运动",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D013",
+      "authorId": "U013",
+      "author": "木木有光",
+      "avatar": "assets/mock/media/IMG037.jpg",
+      "text": "大鹏一日慢游计划，海边散步、吃小吃，想去的朋友一起拼行程。",
+      "photos": [
+        "assets/mock/media/IMG057.jpg"
+      ],
+      "location": "深圳·宝安区",
+      "category": "旅游",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D014",
+      "authorId": "U014",
+      "author": "阿葵",
+      "avatar": "assets/mock/media/IMG038.jpg",
+      "text": "海边日落光线很美，约伴取景拍照，分享构图和修图思路。",
+      "photos": [
+        "assets/mock/media/IMG058.jpg"
+      ],
+      "location": "深圳·龙岗区",
+      "category": "摄影",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D015",
+      "authorId": "U015",
+      "author": "山野青",
+      "avatar": "assets/mock/media/IMG039.jpg",
+      "text": "植物园自然笔记活动，认识常见植物，拍照记录叶片和花。",
+      "photos": [
+        "assets/mock/media/IMG059.jpg"
+      ],
+      "location": "深圳·罗湖区",
+      "category": "研学",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D016",
+      "authorId": "U016",
+      "author": "可乐加冰",
+      "avatar": "assets/mock/media/IMG040.jpg",
+      "text": "周末拼桌玩轻策略桌游，新手会讲规则，带上轻松心情来就好。",
+      "photos": [
+        "assets/mock/media/IMG060.jpg"
+      ],
+      "location": "深圳·盐田区",
+      "category": "桌游",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D017",
+      "authorId": "U017",
+      "author": "林间拾光",
+      "avatar": "assets/mock/media/IMG041.jpg",
+      "text": "收藏很久的牛肉火锅终于安排上，想约喜欢潮汕口味的朋友一起打卡。",
+      "photos": [
+        "assets/mock/media/IMG061.jpg"
+      ],
+      "location": "深圳·龙华区",
+      "category": "美食",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D018",
+      "authorId": "U018",
+      "author": "七分甜",
+      "avatar": "assets/mock/media/IMG042.jpg",
+      "text": "周末逛逛复古街区，拍照、喝咖啡、看小店，欢迎一起慢慢走。",
+      "photos": [
+        "assets/mock/media/IMG062.jpg"
+      ],
+      "location": "深圳·坪山区",
+      "category": "探店",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D019",
+      "authorId": "U019",
+      "author": "蓝调周末",
+      "avatar": "assets/mock/media/IMG043.jpg",
+      "text": "梅沙尖轻徒步招募同行，路线节奏友好，记得带水和防晒。",
+      "photos": [
+        "assets/mock/media/IMG063.jpg"
+      ],
+      "location": "深圳·光明区",
+      "category": "户外",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "id": "D020",
+      "authorId": "U020",
+      "author": "米粒呀",
+      "avatar": "assets/mock/media/IMG044.jpg",
+      "text": "约一场海边慢跑，配速轻松，跑不动就一起散步看海。",
+      "photos": [
+        "assets/mock/media/IMG064.jpg"
+      ],
+      "location": "深圳·大鹏新区",
+      "category": "运动",
+      "isMine": false,
+      "likeCount": 0,
+      "commentCount": 0
+    }
+  ],
+  "likes": [],
+  "comments": {},
+  "following": []
+}

@@ -1,0 +1,157 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/bb9221a3-d027-4041-bff4-aa29a5aaace4";
+const img = `${assetPathPrefix}/b749f.svg`;
+const imgImage10 = `${assetPathPrefix}/85ca4.png`;
+const imgBattery = `${assetPathPrefix}/f80d4.svg`;
+const imgWifi = `${assetPathPrefix}/eb198.svg`;
+const imgCellularConnection = `${assetPathPrefix}/d5602.svg`;
+
+type IconProps = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon({ className, propValue = "左" }: IconProps) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+export default function Component() {
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start justify-between relative size-full" data-node-id="3165:12577" data-name="选择生日">
+      <div className="absolute h-[242px] left-0 overflow-clip top-0 w-[375px]" data-node-id="3165:12578" data-name="浅黄色氛围">
+        <div className="absolute bg-gradient-to-b from-[#fffbbf] inset-0 to-white" data-node-id="I3165:12578;3109:19306" />
+        <div className="absolute aspect-[274/360] left-[56.27%] opacity-25 right-[-4.27%] top-[-39px]" data-node-id="I3165:12578;3109:19311" data-name="image 10">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+        </div>
+        <div className="absolute aspect-[236.5010055239154/280.49248874424575] flex items-center justify-center left-[-10.93%] right-[47.87%] top-[-98px]" data-node-id="I3165:12578;3109:19313" style={{ containerType: "size" }}>
+          <div className="-scale-x-100 flex-none h-[hypot(-23.1311cqw,85.1558cqh)] rotate-[12.9deg] w-[hypot(-76.8689cqw,-14.8442cqh)]">
+            <div className="opacity-25 relative size-full" data-name="image 11">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12582" data-name="页面内容">
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3165:12583" data-name="状态栏">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3165:12583;1:946" data-name="矩形" />
+          <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I3165:12583;1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I3165:12583;1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+              <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I3165:12583;1:947;0:182" data-name="Battery">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+              </div>
+              <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I3165:12583;1:947;0:188" data-name="Wifi">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+              </div>
+              <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I3165:12583;1:947;0:192" data-name="Cellular Connection">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+              </div>
+              <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I3165:12583;1:947;0:195" data-name="Time Style">
+                <p className="-translate-x-1/2 [word-break:break-word] absolute font-['PingFang_SC:Semibold'] leading-[0] left-[27px] not-italic text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I3165:12583;1:947;0:196">
+                  <span className="leading-[normal]">9:4</span>
+                  <span className="leading-[normal]">1</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3165:12604" data-name="返回导航">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3165:12604;9:464" />
+          <Icon className="absolute h-[24px] left-[4.27%] right-[89.33%] top-[12px]" />
+          <p className="[word-break:break-word] absolute font-['PingFang_SC:Semibold'] inset-[27.08%_41.6%_27.08%_41.33%] leading-[normal] not-italic text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3165:12604;9:473">
+            选择生日
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[20px] items-start overflow-clip pb-[24px] pt-[16px] px-[16px] relative shrink-0 w-full" data-node-id="3165:12615" data-name="主体">
+          <div className="[word-break:break-word] bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[12px] items-start leading-[1.6] not-italic overflow-clip p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3165:12616" data-name="内容卡片">
+            <p className="font-['PingFang_SC:Regular'] relative shrink-0 text-[#666] text-[13px] w-full" data-node-id="3165:12617">
+              当前生日
+            </p>
+            <p className="font-['PingFang_SC:Semibold'] relative shrink-0 text-[#333] text-[24px] w-full" data-node-id="3165:12618">
+              1999-08-16
+            </p>
+          </div>
+          <p className="[word-break:break-word] font-['PingFang_SC:Semibold'] leading-[1.6] min-w-full not-italic relative shrink-0 text-[#333] text-[16px] w-[min-content]" data-node-id="3165:12619">
+            选择你的出生日期
+          </p>
+          <div className="h-[210px] overflow-clip relative shrink-0 w-[343px]" data-node-id="3165:12620" data-name="生日日期选择">
+            <div className="absolute bg-[#fff6cb] border-[#ededed] border-[1.5px] border-solid h-[50px] left-0 rounded-[12px] top-[80px] w-[343px]" data-node-id="3165:12636" data-name="日期选中区域" />
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[285px] not-italic text-[#999] text-[15px] text-center top-[189px] w-[114px]" data-node-id="3165:12635">
+              <p className="leading-[normal]">18</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[285px] not-italic text-[#666] text-[17px] text-center top-[147px] w-[114px]" data-node-id="3165:12634">
+              <p className="leading-[normal]">17</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[285px] not-italic text-[#333] text-[19px] text-center top-[105px] w-[114px]" data-node-id="3165:12633">
+              <p className="leading-[normal]">16日</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[285px] not-italic text-[#666] text-[17px] text-center top-[63px] w-[114px]" data-node-id="3165:12632">
+              <p className="leading-[normal]">15</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[285px] not-italic text-[#999] text-[15px] text-center top-[21px] w-[114px]" data-node-id="3165:12631">
+              <p className="leading-[normal]">14</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[171px] not-italic text-[#999] text-[15px] text-center top-[189px] w-[114px]" data-node-id="3165:12630">
+              <p className="leading-[normal]">10</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[171px] not-italic text-[#666] text-[17px] text-center top-[147px] w-[114px]" data-node-id="3165:12629">
+              <p className="leading-[normal]">09</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[171px] not-italic text-[#333] text-[19px] text-center top-[105px] w-[114px]" data-node-id="3165:12628">
+              <p className="leading-[normal]">08月</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[171px] not-italic text-[#666] text-[17px] text-center top-[63px] w-[114px]" data-node-id="3165:12627">
+              <p className="leading-[normal]">07</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[171px] not-italic text-[#999] text-[15px] text-center top-[21px] w-[114px]" data-node-id="3165:12626">
+              <p className="leading-[normal]">06</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[57px] not-italic text-[#999] text-[15px] text-center top-[189px] w-[114px]" data-node-id="3165:12625">
+              <p className="leading-[normal]">2001</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[57px] not-italic text-[#666] text-[17px] text-center top-[147px] w-[114px]" data-node-id="3165:12624">
+              <p className="leading-[normal]">2000</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[57px] not-italic text-[#333] text-[19px] text-center top-[105px] w-[114px]" data-node-id="3165:12623">
+              <p className="leading-[normal]">1999年</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[57px] not-italic text-[#666] text-[17px] text-center top-[63px] w-[114px]" data-node-id="3165:12622">
+              <p className="leading-[normal]">1998</p>
+            </div>
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['PingFang_SC:Regular'] h-[32px] justify-center leading-[0] left-[57px] not-italic text-[#999] text-[15px] text-center top-[21px] w-[114px]" data-node-id="3165:12621">
+              <p className="leading-[normal]">1997</p>
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[1.6] min-w-full not-italic relative shrink-0 text-[#666] text-[12px] text-center w-[min-content]" data-node-id="3165:12637">
+            上下滑动选择年、月、日
+          </p>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12638" data-name="底部安全区">
+        <div className="content-stretch flex flex-col items-start overflow-clip px-[16px] relative shrink-0 w-full" data-node-id="3165:12639" data-name="操作区域">
+          <div className="bg-[#ffd152] content-stretch flex gap-[10px] h-[52px] items-center justify-center px-[76px] py-[15px] relative rounded-[16px] shrink-0 w-full" data-node-id="3165:12640" data-name="操作按钮">
+            <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[16px] whitespace-nowrap" data-node-id="I3165:12640;9:423">
+              完成
+            </p>
+          </div>
+        </div>
+        <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3165:12644" data-name="手势条">
+          <div className="absolute bg-white inset-0" data-node-id="I3165:12644;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3165:12644;7122:3671" />
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/主要文字: #333333, 灰色/次要文字: #666666, 灰色/白色: #FFFFFF, 灰色/辅助文字: #999999, 颜色/主色: #FFD152.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

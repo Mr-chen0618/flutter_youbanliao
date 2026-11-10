@@ -1,0 +1,195 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/5571d524-ff80-4298-9579-08bb38b99bbf";
+const imgIcon = `${assetPathPrefix}/9d66e.svg`;
+const img = `${assetPathPrefix}/b749f.svg`;
+const imgImage10 = `${assetPathPrefix}/85ca4.png`;
+const img1 = `${assetPathPrefix}/b5e1d.png`;
+const img2 = `${assetPathPrefix}/6a16c.png`;
+const img3 = `${assetPathPrefix}/abbc8.png`;
+const imgBattery = `${assetPathPrefix}/f80d4.svg`;
+const imgWifi = `${assetPathPrefix}/eb198.svg`;
+const imgCellularConnection = `${assetPathPrefix}/d5602.svg`;
+const imgHeart = `${assetPathPrefix}/547c5.svg`;
+const imgMessageCircle = `${assetPathPrefix}/ed693.svg`;
+const img4 = `${assetPathPrefix}/cfbcf.svg`;
+
+function Icon({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="370:4072" data-name="icon/更多">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+    </div>
+  );
+}
+
+type Icon1Props = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon1({ className, propValue = "左" }: Icon1Props) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+export default function Component() {
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start relative size-full" data-node-id="3168:8949" data-name="更多操作">
+      <div className="bg-white content-stretch flex flex-col items-start justify-between min-h-[812px] overflow-clip relative shrink-0 w-[375px]" data-node-id="3168:8950" data-name="动态背景">
+        <div className="absolute h-[242px] left-0 overflow-clip top-0 w-[375px]" data-node-id="3168:8951" data-name="浅黄色氛围">
+          <div className="absolute bg-gradient-to-b from-[#fffbbf] inset-0 to-white" data-node-id="I3168:8951;3109:19306" />
+          <div className="absolute aspect-[274/360] left-[56.27%] opacity-25 right-[-4.27%] top-[-39px]" data-node-id="I3168:8951;3109:19311" data-name="image 10">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+          </div>
+          <div className="absolute aspect-[236.5010055239154/280.49248874424575] flex items-center justify-center left-[-10.93%] right-[47.87%] top-[-98px]" data-node-id="I3168:8951;3109:19313" style={{ containerType: "size" }}>
+            <div className="-scale-x-100 flex-none h-[hypot(-23.1311cqw,85.1558cqh)] rotate-[12.9deg] w-[hypot(-76.8689cqw,-14.8442cqh)]">
+              <div className="opacity-25 relative size-full" data-name="image 11">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:8955" data-name="页面内容">
+          <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3168:8956" data-name="状态栏">
+            <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3168:8956;1:946" data-name="矩形" />
+            <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I3168:8956;1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+              <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I3168:8956;1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+                <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I3168:8956;1:947;0:182" data-name="Battery">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+                </div>
+                <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I3168:8956;1:947;0:188" data-name="Wifi">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+                </div>
+                <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I3168:8956;1:947;0:192" data-name="Cellular Connection">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+                </div>
+                <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I3168:8956;1:947;0:195" data-name="Time Style">
+                  <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I3168:8956;1:947;0:196">
+                    <span className="leading-[normal]">9:4</span>
+                    <span className="leading-[normal]">1</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3168:8977" data-name="返回导航">
+            <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3168:8977;9:464" />
+            <Icon1 className="absolute h-[24px] left-[4.27%] right-[89.33%] top-[12px]" />
+            <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Bold'] font-bold inset-[27.08%_45.87%_33.33%_45.6%] leading-[normal] text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3168:8977;9:473">
+              动态
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip p-[16px] relative shrink-0 w-full" data-node-id="3168:8988" data-name="动态列表">
+            <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3168:8989" data-name="薄荷同学的动态">
+              <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3168:8990" data-name="发布者">
+                <div className="relative shrink-0 size-[40px]" data-node-id="3168:8991" data-name="用户头像">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={img1} width="40" />
+                </div>
+                <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start leading-[1.5] min-w-px overflow-clip relative" data-node-id="3168:8992" data-name="用户信息">
+                  <p className="font-['Noto_Sans_SC:Medium'] font-medium relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3168:8993">
+                    薄荷同学
+                  </p>
+                  <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[11px] w-full" data-node-id="3168:8994">
+                    24岁｜164cm｜音乐
+                  </p>
+                </div>
+                <Icon className="relative shrink-0 size-[24px]" />
+              </div>
+              <div className="bg-[rgba(71,108,255,0.1)] content-stretch flex gap-[4px] items-start overflow-clip px-[8px] py-[3px] relative rounded-[8px] shrink-0" data-node-id="3168:9001" data-name="分类标签">
+                <div className="relative shrink-0 size-[14px]" data-node-id="3168:9002" data-name="运动图标">
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <img alt="" className="absolute h-[355.56%] left-[-23.44%] max-w-none top-[-127.8%] w-[378.86%]" src={img2} />
+                  </div>
+                </div>
+                <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] relative shrink-0 text-[#476cff] text-[12px] whitespace-nowrap" data-node-id="3168:9005">
+                  运动
+                </p>
+              </div>
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#333] text-[15px] w-[min-content]" data-node-id="3168:9006">
+                接受一切事与愿违，人生缓缓自有答案。
+              </p>
+              <div className="h-[198px] relative rounded-[12px] shrink-0 w-[178px]" data-node-id="3168:9007" data-name="动态配图">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[12px] size-full" src={img3} />
+              </div>
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#999] text-[11px] w-[min-content]" data-node-id="3168:9008">
+                12小时前发布
+              </p>
+              <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="3168:9009" data-name="动态操作">
+                <Icon className="relative shrink-0 size-[24px]" />
+                <div className="content-stretch flex gap-[4px] items-start overflow-clip relative shrink-0" data-node-id="3168:9016" data-name="点赞">
+                  <div className="relative shrink-0 size-[20px]" data-node-id="3168:9433" data-name="heart">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgHeart} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] relative shrink-0 text-[#999] text-[13px] whitespace-nowrap" data-node-id="3168:9018">
+                    点赞
+                  </p>
+                </div>
+                <div className="content-stretch flex gap-[4px] items-start overflow-clip relative shrink-0" data-node-id="3168:9019" data-name="评论">
+                  <div className="relative shrink-0 size-[20px]" data-node-id="3168:9436" data-name="message-circle">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMessageCircle} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] relative shrink-0 text-[#999] text-[13px] whitespace-nowrap" data-node-id="3168:9021">
+                    评论
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[8px] items-start leading-[1.5] p-[16px] relative rounded-[20px] shrink-0 text-[#333] w-full" data-node-id="3168:9022" data-name="下一条动态">
+              <p className="font-['Noto_Sans_SC:Medium'] font-medium relative shrink-0 text-[14px] w-full" data-node-id="3168:9023">
+                小满
+              </p>
+              <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[15px] w-full" data-node-id="3168:9024">
+                今天仍然是自己喜欢的样子。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3168:9025" data-name="底部安全区">
+          <div className="absolute bg-white inset-0" data-node-id="I3168:9025;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3168:9025;7122:3671" />
+        </div>
+      </div>
+      <div className="absolute bg-[rgba(0,0,0,0.4)] h-[812px] left-0 top-0 w-[375px]" data-node-id="3168:9028" data-name="弹窗遮罩">
+        <div className="absolute bg-[rgba(0,0,0,0.7)] inset-0" data-node-id="I3168:9028;9:1144" />
+      </div>
+      <div className="absolute bg-white bottom-0 content-stretch flex flex-col items-start left-0 overflow-clip rounded-tl-[20px] rounded-tr-[20px] w-[375px]" data-node-id="3168:9030" data-name="底部操作菜单">
+        <div className="h-[54px] relative shrink-0 w-[375px]" data-node-id="3168:9033" data-name="拉黑">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={img4} />
+          <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal inset-[29.63%_45.6%_35.19%_45.87%] leading-[normal] text-[#db6464] text-[16px] text-center whitespace-nowrap" data-node-id="I3168:9033;200:2299">
+            拉黑
+          </p>
+        </div>
+        <div className="h-[54px] relative shrink-0 w-[375px]" data-node-id="3168:9036" data-name="举报">
+          <div className="absolute bg-white inset-0" data-node-id="I3168:9036;200:2319" />
+          <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal inset-[29.63%_45.6%_35.19%_45.87%] leading-[normal] text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3168:9036;200:2320">
+            举报
+          </p>
+        </div>
+        <div className="bg-[#f8f8f8] h-[8px] relative shrink-0 w-full" data-node-id="3168:9041" data-name="菜单分组间隔" />
+        <div className="h-[88px] relative shrink-0 w-[375px]" data-node-id="3168:9042" data-name="取消">
+          <div className="absolute contents inset-[0_0_38.64%_0]" data-node-id="I3168:9042;200:2301">
+            <div className="absolute bg-white inset-[0_0_38.64%_0]" data-node-id="I3168:9042;200:2302" />
+            <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal inset-[18.18%_45.6%_60.23%_45.87%] leading-[normal] text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3168:9042;200:2303">
+              取消
+            </p>
+          </div>
+          <div className="absolute bg-white inset-[61.36%_0_0_0]" data-node-id="I3168:9042;200:2304" data-name="基础页面组件/Home">
+            <div className="absolute bg-white border-0 border-solid border-white inset-0 opacity-0" data-node-id="I3168:9042;200:2304;1:992" data-name="背板" />
+            <div className="-translate-x-1/2 absolute bg-[#333] bottom-[9px] h-[5px] left-[calc(50%+0.5px)] rounded-[100px] w-[134px]" data-node-id="I3168:9042;200:2304;1:993;0:152" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/主要文字: #333333, 灰色/辅助文字: #999999, 灰色/白色: #FFFFFF, 灰色/遮罩: #000000, 灰色/背景2: #F8F8F8.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

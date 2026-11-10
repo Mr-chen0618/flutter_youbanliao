@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:io';
+import 'package:flutter/services.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,9 @@ class AppToast {
 
   /// 从异常/错误对象取出适合展示给用户的文案（去掉 Dart 默认的 `Exception: ` 前缀等）。
   static String messageOf(Object? error) {
-    if (error == null) return '未知错误';
+    if (error == null) return '操作失败，请重试';
+    if (error is PlatformException) return '操作失败，请检查权限后重试';
+    if (error is FileSystemException) return '数据保存失败，请稍后重试';
 
     if (error is FormatException) {
       return error.message;
@@ -26,6 +30,8 @@ class AppToast {
 
     // 去掉一层或多层 `Exception: `（例如 catch 里又包了一层 Exception）
     var s = error.toString().trim();
+    if (error is StateError) return error.message;
+    if (error is ArgumentError) return error.message?.toString() ?? '输入内容有误';
     const prefix = 'Exception: ';
     while (s.startsWith(prefix)) {
       s = s.substring(prefix.length).trimLeft();

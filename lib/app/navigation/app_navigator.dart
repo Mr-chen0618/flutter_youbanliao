@@ -25,7 +25,7 @@ class AppNavigator {
 
     _pushingRoutes.add(routeName);
     try {
-      return Navigator.of(context, rootNavigator: true).push<T>(
+      return Navigator.of(context, rootNavigator: false).push<T>(
         AppPageRoute<T>(
           builder: (_) => page,
           settings: RouteSettings(name: routeName, arguments: arguments),
@@ -46,7 +46,7 @@ class AppNavigator {
     String? name,
   }) {
     final routeName = name ?? page.runtimeType.toString();
-    return Navigator.of(context, rootNavigator: true).pushAndRemoveUntil<T>(
+    return Navigator.of(context, rootNavigator: false).pushAndRemoveUntil<T>(
       AppPageRoute<T>(
         builder: (_) => page,
         settings: RouteSettings(name: routeName, arguments: arguments),
@@ -63,7 +63,7 @@ class AppNavigator {
     TO? result,
   }) {
     final routeName = name ?? page.runtimeType.toString();
-    return Navigator.of(context, rootNavigator: true).pushReplacement<T, TO>(
+    return Navigator.of(context, rootNavigator: false).pushReplacement<T, TO>(
       AppPageRoute<T>(
         builder: (_) => page,
         settings: RouteSettings(name: routeName, arguments: arguments),
@@ -79,7 +79,7 @@ class AppNavigator {
     Duration duration = const Duration(milliseconds: 200),
     bool dismissible = true,
   }) {
-    return Navigator.of(context, rootNavigator: true).push<T>(
+    return Navigator.of(context, rootNavigator: false).push<T>(
       PageRouteBuilder<T>(
         opaque: false,
         barrierColor: barrierColor,
@@ -98,7 +98,7 @@ class AppNavigator {
     if (count <= 0) return;
 
     var popped = 0;
-    Navigator.of(context, rootNavigator: true).popUntil((route) {
+    Navigator.of(context, rootNavigator: false).popUntil((route) {
       if (popped < count && route.isFirst == false) {
         popped++;
         return false;
@@ -133,7 +133,7 @@ class AppNavigator {
     try {
       return Navigator.of(
         context,
-        rootNavigator: true,
+        rootNavigator: false,
       ).pushNamed<T>(routeName, arguments: arguments);
     } finally {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -150,7 +150,7 @@ class AppNavigator {
   }) {
     return Navigator.of(
       context,
-      rootNavigator: true,
+      rootNavigator: false,
     ).pushReplacementNamed<T, TO>(
       routeName,
       arguments: arguments,
@@ -166,7 +166,7 @@ class AppNavigator {
   }) {
     return Navigator.of(
       context,
-      rootNavigator: true,
+      rootNavigator: false,
     ).pushNamedAndRemoveUntil<T>(
       routeName,
       predicate ?? (_) => false,

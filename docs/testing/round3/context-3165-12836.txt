@@ -1,0 +1,244 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/f0d90e92-d330-49df-9097-87225238bf0e";
+const img = `${assetPathPrefix}/b749f.svg`;
+const imgImage10 = `${assetPathPrefix}/85ca4.png`;
+const imgBattery = `${assetPathPrefix}/f80d4.svg`;
+const imgWifi = `${assetPathPrefix}/eb198.svg`;
+const imgCellularConnection = `${assetPathPrefix}/d5602.svg`;
+
+type IconProps = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon({ className, propValue = "左" }: IconProps) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+export default function Component() {
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start justify-between relative size-full" data-node-id="3165:12836" data-name="编辑兴趣偏好">
+      <div className="absolute h-[242px] left-0 overflow-clip top-0 w-[375px]" data-node-id="3165:12837" data-name="浅黄色氛围">
+        <div className="absolute bg-gradient-to-b from-[#fffbbf] inset-0 to-white" data-node-id="I3165:12837;3109:19306" />
+        <div className="absolute aspect-[274/360] left-[56.27%] opacity-25 right-[-4.27%] top-[-39px]" data-node-id="I3165:12837;3109:19311" data-name="image 10">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+        </div>
+        <div className="absolute aspect-[236.5010055239154/280.49248874424575] flex items-center justify-center left-[-10.93%] right-[47.87%] top-[-98px]" data-node-id="I3165:12837;3109:19313" style={{ containerType: "size" }}>
+          <div className="-scale-x-100 flex-none h-[hypot(-23.1311cqw,85.1558cqh)] rotate-[12.9deg] w-[hypot(-76.8689cqw,-14.8442cqh)]">
+            <div className="opacity-25 relative size-full" data-name="image 11">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12841" data-name="页面内容">
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3165:12842" data-name="状态栏">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3165:12842;1:946" data-name="矩形" />
+          <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I3165:12842;1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I3165:12842;1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+              <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I3165:12842;1:947;0:182" data-name="Battery">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+              </div>
+              <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I3165:12842;1:947;0:188" data-name="Wifi">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+              </div>
+              <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I3165:12842;1:947;0:192" data-name="Cellular Connection">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+              </div>
+              <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I3165:12842;1:947;0:195" data-name="Time Style">
+                <p className="-translate-x-1/2 [word-break:break-word] absolute font-['PingFang_SC:Semibold'] leading-[0] left-[27px] not-italic text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I3165:12842;1:947;0:196">
+                  <span className="leading-[normal]">9:4</span>
+                  <span className="leading-[normal]">1</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3165:12863" data-name="返回导航">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3165:12863;9:464" />
+          <Icon className="absolute h-[24px] left-[4.27%] right-[89.33%] top-[12px]" />
+          <p className="[word-break:break-word] absolute font-['PingFang_SC:Semibold'] inset-[27.08%_37.33%_27.08%_37.07%] leading-[normal] not-italic text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3165:12863;9:473">
+            编辑兴趣偏好
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[20px] items-start overflow-clip pb-[24px] pt-[16px] px-[16px] relative shrink-0 w-full" data-node-id="3165:12874" data-name="主体">
+          <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[12px] items-start overflow-clip p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3165:12875" data-name="内容卡片">
+            <div className="[word-break:break-word] content-stretch flex items-start justify-between leading-[1.6] not-italic overflow-clip relative shrink-0 w-full" data-node-id="3165:12876" data-name="选择数量">
+              <p className="flex-[1_0_0] font-['PingFang_SC:Semibold'] min-w-px relative text-[#333] text-[16px]" data-node-id="3165:12877">
+                已选兴趣
+              </p>
+              <p className="flex-[1_0_0] font-['PingFang_SC:Regular'] min-w-px relative text-[#666] text-[13px]" data-node-id="3165:12878">
+                4 / 6
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[6px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12879" data-name="已选标签">
+              <div className="bg-[#fff6cb] border border-[#ffd152] border-solid content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12880" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12881">
+                  徒步 ✓
+                </p>
+              </div>
+              <div className="bg-[#fff6cb] border border-[#ffd152] border-solid content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12882" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12883">
+                  探店 ✓
+                </p>
+              </div>
+              <div className="bg-[#fff6cb] border border-[#ffd152] border-solid content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12884" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12885">
+                  美食 ✓
+                </p>
+              </div>
+              <div className="bg-[#fff6cb] border border-[#ffd152] border-solid content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12886" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12887">
+                  摄影 ✓
+                </p>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[1.6] not-italic relative shrink-0 text-[#666] text-[12px] w-full" data-node-id="3165:12888">
+              最多选择 6 项，还可以再选 2 项
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12889" data-name="兴趣分类">
+            <p className="[word-break:break-word] font-['PingFang_SC:Semibold'] leading-[1.6] not-italic relative shrink-0 text-[#333] text-[15px] w-full" data-node-id="3165:12890">
+              户外与运动
+            </p>
+            <div className="content-start flex flex-wrap gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12891" data-name="兴趣选项">
+              <div className="bg-[#fff6cb] border border-[#ffd152] border-solid content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12892" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12893">
+                  徒步 ✓
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12894" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12895">
+                  露营
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12896" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12897">
+                  骑行
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12898" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12899">
+                  跑步
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12900" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12901">
+                  登山
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12902" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12903">
+                  健身
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12904" data-name="兴趣分类">
+            <p className="[word-break:break-word] font-['PingFang_SC:Semibold'] leading-[1.6] not-italic relative shrink-0 text-[#333] text-[15px] w-full" data-node-id="3165:12905">
+              城市与生活
+            </p>
+            <div className="content-start flex flex-wrap gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12906" data-name="兴趣选项">
+              <div className="bg-[#fff6cb] border border-[#ffd152] border-solid content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12907" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12908">
+                  探店 ✓
+                </p>
+              </div>
+              <div className="bg-[#fff6cb] border border-[#ffd152] border-solid content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12909" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12910">
+                  美食 ✓
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12911" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12912">
+                  咖啡
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12913" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12914">
+                  看展
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12915" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12916">
+                  电影
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12917" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12918">
+                  桌游
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12919" data-name="兴趣分类">
+            <p className="[word-break:break-word] font-['PingFang_SC:Semibold'] leading-[1.6] not-italic relative shrink-0 text-[#333] text-[15px] w-full" data-node-id="3165:12920">
+              文艺与记录
+            </p>
+            <div className="content-start flex flex-wrap gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12921" data-name="兴趣选项">
+              <div className="bg-[#fff6cb] border border-[#ffd152] border-solid content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12922" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12923">
+                  摄影 ✓
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12924" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12925">
+                  音乐
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12926" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12927">
+                  阅读
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12928" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12929">
+                  旅行
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12930" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12931">
+                  手作
+                </p>
+              </div>
+              <div className="bg-[#f8f8f8] content-stretch flex h-[36px] items-center justify-center min-w-[66px] overflow-clip px-[12px] relative rounded-[8px] shrink-0" data-node-id="3165:12932" data-name="选择标签">
+                <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[13px] whitespace-nowrap" data-node-id="3165:12933">
+                  绘画
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3165:12934" data-name="底部安全区">
+        <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip px-[16px] relative shrink-0 w-full" data-node-id="3165:12935" data-name="操作区域">
+          <div className="bg-[#ffd152] content-stretch flex gap-[10px] h-[52px] items-center justify-center px-[76px] py-[15px] relative rounded-[16px] shrink-0 w-full" data-node-id="3165:12936" data-name="操作按钮">
+            <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[normal] not-italic relative shrink-0 text-[#333] text-[16px] whitespace-nowrap" data-node-id="I3165:12936;9:423">
+              保存
+            </p>
+          </div>
+          <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[1.6] not-italic relative shrink-0 text-[#666] text-[11px] text-center w-full" data-node-id="3165:12940">
+            让友伴为你推荐更合拍的组队
+          </p>
+        </div>
+        <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3165:12941" data-name="手势条">
+          <div className="absolute bg-white inset-0" data-node-id="I3165:12941;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3165:12941;7122:3671" />
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/主要文字: #333333, 灰色/次要文字: #666666, 灰色/白色: #FFFFFF, 灰色/背景2: #F8F8F8, 颜色/主色: #FFD152.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

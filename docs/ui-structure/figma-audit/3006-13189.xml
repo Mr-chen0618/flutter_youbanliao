@@ -1,0 +1,2100 @@
+<canvas id="3006:13189" name="线上找搭子" x="0" y="0" width="0" height="0">
+  <frame id="3007:16619" name="Section - 首页" x="16503.62890625" y="-15391" width="375" height="1177.51953125">
+    <frame id="3007:16620" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:16621" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:16622" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:16624" name="Text" x="300.017578125" y="5" width="51.982421875" height="11.9921875">
+        <frame id="3007:16625" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:16627" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:16630" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:16634" name="Header" x="0" y="27.998046875" width="375" height="57">
+      <frame id="3007:16635" name="Heading 1" x="19" y="12.5" width="59" height="27">
+        <text id="3007:16636" name="找同伴" x="0" y="0" width="59" height="27" />
+      </frame>
+      <frame id="3007:16638" name="Container" x="238" y="10" width="118" height="32">
+        <frame id="3007:16639" name="Button" x="0" y="2.5" width="77" height="27">
+          <frame id="3007:16640" name="Icon" x="8" y="6" width="15" height="15" />
+          <text id="3007:16642" name="发布目标" x="28" y="6.5" width="41" height="14" />
+        </frame>
+        <frame id="3007:16644" name="Button - 打开我的资料" x="86" y="0" width="32" height="32">
+          <frame id="3007:16645" name="Image (当前用户头像)" x="0" y="-5.9970703125" width="32" height="43.994140625" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="3007:16647" name="Section - 找同伴内容" x="0" y="84.998046875" width="373.75" height="1026.525390625">
+      <frame id="3007:16648" name="Container" x="0" y="0" width="373.75" height="54.994140625">
+        <frame id="3007:16649" name="Label" x="20" y="3" width="281.755859375" height="43.994140625">
+          <frame id="3007:16650" name="Icon" x="12.625" y="13.5009765625" width="16.9921875" height="16.9921875" />
+          <frame id="3007:16653" name="Search Input" x="37.6171875" y="13.8134765625" width="231.533203125" height="16.3671875">
+            <text id="3007:16654" name="搜索目标、练习方向或用户" x="2" y="-0.31640625" width="227.533203125" height="17" />
+          </frame>
+        </frame>
+        <frame id="3007:16655" name="Button - 筛选目标" x="309.755859375" y="3" width="43.994140625" height="43.994140625">
+          <frame id="3007:16656" name="Icon" x="13.00197696685791" y="13.001976013183594" width="17.998046875" height="17.998046875" />
+        </frame>
+      </frame>
+      <frame id="3007:16843" name="目标类别:margin" x="0" y="54.994140625" width="373.75" height="34">
+        <frame id="3007:16661" name="目标类别" x="20" y="0" width="333.75" height="34.248046875">
+          <frame id="3007:16662" name="Button" x="0" y="0" width="25" height="33.623046875">
+            <text id="3007:16663" name="全部" x="1" y="8.3115234375" width="23" height="15" />
+          </frame>
+          <frame id="3007:16665" name="Button" x="44" y="0" width="47" height="33.623046875">
+            <text id="3007:16666" name="语言表达" x="1" y="8.3115234375" width="45" height="15" />
+          </frame>
+          <frame id="3007:16668" name="Button" x="110" y="0" width="47" height="33.623046875">
+            <text id="3007:16669" name="阅读学习" x="1" y="8.3115234375" width="45" height="15" />
+          </frame>
+          <frame id="3007:16670" name="Button" x="176" y="0" width="47" height="33.623046875">
+            <text id="3007:16671" name="兴趣技能" x="1" y="8.3115234375" width="45" height="15" />
+          </frame>
+          <frame id="3007:16672" name="Button" x="242" y="0" width="47" height="33.623046875">
+            <text id="3007:16673" name="日常习惯" x="1" y="8.3115234375" width="45" height="15" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:16674" name="Container" x="0" y="88.994140625" width="373.75" height="39">
+        <text id="3007:16676" name="快速认识" x="19" y="9" width="59" height="21" />
+        <text id="3007:16679" name="选择交流方式" x="293.75" y="12.5" width="61" height="14" />
+      </frame>
+      <frame id="3007:16845" name="快速认识同伴:margin" x="0" y="127.994140625" width="373.75" height="73.99609375">
+        <frame id="3007:16681" name="快速认识同伴" x="16" y="0" width="341.75" height="65.99609375">
+          <frame id="3007:16682" name="Container" x="0" y="0" width="166.875" height="66">
+            <frame id="3007:16683" name="Button" x="11.625" y="11.624996185302734" width="143.6328125" height="42.75390625">
+              <frame id="3007:16684" name="Bold Text" x="0" y="0" width="143.6328125" height="19.501953125">
+                <text id="3007:16685" name="视频速配" x="0" y="0" width="41" height="14" />
+              </frame>
+              <frame id="3007:16687" name="Text" x="0.000091552734375" y="24.502025604248047" width="143.6328125" height="18.251953125">
+                <text id="3007:16688" name="按练习目标找人 · 等待开始" x="0" y="0" width="112" height="13" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:16690" name="Container" x="174.8751220703125" y="0" width="166.884765625" height="66">
+            <frame id="3007:16691" name="Button" x="11.625" y="11.624996185302734" width="143.642578125" height="42.75390625">
+              <frame id="3007:16692" name="Bold Text" x="0" y="0" width="143.642578125" height="19.501953125">
+                <text id="3007:16693" name="语音速配" x="0" y="0" width="41" height="14" />
+              </frame>
+              <frame id="3007:16694" name="Text" x="0.000213623046875" y="24.502025604248047" width="143.642578125" height="18.251953125">
+                <text id="3007:16695" name="先聊几句再认识 · 等待开始" x="0" y="0" width="112" height="13" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:16696" name="Section - 同伴练习视频" x="0" y="201.990234375" width="373.75" height="205.44140625">
+        <frame id="3007:16697" name="Container" x="0" y="14" width="373.75" height="31.73828125">
+          <text id="3007:16699" name="看看同伴怎么练" x="20" y="0.99609375" width="102" height="21" />
+          <frame id="3007:16700" name="Container" x="273.740234375" y="4.248046875" width="82" height="19">
+            <frame id="3007:16701" name="Button" x="0" y="0" width="37" height="19">
+              <text id="3007:16702" name="上传视频" x="0" y="3" width="37" height="13" />
+            </frame>
+            <frame id="3007:16704" name="Button" x="45" y="0" width="37" height="19">
+              <text id="3007:16705" name="更多视频" x="0" y="3" width="37" height="13" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:16734" name="Container:margin" x="0" y="45.73828125" width="373.7578125" height="159.703125">
+          <frame id="3007:16706" name="Container" x="16" y="0" width="341.7578125" height="145.703125">
+            <frame id="3007:16707" name="Article" x="0" y="0" width="194.04296875" height="145.703125">
+              <frame id="3007:16708" name="Button - 播放晓禾的骑行练习视频" x="7.625" y="7.625" width="178.80859375" height="102">
+                <frame id="3007:16709" name="Image (晓禾公开视频封面)" x="0" y="0" width="178.80859375" height="101.9921875" />
+                <frame id="3007:16710" name="Text" x="7.998046875" y="65.009765625" width="75.693359375" height="29.046875">
+                  <frame id="3007:16711" name="Bold Text" x="0" y="0" width="75.693359375" height="16">
+                    <text id="3007:16712" name="晓禾 · 骑行练习" x="-2.1533203125" y="0" width="80" height="16" />
+                  </frame>
+                  <frame id="3007:16716" name="Container" x="0" y="16" width="75.693359375" height="13.046875">
+                    <text id="3007:16714" name="1 分 12 秒 · 今天" x="2.53125" y="-0.375" width="71" height="14" />
+                  </frame>
+                </frame>
+              </frame>
+              <frame id="3007:16717" name="Container" x="7.625" y="109.625" width="178.80859375" height="28.4765625">
+                <frame id="3007:16718" name="Button" x="1" y="7" width="56" height="20.4765625">
+                  <text id="3007:16719" name="查看发布者" x="5" y="3.73828125" width="46" height="13" />
+                </frame>
+                <frame id="3007:16720" name="Button" x="112.80859375" y="7" width="65" height="20.4765625">
+                  <text id="3007:16721" name="聊聊这个练习" x="5" y="3.73828125" width="55" height="13" />
+                </frame>
+              </frame>
+            </frame>
+            <frame id="3007:16722" name="Article" x="202.04298400878906" y="-0.00006103515625" width="139.70703125" height="145.703125">
+              <frame id="3007:16723" name="Image (林岚口语练习视频封面)" x="7.625" y="7.625" width="124.47265625" height="61.9921875" />
+              <frame id="3007:16724" name="Container" x="7.625" y="78.84765625" width="124.45703125" height="29">
+                <frame id="3007:16725" name="Bold Text" x="0" y="0" width="124.45703125" height="13">
+                  <text id="3007:16726" name="林岚 · 旅行英语打卡" x="0" y="0" width="85" height="13" />
+                </frame>
+                <frame id="3007:16728" name="Text" x="0" y="13" width="124.45703125" height="16">
+                  <text id="3007:16729" name="42 秒 · 昨天" x="0" y="3" width="53" height="13" />
+                </frame>
+              </frame>
+              <frame id="3007:16732" name="Button - 查看林岚资料" x="118.08203125" y="117.078125" width="14" height="21">
+                <text id="3007:16733" name="›" x="5" y="4" width="4" height="13" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:16735" name="Container" x="0" y="407.431640625" width="373.75" height="32.373046875">
+        <text id="3007:16737" name="正在找伙伴" x="20" y="0" width="73" height="21" />
+        <frame id="3007:16738" name="Button" x="298.75" y="0.751953125" width="56" height="21">
+          <text id="3007:16739" name="按最近发布" x="0" y="3" width="56" height="15" />
+        </frame>
+      </frame>
+      <frame id="3007:16740" name="Container" x="0" y="439.8046875" width="373.75" height="529.638671875">
+        <frame id="3007:16741" name="Article" x="16.000091552734375" y="-0.0001983642578125" width="341.7578125" height="271.81640625">
+          <frame id="3007:16742" name="Container" x="14.625" y="14.625" width="312.51953125" height="55.99609375">
+            <frame id="3007:16743" name="Image (林岚头像)" x="0" y="0" width="55.99609375" height="55.99609375" />
+            <frame id="3007:16744" name="Container" x="65.99602508544922" y="10.190433502197266" width="197.28515625" height="35.615234375">
+              <frame id="3007:16745" name="Button" x="0" y="0" width="45.994140625" height="18.125">
+                <text id="3007:16746" name="林岚" x="0" y="0.0625" width="26" height="18" />
+                <frame id="3007:16748" name="资料已完成" x="32" y="2.0654296875" width="13.994140625" height="13.994140625">
+                  <frame id="3007:16749" name="Icon" x="2.4999794960021973" y="2.4999794960021973" width="8.994140625" height="8.994140625" />
+                </frame>
+              </frame>
+              <frame id="3007:16751" name="Paragraph" x="0" y="18.125" width="197.28515625" height="18">
+                <text id="3007:16752" name="英语口语 · 初级阶段 · 练习中" x="0" y="4" width="136" height="14" />
+              </frame>
+            </frame>
+            <frame id="3007:16755" name="Button" x="273.2810974121094" y="14.501956939697266" width="39.23828125" height="26.9921875">
+              <text id="3007:16756" name="关注" x="9.119140625" y="6.49609375" width="21" height="14" />
+            </frame>
+          </frame>
+          <frame id="3007:16799" name="Container:margin" x="14.625" y="70.62109375" width="312.51953125" height="132.75">
+            <frame id="3007:16758" name="Container" x="0" y="12" width="312.51953125" height="120.75">
+              <frame id="3007:16759" name="Heading 3" x="0" y="0" width="312.51953125" height="19">
+                <text id="3007:16760" name="想把日常对话说得更自然" x="0" y="0" width="153" height="19" />
+              </frame>
+              <frame id="3007:16762" name="Paragraph" x="0" y="19" width="312.51953125" height="21">
+                <text id="3007:16763" name="目标：能轻松聊旅行、生活和最近在看的内容" x="0" y="5" width="222" height="16" />
+              </frame>
+              <frame id="3007:16765" name="Container" x="0" y="40" width="312.51953125" height="32.75">
+                <frame id="3007:16766" name="Text" x="0" y="9" width="155.998046875" height="23.75">
+                  <frame id="3007:16767" name="Icon" x="7" y="5.3759765625" width="12.998046875" height="12.998046875" />
+                  <text id="3007:16770" name="每周 2 次 · 每次约 20 分钟" x="23.998046875" y="4.875" width="125" height="14" />
+                </frame>
+                <frame id="3007:16771" name="Text" x="161.998046875" y="9" width="111.998046875" height="23.75">
+                  <frame id="3007:16772" name="Icon" x="7" y="5.3759765625" width="12.998046875" height="12.998046875" />
+                  <text id="3007:16775" name="语音或视频都可以" x="23.998046875" y="4.875" width="81" height="14" />
+                </frame>
+              </frame>
+              <frame id="3007:16790" name="Container:margin" x="0" y="72.75" width="312.51953125" height="25">
+                <frame id="3007:16776" name="Container" x="0" y="10" width="312.51953125" height="15">
+                  <frame id="3007:16777" name="Bold Text" x="10.875" y="0" width="41" height="15">
+                    <text id="3007:16778" name="伙伴期待" x="0" y="0" width="41" height="15" />
+                  </frame>
+                  <frame id="3007:16780" name="Text" x="58.875" y="0" width="233" height="15">
+                    <text id="3007:16781" name="固定练习、轮流开话题；可以温和指出听不懂的地方" x="0" y="0" width="233" height="15" />
+                  </frame>
+                </frame>
+              </frame>
+              <frame id="3007:16783" name="Container" x="0" y="97.75" width="312.51953125" height="23">
+                <frame id="3007:16784" name="Icon" x="0" y="9.0029296875" width="13.994140625" height="13.994140625" />
+                <text id="3007:16787" name="最近进展：录完了第一段自我介绍" x="20.994140625" y="9" width="152" height="14" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:16800" name="Container:margin" x="14.625" y="203.37109375" width="312.5078125" height="54.625">
+            <frame id="3007:16792" name="Container" x="-0.005859375" y="12" width="312.51953125" height="42.625">
+              <frame id="3007:16793" name="Button" x="133.51953125" y="12.125" width="79" height="28">
+                <text id="3007:16794" name="查看完整计划" x="9" y="7" width="61" height="14" />
+              </frame>
+              <frame id="3007:16796" name="Button" x="219.51953125" y="9.625" width="93" height="33">
+                <text id="3007:16797" name="聊聊这个目标" x="13" y="9" width="67" height="15" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:16801" name="Article" x="16.000091552734375" y="280.8159484863281" width="341.7578125" height="248.828125">
+          <frame id="3007:16802" name="Container" x="14.625" y="14.625" width="312.51953125" height="55.99609375">
+            <frame id="3007:16803" name="Image (晓禾头像)" x="0" y="0" width="55.99609375" height="55.99609375" />
+            <frame id="3007:16804" name="Container" x="65.99602508544922" y="10.190433502197266" width="197.28515625" height="35.615234375">
+              <frame id="3007:16805" name="Button" x="0" y="0" width="26" height="18.125">
+                <text id="3007:16806" name="晓禾" x="0" y="0.0625" width="26" height="18" />
+              </frame>
+              <frame id="3007:16807" name="Paragraph" x="0" y="18.125" width="197.28515625" height="18">
+                <text id="3007:16808" name="骑行练习 · 入门阶段 · 刚开始" x="0" y="4" width="136" height="14" />
+              </frame>
+            </frame>
+            <frame id="3007:16810" name="Button" x="273.2810974121094" y="14.501956939697266" width="39.23828125" height="26.9921875">
+              <text id="3007:16811" name="关注" x="9.119140625" y="6.49609375" width="21" height="14" />
+            </frame>
+          </frame>
+          <frame id="3007:16841" name="Container:margin" x="14.625" y="70.62109375" width="312.51953125" height="109.75">
+            <frame id="3007:16812" name="Container" x="0" y="12" width="312.51953125" height="97.75">
+              <frame id="3007:16813" name="Heading 3" x="0" y="0" width="312.51953125" height="19">
+                <text id="3007:16814" name="每周完成两次轻松骑行" x="0" y="0" width="139" height="19" />
+              </frame>
+              <frame id="3007:16815" name="Paragraph" x="0" y="19" width="312.51953125" height="21">
+                <text id="3007:16816" name="目标：逐步骑完 20 公里，找到适合自己的节奏" x="0" y="5" width="231" height="16" />
+              </frame>
+              <frame id="3007:16817" name="Container" x="0" y="40" width="312.51953125" height="32.75">
+                <frame id="3007:16818" name="Text" x="0" y="9" width="136.998046875" height="23.75">
+                  <frame id="3007:16819" name="Icon" x="7" y="5.3759765625" width="12.998046875" height="12.998046875" />
+                  <text id="3007:16822" name="每周 2 次 · 不追求速度" x="23.998046875" y="4.875" width="106" height="14" />
+                </frame>
+                <frame id="3007:16823" name="Text" x="142.998046875" y="9" width="101.998046875" height="23.75">
+                  <frame id="3007:16824" name="Icon" x="7" y="5.3759765625" width="12.998046875" height="12.998046875" />
+                  <text id="3007:16827" name="记录路线和感受" x="23.998046875" y="4.875" width="71" height="14" />
+                </frame>
+              </frame>
+              <frame id="3007:16835" name="Container:margin" x="0" y="72.75" width="312.51953125" height="25">
+                <frame id="3007:16828" name="Container" x="0" y="10" width="312.51953125" height="15">
+                  <frame id="3007:16829" name="Bold Text" x="10.875" y="0" width="41" height="15">
+                    <text id="3007:16830" name="伙伴期待" x="0" y="0" width="41" height="15" />
+                  </frame>
+                  <frame id="3007:16831" name="Text" x="58.875" y="0" width="203" height="15">
+                    <text id="3007:16832" name="互相分享练习感受，状态不佳时也能调整计划" x="0" y="0" width="203" height="15" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:16842" name="Container:margin" x="14.625" y="180.37109375" width="312.5078125" height="54.625">
+            <frame id="3007:16836" name="Container" x="-0.005859375" y="12" width="312.51953125" height="42.625">
+              <frame id="3007:16837" name="Button" x="133.51953125" y="12.125" width="79" height="28">
+                <text id="3007:16838" name="查看完整计划" x="9" y="7" width="61" height="14" />
+              </frame>
+              <frame id="3007:16839" name="Button" x="219.51953125" y="9.625" width="93" height="33">
+                <text id="3007:16840" name="聊聊这个目标" x="13" y="9" width="67" height="15" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="3007:16847" name="Navigation - 主导航" x="0" y="1111.5234375" width="375" height="65.99609375">
+      <frame id="3007:16848" name="Button" x="8.999977111816406" y="6.624996185302734" width="88.935546875" height="53.37890625">
+        <frame id="3007:16849" name="Icon" x="32.96875" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:16853" name="发现" x="33.9677734375" y="33.1884765625" width="21" height="14" />
+      </frame>
+      <frame id="3007:16855" name="Button" x="97.93549346923828" y="6.624996185302734" width="88.9453125" height="53.37890625">
+        <frame id="3007:16856" name="Icon" x="32.9736328125" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:16860" name="看进展" x="28.97265625" y="33.1884765625" width="31" height="14" />
+      </frame>
+      <frame id="3007:16862" name="Button" x="186.88076782226562" y="6.624996185302734" width="88.935546875" height="53.37890625">
+        <frame id="3007:16863" name="Icon" x="32.96875" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:16867" name="消息" x="33.9677734375" y="33.1884765625" width="21" height="14" />
+      </frame>
+      <frame id="3007:16868" name="Button" x="275.8162841796875" y="6.624996185302734" width="88.9453125" height="53.37890625">
+        <frame id="3007:16869" name="Icon" x="32.9736328125" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:16873" name="我的" x="33.97265625" y="33.1884765625" width="21" height="14" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:16943" name="Section - 消息" x="17289.62890625" y="-15391" width="375" height="812">
+    <frame id="3007:16944" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:16945" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:16946" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:16947" name="Text" x="300.017578125" y="5" width="51.982421875" height="11.9921875">
+        <frame id="3007:16948" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:16950" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:16953" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:16957" name="Header" x="0" y="27.998046875" width="375" height="52">
+      <frame id="3007:16958" name="Heading 1" x="19" y="10" width="40" height="27">
+        <text id="3007:16959" name="消息" x="0" y="0" width="40" height="27" />
+      </frame>
+    </frame>
+    <frame id="3007:16963" name="Container" x="0" y="79.998046875" width="375" height="666.0059204101562">
+      <frame id="3007:18254" name="进展类型:margin" x="0" y="0" width="373.7578125" height="46.99609375">
+        <frame id="3007:18255" name="进展类型" x="16" y="8" width="341.7578125" height="30.99609375">
+          <frame id="3007:18262" name="Button" x="4" y="0" width="44.25" height="31">
+            <text id="3007:18263" name="全部" x="11.625" y="8.5" width="21" height="14" />
+          </frame>
+          <frame id="3007:18256" name="Button" x="55.25" y="0" width="44.25" height="31">
+            <text id="3007:18257" name="未读" x="11.625" y="8.5" width="21" height="14" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:16969" name="Container" x="0" y="46.99609375" width="375" height="30.615234375">
+        <text id="3007:16971" name="最近聊天" x="20" y="0.99609375" width="59" height="21" />
+        <frame id="3007:16972" name="Container" x="274.443359375" y="7.24609375" width="82" height="13">
+          <frame id="3007:16973" name="Text" x="0" y="0" width="37" height="13">
+            <text id="3007:16974" name="2 条未读" x="0" y="0" width="37" height="13" />
+          </frame>
+          <frame id="3007:16975" name="Button" x="45" y="0" width="37" height="13">
+            <text id="3007:16976" name="全部已读" x="0" y="0" width="37" height="13" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17028" name="Section - 最近聊天列表:margin" x="0" y="77.611328125" width="373.7578125" height="229.23828125">
+        <frame id="3007:16978" name="Section - 最近聊天列表" x="16" y="0" width="341.7578125" height="229.23828125">
+          <frame id="3007:16979" name="Button" x="0.625" y="0.625" width="340.5078125" height="76">
+            <frame id="3007:16980" name="Text" x="12" y="13.126953125" width="45.99609375" height="49.12109375">
+              <frame id="3007:16981" name="Image (林岚头像)" x="0" y="0" width="45.99609375" height="45.99609375" />
+              <frame id="3007:16982" name="在线" x="36.9921875" y="39.12109375" width="10" height="10" />
+            </frame>
+            <frame id="3007:16983" name="Text" x="67.99609375" y="21.125" width="228.51171875" height="33.125">
+              <frame id="3007:16984" name="Text" x="0" y="0" width="228.51171875" height="15.625">
+                <frame id="3007:16985" name="Bold Text" x="0" y="0" width="22.001953125" height="15.625">
+                  <text id="3007:16986" name="林岚" x="0" y="0" width="23" height="15" />
+                </frame>
+                <frame id="3007:16988" name="Time" x="205.51171875" y="1.3125" width="23" height="13">
+                  <text id="3007:16989" name="10:24" x="0" y="0" width="23" height="13" />
+                </frame>
+              </frame>
+              <frame id="3007:16990" name="Text" x="0" y="15.625" width="228.51171875" height="17.5">
+                <text id="3007:16991" name="你这周哪天方便？我们可以继续练旅行对话。" x="0" y="5" width="184" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:16996" name="Text:margin" x="306.5078125" y="29.19140625" width="22" height="16.9921875">
+              <frame id="3007:16993" name="Text" x="5" y="0" width="17" height="16.9921875">
+                <text id="3007:16994" name="2" x="5.496100425720215" y="1.9961004257202148" width="6" height="13" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:16997" name="Button" x="0.625" y="76.625" width="340.5078125" height="76">
+            <frame id="3007:16998" name="Text" x="12" y="13.126953125" width="45.99609375" height="49.12109375">
+              <frame id="3007:16999" name="Image (晓禾头像)" x="0" y="0" width="45.99609375" height="45.99609375" />
+            </frame>
+            <frame id="3007:17000" name="Text" x="67.99609375" y="21.125" width="260.51171875" height="33.125">
+              <frame id="3007:17001" name="Text" x="0" y="0" width="260.51171875" height="15.625">
+                <frame id="3007:17002" name="Bold Text" x="0" y="0" width="22.001953125" height="15.625">
+                  <text id="3007:17003" name="晓禾" x="0" y="0" width="23" height="15" />
+                </frame>
+                <frame id="3007:17004" name="Time" x="241.51171875" y="1.3125" width="19" height="13">
+                  <text id="3007:17005" name="昨天" x="0" y="0" width="19" height="13" />
+                </frame>
+              </frame>
+              <frame id="3007:17006" name="Text" x="0" y="15.625" width="260.51171875" height="17.5">
+                <text id="3007:17007" name="路线我发给你了，周末骑完再复盘。" x="0" y="5" width="147" height="13" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:17009" name="Button" x="0.625" y="152.625" width="340.5078125" height="76">
+            <frame id="3007:17010" name="Text" x="12" y="15.001953125" width="45.99609375" height="45.99609375">
+              <frame id="3007:17011" name="Icon" x="12.500003814697266" y="12.500003814697266" width="20.99609375" height="20.99609375" />
+            </frame>
+            <frame id="3007:17014" name="Text" x="67.99609375" y="21.4375" width="260.51171875" height="33.125">
+              <frame id="3007:17015" name="Text" x="0" y="0" width="260.51171875" height="15.625">
+                <frame id="3007:17016" name="Bold Text" x="0" y="0" width="44.00390625" height="15.625">
+                  <text id="3007:17017" name="互动通知" x="0" y="0" width="45" height="15" />
+                </frame>
+                <frame id="3007:17018" name="Time" x="241.51171875" y="1.3125" width="19" height="13">
+                  <text id="3007:17019" name="周一" x="0" y="0" width="19" height="13" />
+                </frame>
+              </frame>
+              <frame id="3007:17020" name="Text" x="0" y="15.625" width="260.51171875" height="17.5">
+                <text id="3007:17021" name="晓禾回应了你的骑行进展。" x="0" y="5" width="110" height="13" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17023" name="Container" x="0" y="306.849609375" width="373.75" height="70.99609375">
+        <frame id="3007:17024" name="Button" x="129.375" y="18" width="115" height="34.99609375">
+          <frame id="3007:17025" name="Icon" x="16" y="9.998046875" width="15" height="15" />
+          <text id="3007:17027" name="去找同伴聊聊" x="38" y="10.498046875" width="61" height="14" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="3007:17029" name="Navigation - 主导航" x="0" y="746.00390625" width="375" height="65.99609375">
+      <frame id="3007:17030" name="Button" x="8.999977111816406" y="6.624996185302734" width="88.935546875" height="53.37890625">
+        <frame id="3007:17031" name="Icon" x="32.96875" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:17035" name="发现" x="33.9677734375" y="33.1884765625" width="21" height="14" />
+      </frame>
+      <frame id="3007:17036" name="Button" x="97.93549346923828" y="6.624996185302734" width="88.9453125" height="53.37890625">
+        <frame id="3007:17037" name="Icon" x="32.9736328125" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:17041" name="看进展" x="28.97265625" y="33.1884765625" width="31" height="14" />
+      </frame>
+      <frame id="3007:17042" name="Button" x="186.88076782226562" y="6.624996185302734" width="88.935546875" height="53.37890625">
+        <frame id="3007:17043" name="Icon" x="32.96875" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:17047" name="消息" x="33.9677734375" y="33.1884765625" width="21" height="14" />
+      </frame>
+      <frame id="3007:17048" name="Button" x="275.8162841796875" y="6.624996185302734" width="88.9453125" height="53.37890625">
+        <frame id="3007:17049" name="Icon" x="32.9736328125" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:17053" name="我的" x="33.97265625" y="33.1884765625" width="21" height="14" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17054" name="Section - 我的" x="17682.62890625" y="-15391" width="375" height="1480.986328125">
+    <frame id="3007:17055" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17056" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17057" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17058" name="Text" x="300.017578125" y="5" width="51.982421875" height="11.9921875">
+        <frame id="3007:17059" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17061" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17064" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17068" name="Header" x="0" y="27.998046875" width="375" height="52">
+      <frame id="3007:17069" name="Heading 1" x="19" y="10" width="40" height="27">
+        <text id="3007:17070" name="我的" x="0" y="0" width="40" height="27" />
+      </frame>
+    </frame>
+    <frame id="3007:17071" name="Container" x="0" y="79.998046875" width="375" height="1334.9921875">
+      <frame id="3007:17072" name="Section - 个人资料" x="0" y="0" width="373.75" height="82.998046875">
+        <frame id="3007:17073" name="Image (林岚头像)" x="17" y="13" width="57.998046875" height="57.998046875" />
+        <frame id="3007:17074" name="Container" x="86.998046875" y="22.4990234375" width="186.50390625" height="39">
+          <frame id="3007:17075" name="Container" x="0" y="0" width="186.50390625" height="22">
+            <frame id="3007:17076" name="Heading 2" x="0" y="0" width="32" height="22">
+              <text id="3007:17077" name="林岚" x="0" y="0" width="32" height="22" />
+            </frame>
+            <frame id="3007:17079" name="Text" x="39" y="1.5" width="58" height="19">
+              <text id="3007:17080" name="资料已完成" x="6" y="3" width="46" height="13" />
+            </frame>
+          </frame>
+          <frame id="3007:17081" name="Paragraph" x="0" y="22" width="186.50390625" height="17">
+            <text id="3007:17082" name="女 · 26 岁 · 今天在线" x="0" y="5" width="101" height="14" />
+          </frame>
+        </frame>
+        <frame id="3007:17084" name="Button" x="285.501953125" y="27.8740234375" width="71.248046875" height="28.25">
+          <frame id="3007:17085" name="Icon" x="8.625" y="7.6259765625" width="12.998046875" height="12.998046875" />
+          <text id="3007:17087" name="编辑资料" x="25.623046875" y="7.625" width="37" height="13" />
+        </frame>
+      </frame>
+      <frame id="3007:17308" name="Section - 账户余额:margin" x="0" y="82.998046875" width="375" height="65.25">
+        <frame id="3007:17088" name="Section - 账户余额" x="16.62109375" y="0" width="341.7578125" height="65.25">
+          <frame id="3007:17089" name="Icon" x="12.625" y="23.1279296875" width="18.994140625" height="18.994140625" />
+          <frame id="3007:17093" name="Container" x="41.619140625" y="11.625" width="198.515625" height="42">
+            <frame id="3007:17094" name="Bold Text" x="0" y="0" width="198.515625" height="14">
+              <text id="3007:17095" name="账户余额" x="0" y="0" width="41" height="14" />
+            </frame>
+            <frame id="3007:17096" name="Text" x="0" y="14" width="198.515625" height="14">
+              <text id="3007:17097" name="¥ 0.00" x="0" y="3" width="28" height="13" />
+            </frame>
+            <frame id="3007:17098" name="Small" x="0" y="28" width="198.515625" height="14">
+              <text id="3007:17099" name="首发免费体验" x="0" y="3" width="55" height="13" />
+            </frame>
+          </frame>
+          <frame id="3007:17102" name="Button" x="250.134765625" y="18.625" width="78.998046875" height="28">
+            <frame id="3007:17103" name="Icon" x="10" y="7.5009765625" width="12.998046875" height="12.998046875" />
+            <text id="3007:17105" name="充值入口" x="27.998046875" y="7" width="41" height="14" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17309" name="Section - 社交关系:margin" x="0" y="148.248046875" width="373.7578125" height="87.099609375">
+        <frame id="3007:17106" name="Section - 社交关系" x="16" y="10" width="341.7578125" height="77.099609375">
+          <frame id="3007:17107" name="Button" x="0.6249542236328125" y="10.625" width="113.49609375" height="55.84960174560547">
+            <frame id="3007:17108" name="Icon" x="46.9384765625" y="1" width="18.994140625" height="18.994140625" />
+            <text id="3007:17112" name="36" x="48.935546875" y="23.994140625" width="15" height="17" />
+            <text id="3007:17115" name="关注" x="46.935546875" y="44.994140625" width="19" height="13" />
+          </frame>
+          <frame id="3007:17116" name="Button" x="114.1210708618164" y="10.625" width="113.505859375" height="55.84960174560547">
+            <frame id="3007:17117" name="Icon" x="46.943359375" y="1" width="18.994140625" height="18.994140625" />
+            <text id="3007:17121" name="128" x="46.4404296875" y="23.994140625" width="20" height="17" />
+            <text id="3007:17123" name="粉丝" x="46.9404296875" y="44.994140625" width="19" height="13" />
+          </frame>
+          <frame id="3007:17124" name="Button" x="227.6270751953125" y="10.625" width="113.505859375" height="55.84960174560547">
+            <frame id="3007:17125" name="Icon" x="47.255859375" y="1" width="18.994140625" height="18.994140625" />
+            <text id="3007:17130" name="18" x="50.2529296875" y="23.994140625" width="13" height="17" />
+            <text id="3007:17132" name="好友" x="47.2529296875" y="44.994140625" width="19" height="13" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17133" name="Section - 我的社交" x="0" y="235.34765625" width="373.75" height="171.107421875">
+        <frame id="3007:17134" name="Heading 2" x="16" y="14" width="341.7734375" height="16.875">
+          <text id="3007:17135" name="我的社交" x="2" y="-0.0625" width="48" height="17" />
+        </frame>
+        <frame id="3007:17169" name="Container:margin" x="16" y="30.875" width="341.7578125" height="140.232421875">
+          <frame id="3007:17137" name="Container" x="0" y="7" width="341.7578125" height="133.232421875">
+            <frame id="3007:17138" name="Button" x="0.625" y="0.625" width="340.5078125" height="44">
+              <frame id="3007:17139" name="Icon" x="11" y="12.1904296875" width="18.994140625" height="18.994140625" />
+              <frame id="3007:17142" name="Text" x="39.994140625" y="14.6875" width="219.515625" height="14">
+                <text id="3007:17143" name="谁看过我" x="0" y="0" width="41" height="14" />
+              </frame>
+              <frame id="3007:17144" name="Small" x="269.509765625" y="15.1875" width="37" height="13">
+                <text id="3007:17145" name="6 人看过" x="0" y="0" width="37" height="13" />
+              </frame>
+              <frame id="3007:17146" name="Icon" x="316.509765625" y="15.1884765625" width="12.998046875" height="12.998046875" />
+            </frame>
+            <frame id="3007:17148" name="Button" x="0.625" y="44.625" width="340.5078125" height="44">
+              <frame id="3007:17149" name="Icon" x="11" y="12.1904296875" width="18.994140625" height="18.994140625" />
+              <frame id="3007:17152" name="Text" x="39.994140625" y="14.6875" width="216.515625" height="14">
+                <text id="3007:17153" name="签到" x="0" y="0" width="21" height="14" />
+              </frame>
+              <frame id="3007:17154" name="Small" x="266.509765625" y="15.1875" width="40" height="13">
+                <text id="3007:17155" name="连续 3 天" x="0" y="0" width="40" height="13" />
+              </frame>
+              <frame id="3007:17156" name="Icon" x="316.509765625" y="15.1884765625" width="12.998046875" height="12.998046875" />
+            </frame>
+            <frame id="3007:17158" name="Button" x="0.625" y="88.625" width="340.5078125" height="44">
+              <frame id="3007:17159" name="Icon" x="11" y="12.5029296875" width="18.994140625" height="18.994140625" />
+              <frame id="3007:17162" name="Text" x="39.994140625" y="15" width="228.515625" height="14">
+                <text id="3007:17163" name="我的认证" x="0" y="0" width="41" height="14" />
+              </frame>
+              <frame id="3007:17164" name="Small" x="278.509765625" y="15.5" width="28" height="13">
+                <text id="3007:17165" name="未认证" x="0" y="0" width="28" height="13" />
+              </frame>
+              <frame id="3007:17166" name="Icon" x="316.509765625" y="15.5009765625" width="12.998046875" height="12.998046875" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17170" name="Section - 我的内容" x="0" y="406.455078125" width="373.75" height="170.107421875">
+        <frame id="3007:17171" name="Heading 2" x="16" y="13" width="341.7734375" height="16.875">
+          <text id="3007:17172" name="我的内容" x="2" y="-0.0625" width="48" height="17" />
+        </frame>
+        <frame id="3007:17205" name="Container:margin" x="16" y="29.875" width="341.7578125" height="140.232421875">
+          <frame id="3007:17173" name="Container" x="0" y="7" width="341.7578125" height="133.232421875">
+            <frame id="3007:17174" name="Button" x="0.625" y="0.625" width="340.5078125" height="44">
+              <frame id="3007:17175" name="Icon" x="11" y="12.1904296875" width="18.994140625" height="18.994140625" />
+              <frame id="3007:17178" name="Text" x="39.994140625" y="14.6875" width="201.515625" height="14">
+                <text id="3007:17179" name="我的动态" x="0" y="0" width="41" height="14" />
+              </frame>
+              <frame id="3007:17180" name="Small" x="251.509765625" y="15.1875" width="55" height="13">
+                <text id="3007:17181" name="查看发布内容" x="0" y="0" width="55" height="13" />
+              </frame>
+              <frame id="3007:17182" name="Icon" x="316.509765625" y="15.1884765625" width="12.998046875" height="12.998046875" />
+            </frame>
+            <frame id="3007:17184" name="Button" x="0.625" y="44.625" width="340.5078125" height="44">
+              <frame id="3007:17185" name="Icon" x="11" y="12.1904296875" width="18.994140625" height="18.994140625" />
+              <frame id="3007:17188" name="Text" x="39.994140625" y="14.6875" width="201.515625" height="14">
+                <text id="3007:17189" name="我的视频" x="0" y="0" width="41" height="14" />
+              </frame>
+              <frame id="3007:17190" name="Small" x="251.509765625" y="15.1875" width="55" height="13">
+                <text id="3007:17191" name="查看上传视频" x="0" y="0" width="55" height="13" />
+              </frame>
+              <frame id="3007:17192" name="Icon" x="316.509765625" y="15.1884765625" width="12.998046875" height="12.998046875" />
+            </frame>
+            <frame id="3007:17194" name="Button" x="0.625" y="88.625" width="340.5078125" height="44">
+              <frame id="3007:17195" name="Icon" x="11" y="12.5029296875" width="18.994140625" height="18.994140625" />
+              <frame id="3007:17198" name="Text" x="39.994140625" y="15" width="210.515625" height="14">
+                <text id="3007:17199" name="设置" x="0" y="0" width="21" height="14" />
+              </frame>
+              <frame id="3007:17200" name="Small" x="260.509765625" y="15.5" width="46" height="13">
+                <text id="3007:17201" name="账号与隐私" x="0" y="0" width="46" height="13" />
+              </frame>
+              <frame id="3007:17202" name="Icon" x="316.509765625" y="15.5009765625" width="12.998046875" height="12.998046875" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17206" name="Section - 我的目标" x="0" y="576.5625" width="373.75" height="677.998046875">
+        <frame id="3007:17207" name="Heading 2" x="16" y="13" width="341.75" height="26">
+          <text id="3007:17208" name="我的目标" x="2" y="4.5" width="48" height="17" />
+          <frame id="3007:17209" name="Button" x="287.75" y="-1" width="52" height="28">
+            <text id="3007:17210" name="＋ 新建" x="9" y="7" width="34" height="14" />
+          </frame>
+        </frame>
+        <frame id="3007:17211" name="Section - 我的目标" x="16" y="39" width="341.7578125" height="624.998046875">
+          <frame id="3007:17301" name="Tab List - 目标状态:margin" x="0" y="13" width="341.76171875" height="37.98828125">
+            <frame id="3007:17212" name="Tab List - 目标状态" x="18" y="0" width="305.76171875" height="37.98828125">
+              <frame id="3007:17213" name="Tab" x="3.0000457763671875" y="3" width="148.37890625" height="32">
+                <text id="3007:17214" name="进行中" x="57.189453125" y="8.5" width="34" height="15" />
+              </frame>
+              <frame id="3007:17215" name="Tab" x="154.37916564941406" y="3" width="148.388671875" height="32">
+                <text id="3007:17216" name="已结束" x="57.1943359375" y="8.5" width="34" height="15" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:17217" name="Tab Panel" x="0" y="50.98828125" width="341.7578125" height="574.009765625">
+            <frame id="3007:17297" name="Container:margin" x="16" y="17" width="309.77734375" height="20">
+              <frame id="3007:17218" name="Container" x="4" y="0" width="301.77734375" height="20">
+                <text id="3007:17220" name="与伙伴一起" x="0" y="0" width="70" height="20" />
+                <text id="3007:17223" name="共同练习" x="261.77734375" y="4.375" width="41" height="14" />
+              </frame>
+            </frame>
+            <frame id="3007:17298" name="Article:margin" x="16" y="37" width="310.25" height="294.533203125">
+              <frame id="3007:17224" name="Article" x="0" y="9" width="310.25" height="285.533203125">
+                <frame id="3007:17225" name="Container" x="13.625" y="13.625" width="282.51953125" height="21">
+                  <frame id="3007:17226" name="Heading 3" x="0" y="0" width="84" height="19">
+                    <text id="3007:17227" name="英语口语练习" x="0" y="0" width="84" height="19" />
+                  </frame>
+                  <frame id="3007:17229" name="Text" x="240.51953125" y="0" width="42" height="21">
+                    <text id="3007:17230" name="进行中" x="7" y="4" width="28" height="13" />
+                  </frame>
+                </frame>
+                <frame id="3007:17231" name="Paragraph" x="13.625" y="34.625" width="282.51953125" height="20">
+                  <text id="3007:17232" name="目标：能自然聊旅行、生活和最近在看的内容" x="0" y="5" width="203" height="15" />
+                </frame>
+                <frame id="3007:17266" name="Container:margin" x="13.625" y="54.625" width="283" height="61.2421875">
+                  <frame id="3007:17233" name="Container" x="0.240234375" y="10" width="282.51953125" height="51.2421875">
+                    <frame id="3007:17234" name="Image (伙伴林岚头像)" x="0" y="9.625" width="31.9921875" height="31.9921875" />
+                    <frame id="3007:17235" name="Container" x="39.9921875" y="12.12109375" width="195.52734375" height="27">
+                      <frame id="3007:17236" name="Bold Text" x="0" y="0" width="195.52734375" height="14">
+                        <text id="3007:17237" name="练习伙伴：林岚 · 初级" x="0" y="0" width="103" height="14" />
+                      </frame>
+                      <frame id="3007:17238" name="Text" x="0" y="14" width="195.52734375" height="13">
+                        <text id="3007:17239" name="每周 2 次 · 每次约 20 分钟 · 语音或视频" x="0" y="2" width="171" height="13" />
+                      </frame>
+                    </frame>
+                    <frame id="3007:17241" name="Button" x="243.51953125" y="11.62109375" width="39" height="28">
+                      <text id="3007:17242" name="计划" x="9" y="7" width="21" height="14" />
+                    </frame>
+                  </frame>
+                </frame>
+                <frame id="3007:17267" name="Paragraph:margin" x="13.625" y="115.8671875" width="283" height="39">
+                  <text id="3007:17244" name="最近一起练习：完成了第一段自我介绍。下一步可以轮流聊一个日常话题。" x="0" y="9" width="283" height="30" />
+                </frame>
+                <frame id="3007:17268" name="Container:margin" x="13.625" y="154.8671875" width="282.51953125" height="78.056640625">
+                  <frame id="3007:17246" name="Container" x="0" y="10" width="282.51953125" height="68.056640625">
+                    <frame id="3007:17247" name="Container" x="11.624786376953125" y="-0.0000247955322265625" width="270.8984375" height="29.53125">
+                      <frame id="3007:17248" name="Bold Text" x="0" y="0" width="270.8984375" height="17">
+                        <text id="3007:17249" name="今天 · 林岚" x="0" y="0" width="53" height="15" />
+                      </frame>
+                      <frame id="3007:17253" name="Container" x="0" y="17" width="270.8984375" height="13.0390625">
+                        <text id="3007:17250" name="录完了第一段自我介绍" x="0" y="-0.3828125" width="92" height="14" />
+                      </frame>
+                    </frame>
+                    <frame id="3007:17254" name="Container" x="11.624786376953125" y="38.53117370605469" width="270.8984375" height="29.53125">
+                      <frame id="3007:17255" name="Bold Text" x="0" y="0" width="270.8984375" height="17">
+                        <text id="3007:17256" name="昨天 · 我" x="0" y="0" width="43" height="15" />
+                      </frame>
+                      <frame id="3007:17259" name="Container" x="0" y="17" width="270.8984375" height="13.0390625">
+                        <text id="3007:17257" name="练习了旅行场景的常用表达" x="0" y="-0.3828125" width="110" height="14" />
+                      </frame>
+                    </frame>
+                  </frame>
+                </frame>
+                <frame id="3007:17260" name="Container" x="13.625" y="232.923828125" width="282.51953125" height="38.984375">
+                  <frame id="3007:17261" name="Button" x="145.01953125" y="10" width="60.25" height="28.984375">
+                    <text id="3007:17262" name="记录进展" x="9.625" y="7.4921875" width="41" height="14" />
+                  </frame>
+                  <frame id="3007:17263" name="Button" x="212.26953125" y="10" width="70.25" height="28.984375">
+                    <text id="3007:17264" name="和伙伴练习" x="9.625" y="7.4921875" width="51" height="14" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <frame id="3007:17299" name="Container:margin" x="16" y="331.533203125" width="309.77734375" height="37">
+              <frame id="3007:17270" name="Container" x="4" y="17" width="301.77734375" height="20">
+                <text id="3007:17272" name="我正在寻找伙伴" x="0" y="0" width="98" height="20" />
+                <text id="3007:17274" name="个人目标" x="261.77734375" y="4.375" width="41" height="14" />
+              </frame>
+            </frame>
+            <frame id="3007:17300" name="Article:margin" x="16" y="368.533203125" width="309.76953125" height="187.4765625">
+              <frame id="3007:17275" name="Article" x="0" y="9" width="309.76953125" height="168.4765625">
+                <frame id="3007:17276" name="Container" x="13.625" y="13.625" width="282.51953125" height="21">
+                  <frame id="3007:17277" name="Heading 3" x="0" y="0" width="109" height="19">
+                    <text id="3007:17278" name="每天阅读 20 分钟" x="0" y="0" width="109" height="19" />
+                  </frame>
+                  <frame id="3007:17279" name="Text" x="231.51953125" y="0" width="51" height="21">
+                    <text id="3007:17280" name="待找伙伴" x="7" y="4" width="37" height="13" />
+                  </frame>
+                </frame>
+                <frame id="3007:17281" name="Paragraph" x="13.625" y="34.625" width="282.51953125" height="20">
+                  <text id="3007:17282" name="想养成稳定阅读习惯，读完后分享一两句感受。" x="0" y="5" width="213" height="15" />
+                </frame>
+                <frame id="3007:17295" name="Container:margin" x="13.625" y="54.625" width="282.51953125" height="61.2421875">
+                  <frame id="3007:17283" name="Container" x="0" y="10" width="282.51953125" height="51.2421875">
+                    <frame id="3007:17284" name="Image (当前用户头像)" x="0" y="9.625" width="31.9921875" height="31.9921875" />
+                    <frame id="3007:17285" name="Container" x="39.9921875" y="12.12109375" width="242.52734375" height="27">
+                      <frame id="3007:17286" name="Bold Text" x="0" y="0" width="242.52734375" height="14">
+                        <text id="3007:17287" name="每周 5 天 · 自主安排" x="0" y="0" width="96" height="14" />
+                      </frame>
+                      <frame id="3007:17288" name="Text" x="0" y="14" width="242.52734375" height="13">
+                        <text id="3007:17289" name="希望找一个愿意交流读后感的同伴" x="0" y="2" width="138" height="13" />
+                      </frame>
+                    </frame>
+                  </frame>
+                </frame>
+                <frame id="3007:17291" name="Container" x="13.625" y="115.8671875" width="282.51953125" height="38.984375">
+                  <frame id="3007:17292" name="Button" x="212.26953125" y="10" width="70.25" height="28.984375">
+                    <text id="3007:17293" name="去发现同伴" x="9.625" y="7.4921875" width="51" height="14" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17313" name="Container:margin" x="0" y="1254.560546875" width="375" height="46.740234375">
+        <frame id="3007:17305" name="Container" x="0" y="13" width="375" height="33.740234375">
+          <frame id="3007:17306" name="Button" x="135.87890625" y="4.00390625" width="101.9921875" height="15.7421875">
+            <text id="3007:17307" name="切换账号或重新登录" x="5.99609375" y="2.24609375" width="91" height="14" />
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="3007:17314" name="Navigation - 主导航" x="0" y="1414.990234375" width="375" height="65.99609375">
+      <frame id="3007:17315" name="Button" x="8.999977111816406" y="6.624996185302734" width="88.935546875" height="53.37890625">
+        <frame id="3007:17316" name="Icon" x="32.96875" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:17320" name="发现" x="33.9677734375" y="33.1884765625" width="21" height="14" />
+      </frame>
+      <frame id="3007:17321" name="Button" x="97.93549346923828" y="6.624996185302734" width="88.9453125" height="53.37890625">
+        <frame id="3007:17322" name="Icon" x="32.9736328125" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:17326" name="看进展" x="28.97265625" y="33.1884765625" width="31" height="14" />
+      </frame>
+      <frame id="3007:17327" name="Button" x="186.88076782226562" y="6.624996185302734" width="88.935546875" height="53.37890625">
+        <frame id="3007:17328" name="Icon" x="32.96875" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:17332" name="消息" x="33.9677734375" y="33.1884765625" width="21" height="14" />
+      </frame>
+      <frame id="3007:17333" name="Button" x="275.8162841796875" y="6.624996185302734" width="88.9453125" height="53.37890625">
+        <frame id="3007:17334" name="Icon" x="32.9736328125" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:17338" name="我的" x="33.97265625" y="33.1884765625" width="21" height="14" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17339" name="Section - 登录" x="16503.62890625" y="-13892.009765625" width="375" height="812">
+    <frame id="3007:17340" name="Header" x="0" y="0" width="375" height="231.9921875">
+      <frame id="3007:17341" name="Container" x="0" y="0" width="373.75" height="27.998046875">
+        <frame id="3007:17342" name="Text" x="23" y="5" width="23" height="17">
+          <text id="3007:17343" name="9:41" x="0" y="0" width="23" height="17" />
+        </frame>
+        <frame id="3007:17344" name="Text" x="298.767578125" y="5" width="51.982421875" height="11.9921875">
+          <frame id="3007:17345" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+          <frame id="3007:17347" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+          <frame id="3007:17350" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+        </frame>
+      </frame>
+      <frame id="3007:17357" name="Container" x="24" y="88" width="325.76171875" height="59">
+        <frame id="3007:17358" name="Heading 1" x="0" y="0" width="325.76171875" height="32">
+          <text id="3007:17359" name="你好！" x="0" y="0" width="77" height="32" />
+        </frame>
+        <frame id="3007:17361" name="Paragraph" x="0" y="32" width="325.76171875" height="27">
+          <text id="3007:17362" name="欢迎回来，找到愿意一起坚持的同伴" x="0" y="7" width="222" height="20" />
+        </frame>
+      </frame>
+      <frame id="3007:17354" name="Button - 返回首页" x="20" y="42.998046875" width="33.994140625" height="33.994140625">
+        <frame id="3007:17355" name="Icon" x="8.500955581665039" y="8.500955581665039" width="16.9921875" height="16.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17432" name="Section - 账号登录:margin" x="0" y="231.9921875" width="375" height="580.0078125">
+      <frame id="3007:17366" name="Section - 账号登录" x="0" y="-25" width="373.75" height="603.75">
+        <frame id="3007:17430" name="Tab List - 登录方式:margin" x="20" y="17" width="333.75" height="52.625">
+          <frame id="3007:17367" name="Tab List - 登录方式" x="0" y="0" width="333.75" height="34.625">
+            <frame id="3007:17368" name="Tab" x="0" y="0" width="72" height="34">
+              <text id="3007:17369" name="手机号登录" x="1" y="2.5" width="70" height="20" />
+            </frame>
+            <frame id="3007:17371" name="Tab" x="94" y="0" width="58" height="34">
+              <text id="3007:17372" name="密码登录" x="1" y="2.5" width="56" height="20" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:17374" name="Form" x="20" y="69.625" width="333.75" height="298.603515625">
+          <frame id="3007:17375" name="Label" x="0" y="0" width="333.75" height="47.998046875">
+            <frame id="3007:17376" name="Phone Input" x="16.625" y="0.625" width="300.5078125" height="46.748046875">
+              <text id="3007:17377" name="请输入手机号" x="0" y="14.3740234375" width="300.5078125" height="18" />
+            </frame>
+          </frame>
+          <frame id="3007:17378" name="Label" x="0" y="59.99800109863281" width="333.75" height="47.998046875">
+            <frame id="3007:17379" name="Text Input" x="16.625" y="0.625" width="228.515625" height="46.748046875">
+              <text id="3007:17380" name="请输入验证码" x="0" y="14.3740234375" width="228.515625" height="18" />
+            </frame>
+            <frame id="3007:17381" name="Button" x="245.140625" y="10.4990234375" width="72" height="27">
+              <text id="3007:17382" name="获取验证码" x="12" y="5" width="60" height="17" />
+            </frame>
+          </frame>
+          <frame id="3007:17384" name="Label" x="0" y="119.99600219726562" width="333.75" height="47.998046875">
+            <frame id="3007:17385" name="Password Input" x="16.625" y="0.625" width="300.5078125" height="46.748046875">
+              <text id="3007:17386" name="请输入密码" x="0" y="14.3740234375" width="300.5078125" height="18" />
+            </frame>
+          </frame>
+          <frame id="3007:17400" name="Button:margin" x="0" y="179.99400329589844" width="333.75" height="51.9921989440918">
+            <frame id="3007:17387" name="Button" x="0" y="3" width="333.75" height="49">
+              <text id="3007:17388" name="登录" x="151.875" y="14" width="30" height="21" />
+            </frame>
+          </frame>
+          <frame id="3007:17401" name="Container:margin" x="0" y="243.9862060546875" width="333.75" height="24.609399795532227">
+            <frame id="3007:17390" name="Container" x="0" y="1" width="333.75" height="23">
+              <frame id="3007:17391" name="Button" x="102.875" y="0" width="45" height="23">
+                <text id="3007:17392" name="账号注册" x="0" y="4" width="45" height="15" />
+              </frame>
+              <frame id="3007:17393" name="Text" x="159.875" y="4" width="3" height="15">
+                <text id="3007:17394" name="|" x="0" y="0" width="3" height="15" />
+              </frame>
+              <frame id="3007:17396" name="Button" x="174.875" y="0" width="56" height="23">
+                <text id="3007:17397" name="忘记密码？" x="0" y="4" width="56" height="15" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:17402" name="Paragraph:margin" x="0" y="280.5956115722656" width="333.75" height="18.046875">
+            <frame id="3007:17398" name="Paragraph" x="0" y="5" width="333.75" height="13.046875">
+              <text id="3007:17399" name="登录即表示同意《用户协议》和《隐私政策》" x="74.875" y="0" width="184" height="14" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:17403" name="Container" x="20" y="368.228515625" width="333.75" height="213.544921875">
+          <frame id="3007:17404" name="Container" x="0" y="121.30860137939453" width="333.75" height="13.75">
+            <text id="3007:17405" name="其他登录方式" x="0" y="-0.125" width="61" height="14" />
+          </frame>
+          <frame id="3007:17406" name="Container" x="0" y="135.05859375" width="333.75" height="78.48828125">
+            <frame id="3007:17407" name="Button" x="75.88671875" y="18" width="41.9921875" height="60.48828125">
+              <frame id="3007:17408" name="Text" x="0" y="0" width="41.9921875" height="41.9921875">
+                <frame id="3007:17409" name="Icon" x="10.000005722045898" y="10.000005722045898" width="21.9921875" height="21.9921875" />
+              </frame>
+              <text id="3007:17412" name="Apple" x="7.996099472045898" y="48.9296989440918" width="26" height="11.5625" />
+            </frame>
+            <frame id="3007:17413" name="Button" x="145.87890625" y="18" width="41.9921875" height="60.48828125">
+              <frame id="3007:17414" name="Text" x="0" y="0" width="41.9921875" height="41.9921875">
+                <frame id="3007:17415" name="Icon" x="10.000005722045898" y="10.000005722045898" width="21.9921875" height="21.9921875" />
+              </frame>
+              <text id="3007:17422" name="微信" x="11.496099472045898" y="47.9921989440918" width="19" height="12.5" />
+            </frame>
+            <frame id="3007:17423" name="Button" x="215.87109375" y="18" width="41.9921875" height="60.48828125">
+              <frame id="3007:17424" name="Text" x="0" y="0" width="41.9921875" height="41.9921875">
+                <frame id="3007:17425" name="Icon" x="10.000005722045898" y="10.000005722045898" width="21.9921875" height="21.9921875" />
+              </frame>
+              <text id="3007:17428" name="访客体验" x="2.4960994720458984" y="47.9921989440918" width="37" height="12.5" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17433" name="Section - 完善资料" x="16896.62890625" y="-13892.009765625" width="375" height="812">
+    <frame id="3007:17434" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17435" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17436" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17437" name="Text" x="300.017578125" y="5" width="51.982421875" height="11.9921875">
+        <frame id="3007:17438" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17440" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17443" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17447" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:17448" name="Heading 1" x="20" y="12" width="335" height="29">
+        <text id="3007:17449" name="完善资料" x="0" y="0" width="94" height="29" />
+      </frame>
+      <frame id="3007:17451" name="Paragraph" x="20" y="41" width="333.75" height="23">
+        <text id="3007:17452" name="添加基础信息，找到合适的同伴" x="0" y="6" width="155" height="17" />
+      </frame>
+    </frame>
+    <frame id="3007:17455" name="Container" x="0" y="91.998046875" width="375" height="642.00390625">
+      <frame id="3007:17456" name="Form" x="20.625" y="16" width="333.75" height="366.69921875">
+        <frame id="3007:17491" name="Label:margin" x="0" y="0" width="95.99609375" height="97.99609375">
+          <frame id="3007:17457" name="Label" x="0" y="0" width="95.99609375" height="95.99609375">
+            <frame id="3007:17458" name="Image (当前头像)" x="0" y="0" width="95.99609375" height="95.99609375" />
+            <frame id="3007:17459" name="Text" x="64.00390625" y="63.0078125" width="31.9921875" height="31.9921875">
+              <frame id="3007:17460" name="Icon" x="6.499030113220215" y="6.499030113220215" width="18.994140625" height="18.994140625" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:17463" name="Label" x="0" y="112.98828125" width="333.75" height="67.744140625">
+          <text id="3007:17464" name="昵称" x="0" y="0" width="333.75" height="13.75" />
+          <frame id="3007:17466" name="Container" x="0" y="19.75" width="333.75" height="48">
+            <frame id="3007:17467" name="Text Input" x="13.625" y="1" width="283.251953125" height="46">
+              <text id="3007:17468" name="林岚" x="0" y="14" width="283.251953125" height="18" />
+            </frame>
+            <frame id="3007:17469" name="Text" x="296.876953125" y="17" width="24" height="14">
+              <text id="3007:17470" name="2/20" x="0" y="0" width="24" height="14" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:17471" name="Label" x="0" y="195.73239135742188" width="333.75" height="84.345703125">
+          <text id="3007:17472" name="出生日期" x="0" y="1.25" width="41" height="14" />
+          <frame id="3007:17473" name="Container" x="0" y="19.74609375" width="333.75390625" height="48">
+            <frame id="3007:17474" name="Date Picker - 选择出生日期" x="13.625" y="1.001953125" width="306.50390625" height="46" />
+          </frame>
+          <text id="3007:17476" name="出生日期仅用于计算年龄，资料页展示年龄" x="0" y="71.748046875" width="175" height="13" />
+        </frame>
+        <frame id="3007:17478" name="Field Set" x="0" y="295.0780944824219" width="333.75" height="71.62109375">
+          <frame id="3007:17479" name="Legend" x="0" y="0" width="333.75" height="15">
+            <text id="3007:17480" name="性别 （选择后可在设置中管理展示）" x="2" y="0" width="155" height="15" />
+          </frame>
+          <frame id="3007:17490" name="Container:margin" x="0" y="15" width="333.75" height="55.998046875">
+            <frame id="3007:17482" name="Container" x="0" y="8" width="333.75" height="47.998046875">
+              <frame id="3007:17483" name="Label" x="0" y="0" width="162.3730010986328" height="48">
+                <frame id="3007:17484" name="Text" x="73.1835708618164" y="12.749000549316406" width="16.005859375" height="22.5">
+                  <text id="3007:17485" name="男" x="0" y="0" width="16" height="22" />
+                </frame>
+              </frame>
+              <frame id="3007:17487" name="Label" x="171.3730010986328" y="0" width="162.38299560546875" height="48">
+                <frame id="3007:17488" name="Text" x="73.18856811523438" y="12.749000549316406" width="16.005859375" height="22.5">
+                  <text id="3007:17489" name="女" x="0" y="0" width="16" height="22" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="3007:17492" name="Container" x="0" y="734.001953125" width="375" height="77.998046875">
+      <frame id="3007:17493" name="Button" x="20" y="10" width="333.75" height="47.998046875">
+        <text id="3007:17494" name="进入" x="153.8671875" y="16.181640625" width="26" height="18" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17495" name="Section - 同伴资料" x="17289.62890625" y="-13892.009765625" width="375" height="1447.763671875">
+    <frame id="3007:17496" name="Container" x="0" y="0" width="375" height="1447.763671875">
+      <frame id="3007:17497" name="Section - 个人主页封面" x="0" y="0" width="373.75" height="303.994140625">
+        <frame id="3007:17498" name="Image (林岚个人主页照片)" x="0" y="0" width="373.75" height="303.994140625" />
+        <frame id="3007:17499" name="Container" x="0" y="0" width="373.75" height="303.994140625" />
+        <frame id="3007:17500" name="Container" x="0" y="0" width="373.75" height="27.998046875">
+          <frame id="3007:17501" name="Text" x="23" y="5" width="23" height="17">
+            <text id="3007:17502" name="9:41" x="0" y="0" width="23" height="17" />
+          </frame>
+          <frame id="3007:17503" name="Text" x="298.767578125" y="5" width="51.982421875" height="11.9921875">
+            <frame id="3007:17504" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+            <frame id="3007:17506" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+            <frame id="3007:17509" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+          </frame>
+        </frame>
+        <frame id="3007:17513" name="Container" x="15" y="42.998046875" width="343.75" height="40">
+          <frame id="3007:17514" name="Button - 返回发现" x="0" y="0" width="40" height="40">
+            <frame id="3007:17515" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+          </frame>
+          <frame id="3007:17517" name="Button - 更多操作" x="303.75" y="0" width="40" height="40">
+            <frame id="3007:17518" name="Icon" x="11.0009765625" y="11.0009765625" width="17.998046875" height="17.998046875" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17698" name="Section:margin" x="0" y="303.994140625" width="373.7578125" height="175.06640625">
+        <frame id="3007:17522" name="Section" x="0" y="-18" width="373.7578125" height="193.06640625">
+          <frame id="3007:17523" name="Container" x="16" y="17" width="341.7578125" height="43">
+            <frame id="3007:17524" name="Container" x="0" y="0" width="120" height="43">
+              <frame id="3007:17525" name="Heading 1" x="0" y="0" width="120" height="24">
+                <text id="3007:17526" name="林岚" x="0" y="0" width="41" height="24" />
+              </frame>
+              <frame id="3007:17528" name="Paragraph" x="0" y="24" width="120" height="19">
+                <text id="3007:17529" name="想把英语练习融入日常生活" x="0" y="5" width="122" height="14" />
+              </frame>
+            </frame>
+            <frame id="3007:17532" name="Button" x="267.763671875" y="7.5029296875" width="73.994140625" height="27.994140625">
+              <frame id="3007:17533" name="Icon" x="9" y="7" width="13.994140625" height="13.994140625" />
+              <frame id="3007:17536" name="Text" x="27.994140625" y="7.4970703125" width="37" height="13">
+                <text id="3007:17537" name="语音介绍" x="0" y="0" width="37" height="13" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:17561" name="Container" x="16" y="60" width="341.7578125" height="23.75">
+            <frame id="3007:17538" name="Text" x="-0.00390625" y="1.25" width="110" height="22.5">
+              <text id="3007:17539" name="资料已认证 · 正在练习" x="8" y="4.75" width="94" height="13" />
+            </frame>
+          </frame>
+          <frame id="3007:17540" name="Paragraph" x="16" y="83.75" width="341.7578125" height="14">
+            <text id="3007:17541" name="女 · 26 岁 · 今天在线" x="0" y="0" width="101" height="14" />
+          </frame>
+          <frame id="3007:17542" name="Container" x="16" y="97.75" width="341.7578125" height="31.5">
+            <frame id="3007:17543" name="Text" x="0" y="9" width="35" height="22.5">
+              <text id="3007:17544" name="旅行" x="8" y="5" width="19" height="13" />
+            </frame>
+            <frame id="3007:17545" name="Text" x="41" y="9" width="35" height="22.5">
+              <text id="3007:17546" name="播客" x="8" y="5" width="19" height="13" />
+            </frame>
+            <frame id="3007:17547" name="Text" x="82" y="9" width="53" height="22.5">
+              <text id="3007:17548" name="英语练习" x="8" y="5" width="37" height="13" />
+            </frame>
+          </frame>
+          <frame id="3007:17549" name="Container" x="16" y="129.25" width="341.7578125" height="51.998046875">
+            <frame id="3007:17550" name="Button" x="0" y="14" width="248.763671875" height="37.998046875">
+              <frame id="3007:17551" name="Icon" x="102.3818359375" y="11.4990234375" width="15" height="15" />
+              <frame id="3007:17553" name="Bold Text" x="123.3818359375" y="11.4990234375" width="23" height="15">
+                <text id="3007:17554" name="关注" x="0" y="0" width="23" height="15" />
+              </frame>
+            </frame>
+            <frame id="3007:17556" name="Button" x="257.763671875" y="14" width="83.994140625" height="37.998046875">
+              <text id="3007:17557" name="私信" x="30.4970703125" y="11.4990234375" width="23" height="15" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17562" name="Section" x="0" y="479.060546875" width="375" height="944.5703125">
+        <frame id="3007:17563" name="Section" x="18" y="5" width="337.75390625" height="224.75">
+          <frame id="3007:17564" name="Heading 2" x="0" y="10" width="337.75390625" height="18">
+            <text id="3007:17565" name="基本资料" x="0" y="0" width="56" height="18" />
+          </frame>
+          <frame id="3007:17599" name="Container:margin" x="0" y="28" width="337.75390625" height="180.125">
+            <frame id="3007:17567" name="Container" x="0" y="12" width="337.75390625" height="168.125">
+              <frame id="3007:17568" name="Container" x="0" y="0" width="159.873046875" height="56.25">
+                <frame id="3007:17569" name="Text" x="-0.00002288818359375" y="10" width="159.873046875" height="13.75">
+                  <text id="3007:17570" name="职业" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:17571" name="Bold Text" x="-0.00002288818359375" y="28.75" width="159.873046875" height="16.875">
+                  <text id="3007:17572" name="视觉设计师" x="0" y="0" width="60" height="17" />
+                </frame>
+              </frame>
+              <frame id="3007:17574" name="Container" x="177.8730926513672" y="0" width="159.8828125" height="56.25">
+                <frame id="3007:17575" name="Text" x="0.000091552734375" y="10" width="159.8828125" height="13.75">
+                  <text id="3007:17576" name="现居" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:17577" name="Bold Text" x="0.000091552734375" y="28.75" width="159.8828125" height="16.875">
+                  <text id="3007:17578" name="上海" x="0" y="0" width="24" height="17" />
+                </frame>
+              </frame>
+              <frame id="3007:17579" name="Container" x="-0.00002288818359375" y="56.25" width="159.873046875" height="56.25">
+                <frame id="3007:17580" name="Text" x="-0.00002288818359375" y="10" width="159.873046875" height="13.75">
+                  <text id="3007:17581" name="家乡" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:17582" name="Bold Text" x="-0.00002288818359375" y="28.75" width="159.873046875" height="16.875">
+                  <text id="3007:17583" name="杭州" x="0" y="0" width="24" height="17" />
+                </frame>
+              </frame>
+              <frame id="3007:17584" name="Container" x="177.8730926513672" y="56.25" width="159.8828125" height="56.25">
+                <frame id="3007:17585" name="Text" x="0.000091552734375" y="10" width="159.8828125" height="13.75">
+                  <text id="3007:17586" name="教育" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:17587" name="Bold Text" x="0.000091552734375" y="28.75" width="159.8828125" height="16.875">
+                  <text id="3007:17588" name="本科" x="0" y="0" width="24" height="17" />
+                </frame>
+              </frame>
+              <frame id="3007:17589" name="Container" x="-0.00002288818359375" y="112.5" width="159.873046875" height="55.625">
+                <frame id="3007:17590" name="Text" x="-0.00002288818359375" y="10" width="159.873046875" height="13.75">
+                  <text id="3007:17591" name="星座" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:17592" name="Bold Text" x="-0.00002288818359375" y="28.75" width="159.873046875" height="16.875">
+                  <text id="3007:17593" name="天秤座" x="0" y="0" width="36" height="17" />
+                </frame>
+              </frame>
+              <frame id="3007:17594" name="Container" x="177.8730926513672" y="112.5" width="159.8828125" height="55.625">
+                <frame id="3007:17595" name="Text" x="0.000091552734375" y="10" width="159.8828125" height="13.75">
+                  <text id="3007:17596" name="身高" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:17597" name="Bold Text" x="0.000091552734375" y="28.75" width="159.8828125" height="16.875">
+                  <text id="3007:17598" name="165 cm · 好友可见" x="0" y="0" width="103" height="17" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:17600" name="Section" x="18" y="229.75" width="337.75390625" height="238.341796875">
+          <frame id="3007:17601" name="Container" x="0" y="16" width="337.75390625" height="17.5">
+            <text id="3007:17603" name="动态" x="0" y="0" width="28" height="18" />
+          </frame>
+          <frame id="3007:17633" name="Article:margin" x="0" y="33.5" width="337.75390625" height="188.216796875">
+            <frame id="3007:17604" name="Article" x="0" y="10" width="337.75390625" height="178.216796875">
+              <frame id="3007:17605" name="Container" x="18.625" y="0" width="319.130859375" height="18.75">
+                <text id="3007:17607" name="24" x="0" y="0" width="19" height="22" />
+                <text id="3007:17610" name="3月" x="24.052734375" y="6.25" width="15" height="13" />
+                <frame id="3007:17611" name="Button - 动态更多操作" x="307.138671875" y="5.25390625" width="11.9921875" height="13.2421875" />
+              </frame>
+              <frame id="3007:17612" name="Container" x="18.625" y="18.75" width="319.130859375" height="28.48828125">
+                <frame id="3007:17613" name="Text" x="0" y="8" width="33" height="20.48828125">
+                  <text id="3007:17614" name="日常" x="7" y="4" width="19" height="13" />
+                </frame>
+                <frame id="3007:17615" name="Text" x="39" y="8" width="51" height="20.48828125">
+                  <text id="3007:17616" name="练习记录" x="7" y="4" width="37" height="13" />
+                </frame>
+              </frame>
+              <frame id="3007:17617" name="Paragraph" x="18.625" y="47.23828125" width="319.130859375" height="25">
+                <text id="3007:17618" name="练完旅行场景对话，今天比上次更顺一点。" x="0" y="8" width="211" height="17" />
+              </frame>
+              <frame id="3007:17631" name="Container:margin" x="18.625" y="72.23828125" width="319.130859375" height="63.478515625">
+                <frame id="3007:17619" name="Container" x="0" y="8" width="319.130859375" height="55.478515625">
+                  <frame id="3007:17620" name="Bold Text" x="12.624755859375" y="12.625" width="293.896484375" height="13.75">
+                    <text id="3007:17621" name="英语口语练习 · 第 3 次练习" x="0" y="0" width="127" height="14" />
+                  </frame>
+                  <frame id="3007:17622" name="Text" x="12.624755859375" y="30.375" width="293.896484375" height="12.5">
+                    <text id="3007:17623" name="每周 2 次 · 语音交流 · 今天完成" x="0" y="0" width="135" height="13" />
+                  </frame>
+                </frame>
+              </frame>
+              <frame id="3007:17624" name="Container" x="18.625" y="135.716796875" width="319.130859375" height="29.5">
+                <frame id="3007:17625" name="Button" x="237.130859375" y="7" width="41" height="22.5">
+                  <text id="3007:17626" name="鼓励 12" x="5" y="4.75" width="31" height="13" />
+                </frame>
+                <frame id="3007:17627" name="Button" x="290.130859375" y="7" width="29" height="22.5">
+                  <text id="3007:17628" name="回应" x="5" y="4.75" width="19" height="13" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:17634" name="Section" x="18" y="468.091796875" width="337.75390625" height="239.1171875">
+          <frame id="3007:17635" name="Heading 2" x="0" y="16" width="337.75390625" height="18">
+            <text id="3007:17636" name="关于我" x="0" y="0" width="42" height="18" />
+          </frame>
+          <frame id="3007:17637" name="Paragraph" x="0" y="34" width="337.75390625" height="27">
+            <text id="3007:17638" name="想把英语练习融入日常，喜欢边聊旅行边学表达。" x="0" y="12" width="223" height="15" />
+          </frame>
+          <frame id="3007:17639" name="Container" x="0" y="61" width="337.75390625" height="62.9921875">
+            <frame id="3007:17640" name="Heading 3" x="0" y="16" width="337.75390625" height="14">
+              <text id="3007:17641" name="兴趣" x="0" y="0" width="21" height="14" />
+            </frame>
+            <frame id="3007:17643" name="Container" x="0" y="30" width="337.75390625" height="34.9921875">
+              <frame id="3007:17644" name="Text" x="0" y="8" width="40.25" height="26.9921875">
+                <text id="3007:17645" name="旅行" x="9.625" y="6.625" width="21" height="14" />
+              </frame>
+              <frame id="3007:17646" name="Text" x="46.25" y="8" width="40.25" height="26.9921875">
+                <text id="3007:17647" name="播客" x="9.625" y="6.625" width="21" height="14" />
+              </frame>
+              <frame id="3007:17648" name="Text" x="92.5" y="8" width="60.25" height="26.9921875">
+                <text id="3007:17649" name="城市散步" x="9.625" y="6.625" width="41" height="14" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:17651" name="Container" x="0" y="123.9921875" width="337.75390625" height="98.5">
+            <frame id="3007:17652" name="Heading 3" x="0" y="16" width="337.75390625" height="14">
+              <text id="3007:17653" name="相处偏好" x="0" y="0" width="41" height="14" />
+            </frame>
+            <frame id="3007:17666" name="Container:margin" x="0" y="30" width="337.75390625" height="70.5">
+              <frame id="3007:17654" name="Container" x="0" y="8" width="337.75390625" height="62.5">
+                <frame id="3007:17655" name="Container" x="0" y="0" width="337.75390625" height="36.5625">
+                  <frame id="3007:17656" name="Text" x="-0.00002288818359375" y="10" width="67.998046875" height="15.9375">
+                    <text id="3007:17657" name="聊天节奏" x="0" y="0" width="41" height="14" />
+                  </frame>
+                  <frame id="3007:17658" name="Bold Text" x="77.99807739257812" y="10" width="259.755859375" height="15.9375">
+                    <text id="3007:17659" name="慢热，喜欢有来有回" x="0" y="0" width="100" height="16" />
+                  </frame>
+                </frame>
+                <frame id="3007:17661" name="Container" x="0.0000457763671875" y="36.5625" width="337.75390625" height="25.9375">
+                  <frame id="3007:17662" name="Text" x="-0.00002288818359375" y="10" width="67.998046875" height="15.9375">
+                    <text id="3007:17663" name="互动边界" x="0" y="0" width="41" height="14" />
+                  </frame>
+                  <frame id="3007:17664" name="Bold Text" x="77.99807739257812" y="10" width="259.755859375" height="15.9375">
+                    <text id="3007:17665" name="不方便时可以改天" x="0" y="0" width="89" height="16" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:17670" name="Section" x="18" y="707.208984375" width="337.75390625" height="98.3671875">
+          <frame id="3007:17671" name="Heading 2" x="0" y="16" width="337.75390625" height="18">
+            <text id="3007:17672" name="关系" x="0" y="0" width="28" height="18" />
+          </frame>
+          <frame id="3007:17685" name="Container:margin" x="0" y="34" width="337.75390625" height="47.7421875">
+            <frame id="3007:17673" name="Container" x="0" y="12" width="337.75390625" height="35.7421875">
+              <frame id="3007:17674" name="Container" x="0" y="0" width="168.876953125" height="35.7421875">
+                <frame id="3007:17675" name="Bold Text" x="0" y="0" width="168.876953125" height="17.998046875">
+                  <text id="3007:17676" name="2" x="0" y="0" width="11" height="18" />
+                </frame>
+                <frame id="3007:17678" name="Text" x="0.00002288818359375" y="21.99799919128418" width="168.876953125" height="13.75">
+                  <text id="3007:17679" name="共同关注" x="0" y="0" width="41" height="14" />
+                </frame>
+              </frame>
+              <frame id="3007:17680" name="Container" x="168.87701416015625" y="0.0000057220458984375" width="168.876953125" height="35.7421875">
+                <frame id="3007:17681" name="Bold Text" x="16.62506866455078" y="-0.00002384185791015625" width="152.255859375" height="17.998046875">
+                  <text id="3007:17682" name="36" x="0" y="0" width="22" height="18" />
+                </frame>
+                <frame id="3007:17683" name="Text" x="16.62506866455078" y="21.99799919128418" width="152.255859375" height="13.75">
+                  <text id="3007:17684" name="关注者" x="0" y="0" width="31" height="14" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:17686" name="Section" x="18" y="805.576171875" width="337.75390625" height="114.994140625">
+          <frame id="3007:17687" name="Heading 2" x="0" y="16" width="337.75390625" height="18">
+            <text id="3007:17688" name="安全与隐私" x="0" y="0" width="70" height="18" />
+          </frame>
+          <frame id="3007:17689" name="Paragraph" x="0" y="34" width="337.75390625" height="27">
+            <text id="3007:17690" name="个人资料按可见范围展示。遇到不适可举报或屏蔽。" x="0" y="12" width="233" height="15" />
+          </frame>
+          <frame id="3007:17691" name="Container" x="0" y="61" width="337.75390625" height="45.994140625">
+            <frame id="3007:17692" name="Button" x="0" y="12" width="62.25" height="34">
+              <text id="3007:17693" name="举报用户" x="10.625" y="10" width="41" height="14" />
+            </frame>
+            <frame id="3007:17694" name="Button" x="70.25" y="12" width="62.25" height="34">
+              <text id="3007:17695" name="屏蔽用户" x="10.625" y="10" width="41" height="14" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17699" name="Section - 聊天" x="17682.62890625" y="-13892.009765625" width="375" height="812">
+    <frame id="3007:17700" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17701" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17702" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17703" name="Text" x="300.017578125" y="5" width="51.982421875" height="11.9921875">
+        <frame id="3007:17704" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17706" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17709" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17713" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:17714" name="Button - 返回消息" x="19" y="10" width="40" height="40">
+        <frame id="3007:17715" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:17717" name="Heading 1" x="69" y="15.5" width="244" height="29">
+        <text id="3007:17718" name="林岚" x="0" y="0" width="41" height="29" />
+      </frame>
+      <frame id="3007:17720" name="Button" x="323" y="22" width="33" height="16">
+        <text id="3007:17721" name="资料" x="6" y="1" width="21" height="14" />
+      </frame>
+    </frame>
+    <frame id="3007:17722" name="Paragraph" x="0" y="91.998046875" width="373.75" height="31">
+      <text id="3007:17723" name="目标：英语口语练习 · 可以直接打个招呼" x="20" y="0" width="202" height="17" />
+    </frame>
+    <frame id="3007:17724" name="Container" x="0" y="122.998046875" width="375" height="24">
+      <frame id="3007:17725" name="Button" x="278" y="0" width="33" height="16">
+        <text id="3007:17726" name="举报" x="6" y="1" width="21" height="14" />
+      </frame>
+      <frame id="3007:17727" name="Button" x="323" y="0" width="33" height="16">
+        <text id="3007:17728" name="屏蔽" x="6" y="1" width="21" height="14" />
+      </frame>
+    </frame>
+    <frame id="3007:17729" name="Container" x="0" y="146.998046875" width="375" height="602.376953125">
+      <frame id="3007:17730" name="Container" x="0" y="0" width="373.75" height="146.865234375">
+        <frame id="3007:17731" name="Text" x="18.000045776367188" y="4" width="337.75390625" height="12.5">
+          <text id="3007:17732" name="今天 10:24" x="0" y="0" width="45" height="13" />
+        </frame>
+        <frame id="3007:17733" name="Container" x="18" y="26.5" width="337.7539978027344" height="35.9375">
+          <text id="3007:17734" name="你这周哪天方便？我们可以继续练旅行对话。" x="12" y="10" width="222" height="16" />
+        </frame>
+        <frame id="3007:17735" name="Container" x="133.76181030273438" y="72.4375" width="221.9921875" height="35.9375">
+          <text id="3007:17736" name="周六下午可以，我整理几个想聊的话题。" x="12" y="10" width="200" height="16" />
+        </frame>
+        <frame id="3007:17737" name="Text" x="328.7520446777344" y="118.375" width="27.001953125" height="12.5">
+          <text id="3007:17738" name="已送达" x="0" y="0" width="28" height="13" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="3007:17739" name="Container" x="0" y="749.375" width="375" height="62.625">
+      <frame id="3007:17740" name="Button - 语音消息" x="15" y="10.625" width="40" height="40">
+        <frame id="3007:17741" name="Icon" x="10.99609375" y="10.05859375" width="17.998046875" height="17.998046875" />
+      </frame>
+      <frame id="3007:17744" name="Button - 图片消息" x="63" y="10.625" width="40" height="40">
+        <frame id="3007:17745" name="Icon" x="10.99609375" y="10.05859375" width="17.998046875" height="17.998046875" />
+      </frame>
+      <frame id="3007:17749" name="Text Input - 输入消息" x="111" y="10.625" width="192" height="37.998046875">
+        <text id="3007:17750" name="发一条消息" x="11.625" y="11.4990234375" width="168.75" height="15" />
+      </frame>
+      <frame id="3007:17751" name="Button" x="311" y="10.625" width="49" height="40">
+        <text id="3007:17752" name="发送" x="14" y="13" width="21" height="14" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17754" name="Section - 充值" x="16503.62890625" y="-12426.25" width="375" height="812">
+    <frame id="3007:17755" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17756" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17757" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17758" name="Text" x="300.017578125" y="5" width="51.982421875" height="11.9921875">
+        <frame id="3007:17759" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17761" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17764" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17768" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:17769" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:17770" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:17772" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:17773" name="账户余额" x="0" y="0" width="81" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:17774" name="Container" x="0" y="91.998046875" width="375" height="720.001953125">
+      <frame id="3007:17794" name="Section:margin" x="0" y="0" width="373.76171875" height="105.25">
+        <frame id="3007:17775" name="Section" x="16" y="0" width="341.76171875" height="105.25">
+          <frame id="3007:17776" name="Paragraph" x="13.625" y="13.625" width="314.51171875" height="15">
+            <text id="3007:17777" name="当前余额" x="0" y="0" width="41" height="15" />
+          </frame>
+          <frame id="3007:17778" name="Heading 2" x="13.625" y="28.625" width="314.51171875" height="40">
+            <text id="3007:17779" name="¥ 0.00" x="0" y="7" width="87" height="39" />
+          </frame>
+          <frame id="3007:17781" name="Paragraph" x="13.625" y="68.625" width="314.51171875" height="23">
+            <text id="3007:17782" name="首发体验版本暂不开放付费服务与充值。" x="0" y="8" width="182" height="15" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17795" name="Section:margin" x="0" y="105.25" width="374.25" height="108.25">
+        <frame id="3007:17785" name="Section" x="16" y="12" width="342.25" height="84.25">
+          <frame id="3007:17786" name="Heading 2" x="13.625" y="13.625" width="314.51171875" height="18">
+            <text id="3007:17787" name="余额说明" x="0" y="0" width="52" height="18" />
+          </frame>
+          <frame id="3007:17790" name="Paragraph:margin" x="13.625" y="31.625" width="315" height="39">
+            <text id="3007:17789" name="目标陪伴、同伴动态、语音和视频互动在当前版本均可免费体验。本页面仅保留账户入口，不会发起支付。" x="0" y="9" width="315" height="30" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17796" name="Container" x="0" y="213.5" width="375" height="489.65625">
+        <frame id="3007:17791" name="Button" x="15.99609375" y="-0.0078125" width="93.994140625" height="41.9921875">
+          <text id="3007:17792" name="查看余额记录" x="13.994140625" y="14.43359375" width="67" height="15" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17797" name="Section - 设置" x="16896.62890625" y="-12426.25" width="375" height="812">
+    <frame id="3007:17798" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17799" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17800" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17801" name="Text" x="338.005859375" y="5" width="13.994140625" height="11.9921875">
+        <frame id="3007:17802" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17804" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:17805" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:17806" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:17808" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:17809" name="设置" x="0" y="0" width="41" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:17810" name="Container" x="0" y="91.998046875" width="375" height="720.001953125">
+      <frame id="3007:17861" name="Section:margin" x="0" y="0" width="373.76171875" height="115.994140625">
+        <frame id="3007:17811" name="Section" x="16" y="0" width="341.76171875" height="115.994140625">
+          <frame id="3007:17812" name="Heading 2" x="13.625" y="13.625" width="314.51171875" height="18">
+            <text id="3007:17813" name="账号" x="0" y="0" width="26" height="18" />
+          </frame>
+          <frame id="3007:17821" name="Container:margin" x="13.625" y="31.625" width="314.51171875" height="51">
+            <frame id="3007:17814" name="Container" x="0" y="9" width="314.51171875" height="42">
+              <frame id="3007:17815" name="Text" x="0" y="13.6875" width="41" height="14">
+                <text id="3007:17816" name="当前账号" x="0" y="0" width="41" height="14" />
+              </frame>
+              <frame id="3007:17817" name="Bold Text" x="226.51171875" y="13.6875" width="88" height="14">
+                <text id="3007:17818" name="手机号 ·•••• 2688" x="0" y="0" width="88" height="14" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:17822" name="Container" x="13.625" y="82.625" width="314.51171875" height="19.744140625">
+            <frame id="3007:17819" name="Button" x="-0.001953125" y="4.00390625" width="51.9921875" height="15.7421875">
+              <text id="3007:17820" name="切换账号" x="5.99609375" y="2.24609375" width="41" height="14" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17862" name="Section:margin" x="0" y="115.994140625" width="373.76171875" height="215.25">
+        <frame id="3007:17823" name="Section" x="16" y="12" width="341.76171875" height="203.25">
+          <frame id="3007:17824" name="Heading 2" x="13.625" y="13.625" width="314.51171875" height="18">
+            <text id="3007:17825" name="隐私" x="0" y="0" width="26" height="18" />
+          </frame>
+          <frame id="3007:17840" name="Container:margin" x="13.625" y="31.625" width="314.51171875" height="51">
+            <frame id="3007:17826" name="Container" x="0" y="9" width="314.51171875" height="42">
+              <frame id="3007:17827" name="Text" x="0" y="13.6875" width="112" height="14">
+                <text id="3007:17828" name="允许同伴通过目标找到我" x="0" y="0" width="112" height="14" />
+              </frame>
+              <frame id="3007:17829" name="Button" x="272.51171875" y="8.5625" width="42" height="24.25">
+                <text id="3007:17830" name="开启" x="11.5" y="5.625" width="19" height="13" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:17831" name="Container" x="13.625" y="82.625" width="314.51171875" height="42">
+            <frame id="3007:17832" name="Text" x="0" y="13.6875" width="81" height="14">
+              <text id="3007:17833" name="展示最近在线状态" x="0" y="0" width="81" height="14" />
+            </frame>
+            <frame id="3007:17834" name="Button" x="272.51171875" y="8.5625" width="42" height="24.25">
+              <text id="3007:17835" name="开启" x="11.5" y="5.625" width="19" height="13" />
+            </frame>
+          </frame>
+          <frame id="3007:17836" name="Button" x="13.625" y="124.625" width="63" height="42">
+            <text id="3007:17837" name="黑名单管理" x="6" y="13.6875" width="51" height="14" />
+          </frame>
+          <frame id="3007:17838" name="Paragraph" x="13.625" y="166.625" width="314.51171875" height="23">
+            <text id="3007:17839" name="敏感资料按资料页标注的范围展示。" x="0" y="8" width="162" height="15" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17863" name="Section:margin" x="0" y="331.244140625" width="373.76171875" height="192.25">
+        <frame id="3007:17842" name="Section" x="16" y="12" width="341.76171875" height="180.25">
+          <frame id="3007:17843" name="Heading 2" x="13.625" y="13.625" width="314.51171875" height="18">
+            <text id="3007:17844" name="社区与帮助" x="0" y="0" width="65" height="18" />
+          </frame>
+          <frame id="3007:17851" name="Button:margin" x="13.625" y="31.625" width="53" height="51">
+            <frame id="3007:17845" name="Button" x="0" y="9" width="53" height="42">
+              <text id="3007:17846" name="社区规范" x="6" y="13.6875" width="41" height="14" />
+            </frame>
+          </frame>
+          <frame id="3007:17847" name="Button" x="13.625" y="82.625" width="53" height="42">
+            <text id="3007:17848" name="隐私政策" x="6" y="13.6875" width="41" height="14" />
+          </frame>
+          <frame id="3007:17849" name="Button" x="13.625" y="124.625" width="53" height="42">
+            <text id="3007:17850" name="联系客服" x="6" y="14" width="41" height="14" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:17864" name="Section:margin" x="0" y="523.494140625" width="373.7734375" height="122.970703125">
+        <frame id="3007:17852" name="Section" x="16" y="12" width="341.7734375" height="94.970703125">
+          <frame id="3007:17853" name="Bold Text" x="12.625" y="12.625" width="316.5234375" height="14">
+            <text id="3007:17854" name="删除账号" x="0" y="0" width="41" height="14" />
+          </frame>
+          <frame id="3007:17855" name="Paragraph" x="12.625" y="26.625" width="316.5234375" height="28">
+            <text id="3007:17856" name="提交后将进入账号删除确认流程。此页面仅演示界面，不会真实删除账号。" x="0" y="5" width="303" height="14" />
+          </frame>
+          <frame id="3007:17860" name="Container" x="12.625" y="54.625" width="316.5234375" height="27.720703125">
+            <frame id="3007:17857" name="Button" x="-0.0078125" y="-0.005859375" width="73.2421875" height="27.734375">
+              <text id="3007:17858" name="申请删除账号" x="9.619140625" y="8.2421875" width="55" height="13" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17865" name="Section - 举报" x="17289.62890625" y="-12426.25" width="375" height="812">
+    <frame id="3007:17866" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17867" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17868" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17869" name="Text" x="338.005859375" y="5" width="13.994140625" height="11.9921875">
+        <frame id="3007:17870" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17872" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:17873" name="Button - 返回个人主页" x="19" y="10" width="40" height="40">
+        <frame id="3007:17874" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:17876" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:17877" name="举报内容" x="0" y="0" width="81" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:17878" name="Container" x="0" y="91.998046875" width="375" height="720.001953125">
+      <frame id="3007:17891" name="Paragraph:margin" x="0" y="0" width="375" height="17">
+        <frame id="3007:17879" name="Paragraph" x="20" y="0" width="335" height="17">
+          <text id="3007:17880" name="请选择最符合的原因。举报后平台会按社区规范处理。" x="0" y="0" width="266" height="17" />
+        </frame>
+      </frame>
+      <frame id="3007:17892" name="Form:margin" x="0" y="17" width="375" height="271.67578125">
+        <frame id="3007:17881" name="Form" x="0.625" y="14" width="373.75" height="257.67578125">
+          <frame id="3007:17882" name="Label" x="20" y="-0.0000209808349609375" width="333.75" height="62.744140625">
+            <text id="3007:17883" name="举报原因" x="0" y="0" width="333.75" height="13.75" />
+            <frame id="3007:17884" name="Dropdown" x="0" y="19.75" width="333.75" height="43" />
+          </frame>
+          <frame id="3007:17885" name="Label" x="20" y="74.74412536621094" width="333.75" height="104.9609375">
+            <text id="3007:17886" name="补充说明" x="0" y="0" width="333.75" height="13.75" />
+            <frame id="3007:17887" name="Text Area" x="0" y="19.749977111816406" width="333.75" height="85.21484375">
+              <text id="3007:17888" name="描述你遇到的情况（选填）" x="10.625" y="9.625" width="312.5" height="17" />
+            </frame>
+          </frame>
+          <frame id="3007:17889" name="Button" x="20" y="191.70509338378906" width="333.75" height="42">
+            <text id="3007:17890" name="提交举报" x="144.375" y="13.5" width="45" height="15" />
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17893" name="Section - 编辑资料" x="17682.62890625" y="-12426.25" width="375" height="812">
+    <frame id="3007:17894" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17895" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17896" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17897" name="网络状态" x="319.01171875" y="5" width="32.98828125" height="11.9921875">
+        <frame id="3007:17898" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17900" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17903" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:17904" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:17905" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:17907" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:17908" name="编辑资料" x="0" y="0" width="81" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:17909" name="Container" x="0" y="91.998046875" width="375" height="720.001953125">
+      <frame id="3007:17931" name="Paragraph:margin" x="0" y="0" width="375" height="17">
+        <frame id="3007:17910" name="Paragraph" x="20" y="0" width="335" height="17">
+          <text id="3007:17911" name="完善基础信息，让同伴更容易认识你。" x="0" y="0" width="189" height="17" />
+        </frame>
+      </frame>
+      <frame id="3007:17932" name="Form:margin" x="0" y="17" width="375" height="391.9296875">
+        <frame id="3007:17912" name="Form" x="0.625" y="14" width="373.75" height="377.9296875">
+          <frame id="3007:17913" name="Label" x="20" y="0.00000762939453125" width="333.75" height="75.7421875">
+            <text id="3007:17914" name="头像" x="0" y="0" width="333.75" height="13.75" />
+            <frame id="3007:17915" name="Container" x="0" y="19.750003814697266" width="333.75" height="55.99609375">
+              <frame id="3007:17916" name="Image (当前头像)" x="0" y="0" width="55.99609375" height="55.99609375" />
+              <frame id="3007:17917" name="Text" x="66.99609375" y="20.998046875" width="81" height="14">
+                <text id="3007:17918" name="点击选择本机图片" x="0" y="0" width="81" height="14" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:17919" name="Label" x="20" y="87.74217987060547" width="333.75" height="62.744140625">
+            <text id="3007:17920" name="昵称" x="0" y="0" width="333.75" height="13.75" />
+            <frame id="3007:17921" name="Text Input" x="0" y="19.75" width="333.75" height="43">
+              <text id="3007:17922" name="林岚" x="12.625" y="13" width="308.5" height="17" />
+            </frame>
+          </frame>
+          <frame id="3007:17923" name="Label" x="20" y="162.4862823486328" width="333.75" height="62.744140625">
+            <text id="3007:17924" name="性别" x="0" y="0" width="333.75" height="13.75" />
+            <frame id="3007:17925" name="Dropdown" x="0" y="19.75" width="333.75" height="43" />
+          </frame>
+          <frame id="3007:17926" name="Label" x="20" y="237.23037719726562" width="333.75" height="62.744140625">
+            <text id="3007:17927" name="出生日期" x="0" y="0" width="333.75" height="13.75" />
+            <frame id="3007:17928" name="Date Picker" x="0" y="19.75" width="333.75" height="43" />
+          </frame>
+          <frame id="3007:17929" name="Button" x="20" y="311.9744873046875" width="333.75" height="42">
+            <text id="3007:17930" name="保存资料" x="144.375" y="13.5" width="45" height="15" />
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17933" name="Section - 社交关系" x="16503.62890625" y="-11596.2578125" width="375" height="812">
+    <frame id="3007:17934" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17935" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17936" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17937" name="网络状态" x="319.01171875" y="5" width="32.98828125" height="11.9921875">
+        <frame id="3007:17938" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17940" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17943" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:17944" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:17945" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:17947" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:17948" name="社交关系" x="0" y="0" width="81" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:17981" name="Tab List - 关系类型:margin" x="0" y="91.998046875" width="375" height="47.625">
+      <frame id="3007:17949" name="Tab List - 关系类型" x="20" y="0" width="335" height="34.625">
+        <frame id="3007:17950" name="Tab" x="0" y="0" width="40" height="34">
+          <text id="3007:17951" name="关注 36" x="0" y="9" width="40" height="15" />
+        </frame>
+        <frame id="3007:17952" name="Tab" x="60" y="0" width="44" height="34">
+          <text id="3007:17953" name="粉丝 128" x="0" y="9" width="44" height="15" />
+        </frame>
+        <frame id="3007:17954" name="Tab" x="124" y="0" width="37" height="34">
+          <text id="3007:17955" name="好友 18" x="0" y="9" width="37" height="15" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="3007:17956" name="Container" x="0" y="139.623046875" width="375" height="672.376953125">
+      <frame id="3007:17980" name="Container:margin" x="0" y="0" width="373.7578125" height="151.24609375">
+        <frame id="3007:17957" name="Container" x="16" y="0" width="341.7578125" height="137.24609375">
+          <frame id="3007:17958" name="Container" x="0.625" y="0.625" width="340.5078125" height="68">
+            <frame id="3007:17959" name="Image (林岚头像)" x="12" y="11.6904296875" width="43.994140625" height="43.994140625" />
+            <frame id="3007:17960" name="Container" x="65.994140625" y="17.6875" width="194.263671875" height="32">
+              <frame id="3007:17961" name="Bold Text" x="0" y="0" width="194.263671875" height="15">
+                <text id="3007:17962" name="林岚" x="0" y="0" width="23" height="15" />
+              </frame>
+              <frame id="3007:17964" name="Text" x="0" y="15" width="194.263671875" height="17">
+                <text id="3007:17965" name="英语口语练习 · 最近刚记录进展" x="0" y="4" width="130" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:17968" name="Button" x="270.2578125" y="19.5625" width="58.25" height="28.25">
+              <text id="3007:17969" name="查看资料" x="10.625" y="7.625" width="37" height="13" />
+            </frame>
+          </frame>
+          <frame id="3007:17970" name="Container" x="0.625" y="68.625" width="340.5078125" height="68">
+            <frame id="3007:17971" name="Image (晓禾头像)" x="12" y="12.0029296875" width="43.994140625" height="43.994140625" />
+            <frame id="3007:17972" name="Container" x="65.994140625" y="18" width="194.263671875" height="32">
+              <frame id="3007:17973" name="Bold Text" x="0" y="0" width="194.263671875" height="15">
+                <text id="3007:17974" name="晓禾" x="0" y="0" width="23" height="15" />
+              </frame>
+              <frame id="3007:17975" name="Text" x="0" y="15" width="194.263671875" height="17">
+                <text id="3007:17976" name="骑行目标 · 昨天在线" x="0" y="4" width="85" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:17978" name="Button" x="270.2578125" y="19.875" width="58.25" height="28.25">
+              <text id="3007:17979" name="查看资料" x="10.625" y="7.625" width="37" height="13" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:17982" name="Section - 谁看过我" x="16896.62890625" y="-11596.2578125" width="375" height="812">
+    <frame id="3007:17983" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:17984" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:17985" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:17986" name="网络状态" x="319.01171875" y="5" width="32.98828125" height="11.9921875">
+        <frame id="3007:17987" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:17989" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:17992" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:17993" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:17994" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:17996" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:17997" name="谁看过我" x="0" y="0" width="81" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:17998" name="Paragraph" x="0" y="91.998046875" width="373.75" height="31">
+      <text id="3007:17999" name="最近到访你的公开资料的同伴。" x="20" y="0" width="155" height="17" />
+    </frame>
+    <frame id="3007:18000" name="Container" x="0" y="122.998046875" width="375" height="689.001953125">
+      <frame id="3007:18022" name="Container:margin" x="0" y="0" width="373.7578125" height="151.24609375">
+        <frame id="3007:18001" name="Container" x="16" y="0" width="341.7578125" height="137.24609375">
+          <frame id="3007:18002" name="Container" x="0.625" y="0.625" width="340.5078125" height="68">
+            <frame id="3007:18003" name="Image (晓禾头像)" x="12" y="11.6904296875" width="43.994140625" height="43.994140625" />
+            <frame id="3007:18004" name="Container" x="65.994140625" y="17.6875" width="203.263671875" height="32">
+              <frame id="3007:18005" name="Bold Text" x="0" y="0" width="203.263671875" height="15">
+                <text id="3007:18006" name="晓禾" x="0" y="0" width="23" height="15" />
+              </frame>
+              <frame id="3007:18007" name="Text" x="0" y="15" width="203.263671875" height="17">
+                <text id="3007:18008" name="今天 10:32 · 也在坚持日常运动" x="0" y="4" width="129" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:18010" name="Button" x="279.2578125" y="19.5625" width="49.25" height="28.25">
+              <text id="3007:18011" name="看资料" x="10.625" y="7.625" width="28" height="13" />
+            </frame>
+          </frame>
+          <frame id="3007:18012" name="Container" x="0.625" y="68.625" width="340.5078125" height="68">
+            <frame id="3007:18013" name="Image (林岚头像)" x="12" y="12.0029296875" width="43.994140625" height="43.994140625" />
+            <frame id="3007:18014" name="Container" x="65.994140625" y="18" width="203.263671875" height="32">
+              <frame id="3007:18015" name="Bold Text" x="0" y="0" width="203.263671875" height="15">
+                <text id="3007:18016" name="林岚" x="0" y="0" width="23" height="15" />
+              </frame>
+              <frame id="3007:18017" name="Text" x="0" y="15" width="203.263671875" height="17">
+                <text id="3007:18018" name="昨天 19:08 · 最近在线" x="0" y="4" width="93" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:18020" name="Button" x="279.2578125" y="19.875" width="49.25" height="28.25">
+              <text id="3007:18021" name="看资料" x="10.625" y="7.625" width="28" height="13" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:18024" name="Section - 每日签到" x="17289.62890625" y="-11596.2578125" width="375" height="812">
+    <frame id="3007:18025" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:18026" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:18027" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:18028" name="网络状态" x="319.01171875" y="5" width="32.98828125" height="11.9921875">
+        <frame id="3007:18029" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:18031" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:18034" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:18035" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:18036" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:18038" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:18039" name="每日签到" x="0" y="0" width="81" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:18040" name="Container" x="0" y="91.998046875" width="375" height="720.001953125">
+      <frame id="3007:18070" name="Container:margin" x="0" y="0" width="373.76953125" height="69.25">
+        <frame id="3007:18041" name="Container" x="16" y="0" width="341.76953125" height="69.25">
+          <frame id="3007:18042" name="Bold Text" x="14.625" y="14.625" width="312.51953125" height="20">
+            <text id="3007:18043" name="连续签到 3 天" x="0" y="0" width="87" height="20" />
+          </frame>
+          <frame id="3007:18045" name="Text" x="14.625" y="34.625" width="312.51953125" height="20">
+            <text id="3007:18046" name="记录你今天为目标留出的时间。签到只用于个人习惯记录。" x="0" y="5" width="263" height="15" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:18071" name="Section:margin" x="0" y="69.25" width="373.7619934082031" height="165.3125">
+        <frame id="3007:18048" name="Section" x="16" y="12" width="341.7619934082031" height="153.3125">
+          <frame id="3007:18049" name="Heading 2" x="13.625" y="13.625" width="314.51171875" height="18">
+            <text id="3007:18050" name="本周记录" x="0" y="0" width="52" height="18" />
+          </frame>
+          <frame id="3007:18067" name="Container:margin" x="13.625" y="31.625" width="314.5119934082031" height="108.0625">
+            <frame id="3007:18051" name="Container" x="0" y="9" width="314.5119934082031" height="99.0625">
+              <frame id="3007:18052" name="Container" x="0" y="0" width="314.51202392578125" height="36.5625">
+                <frame id="3007:18053" name="Text" x="-0.00002288818359375" y="10" width="67.998046875" height="15.9375">
+                  <text id="3007:18054" name="周一" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:18055" name="Bold Text" x="77.9981689453125" y="10" width="236.513671875" height="15.9375">
+                  <text id="3007:18056" name="已签到 · 记录 20 分钟阅读" x="0" y="0" width="134" height="16" />
+                </frame>
+              </frame>
+              <frame id="3007:18057" name="Container" x="-0.0000152587890625" y="36.5625" width="314.51202392578125" height="36.5625">
+                <frame id="3007:18058" name="Text" x="-0.00002288818359375" y="10" width="67.998046875" height="15.9375">
+                  <text id="3007:18059" name="周二" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:18060" name="Bold Text" x="77.9981689453125" y="10" width="236.513671875" height="15.9375">
+                  <text id="3007:18061" name="已签到 · 完成英语口语练习" x="0" y="0" width="135" height="16" />
+                </frame>
+              </frame>
+              <frame id="3007:18062" name="Container" x="-0.0000152587890625" y="73.125" width="314.51202392578125" height="25.9375">
+                <frame id="3007:18063" name="Text" x="-0.00002288818359375" y="10" width="67.998046875" height="15.9375">
+                  <text id="3007:18064" name="今天" x="0" y="0" width="21" height="14" />
+                </frame>
+                <frame id="3007:18065" name="Bold Text" x="77.9981689453125" y="10" width="236.513671875" height="15.9375">
+                  <text id="3007:18066" name="尚未签到" x="0" y="0" width="45" height="16" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:18072" name="Button:margin" x="0" y="234.5625" width="373.748046875" height="72">
+        <frame id="3007:18068" name="Button" x="16" y="14" width="341.748046875" height="44">
+          <text id="3007:18069" name="今日签到" x="148.3740234375" y="14.5" width="45" height="15" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:18073" name="Section - 我的认证" x="17682.62890625" y="-11596.2578125" width="375" height="812">
+    <frame id="3007:18074" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:18075" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:18076" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:18077" name="网络状态" x="319.01171875" y="5" width="32.98828125" height="11.9921875">
+        <frame id="3007:18078" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:18080" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:18083" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:18084" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:18085" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:18087" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:18088" name="我的认证" x="0" y="0" width="81" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:18089" name="Container" x="0" y="91.998046875" width="375" height="720.001953125">
+      <frame id="3007:18112" name="Container:margin" x="0" y="0" width="374.25" height="83.25">
+        <frame id="3007:18090" name="Container" x="16" y="0" width="342.25" height="83.25">
+          <frame id="3007:18091" name="Bold Text" x="14.625" y="14.625" width="312.51953125" height="20">
+            <text id="3007:18092" name="基础资料已完善" x="0" y="0" width="98" height="20" />
+          </frame>
+          <frame id="3007:18095" name="Text:margin" x="14.625" y="34.625" width="313" height="34">
+            <text id="3007:18094" name="认证用于帮助同伴辨认真实账号。当前为原型演示，不会采集或上传证件信息。" x="0" y="5" width="313" height="29" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:18113" name="Section:margin" x="0" y="83.25" width="373.76171875" height="150.25">
+        <frame id="3007:18096" name="Section" x="16" y="12" width="341.76171875" height="138.25">
+          <frame id="3007:18097" name="Heading 2" x="13.625" y="13.625" width="314.51171875" height="18">
+            <text id="3007:18098" name="认证状态" x="0" y="0" width="52" height="18" />
+          </frame>
+          <frame id="3007:18109" name="Container:margin" x="13.625" y="31.625" width="314.51171875" height="51">
+            <frame id="3007:18099" name="Container" x="0" y="9" width="314.51171875" height="42">
+              <frame id="3007:18100" name="Text" x="0" y="13.6875" width="51" height="14">
+                <text id="3007:18101" name="资料完整度" x="0" y="0" width="51" height="14" />
+              </frame>
+              <frame id="3007:18102" name="Bold Text" x="283.51171875" y="13.6875" width="31" height="14">
+                <text id="3007:18103" name="已完成" x="0" y="0" width="31" height="14" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:18104" name="Container" x="13.625" y="82.625" width="314.51171875" height="42">
+            <frame id="3007:18105" name="Text" x="0" y="14" width="41" height="14">
+              <text id="3007:18106" name="真人认证" x="0" y="0" width="41" height="14" />
+            </frame>
+            <frame id="3007:18107" name="Bold Text" x="273.51171875" y="14" width="41" height="14">
+              <text id="3007:18108" name="尚未认证" x="0" y="0" width="41" height="14" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:18114" name="Button:margin" x="0" y="233.5" width="373.748046875" height="72">
+        <frame id="3007:18110" name="Button" x="16" y="14" width="341.748046875" height="44">
+          <text id="3007:18111" name="查看认证说明" x="137.3740234375" y="14.5" width="67" height="15" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:18115" name="Section - 我的动态" x="16503.62890625" y="-10766.265625" width="375" height="812">
+    <frame id="3007:18116" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:18117" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:18118" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:18119" name="网络状态" x="319.01171875" y="5" width="32.98828125" height="11.9921875">
+        <frame id="3007:18120" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:18122" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:18125" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:18126" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:18127" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:18129" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:18130" name="我的动态" x="0" y="0" width="81" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:18131" name="Container" x="0" y="91.998046875" width="375" height="720.001953125">
+      <frame id="3007:18132" name="Paragraph" x="0" y="0" width="373.75" height="17">
+        <text id="3007:18133" name="你分享的练习记录和日常近况。" x="20" y="0" width="155" height="17" />
+      </frame>
+      <frame id="3007:18170" name="Article:margin" x="0" y="17" width="374.25" height="203.4765625">
+        <frame id="3007:18134" name="Article" x="16" y="14" width="342.25" height="189.4765625">
+          <frame id="3007:18154" name="Container" x="13.625" y="13.625" width="315" height="18.748046875">
+            <text id="3007:18135" name="今天 09:40 · 公开" x="-0.001953125" y="6.873046875" width="76" height="13" />
+          </frame>
+          <frame id="3007:18152" name="Paragraph:margin" x="13.625" y="32.373046875" width="315" height="45">
+            <text id="3007:18138" name="练完旅行场景对话，今天比上次更顺一点。准备下次试试在咖啡店点单。" x="0" y="10" width="315" height="35" />
+          </frame>
+          <frame id="3007:18153" name="Container:margin" x="13.625" y="77.373046875" width="314.51171875" height="65.478515625">
+            <frame id="3007:18140" name="Container" x="0" y="10" width="314.51171875" height="55.478515625">
+              <frame id="3007:18141" name="Bold Text" x="12.624832153320312" y="12.625" width="289.27734375" height="13.75">
+                <text id="3007:18142" name="英语口语练习 · 第 3 次练习" x="0" y="0" width="127" height="14" />
+              </frame>
+              <frame id="3007:18143" name="Text" x="12.624832153320312" y="30.375" width="289.27734375" height="12.5">
+                <text id="3007:18144" name="每周 2 次 · 语音交流" x="0" y="0" width="87" height="13" />
+              </frame>
+            </frame>
+          </frame>
+          <frame id="3007:18145" name="Container" x="13.625" y="142.8515625" width="314.51171875" height="33">
+            <frame id="3007:18146" name="Button" x="0" y="9" width="34" height="24">
+              <text id="3007:18147" name="鼓励 12" x="0" y="5" width="34" height="14" />
+            </frame>
+            <frame id="3007:18148" name="Button" x="50" y="9" width="30" height="24">
+              <text id="3007:18149" name="评论 3" x="0" y="5" width="30" height="14" />
+            </frame>
+            <frame id="3007:18150" name="Button" x="96" y="9" width="21" height="24">
+              <text id="3007:18151" name="更多" x="0" y="5" width="21" height="14" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:18171" name="Article:margin" x="0" y="220.4765625" width="373.76171875" height="138.998046875">
+        <frame id="3007:18155" name="Article" x="16" y="12" width="341.76171875" height="114.998046875">
+          <frame id="3007:18168" name="Container" x="13.625" y="13.625" width="314.51171875" height="18.748046875">
+            <text id="3007:18156" name="10 月 29 日 · 好友可见" x="-0.001953125" y="6.873046875" width="96" height="13" />
+          </frame>
+          <frame id="3007:18157" name="Paragraph" x="13.625" y="32.373046875" width="314.51171875" height="28">
+            <text id="3007:18158" name="周末读完了一本短篇集，记下了两个想和伙伴聊聊的段落。" x="0" y="10" width="288" height="18" />
+          </frame>
+          <frame id="3007:18159" name="Container" x="13.625" y="60.373046875" width="314.51171875" height="41">
+            <frame id="3007:18160" name="Button" x="0" y="18" width="30" height="24">
+              <text id="3007:18161" name="鼓励 8" x="0" y="5" width="30" height="14" />
+            </frame>
+            <frame id="3007:18162" name="Button" x="46" y="18" width="30" height="24">
+              <text id="3007:18163" name="评论 2" x="0" y="5" width="30" height="14" />
+            </frame>
+            <frame id="3007:18164" name="Button" x="92" y="18" width="21" height="24">
+              <text id="3007:18165" name="更多" x="0" y="5" width="21" height="14" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:18172" name="Section - 我的视频" x="16896.62890625" y="-10766.265625" width="375" height="812">
+    <frame id="3007:18173" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:18174" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:18175" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:18176" name="网络状态" x="319.01171875" y="5" width="32.98828125" height="11.9921875">
+        <frame id="3007:18177" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:18179" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:18182" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:18183" name="Button - 返回我的" x="19" y="10" width="40" height="40">
+        <frame id="3007:18184" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:18186" name="Heading 1" x="69" y="15.5" width="231" height="29">
+        <text id="3007:18187" name="我的视频" x="0" y="0" width="81" height="29" />
+      </frame>
+      <frame id="3007:18188" name="Button" x="310" y="22" width="46" height="16">
+        <text id="3007:18189" name="＋ 上传" x="6" y="1" width="34" height="14" />
+      </frame>
+    </frame>
+    <frame id="3007:18190" name="Container" x="0" y="91.998046875" width="375" height="720.001953125">
+      <frame id="3007:18191" name="Paragraph" x="0" y="0" width="373.75" height="17">
+        <text id="3007:18192" name="管理你拍摄的原创练习视频。选择的视频只在本机预览，不会上传。" x="20" y="0" width="332" height="17" />
+      </frame>
+      <frame id="3007:18202" name="Container:margin" x="0" y="17" width="373.7578125" height="95.125">
+        <frame id="3007:18193" name="Container" x="16" y="16" width="341.7578125" height="79.125">
+          <frame id="3007:18194" name="Bold Text" x="20.625" y="20.625" width="300.5078125" height="21">
+            <text id="3007:18195" name="还没有发布视频" x="104.75390625" y="0" width="91" height="18" />
+          </frame>
+          <frame id="3007:18198" name="Container" x="20.625" y="41.625" width="300.5078125" height="16.875">
+            <text id="3007:18196" name="拍一段练习过程，分享给想一起练习的同伴。" x="30.25390625" y="0.625" width="240" height="17" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="3007:18203" name="Button:margin" x="0" y="112.125" width="373.748046875" height="74">
+        <frame id="3007:18199" name="Button" x="16" y="16" width="341.748046875" height="44">
+          <text id="3007:18200" name="选择本机视频" x="137.3740234375" y="14.5" width="67" height="15" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:18204" name="Section - 黑名单" x="17289.62890625" y="-10766.265625" width="375" height="812">
+    <frame id="3007:18205" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:18206" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:18207" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:18208" name="Text" x="338.005859375" y="5" width="13.994140625" height="11.9921875">
+        <frame id="3007:18209" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:18211" name="Header" x="0" y="27.998046875" width="375" height="64">
+      <frame id="3007:18212" name="Button - 返回设置" x="19" y="10" width="40" height="40">
+        <frame id="3007:18213" name="Icon" x="11.50390625" y="11.50390625" width="16.9921875" height="16.9921875" />
+      </frame>
+      <frame id="3007:18215" name="Heading 1" x="69" y="15.5" width="287" height="29">
+        <text id="3007:18216" name="黑名单" x="0" y="0" width="61" height="29" />
+      </frame>
+    </frame>
+    <frame id="3007:18242" name="Paragraph:margin" x="0" y="91.998046875" width="375" height="47">
+      <text id="3007:18218" name="屏蔽后，对方无法向你发消息或查看你的公开动态。你可以随时解除屏蔽。" x="20" y="0" width="334" height="33" />
+    </frame>
+    <frame id="3007:18219" name="Container" x="0" y="138.998046875" width="375" height="673.001953125">
+      <frame id="3007:18241" name="Section:margin" x="0" y="0" width="373.76171875" height="163.859375">
+        <frame id="3007:18220" name="Section" x="16" y="0" width="341.76171875" height="151.859375">
+          <frame id="3007:18221" name="Container" x="13.625" y="13.625" width="314.51171875" height="62.6171875">
+            <frame id="3007:18222" name="Image (林岚头像)" x="0" y="10" width="41.9921875" height="41.9921875" />
+            <frame id="3007:18223" name="Container" x="51.9921875" y="16.99609375" width="196.26953125" height="28">
+              <frame id="3007:18224" name="Bold Text" x="0" y="0" width="196.26953125" height="14">
+                <text id="3007:18225" name="林岚" x="0" y="0" width="21" height="14" />
+              </frame>
+              <frame id="3007:18226" name="Text" x="0" y="14" width="196.26953125" height="14">
+                <text id="3007:18227" name="已屏蔽" x="0" y="3" width="28" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:18229" name="Button" x="258.26171875" y="17.87109375" width="56.25" height="26.25">
+              <text id="3007:18230" name="解除屏蔽" x="9.625" y="6.625" width="37" height="13" />
+            </frame>
+          </frame>
+          <frame id="3007:18231" name="Container" x="13.625" y="76.2421875" width="314.51171875" height="61.9921875">
+            <frame id="3007:18232" name="Image (晓禾头像)" x="0" y="10" width="41.9921875" height="41.9921875" />
+            <frame id="3007:18233" name="Container" x="51.9921875" y="16.99609375" width="196.26953125" height="28">
+              <frame id="3007:18234" name="Bold Text" x="0" y="0" width="196.26953125" height="14">
+                <text id="3007:18235" name="晓禾" x="0" y="0" width="21" height="14" />
+              </frame>
+              <frame id="3007:18236" name="Text" x="0" y="14" width="196.26953125" height="14">
+                <text id="3007:18237" name="已屏蔽" x="0" y="3" width="28" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:18239" name="Button" x="258.26171875" y="17.87109375" width="56.25" height="26.25">
+              <text id="3007:18240" name="解除屏蔽" x="9.625" y="6.625" width="37" height="13" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="3007:18265" name="Section - 看进展 (同伴成长 · 首页、看进展、消息与我的页原型)" x="16896" y="-15391" width="375" height="818.310546875">
+    <frame id="3007:18266" name="Container" x="0" y="0" width="375" height="27.998046875">
+      <frame id="3007:18267" name="Text" x="23" y="5" width="23" height="17">
+        <text id="3007:18268" name="9:41" x="0" y="0" width="23" height="17" />
+      </frame>
+      <frame id="3007:18270" name="Text" x="300.017578125" y="5" width="51.982421875" height="11.9921875">
+        <frame id="3007:18271" name="Icon" x="0" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:18273" name="Icon" x="18.994140625" y="0" width="13.994140625" height="11.9921875" />
+        <frame id="3007:18276" name="Icon" x="37.98828125" y="0" width="13.994140625" height="11.9921875" />
+      </frame>
+    </frame>
+    <frame id="3007:18280" name="Header" x="0" y="27.998046875" width="375" height="54">
+      <frame id="3007:18281" name="Heading 1" x="19" y="12" width="74" height="27">
+        <text id="3007:18282" name="看进展" x="0" y="0" width="74" height="27" />
+      </frame>
+    </frame>
+    <frame id="3007:18284" name="Container" x="0" y="81.998046875" width="375" height="670.31640625">
+      <frame id="3007:18285" name="Section" x="0" y="0" width="375" height="654.734375">
+        <frame id="3007:18286" name="Container" x="0" y="0" width="375" height="41">
+          <frame id="3007:18287" name="Heading 2" x="20" y="8" width="60" height="21">
+            <text id="3007:18288" name="最近进展" x="0" y="0" width="60" height="21" />
+          </frame>
+          <frame id="3007:18290" name="Text" x="304" y="11.5" width="51" height="14">
+            <text id="3007:18291" name="按时间排列" x="0" y="0" width="51" height="14" />
+          </frame>
+        </frame>
+        <frame id="3007:18392" name="进展类型:margin" x="0" y="41" width="373.7578125" height="30.99609375">
+          <frame id="3007:18293" name="进展类型" x="16" y="0" width="341.7578125" height="30.99609375">
+            <frame id="3007:18294" name="Button" x="4" y="0" width="44.25" height="31">
+              <text id="3007:18295" name="全部" x="11.625" y="8.5" width="21" height="14" />
+            </frame>
+            <frame id="3007:18297" name="Button" x="55.25" y="0" width="64.25" height="31">
+              <text id="3007:18298" name="语言表达" x="11.625" y="8.5" width="41" height="14" />
+            </frame>
+            <frame id="3007:18300" name="Button" x="126.5" y="0" width="64.25" height="31">
+              <text id="3007:18301" name="兴趣技能" x="11.625" y="8.5" width="41" height="14" />
+            </frame>
+            <frame id="3007:18302" name="Button" x="197.75" y="0" width="64.25" height="31">
+              <text id="3007:18303" name="日常习惯" x="11.625" y="8.5" width="41" height="14" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:18393" name="Article:margin" x="0" y="71.99609375" width="376.77001953125" height="281.869140625">
+          <frame id="3007:18304" name="Article" x="16" y="15" width="344.77001953125" height="266.869140625">
+            <frame id="3007:18305" name="Container" x="14.625" y="14.625" width="312.51953125" height="43.994140625">
+              <frame id="3007:18306" name="Image (晓禾头像)" x="0" y="0" width="43.994140625" height="43.994140625">
+                <frame id="3007:18307" name="Image (晓禾头像) (image)" x="1.625" y="1.625" width="40.744140625" height="40.744140625" />
+              </frame>
+              <frame id="3007:18308" name="Container" x="53.994140625" y="5.4970703125" width="195.525390625" height="33">
+                <frame id="3007:18309" name="Bold Text" x="0" y="0" width="195.525390625" height="17">
+                  <text id="3007:18310" name="晓禾 · 今天" x="0" y="0" width="62" height="17" />
+                </frame>
+                <frame id="3007:18312" name="Text" x="0" y="17" width="195.525390625" height="16">
+                  <text id="3007:18313" name="目标：每周完成两次轻松骑行" x="0" y="4" width="132" height="14" />
+                </frame>
+              </frame>
+              <frame id="3007:18315" name="Text" x="259.51953125" y="10.4970703125" width="53" height="23">
+                <text id="3007:18316" name="兴趣技能" x="8" y="5" width="37" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:18349" name="Paragraph:margin" x="14.625" y="58.619140625" width="313" height="52">
+              <text id="3007:18319" name="第二次骑行完成了。今天先按舒服的速度骑，回来后感觉比上次轻松一点。" x="0" y="13" width="313" height="39" />
+            </frame>
+            <frame id="3007:18350" name="晓禾的骑行练习数据:margin" x="14.625" y="110.619140625" width="312.51953125" height="95">
+              <frame id="3007:18321" name="晓禾的骑行练习数据" x="0" y="11" width="312.51953125" height="84">
+                <frame id="3007:18322" name="Container" x="0" y="0" width="312.51953125" height="84">
+                  <frame id="3007:18323" name="Container" x="12" y="20.6279296875" width="80.95703125" height="42.744140625">
+                    <frame id="3007:18324" name="Text" x="0" y="0" width="80.95703125" height="13.75">
+                      <text id="3007:18325" name="骑行练习 · 第 2 次" x="0" y="0" width="86" height="14" />
+                    </frame>
+                    <frame id="3007:18326" name="Bold Text" x="-0.0000152587890625" y="18.749980926513672" width="80.95703125" height="23.994140625">
+                      <text id="3007:18327" name="8.4" x="0" y="0" width="28" height="24" />
+                      <text id="3007:18330" name="公里" x="33.49609375" y="7.75" width="23" height="14" />
+                    </frame>
+                  </frame>
+                  <frame id="3007:18332" name="Container" x="204.5234375" y="34.5" width="95.99609375" height="15">
+                    <text id="3007:18333" name="比上次轻松一点" x="11.625" y="0" width="71" height="15" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <frame id="3007:18351" name="Container:margin" x="14.625" y="205.619140625" width="315.52001953125" height="46.625">
+              <frame id="3007:18335" name="Container" x="0" y="11" width="315.52001953125" height="35.625">
+                <frame id="3007:18336" name="Button" x="0" y="10.625" width="41" height="25">
+                  <frame id="3007:18337" name="Icon" x="0" y="5" width="15" height="15" />
+                  <frame id="3007:18339" name="Text" x="20" y="5.5" width="21" height="14">
+                    <text id="3007:18340" name="鼓励" x="0" y="0" width="21" height="14" />
+                  </frame>
+                </frame>
+                <frame id="3007:18341" name="Button" x="61" y="10.625" width="41" height="25">
+                  <frame id="3007:18342" name="Icon" x="0" y="5" width="15" height="15" />
+                  <frame id="3007:18344" name="Text" x="20" y="5.5" width="21" height="14">
+                    <text id="3007:18345" name="回应" x="0" y="0" width="21" height="14" />
+                  </frame>
+                </frame>
+                <frame id="3007:18346" name="Button" x="122" y="12.125" width="193.52000427246094" height="22">
+                  <text id="3007:18347" name="聊聊进展" x="152.52000427246094" y="4" width="41" height="14" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+        <frame id="3007:18394" name="Article:margin" x="0" y="353.865234375" width="376.77001953125" height="278.869140625">
+          <frame id="3007:18352" name="Article" x="16" y="12" width="344.77001953125" height="266.869140625">
+            <frame id="3007:18353" name="Container" x="14.625" y="14.625" width="312.51953125" height="43.994140625">
+              <frame id="3007:18354" name="Image (林岚头像)" x="0" y="0" width="43.994140625" height="43.994140625">
+                <frame id="3007:18355" name="Image (林岚头像) (image)" x="1.625" y="1.625" width="40.744140625" height="40.744140625" />
+              </frame>
+              <frame id="3007:18356" name="Container" x="53.994140625" y="5.4970703125" width="195.525390625" height="33">
+                <frame id="3007:18357" name="Bold Text" x="0" y="0" width="195.525390625" height="17">
+                  <text id="3007:18358" name="林岚 · 昨天" x="0" y="0" width="62" height="17" />
+                </frame>
+                <frame id="3007:18359" name="Text" x="0" y="17" width="195.525390625" height="16">
+                  <text id="3007:18360" name="目标：英语口语练习" x="0" y="4" width="91" height="14" />
+                </frame>
+              </frame>
+              <frame id="3007:18362" name="Text" x="259.51953125" y="10.4970703125" width="53" height="23">
+                <text id="3007:18363" name="语言表达" x="8" y="5" width="37" height="13" />
+              </frame>
+            </frame>
+            <frame id="3007:18389" name="Paragraph:margin" x="14.625" y="58.619140625" width="313" height="52">
+              <text id="3007:18365" name="把旅行自我介绍又录了一遍，这次少停顿了几次，终于能连着说完。" x="0" y="13" width="313" height="39" />
+            </frame>
+            <frame id="3007:18390" name="林岚的口语练习数据:margin" x="14.625" y="110.619140625" width="312.51953125" height="95">
+              <frame id="3007:18366" name="林岚的口语练习数据" x="0" y="11" width="312.51953125" height="84">
+                <frame id="3007:18367" name="Container" x="0" y="0" width="312.51953125" height="84">
+                  <frame id="3007:18368" name="Container" x="12" y="20.6279296875" width="117.001953125" height="42.744140625">
+                    <frame id="3007:18369" name="Text" x="0" y="0" width="117.001953125" height="13.75">
+                      <text id="3007:18370" name="录音练习 · 第 4 次" x="0" y="0" width="86" height="14" />
+                    </frame>
+                    <frame id="3007:18371" name="Bold Text" x="0.00002288818359375" y="18.749980926513672" width="117.001953125" height="23.994140625">
+                      <text id="3007:18372" name="旅行自我介绍" x="0" y="0" width="116" height="24" />
+                    </frame>
+                  </frame>
+                  <frame id="3007:18373" name="Container" x="204.5234375" y="34.5" width="95.99609375" height="15">
+                    <text id="3007:18374" name="停顿比上次少" x="11.625" y="0" width="61" height="15" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <frame id="3007:18391" name="Container:margin" x="14.625" y="205.619140625" width="315.52001953125" height="46.625">
+              <frame id="3007:18375" name="Container" x="0" y="11" width="315.52001953125" height="35.625">
+                <frame id="3007:18376" name="Button" x="0" y="10.625" width="41" height="25">
+                  <frame id="3007:18377" name="Icon" x="0" y="5" width="15" height="15" />
+                  <frame id="3007:18379" name="Text" x="20" y="5.5" width="21" height="14">
+                    <text id="3007:18380" name="鼓励" x="0" y="0" width="21" height="14" />
+                  </frame>
+                </frame>
+                <frame id="3007:18381" name="Button" x="61" y="10.625" width="41" height="25">
+                  <frame id="3007:18382" name="Icon" x="0" y="5" width="15" height="15" />
+                  <frame id="3007:18384" name="Text" x="20" y="5.5" width="21" height="14">
+                    <text id="3007:18385" name="回应" x="0" y="0" width="21" height="14" />
+                  </frame>
+                </frame>
+                <frame id="3007:18386" name="Button" x="122" y="12.125" width="193.52000427246094" height="22">
+                  <text id="3007:18387" name="聊聊进展" x="152.52000427246094" y="4" width="41" height="14" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="3007:18395" name="Navigation - 主导航" x="0" y="752.314453125" width="375" height="65.99609375">
+      <frame id="3007:18396" name="Button" x="8.999977111816406" y="6.624996185302734" width="88.935546875" height="53.37890625">
+        <frame id="3007:18397" name="Icon" x="32.96875" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:18401" name="发现" x="33.9677734375" y="33.1884765625" width="21" height="14" />
+      </frame>
+      <frame id="3007:18403" name="Button" x="97.93549346923828" y="6.624996185302734" width="88.9453125" height="53.37890625">
+        <frame id="3007:18404" name="Icon" x="32.9736328125" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:18408" name="看进展" x="28.97265625" y="33.1884765625" width="31" height="14" />
+      </frame>
+      <frame id="3007:18410" name="Button" x="186.88076782226562" y="6.624996185302734" width="88.935546875" height="53.37890625">
+        <frame id="3007:18411" name="Icon" x="32.96875" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:18415" name="消息" x="33.9677734375" y="33.1884765625" width="21" height="14" />
+      </frame>
+      <frame id="3007:18416" name="Button" x="275.8162841796875" y="6.624996185302734" width="88.9453125" height="53.37890625">
+        <frame id="3007:18417" name="Icon" x="32.9736328125" y="6.1904296875" width="22.998046875" height="22.998046875" />
+        <text id="3007:18421" name="我的" x="33.97265625" y="33.1884765625" width="21" height="14" />
+      </frame>
+    </frame>
+  </frame>
+</canvas>
+IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

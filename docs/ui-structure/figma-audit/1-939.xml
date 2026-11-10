@@ -1,0 +1,241 @@
+<canvas id="1:939" name="组件" x="0" y="0" width="0" height="0">
+  <section id="77:1391" name="icon" x="-11514" y="-1168" width="3262" height="2389">
+    <frame id="9:534" name="icon/箭头" x="79" y="77" width="167" height="64">
+      <symbol id="9:533" name="方向=左" x="20" y="20.000001907348633" width="24" height="24" />
+      <symbol id="9:532" name="方向=上" x="77" y="20.000001907348633" width="24.000001049073035" height="24.000001049073262" />
+      <symbol id="9:531" name="方向=右" x="113" y="44" width="24.00000209814607" height="24.000002098146524" />
+      <symbol id="9:530" name="方向=下" x="123" y="44" width="24.000001049073035" height="24.00000104907349" />
+    </frame>
+    <symbol id="9:958" name="icon/随机" x="123" y="199" width="24" height="24" />
+    <symbol id="286:3163" name="icon/添加" x="167" y="199" width="24" height="24" />
+    <frame id="9:1037" name="icon/性别" x="439" y="77" width="108" height="64">
+      <symbol id="9:1036" name="Property 1=male" x="21" y="20" width="24" height="24" />
+      <symbol id="9:1035" name="Property 1=woman" x="63" y="20" width="24" height="24" />
+    </frame>
+    <frame id="16:1243" name="icon/关闭" x="296" y="77" width="93" height="64">
+      <symbol id="16:1224" name="Property 1=无背景" x="20" y="20" width="24" height="24" />
+      <symbol id="16:1242" name="Property 1=有背景" x="49" y="16" width="28" height="28" />
+    </frame>
+    <symbol id="21:2697" name="icon/loading" x="79" y="199" width="24" height="24" />
+    <frame id="190:1851" name="icon/占位" x="597" y="78" width="176" height="62">
+      <symbol id="9:466" name="Size=24" x="64" y="14" width="24" height="24" />
+      <symbol id="190:1861" name="Size=20" x="37" y="14" width="20" height="20" />
+      <symbol id="190:1874" name="Size=16" x="13" y="14" width="16" height="16" />
+      <symbol id="190:1856" name="Size=32" x="132" y="14" width="32" height="32" />
+      <symbol id="190:1852" name="Size=28" x="96" y="14" width="28" height="28" />
+    </frame>
+    <symbol id="248:2835" name="icon/消息" x="79" y="269" width="52" height="52" />
+    <frame id="280:3035" name="icon/通话" x="823" y="77" width="115" height="64">
+      <symbol id="280:3034" name="Type=HangUp" x="20" y="20" width="24" height="24" />
+      <symbol id="280:3033" name="Type=Answer" x="71" y="20" width="24" height="24" />
+    </frame>
+    <frame id="310:3455" name="icon/播放" x="981" y="77" width="189" height="64">
+      <symbol id="310:3454" name="Play=Off, Style=Icon" x="20" y="20" width="24" height="24" />
+      <symbol id="310:3453" name="Play=On, Style=Icon" x="53" y="20" width="24" height="24" />
+      <symbol id="310:3514" name="Play=Off, Style=Fill" x="96" y="16" width="32" height="32" />
+      <symbol id="310:3513" name="Play=On, Style=Fill" x="140" y="16" width="32" height="32" />
+    </frame>
+    <symbol id="370:4063" name="icon/缩小" x="211" y="199" width="24" height="24" />
+    <symbol id="370:4072" name="icon/更多" x="258" y="199" width="24" height="24" />
+    <symbol id="371:4099" name="icon/评论" x="302" y="199" width="24" height="24" />
+    <symbol id="372:4117" name="icon/点赞" x="340" y="196" width="24" height="24" />
+    <symbol id="2708:11186" name="icon/小窗" x="377" y="196" width="24" height="24" />
+    <symbol id="2710:11382" name="icon/免提" x="529" y="196" width="24" height="24" />
+    <frame id="2710:11297" name="icon/麦克风" x="415" y="193" width="94" height="64">
+      <symbol id="2710:11296" name="状态=on" x="20" y="20" width="24" height="24" />
+      <symbol id="2710:11295" name="状态=off" x="50" y="20" width="24" height="24" />
+    </frame>
+    <symbol id="2710:11629" name="icon/拨打语音" x="563" y="259" width="24" height="24" />
+    <symbol id="2710:11648" name="icon/拨打视频" x="599" y="259" width="24" height="24" />
+    <symbol id="2729:12548" name="icon/视频" x="710" y="191" width="24" height="24" />
+    <symbol id="2744:1156" name="icon/挂断" x="752" y="191" width="24" height="24" />
+    <symbol id="2782:9852" name="icon/编辑资料" x="802" y="186" width="24" height="24" />
+    <symbol id="2782:9851" name="icon/在线客服" x="837" y="186" width="24" height="24" />
+    <symbol id="2782:9849" name="icon/在线客服" x="869" y="186" width="24" height="24" />
+    <symbol id="2782:9850" name="icon/关于我们" x="897" y="186" width="24" height="24" />
+    <symbol id="2788:10847" name="icon/我的动态" x="929" y="186" width="24" height="24" />
+    <symbol id="2791:10863" name="icon/我的认证" x="965" y="186" width="24" height="24" />
+    <symbol id="2793:11004" name="icon/我的积分" x="1004" y="186" width="24" height="24" />
+    <symbol id="2796:11058" name="icon/我的金币" x="1036" y="186" width="24" height="24" />
+    <symbol id="2755:5631" name="icon/表情" x="731" y="259" width="24" height="24" />
+    <symbol id="2866:8116" name="icon/ID" x="777" y="309" width="24" height="24" />
+    <symbol id="2759:7062" name="icon/键盘" x="778" y="259" width="24" height="24" />
+    <symbol id="2812:12133" name="icon/旅游足迹" x="855" y="267" width="24" height="24" />
+    <symbol id="2710:11665" name="icon/发送图片" x="635" y="259" width="24" height="24" />
+    <symbol id="2727:11936" name="icon/反转摄像头" x="668" y="194" width="24" height="24" />
+    <frame id="2759:6745" name="icon/语音" x="663" y="252" width="64" height="96">
+      <symbol id="2752:5610" name="Direction=Left" x="20" y="20" width="24" height="24" />
+      <symbol id="2759:6744" name="Direction=Right" x="20" y="52" width="24" height="24" />
+    </frame>
+    <symbol id="2812:12088" name="icon/运动" x="897" y="267" width="24" height="24" />
+    <symbol id="2812:12114" name="icon/音乐" x="932" y="267" width="24" height="24" />
+    <symbol id="2812:12123" name="icon/影视" x="967.1435546875" y="267" width="24" height="24" />
+    <symbol id="2812:12132" name="icon/美食" x="1005.71484375" y="267" width="24" height="24" />
+    <symbol id="2866:7380" name="icon/标签/在线" x="1376" y="89" width="46" height="20" />
+    <frame id="2866:7403" name="icon/性别" x="533" y="319" width="101.7861328125" height="64">
+      <symbol id="2866:7392" name="性别=男" x="20" y="20" width="24" height="24" />
+      <symbol id="2866:7402" name="性别=女" x="57.7861328125" y="20" width="24" height="24" />
+    </frame>
+    <frame id="2866:7449" name="icon/标签/性别" x="1376" y="148" width="161" height="60">
+      <symbol id="2866:7423" name="性别=男" x="20" y="20" width="51" height="20" />
+      <symbol id="2866:7448" name="性别=女" x="86" y="20" width="51" height="20" />
+    </frame>
+    <frame id="2866:8087" name="icon/标签/常规" x="1376" y="227" width="229" height="112">
+      <symbol id="2866:8086" name="size=小, 风格=填充" x="9" y="10" width="48" height="20" />
+      <symbol id="2866:8195" name="size=中, 风格=填充" x="9" y="38" width="62" height="24" />
+      <symbol id="2899:17613" name="size=大, 风格=填充" x="9" y="71" width="74" height="28" />
+      <symbol id="2874:8352" name="size=icon, 风格=线框" x="82" y="10" width="51" height="20" />
+      <symbol id="2874:8356" name="size=中, 风格=线框" x="98" y="38" width="65" height="27" />
+      <symbol id="2899:17618" name="size=大, 风格=线框" x="114" y="71" width="77" height="31" />
+    </frame>
+  </section>
+  <section id="77:1447" name="基础组件" x="-14826" y="-1168" width="3262" height="2389">
+    <frame id="245:2801" name="业务组件/消息列表" x="69" y="132" width="415" height="225">
+      <symbol id="222:2666" name="Property 1=用户消息" x="20" y="20" width="375" height="76" />
+      <symbol id="245:2800" name="Property 1=系统消息" x="20" y="124" width="375" height="76" />
+    </frame>
+    <frame id="306:3330" name="业务组件/聊天气泡" x="69" y="402" width="415" height="1096">
+      <symbol id="306:3329" name="MessageType=Text, Sender=Self" x="20" y="20" width="375" height="57" />
+      <symbol id="307:3360" name="MessageType=Voice, Sender=Self" x="20" y="172" width="375" height="60" />
+      <symbol id="2716:11710" name="MessageType=Call, Sender=Self" x="22" y="731" width="375" height="60" />
+      <symbol id="306:3328" name="MessageType=Text, Sender=Advered" x="20" y="96" width="375" height="57" />
+      <symbol id="307:3392" name="MessageType=Voice, Sender=Advered" x="20" y="248" width="375" height="60" />
+      <symbol id="2716:11742" name="MessageType=Call, Sender=Advered" x="20" y="807" width="375" height="60" />
+      <symbol id="308:3413" name="MessageType=Image/Video, Sender=Self" x="20" y="327" width="375" height="174" />
+      <symbol id="308:3412" name="MessageType=Image/Video, Sender=Advered" x="20" y="529" width="375" height="174" />
+      <symbol id="310:3610" name="MessageType=Tips" x="22" y="900" width="375" height="44" />
+    </frame>
+    <frame id="339:3981" name="业务组件/用户列表" x="69" y="1801" width="415" height="491">
+      <symbol id="339:3980" name="Property 1=Group 18" x="35" y="175" width="175" height="258" />
+      <symbol id="339:3979" name="Property 1=Group 12" x="20" y="20" width="375" height="121" />
+    </frame>
+    <symbol id="2920:25160" name="业务组件/用户列表" x="595" y="172" width="375" height="72" />
+  </section>
+  <section id="77:1446" name="基础页面组件" x="-21450" y="-1168" width="3262" height="2389">
+    <symbol id="9:1149" name="基础页面组件/遮罩" x="119" y="115" width="375" height="812" />
+    <frame id="1:990" name="基础页面组件/状态栏" x="119" y="1033" width="415" height="163">
+      <symbol id="1:989" name="style=Light" x="20" y="20" width="375" height="48" />
+      <symbol id="1:988" name="style=Dark" x="20" y="95" width="375" height="48" />
+    </frame>
+    <frame id="1:1002" name="基础页面组件/Home" x="119" y="1223" width="415" height="133">
+      <symbol id="1:1001" name="Property 1=Light" x="20" y="20" width="375" height="34" />
+      <symbol id="1:1000" name="Property 1=Dark" x="20" y="79" width="375" height="34" />
+    </frame>
+    <symbol id="1:944" name="AppIcon" x="1606" y="115" width="1024" height="1024" />
+    <frame id="2745:5256" name="基础页面组件/背景" x="613" y="95" width="860" height="852">
+      <symbol id="2:1035" name="Property 1=1" x="20" y="20" width="375" height="812" />
+      <symbol id="2745:5255" name="Property 1=2" x="465" y="20" width="375" height="812" />
+    </frame>
+  </section>
+  <section id="77:1964" name="基础组件" x="-18138" y="-1168" width="3262" height="2389">
+    <frame id="21:1536" name="基础组件/弹出/弹窗" x="69" y="148" width="832" height="629">
+      <symbol id="21:1535" name="按钮数量=2, 类型=标题+文本" x="20" y="20" width="295" height="196" />
+      <symbol id="82:2060" name="按钮数量=按钮数量3, 类型=图标+标题+文本" x="356" y="20" width="295" height="230" />
+      <symbol id="21:1534" name="按钮数量=1, 类型=标题+文本" x="20" y="252" width="295" height="196" />
+      <symbol id="82:2078" name="按钮数量=按钮数量4, 类型=图标+标题+文本" x="356" y="325" width="295" height="230" />
+    </frame>
+    <frame id="77:2025" name="基础组件/弹出/Toast" x="539" y="1400" width="234" height="74">
+      <symbol id="77:2026" name="Property 1=Default" x="40.5" y="19" width="153" height="36" />
+    </frame>
+    <frame id="85:2876" name="基础组件/弹出/资料录入" x="69" y="866" width="832" height="445.0000305175781">
+      <symbol id="84:2506" name="类型=文本输入" x="20" y="20" width="375" height="239" />
+      <symbol id="85:2736" name="类型=选择器" x="437" y="20" width="375" height="405.0000305175781" />
+    </frame>
+    <frame id="200:2372" name="基础组件/弹出/选项弹窗" x="69" y="1400" width="415" height="650">
+      <symbol id="200:2371" name="Locotion=Center, Type=Title" x="20" y="94" width="375" height="54" />
+      <symbol id="200:2370" name="Locotion=Center, Type=Icon+Title" x="20" y="389" width="375" height="54" />
+      <symbol id="200:2369" name="Locotion=Top, Type=Title" x="20" y="20" width="375" height="54" />
+      <symbol id="200:2368" name="Locotion=Top, Type=Icon+Title" x="20" y="315" width="375" height="54" />
+      <symbol id="200:2367" name="Locotion=Top, Type=Tiitle+Icon" x="20" y="502" width="375" height="54" />
+      <symbol id="200:2366" name="Locotion=Center, Type=Tiitle+Icon" x="20" y="576" width="375" height="54" />
+      <symbol id="200:2365" name="Locotion=Below, Type=Title" x="20" y="168" width="375" height="88" />
+    </frame>
+    <frame id="9:576" name="基础组件/输入框" x="1115" y="148" width="1169" height="368">
+      <symbol id="9:562" name="类型=手机号输入框, 状态=未输入" x="20" y="20" width="335" height="48" />
+      <symbol id="9:575" name="类型=手机号输入框, 状态=已输入" x="20" y="96" width="335" height="48" />
+      <symbol id="9:801" name="类型=验证码输入框, 状态=未输入" x="394" y="20" width="335" height="48" />
+      <symbol id="9:800" name="类型=验证码输入框, 状态=重新获取" x="394" y="168" width="335" height="48" />
+      <symbol id="9:799" name="类型=验证码输入框, 状态=已输入" x="394" y="94" width="335" height="48" />
+      <symbol id="21:1930" name="类型=文本输入, 状态=未输入" x="776" y="39" width="335" height="70" />
+      <symbol id="21:1939" name="类型=文本输入, 状态=已输入" x="776" y="131" width="335" height="70" />
+    </frame>
+    <frame id="21:1891" name="基础组件/键盘" x="1115" y="616" width="1169" height="347">
+      <symbol id="21:1886" name="Property 1=文字键盘" x="20" y="20" width="375" height="276" />
+      <symbol id="21:1890" name="Property 1=数字键盘" x="528" y="36" width="375" height="291" />
+    </frame>
+    <frame id="21:2712" name="基础组件/按钮" x="1115" y="1063" width="1828" height="246">
+      <symbol id="9:458" name="尺寸=大, 风格=Fill, 按钮方向=左" x="42" y="20" width="301" height="52" />
+      <symbol id="2693:10903" name="尺寸=大, 风格=Fill, 按钮方向=右" x="833" y="20" width="301" height="52" />
+      <symbol id="248:2887" name="尺寸=大, 风格=Line, 按钮方向=左" x="42" y="160" width="301" height="52" />
+      <symbol id="2693:10906" name="尺寸=大, 风格=Line, 按钮方向=右" x="833" y="160" width="301" height="52" />
+      <symbol id="74:1274" name="尺寸=大, 风格=Text, 按钮方向=左" x="42" y="92" width="301" height="52" />
+      <symbol id="2693:10909" name="尺寸=大, 风格=Text, 按钮方向=右" x="833" y="92" width="301" height="52" />
+      <symbol id="9:778" name="尺寸=小, 风格=Fill, 按钮方向=左" x="600" y="30" width="80" height="32" />
+      <symbol id="2693:10912" name="尺寸=小, 风格=Fill, 按钮方向=右" x="1391" y="30" width="80" height="32" />
+      <symbol id="248:2890" name="尺寸=小, 风格=Line, 按钮方向=左" x="600" y="170" width="80" height="32" />
+      <symbol id="2693:10915" name="尺寸=小, 风格=Line, 按钮方向=右" x="1391" y="170" width="80" height="32" />
+      <symbol id="74:1266" name="尺寸=小, 风格=Text, 按钮方向=左" x="600" y="88" width="80" height="32" />
+      <symbol id="2693:10918" name="尺寸=小, 风格=Text, 按钮方向=右" x="1391" y="88" width="80" height="32" />
+      <symbol id="338:3869" name="尺寸=中, 风格=Fill, 按钮方向=左" x="401" y="22" width="151" height="40" />
+      <symbol id="2693:10921" name="尺寸=中, 风格=Fill, 按钮方向=右" x="1192" y="22" width="151" height="40" />
+      <symbol id="338:3875" name="尺寸=中, 风格=Text, 按钮方向=左" x="401" y="94" width="151" height="40" />
+      <symbol id="2693:10925" name="尺寸=中, 风格=Text, 按钮方向=右" x="1192" y="94" width="151" height="40" />
+      <symbol id="338:3880" name="尺寸=中, 风格=Line, 按钮方向=左" x="401" y="162" width="151" height="40" />
+      <symbol id="2693:10929" name="尺寸=中, 风格=Line, 按钮方向=右" x="1192" y="162" width="151" height="40" />
+    </frame>
+    <frame id="84:2646" name="基础组件/选择器" x="1115" y="1409" width="1169" height="288">
+      <symbol id="84:2645" name="数量=3" x="20" y="20" width="343" height="190" />
+      <symbol id="84:2643" name="数量=2" x="413" y="20" width="343" height="190" />
+      <symbol id="84:2644" name="数量=1" x="806" y="20" width="343" height="190" />
+    </frame>
+    <frame id="4:145" name="基础组件/选择" x="539" y="1520" width="82" height="56">
+      <symbol id="4:144" name="选中=off" x="20" y="20" width="16" height="16" />
+      <symbol id="4:143" name="选中=on" x="46" y="20" width="16" height="16" />
+    </frame>
+    <symbol id="4:375" name="基础组件/勾选协议" x="539" y="1626" width="222" height="16" />
+    <frame id="192:2070" name="基础组件/开关" x="539" y="1692" width="92" height="109">
+      <symbol id="192:2069" name="Type=OFF" x="20" y="20" width="52" height="28" />
+      <symbol id="192:2068" name="Type=ON" x="20" y="61" width="52" height="28" />
+    </frame>
+    <frame id="222:2656" name="基础控件/标签/通知" x="539" y="1851" width="95" height="55">
+      <symbol id="222:2650" name="type=Number" x="20" y="20" width="28" height="15" />
+      <symbol id="222:2655" name="type=Point" x="67" y="24" width="8" height="8" />
+    </frame>
+    <frame id="334:3800" name="基础控件/标签/在线" x="539" y="1915" width="107" height="58">
+      <symbol id="323:3710" name="Type=Text" x="20" y="20" width="46" height="18" />
+      <symbol id="334:3799" name="Type=Point" x="77" y="20" width="12" height="12" />
+    </frame>
+    <symbol id="338:3919" name="基础控件/标签/认证" x="539" y="1994" width="68" height="18" />
+    <frame id="192:1940" name="基础组件/分割线" x="69" y="2139" width="415" height="73.5">
+      <symbol id="192:1939" name="Type=center" x="20" y="20" width="375" height="1" />
+      <symbol id="192:1938" name="Type=Right" x="20" y="53" width="375" height="1" />
+    </frame>
+    <frame id="192:2012" name="基础控件/Bar" x="2431" y="148" width="383" height="319">
+      <symbol id="192:2011" name="Type=Title+Next" x="20" y="19" width="343" height="57" />
+      <symbol id="239:2733" name="Type=Tiitle+Text+Next" x="20" y="245" width="343" height="56" />
+      <symbol id="197:2180" name="Type=Title+Tex" x="20" y="171" width="343" height="56" />
+      <symbol id="192:2049" name="Type=Title+Switch" x="20" y="94" width="343" height="56" />
+    </frame>
+    <frame id="70:1110" name="基础控件/Bar" x="2431" y="559" width="415" height="156">
+      <symbol id="9:476" name="类型=图标+文本+图标" x="20" y="20" width="375" height="48" />
+      <symbol id="70:1111" name="类型=图标+文本+按钮" x="20" y="88" width="375" height="48" />
+    </frame>
+    <symbol id="2812:11610" name="基础组件/上传图片" x="1115" y="1766" width="93" height="93" />
+    <symbol id="2889:11342" name="基础组件/缺省页" x="1115" y="1959" width="157" height="224" />
+    <frame id="2905:19954" name="基础组件/Tab/组件" x="2334" y="1409" width="249" height="69">
+      <symbol id="2905:19870" name="Property 1=已选中" x="20" y="20" width="93" height="29" />
+      <symbol id="2905:19882" name="Property 1=未选中" x="136" y="20" width="93" height="21" />
+    </frame>
+    <frame id="2920:25647" name="基础组件/Tab" x="2343" y="1522" width="415" height="175">
+      <symbol id="2905:19920" name="对齐=左对齐" x="20" y="20" width="375" height="47" />
+      <symbol id="2920:25646" name="对齐=居中对齐" x="20" y="108" width="375" height="47" />
+    </frame>
+  </section>
+  <frame id="2899:13587" name="基础组件/输入框" x="-16578" y="729" width="750" height="345">
+    <symbol id="2899:13546" name="类型=文本输入, 状态=未输入" x="20" y="20" width="343" height="216" />
+    <symbol id="2899:13586" name="类型=单行输入, 状态=未输入" x="20" y="251" width="343" height="74" />
+    <symbol id="2899:13562" name="类型=文本输入, 状态=已输入" x="387" y="20" width="343" height="216" />
+    <symbol id="2899:13585" name="类型=单行输入, 状态=已输入" x="387" y="251" width="343" height="74" />
+  </frame>
+</canvas>
+IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

@@ -1,17 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../../core/storage/mock_json_store.dart';
+import '../../data/order_mock_repository.dart';
 
 import '../bloc/order_bloc.dart';
 import '../bloc/order_event.dart';
-import '../bloc/order_state.dart';
+import '../../data/order_state.dart';
 
-class OrderPage extends StatelessWidget {
+final _orderRepository = Provider(
+  (ref) => OrderMockRepository(ref.watch(mockJsonStoreProvider)),
+);
+final _initialOrder = FutureProvider.autoDispose(
+  (ref) => ref.watch(_orderRepository).load(),
+);
+
+class OrderPage extends ConsumerWidget {
   const OrderPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(create: (_) => OrderBloc(), child: const _OrderView());
-  }
+  Widget build(BuildContext context, WidgetRef ref) => ref
+      .watch(_initialOrder)
+      .when(
+        loading: () =>
+            const Scaffold(body: Center(child: CircularProgressIndicator())),
+        error: (_, _) => Scaffold(
+          body: Center(
+            child: TextButton(
+              onPressed: () => ref.invalidate(_initialOrder),
+              child: const Text('读取失败，点击重试'),
+            ),
+          ),
+        ),
+        data: (initial) => BlocProvider(
+          create: (_) => OrderBloc(ref.read(_orderRepository), initial),
+          child: const _OrderView(),
+        ),
+      );
 }
 
 class _OrderView extends StatelessWidget {

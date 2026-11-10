@@ -9,17 +9,22 @@ import 'app/config/app_globals.dart';
 import 'app/config/application_config.dart';
 import 'app/navigation/app_navigator.dart';
 import 'app/navigation/app_router.dart';
-import 'app/navigation/route_names.dart';
 import 'app/theme/app_theme.dart';
+import 'shared/widgets/feedback/network_status_banner.dart';
 
 Future<void> main() async {
   await ApplicationBootstrapper.instance.bootstrap();
 }
 
 class Application extends ConsumerWidget {
-  const Application({super.key, required this.startPage});
+  const Application({
+    super.key,
+    required this.startPage,
+    this.showNetworkStatus = false,
+  });
 
   final Widget startPage;
+  final bool showNetworkStatus;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -33,7 +38,7 @@ class Application extends ConsumerWidget {
       builder: (context, child) {
         return MaterialApp(
           ///这里是路由跳转页面配置，如果不需要路由跳转，则不需要配置
-          initialRoute: RouteNames.example,
+          //initialRoute: RouteNames.example,
 
           ///这里是路由跳转页面配置，如果不需要路由跳转，则不需要配置
           onGenerateRoute: AppRouter.onGenerateRoute,
@@ -49,7 +54,18 @@ class Application extends ConsumerWidget {
                 data: MediaQuery.of(
                   context,
                 ).copyWith(textScaler: const TextScaler.linear(1)),
-                child: child ?? const SizedBox.shrink(),
+                child: Stack(
+                  children: [
+                    child ?? const SizedBox.shrink(),
+                    if (showNetworkStatus)
+                      const Positioned(
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        child: NetworkStatusBanner(),
+                      ),
+                  ],
+                ),
               );
             },
           ),

@@ -5,18 +5,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/config/config_env.dart';
 import '../../core/network/client/dio_holder.dart';
-import '../../shared/widgets/feedback/network_status_banner.dart';
 import '../app.dart';
 
 /// 运行应用
 void runAppHandle(Widget startPage, ProviderContainer container) {
-  Widget app = Stack(
-    alignment: Alignment.center,
-    children: [
-      Application(startPage: startPage),
-      const Positioned(top: 0, left: 0, right: 0, child: NetworkStatusBanner()),
-    ],
-  );
+  Widget app = Application(startPage: startPage, showNetworkStatus: true);
 
   if (EnvConfig.enableUme) {
     PluginManager.instance

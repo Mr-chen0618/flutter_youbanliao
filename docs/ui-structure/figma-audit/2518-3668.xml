@@ -1,0 +1,936 @@
+<canvas id="2518:3668" name="岛" x="0" y="0" width="0" height="0">
+  <frame id="2518:3669" name="首页" x="0" y="0" width="375" height="1814">
+    <rounded-rectangle id="2524:5082" name="image 3" x="0" y="0" width="375" height="813" />
+    <rounded-rectangle id="2526:5453" name="Background" x="0" y="0" width="375" height="267" />
+    <instance id="2524:5058" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <instance id="2538:5722" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <text id="2524:5080" name="岛屿漫游" x="16" y="56" width="76" height="27" />
+    <frame id="2526:5146" name="Group 5210" x="195" y="103" width="160" height="238">
+      <vector id="2526:5130" name="Rectangle 4161" x="195" y="105" width="160" height="236" />
+      <vector id="2526:5137" name="Rectangle 4164" x="195" y="105" width="160" height="135" />
+      <rounded-rectangle id="2526:5134" name="image 2" x="195" y="103" width="160" height="125" />
+      <frame id="2526:5140" name="Group 5207" x="225" y="292" width="101" height="37">
+        <vector id="2526:5141" name="Rectangle 4160" x="225" y="292" width="101" height="37" />
+        <frame id="2526:5286" name="Group 5214" x="249" y="301" width="54" height="19">
+          <text id="2526:5142" name="登岛" x="262.501953125" y="301" width="26.996109008789062" height="19" />
+          <frame id="2526:5279" name="Group 5212" x="297.5" y="304.72714614868164" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2526:5282" name="Group 5213" x="254.50000047683716" y="304.72714614868164" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2526:5143" name="深夜聊两句" x="235" y="236" width="80" height="22" />
+      <text id="2526:5144" name="1.2k人来过" x="243" y="262" width="63" height="18" />
+    </frame>
+    <frame id="2526:5389" name="Group 5212" x="195" y="361" width="160" height="238">
+      <vector id="2526:5390" name="Rectangle 4161" x="195" y="363" width="160" height="236" />
+      <vector id="2526:5391" name="Rectangle 4164" x="195" y="363" width="160" height="135" />
+      <rounded-rectangle id="2526:5392" name="image 2" x="195" y="361" width="160" height="125" />
+      <frame id="2526:5393" name="Group 5207" x="225.00000381469727" y="550.0000152587891" width="101" height="37">
+        <vector id="2526:5394" name="Rectangle 4160" x="225.00000381469727" y="550.0000152587891" width="101" height="37" />
+        <frame id="2526:5395" name="Group 5214" x="249.00000381469727" y="559.0000152587891" width="54" height="19">
+          <text id="2526:5396" name="登岛" x="262.50195693969727" y="559.0000152587891" width="26.996109008789062" height="19" />
+          <frame id="2526:5397" name="Group 5212" x="297.50000381469727" y="562.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2526:5400" name="Group 5213" x="254.50000429153442" y="562.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2526:5403" name="周末户外" x="243" y="494" width="64" height="22" />
+      <text id="2526:5404" name="1.2k人来过" x="243" y="520" width="63" height="18" />
+    </frame>
+    <frame id="2526:5421" name="Group 5214" x="195" y="619" width="160" height="238">
+      <vector id="2526:5422" name="Rectangle 4161" x="195" y="621" width="160" height="236" />
+      <vector id="2526:5423" name="Rectangle 4164" x="195" y="621" width="160" height="135" />
+      <rounded-rectangle id="2526:5424" name="image 2" x="195" y="619" width="160" height="125" />
+      <frame id="2526:5425" name="Group 5207" x="225.00000381469727" y="808.0000152587891" width="101" height="37">
+        <vector id="2526:5426" name="Rectangle 4160" x="225.00000381469727" y="808.0000152587891" width="101" height="37" />
+        <frame id="2526:5427" name="Group 5214" x="249.00000381469727" y="817.0000152587891" width="54" height="19">
+          <text id="2526:5428" name="登岛" x="262.50195693969727" y="817.0000152587891" width="26.996109008789062" height="19" />
+          <frame id="2526:5429" name="Group 5212" x="297.50000381469727" y="820.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2526:5432" name="Group 5213" x="254.50000429153442" y="820.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2526:5435" name="最近在听" x="243" y="752" width="64" height="22" />
+      <text id="2526:5436" name="1.2k人来过" x="243" y="778" width="63" height="18" />
+    </frame>
+    <frame id="2548:5940" name="Group 5216" x="195" y="877" width="160" height="238">
+      <vector id="2548:5941" name="Rectangle 4161" x="195" y="879" width="160" height="236" />
+      <vector id="2548:5942" name="Rectangle 4164" x="195" y="879" width="160" height="135" />
+      <rounded-rectangle id="2548:5943" name="image 2" x="195" y="877" width="160" height="125" />
+      <frame id="2548:5944" name="Group 5207" x="225.00000381469727" y="1066.000015258789" width="101" height="37">
+        <vector id="2548:5945" name="Rectangle 4160" x="225.00000381469727" y="1066.000015258789" width="101" height="37" />
+        <frame id="2548:5946" name="Group 5214" x="249.00000381469727" y="1075.000015258789" width="54" height="19">
+          <text id="2548:5947" name="登岛" x="262.50195693969727" y="1075.000015258789" width="26.996109008789062" height="19" />
+          <frame id="2548:5948" name="Group 5212" x="297.50000381469727" y="1078.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2548:5951" name="Group 5213" x="254.50000429153442" y="1078.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2548:5954" name="旅游慢行" x="243" y="1010" width="64" height="22" />
+      <text id="2548:5955" name="1.2k人来过" x="243" y="1036" width="63" height="18" />
+    </frame>
+    <frame id="2548:5972" name="Group 5218" x="195" y="1135" width="160" height="238">
+      <vector id="2548:5973" name="Rectangle 4161" x="195" y="1137" width="160" height="236" />
+      <vector id="2548:5974" name="Rectangle 4164" x="195" y="1137" width="160" height="135" />
+      <rounded-rectangle id="2548:5975" name="image 2" x="195" y="1135" width="160" height="125" />
+      <frame id="2548:5976" name="Group 5207" x="225.00000381469727" y="1324.000015258789" width="101" height="37">
+        <vector id="2548:5977" name="Rectangle 4160" x="225.00000381469727" y="1324.000015258789" width="101" height="37" />
+        <frame id="2548:5978" name="Group 5214" x="249.00000381469727" y="1333.000015258789" width="54" height="19">
+          <text id="2548:5979" name="登岛" x="262.50195693969727" y="1333.000015258789" width="26.996109008789062" height="19" />
+          <frame id="2548:5980" name="Group 5212" x="297.50000381469727" y="1336.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2548:5983" name="Group 5213" x="254.50000429153442" y="1336.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2548:5986" name="书页岛" x="251" y="1268" width="48" height="22" />
+      <text id="2548:5987" name="1.2k人来过" x="243" y="1294" width="63" height="18" />
+    </frame>
+    <frame id="2548:6004" name="Group 5220" x="195" y="1392" width="160" height="238">
+      <vector id="2548:6005" name="Rectangle 4161" x="195" y="1394" width="160" height="236" />
+      <vector id="2548:6006" name="Rectangle 4164" x="195" y="1394" width="160" height="135" />
+      <rounded-rectangle id="2548:6007" name="image 2" x="195" y="1392" width="160" height="125" />
+      <frame id="2548:6008" name="Group 5207" x="225.00000381469727" y="1581.000015258789" width="101" height="37">
+        <vector id="2548:6009" name="Rectangle 4160" x="225.00000381469727" y="1581.000015258789" width="101" height="37" />
+        <frame id="2548:6010" name="Group 5214" x="249.00000381469727" y="1590.000015258789" width="54" height="19">
+          <text id="2548:6011" name="登岛" x="262.50195693969727" y="1590.000015258789" width="26.996109008789062" height="19" />
+          <frame id="2548:6012" name="Group 5212" x="297.50000381469727" y="1593.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2548:6015" name="Group 5213" x="254.50000429153442" y="1593.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2548:6018" name="运动场" x="251" y="1525" width="48" height="22" />
+      <text id="2548:6019" name="1.2k人来过" x="243" y="1551" width="63" height="18" />
+    </frame>
+    <frame id="2526:5303" name="Group 5211" x="20" y="167" width="160" height="236">
+      <vector id="2526:5304" name="Rectangle 4161" x="20" y="167" width="160" height="236" />
+      <vector id="2526:5305" name="Rectangle 4164" x="20" y="167" width="160" height="135" />
+      <rounded-rectangle id="2526:5306" name="image 2" x="20" y="167" width="160" height="123" />
+      <frame id="2526:5307" name="Group 5207" x="50.000003814697266" y="354.00001525878906" width="101" height="37">
+        <vector id="2526:5308" name="Rectangle 4160" x="50.000003814697266" y="354.00001525878906" width="101" height="37" />
+        <frame id="2526:5309" name="Group 5214" x="74.00000381469727" y="363.00001525878906" width="54" height="19">
+          <text id="2526:5310" name="登岛" x="87.50195693969727" y="363.00001525878906" width="26.996109008789062" height="19" />
+          <frame id="2526:5311" name="Group 5212" x="122.50000381469727" y="366.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2526:5314" name="Group 5213" x="79.50000429153442" y="366.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2526:5317" name="城市生活" x="68" y="298" width="64" height="22" />
+      <text id="2526:5318" name="1.2k人来过" x="68" y="324" width="63" height="18" />
+    </frame>
+    <frame id="2526:5405" name="Group 5213" x="20" y="425" width="160" height="236">
+      <vector id="2526:5406" name="Rectangle 4161" x="20" y="425" width="160" height="236" />
+      <vector id="2526:5407" name="Rectangle 4164" x="20" y="425" width="160" height="135" />
+      <rounded-rectangle id="2526:5408" name="image 2" x="20" y="425" width="160" height="123" />
+      <frame id="2526:5409" name="Group 5207" x="50.000003814697266" y="612.0000152587891" width="101" height="37">
+        <vector id="2526:5410" name="Rectangle 4160" x="50.000003814697266" y="612.0000152587891" width="101" height="37" />
+        <frame id="2526:5411" name="Group 5214" x="74.00000381469727" y="621.0000152587891" width="54" height="19">
+          <text id="2526:5412" name="登岛" x="87.50195693969727" y="621.0000152587891" width="26.996109008789062" height="19" />
+          <frame id="2526:5413" name="Group 5212" x="122.50000381469727" y="624.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2526:5416" name="Group 5213" x="79.50000429153442" y="624.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2526:5419" name="一起看电影" x="60" y="556" width="80" height="22" />
+      <text id="2526:5420" name="1.2k人来过" x="68" y="582" width="63" height="18" />
+    </frame>
+    <frame id="2526:5437" name="Group 5215" x="20" y="683" width="160" height="236">
+      <vector id="2526:5438" name="Rectangle 4161" x="20" y="683" width="160" height="236" />
+      <vector id="2526:5439" name="Rectangle 4164" x="20" y="683" width="160" height="135" />
+      <rounded-rectangle id="2526:5440" name="image 2" x="20" y="683" width="160" height="123" />
+      <frame id="2526:5441" name="Group 5207" x="50.000003814697266" y="870.0000152587891" width="101" height="37">
+        <vector id="2526:5442" name="Rectangle 4160" x="50.000003814697266" y="870.0000152587891" width="101" height="37" />
+        <frame id="2526:5443" name="Group 5214" x="74.00000381469727" y="879.0000152587891" width="54" height="19">
+          <text id="2526:5444" name="登岛" x="87.50195693969727" y="879.0000152587891" width="26.996109008789062" height="19" />
+          <frame id="2526:5445" name="Group 5212" x="122.50000381469727" y="882.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2526:5448" name="Group 5213" x="79.50000429153442" y="882.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2526:5451" name="美食时刻" x="68" y="814" width="64" height="22" />
+      <text id="2526:5452" name="1.2k人来过" x="68" y="840" width="63" height="18" />
+    </frame>
+    <frame id="2548:5956" name="Group 5217" x="20" y="941" width="160" height="236">
+      <vector id="2548:5957" name="Rectangle 4161" x="20" y="941" width="160" height="236" />
+      <vector id="2548:5958" name="Rectangle 4164" x="20" y="941" width="160" height="135" />
+      <rounded-rectangle id="2548:5959" name="image 2" x="20" y="941" width="160" height="123" />
+      <frame id="2548:5960" name="Group 5207" x="50.000003814697266" y="1128.000015258789" width="101" height="37">
+        <vector id="2548:5961" name="Rectangle 4160" x="50.000003814697266" y="1128.000015258789" width="101" height="37" />
+        <frame id="2548:5962" name="Group 5214" x="74.00000381469727" y="1137.000015258789" width="54" height="19">
+          <text id="2548:5963" name="登岛" x="87.50195693969727" y="1137.000015258789" width="26.996109008789062" height="19" />
+          <frame id="2548:5964" name="Group 5212" x="122.50000381469727" y="1140.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2548:5967" name="Group 5213" x="79.50000429153442" y="1140.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2548:5970" name="宠物公园" x="68" y="1072" width="64" height="22" />
+      <text id="2548:5971" name="1.2k人来过" x="68" y="1098" width="63" height="18" />
+    </frame>
+    <frame id="2548:5988" name="Group 5219" x="20" y="1199" width="160" height="236">
+      <vector id="2548:5989" name="Rectangle 4161" x="20" y="1199" width="160" height="236" />
+      <vector id="2548:5990" name="Rectangle 4164" x="20" y="1199" width="160" height="135" />
+      <rounded-rectangle id="2548:5991" name="image 2" x="20" y="1199" width="160" height="123" />
+      <frame id="2548:5992" name="Group 5207" x="50.000003814697266" y="1386.000015258789" width="101" height="37">
+        <vector id="2548:5993" name="Rectangle 4160" x="50.000003814697266" y="1386.000015258789" width="101" height="37" />
+        <frame id="2548:5994" name="Group 5214" x="74.00000381469727" y="1395.000015258789" width="54" height="19">
+          <text id="2548:5995" name="登岛" x="87.50195693969727" y="1395.000015258789" width="26.996109008789062" height="19" />
+          <frame id="2548:5996" name="Group 5212" x="122.50000381469727" y="1398.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2548:5999" name="Group 5213" x="79.50000429153442" y="1398.7271614074707" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2548:6002" name="摄影灯塔" x="68" y="1330" width="64" height="22" />
+      <text id="2548:6003" name="1.2k人来过" x="68" y="1356" width="63" height="18" />
+    </frame>
+    <frame id="2548:6020" name="Group 5221" x="20" y="1456" width="160" height="236">
+      <vector id="2548:6021" name="Rectangle 4161" x="20" y="1456" width="160" height="236" />
+      <vector id="2548:6022" name="Rectangle 4164" x="20" y="1456" width="160" height="135" />
+      <rounded-rectangle id="2548:6023" name="image 2" x="20" y="1456" width="160" height="123" />
+      <frame id="2548:6024" name="Group 5207" x="50.000003814697266" y="1643" width="101" height="37">
+        <vector id="2548:6025" name="Rectangle 4160" x="50.000003814697266" y="1643" width="101" height="37" />
+        <frame id="2548:6026" name="Group 5214" x="74.00000381469727" y="1652" width="54" height="19">
+          <text id="2548:6027" name="登岛" x="87.50195693969727" y="1652" width="26.996109008789062" height="19" />
+          <frame id="2548:6028" name="Group 5212" x="122.50000381469727" y="1655.7271461486816" width="5.500000476837158" height="11.003164291381836" />
+          <frame id="2548:6031" name="Group 5213" x="79.50000429153442" y="1655.7271461486816" width="5.500000476837158" height="11.003164291381836" />
+        </frame>
+      </frame>
+      <text id="2548:6034" name="舞蹈广场" x="68" y="1587" width="64" height="22" />
+      <text id="2548:6035" name="1.2k人来过" x="68" y="1613" width="63" height="18" />
+    </frame>
+    <frame id="2526:5231" name="Frame 5208" x="194" y="120.49967956542969" width="68.39684897661209" height="41.54696273803711">
+      <text id="2526:5229" name="本周精选" x="6" y="3" width="54.94012701511383" height="31.532533884048462" />
+    </frame>
+    <frame id="2548:6039" name="Group 5222" x="21" y="103" width="159" height="44">
+      <vector id="2526:5353" name="Rectangle 4165" x="21" y="103" width="159" height="44" />
+      <text id="2526:5355" name="今日航线：12" x="33" y="114" width="91" height="21" />
+    </frame>
+    <rounded-rectangle id="2548:6079" name="Rectangle 4175" x="243" y="57" width="113" height="34" />
+    <text id="2548:6080" name="漫游者" x="255" y="67" width="33" height="15" />
+    <ellipse id="2548:6081" name="Ellipse 17" x="292" y="62" width="24" height="24" />
+    <ellipse id="2548:6082" name="Ellipse 18" x="310" y="62" width="24" height="24" />
+    <ellipse id="2548:6083" name="Ellipse 19" x="329" y="62" width="24" height="24" />
+    <frame id="2519:4968" name="导航" x="0" y="1724" width="376" height="90">
+      <frame id="2519:4969" name="Group 5202" x="0" y="0" width="94" height="58">
+        <frame id="2519:4970" name="Group 5197" x="0" y="0" width="94" height="58">
+          <rounded-rectangle id="2519:4971" name="Rectangle 4156" x="0" y="0" width="94" height="58" />
+          <instance id="2519:4972" name="tabbar" x="33" y="7" width="28" height="28" />
+          <text id="2519:4973" name="首页" x="37" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2519:4974" name="Group 5203" x="94" y="0" width="94" height="58">
+        <frame id="2519:4975" name="Group 5197" x="94" y="0" width="94" height="58">
+          <rounded-rectangle id="2519:4976" name="Rectangle 4156" x="94" y="0" width="94" height="58" />
+          <instance id="2519:4977" name="tabbar" x="127" y="7" width="28.080066680908203" height="28" />
+          <text id="2519:4978" name="探索" x="131" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2519:4979" name="Group 5204" x="188" y="0" width="94" height="58">
+        <frame id="2519:4980" name="Group 5197" x="188" y="0" width="94" height="58">
+          <rounded-rectangle id="2519:4981" name="Rectangle 4156" x="188" y="0" width="94" height="58" />
+          <instance id="2519:4982" name="tabbar" x="221" y="7" width="28" height="28" />
+          <text id="2519:4983" name="聊天" x="225" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2519:4984" name="Group 5205" x="282" y="0" width="94" height="58">
+        <frame id="2519:4985" name="Group 5197" x="282" y="0" width="94" height="58">
+          <rounded-rectangle id="2519:4986" name="Rectangle 4156" x="282" y="0" width="94" height="58" />
+          <instance id="2519:4987" name="tabbar" x="315" y="7" width="28" height="28" />
+          <text id="2519:4988" name="我的" x="319" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <instance id="2519:4989" name="系统控件/Home" x="0" y="58" width="376" height="32" />
+    </frame>
+  </frame>
+  <frame id="2560:7559" name="欢迎新人弹窗" x="-425" y="0" width="375" height="812">
+    <vector id="2560:7562" name="Rectangle 4229" x="36" y="281" width="303" height="250.00001525878906" />
+    <frame id="2560:7577" name="Group 5311" x="142" y="292" width="91" height="25" />
+    <text id="2560:7565" name="欢迎来到" x="147" y="297" width="80" height="25" />
+    <text id="2560:7567" name="这里每一座岛屿，都是一个兴趣入口。去音乐岛听一首歌，去电影岛聊一部作品，也可以在城市、旅行或深夜聊天中，遇见和你有共同话题的人。选择一座想去的岛，开始你的第一次漫游吧。" x="52" y="334" width="271" height="105" />
+    <symbol id="2560:7582" name="Like (喜欢)" x="128" y="292.85650634765625" width="16.271313309669495" height="16.271313309669495" />
+    <instance id="2560:7583" name="Like (喜欢)" x="231.2620086669922" y="300.51409912109375" width="12.20690915232916" height="12.20690915232916" />
+    <instance id="2560:7585" name="Like (喜欢)" x="239.38577270507812" y="288" width="15.66456262769185" height="15.66456262769185" />
+    <frame id="2560:7589" name="Group 5312" x="117" y="455" width="140" height="52">
+      <rounded-rectangle id="2560:7587" name="Rectangle 4230" x="117" y="455" width="140" height="52" />
+      <text id="2560:7588" name="我知道了" x="155" y="470" width="64" height="22" />
+    </frame>
+  </frame>
+  <frame id="2535:5456" name="岛屿-声音" x="425" y="0" width="375" height="812">
+    <rounded-rectangle id="2536:5705" name="Rectangle 4166" x="0" y="0" width="375" height="235" />
+    <rounded-rectangle id="2543:5777" name="Background" x="0" y="0" width="375" height="235" />
+    <rounded-rectangle id="2535:5703" name="image 2" x="167" y="53" width="232" height="182" />
+    <text id="2536:5707" name="夜间聊两句" x="16" y="109" width="100" height="28" />
+    <frame id="2543:5806" name="Frame 5219" x="16" y="141" width="67" height="21">
+      <text id="2543:5807" name="100条声音" x="8" y="3" width="51" height="15" />
+    </frame>
+    <frame id="2543:5783" name="Frame 5217" x="87" y="141" width="69" height="21">
+      <text id="2536:5708" name="1.2k人来过" x="8" y="3" width="53" height="15" />
+    </frame>
+    <frame id="2543:5784" name="Frame 5218" x="16" y="166" width="56" height="21">
+      <text id="2543:5785" name="100岛民" x="8" y="3" width="40" height="15" />
+    </frame>
+    <instance id="2538:5711" name="基础控件/Bar" x="0" y="48" width="375" height="48" />
+    <instance id="2538:5744" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <frame id="2543:5801" name="Group 5217" x="0" y="198" width="375" height="52">
+      <rounded-rectangle id="2543:5800" name="Rectangle 4171" x="0" y="198" width="375" height="52" />
+      <frame id="2543:5799" name="Group 5216" x="16" y="209" width="84" height="30">
+        <text id="2541:5775" name="岛语" x="16" y="209" width="36" height="25" />
+        <text id="2541:5776" name="岛民" x="68" y="211" width="32" height="22" />
+        <rounded-rectangle id="2543:5779" name="Rectangle 4169" x="27" y="236" width="12" height="3" />
+      </frame>
+    </frame>
+    <frame id="2548:5823" name="Group 5220" x="16" y="254" width="343" height="239">
+      <rounded-rectangle id="2543:5798" name="Rectangle 4170" x="16" y="254" width="343" height="239" />
+      <rounded-rectangle id="2543:5802" name="Rectangle 4172" x="28" y="266" width="101" height="101" />
+      <rounded-rectangle id="2543:5803" name="Rectangle 4173" x="137" y="266" width="101" height="101" />
+      <rounded-rectangle id="2543:5804" name="Rectangle 4174" x="246" y="266" width="101" height="101" />
+      <text id="2543:5805" name="文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案" x="28" y="375" width="319" height="63" />
+      <frame id="2543:5814" name="Frame 5219" x="28" y="446" width="92" height="32">
+        <frame id="2543:5813" name="Group 5218" x="4" y="4" width="76" height="24">
+          <ellipse id="2543:5810" name="Ellipse 15" x="4" y="4" width="24" height="24" />
+          <text id="2543:5811" name="用户昵称" x="32" y="7" width="48" height="17" />
+        </frame>
+      </frame>
+      <frame id="2548:5819" name="Group 5219" x="253" y="452" width="50" height="20">
+        <frame id="2543:5815" name="Frame" x="253" y="452" width="20" height="20" />
+        <text id="2543:5818" name="点赞" x="277" y="453" width="26" height="18" />
+      </frame>
+      <frame id="2548:5820" name="Frame" x="327" y="452" width="20" height="20" />
+    </frame>
+    <frame id="2548:5824" name="Group 5221" x="16" y="505" width="343" height="239">
+      <rounded-rectangle id="2548:5825" name="Rectangle 4170" x="16" y="505" width="343" height="239" />
+      <rounded-rectangle id="2548:5826" name="Rectangle 4172" x="28" y="517" width="101" height="101" />
+      <rounded-rectangle id="2548:5827" name="Rectangle 4173" x="137" y="517" width="101" height="101" />
+      <rounded-rectangle id="2548:5828" name="Rectangle 4174" x="246" y="517" width="101" height="101" />
+      <text id="2548:5829" name="文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案" x="28" y="626" width="319" height="63" />
+      <frame id="2548:5830" name="Frame 5219" x="28" y="697" width="92" height="32">
+        <frame id="2548:5831" name="Group 5218" x="4" y="4" width="76" height="24">
+          <ellipse id="2548:5832" name="Ellipse 15" x="4" y="4" width="24" height="24" />
+          <text id="2548:5833" name="用户昵称" x="32" y="7" width="48" height="17" />
+        </frame>
+      </frame>
+      <frame id="2548:5834" name="Group 5219" x="253" y="703" width="50" height="20">
+        <frame id="2548:5835" name="Frame" x="253" y="703" width="20" height="20" />
+        <text id="2548:5837" name="点赞" x="277" y="704" width="26" height="18" />
+      </frame>
+      <frame id="2548:5838" name="Frame" x="327" y="703" width="20" height="20" />
+    </frame>
+    <frame id="2543:5788" name="Frame 5207" x="16" y="725" width="167" height="48">
+      <frame id="2543:5790" name="Frame 5214" x="52" y="13" width="64" height="22">
+        <text id="2543:5791" name="成为岛民" x="0" y="0" width="64" height="22" />
+      </frame>
+    </frame>
+    <frame id="2548:6084" name="Frame 5221" x="191" y="725" width="167" height="48">
+      <frame id="2548:6085" name="Frame 5214" x="52" y="13" width="64" height="22">
+        <text id="2548:6086" name="发布声音" x="0" y="0" width="64" height="22" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2548:6094" name="探索" x="1275" y="0" width="375" height="812">
+    <vector id="2548:6316" name="Rectangle 4176" x="16" y="56" width="343" height="44" />
+    <instance id="2548:6339" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <frame id="2548:6369" name="Frame 5224" x="20" y="60" width="334" height="36">
+      <frame id="2548:6365" name="Frame 5228" x="0" y="0" width="167" height="36">
+        <text id="2548:6364" name="发现" x="68" y="7" width="32" height="22" />
+      </frame>
+      <frame id="2548:6366" name="Group 5229" x="167" y="0" width="167" height="36">
+        <vector id="2548:6367" name="Rectangle 4177" x="167" y="0" width="167" height="36" />
+        <text id="2548:6368" name="关注" x="235" y="9" width="32" height="18" />
+      </frame>
+    </frame>
+    <frame id="2551:6384" name="Group 5230" x="16" y="108" width="167" height="207">
+      <vector id="2548:6371" name="Rectangle 4178" x="16" y="108" width="167" height="154" />
+      <text id="2551:6374" name="文案文案文案文案" x="16" y="270" width="120" height="18" />
+      <frame id="2551:6380" name="Frame 5230" x="16" y="292" width="76" height="23">
+        <text id="2551:6377" name="深夜聊两句" x="8" y="4" width="60" height="15" />
+      </frame>
+    </frame>
+    <frame id="2551:6385" name="Group 5231" x="193" y="108" width="167" height="234">
+      <vector id="2550:6373" name="Rectangle 4179" x="193" y="108" width="167" height="181" />
+      <text id="2551:6381" name="文案文案文案文案" x="193" y="297" width="120" height="18" />
+      <frame id="2551:6382" name="Frame 5231" x="193" y="319" width="64" height="23">
+        <text id="2551:6383" name="周末户外" x="8" y="4" width="48" height="15" />
+      </frame>
+    </frame>
+    <frame id="2551:6386" name="Group 5232" x="193" y="354" width="167" height="234">
+      <vector id="2551:6387" name="Rectangle 4179" x="193" y="354" width="167" height="181" />
+      <text id="2551:6388" name="文案文案文案文案" x="193" y="543" width="120" height="18" />
+      <frame id="2551:6389" name="Frame 5231" x="193" y="565" width="64" height="23">
+        <text id="2551:6390" name="宠物公园" x="8" y="4" width="48" height="15" />
+      </frame>
+    </frame>
+    <frame id="2551:6396" name="Group 5234" x="193" y="600" width="167" height="234">
+      <vector id="2551:6397" name="Rectangle 4179" x="193" y="600" width="167" height="181" />
+      <text id="2551:6398" name="文案文案文案文案" x="193" y="789" width="120" height="18" />
+      <frame id="2551:6399" name="Frame 5231" x="193" y="811" width="64" height="23">
+        <text id="2551:6400" name="周末户外" x="8" y="4" width="48" height="15" />
+      </frame>
+    </frame>
+    <frame id="2551:6391" name="Group 5233" x="16" y="327" width="167" height="234">
+      <vector id="2551:6392" name="Rectangle 4179" x="16" y="327" width="167" height="181" />
+      <text id="2551:6393" name="文案文案文案文案" x="16" y="516" width="120" height="18" />
+      <frame id="2551:6394" name="Frame 5231" x="16" y="538" width="64" height="23">
+        <text id="2551:6395" name="最近在听" x="8" y="4" width="48" height="15" />
+      </frame>
+    </frame>
+    <frame id="2551:6401" name="Group 5235" x="16" y="573" width="167" height="234">
+      <vector id="2551:6402" name="Rectangle 4179" x="16" y="573" width="167" height="181" />
+      <text id="2551:6403" name="文案文案文案文案" x="16" y="762" width="120" height="18" />
+      <frame id="2551:6404" name="Frame 5231" x="16" y="784" width="64" height="23">
+        <text id="2551:6405" name="周末户外" x="8" y="4" width="48" height="15" />
+      </frame>
+    </frame>
+    <symbol id="2560:7748" name="More (更多)" x="155" y="116" width="20" height="20" />
+    <instance id="2560:7753" name="More (更多)" x="332" y="116" width="20" height="20" />
+    <instance id="2560:7770" name="More (更多)" x="332" y="362" width="20" height="20" />
+    <instance id="2560:7775" name="More (更多)" x="155" y="335" width="20" height="20" />
+    <instance id="2560:7780" name="More (更多)" x="155" y="581" width="20" height="20" />
+    <instance id="2560:7785" name="More (更多)" x="332" y="608" width="20" height="20" />
+    <frame id="2548:6224" name="导航" x="0" y="722" width="376" height="90">
+      <frame id="2548:6225" name="Group 5202" x="0" y="0" width="94" height="58">
+        <frame id="2548:6226" name="Group 5197" x="0" y="0" width="94" height="58">
+          <rounded-rectangle id="2548:6227" name="Rectangle 4156" x="0" y="0" width="94" height="58" />
+          <instance id="2548:6228" name="tabbar" x="33" y="7" width="28" height="28" />
+          <text id="2548:6229" name="首页" x="37" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2548:6230" name="Group 5203" x="94" y="0" width="94" height="58">
+        <frame id="2548:6231" name="Group 5197" x="94" y="0" width="94" height="58">
+          <rounded-rectangle id="2548:6232" name="Rectangle 4156" x="94" y="0" width="94" height="58" />
+          <instance id="2548:6233" name="tabbar" x="127" y="7" width="28" height="28" />
+          <text id="2548:6234" name="探索" x="131" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2548:6235" name="Group 5204" x="188" y="0" width="94" height="58">
+        <frame id="2548:6236" name="Group 5197" x="188" y="0" width="94" height="58">
+          <rounded-rectangle id="2548:6237" name="Rectangle 4156" x="188" y="0" width="94" height="58" />
+          <instance id="2548:6238" name="tabbar" x="221" y="7" width="28" height="28" />
+          <text id="2548:6239" name="回响" x="225" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2548:6240" name="Group 5205" x="282" y="0" width="94" height="58">
+        <frame id="2548:6241" name="Group 5197" x="282" y="0" width="94" height="58">
+          <rounded-rectangle id="2548:6242" name="Rectangle 4156" x="282" y="0" width="94" height="58" />
+          <instance id="2548:6243" name="tabbar" x="315" y="7" width="28" height="28" />
+          <text id="2548:6244" name="我的" x="319" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <instance id="2548:6245" name="系统控件/Home" x="0" y="58" width="376" height="32" />
+    </frame>
+  </frame>
+  <frame id="2551:6406" name="岛屿-声音" x="1700" y="0" width="375" height="812">
+    <instance id="2551:6408" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <frame id="2551:6512" name="Group 5207" x="0" y="48" width="375" height="48">
+      <rounded-rectangle id="2551:6513" name="Rectangle 4159" x="0" y="48" width="375" height="48" />
+      <frame id="2551:6514" name="Group 5206" x="16" y="60" width="34" height="24">
+        <text id="2551:6515" name="聊天" x="16" y="60" width="34" height="24" />
+      </frame>
+    </frame>
+    <frame id="2551:6678" name="Frame 5238" x="16" y="96" width="343" height="76">
+      <frame id="2551:6657" name="Frame 2" x="0" y="0" width="343" height="76">
+        <frame id="2551:6658" name="Frame 1" x="0" y="0" width="343" height="76" />
+        <instance id="2551:6659" name="基础组件/分割线" x="0" y="75" width="343" height="1" />
+      </frame>
+      <frame id="2551:6677" name="Frame 5237" x="16" y="8" width="311" height="56">
+        <frame id="2551:6676" name="Group 5236" x="0" y="0" width="208" height="56">
+          <frame id="2551:6660" name="Frame 7" x="0" y="4" width="208" height="52">
+            <frame id="2551:6661" name="Frame 7" x="0" y="0" width="208" height="52">
+              <rounded-rectangle id="2551:6662" name="Rectangle 54" x="0" y="0" width="52" height="52" />
+              <frame id="2551:6663" name="Group 5" x="65" y="5" width="143" height="42">
+                <frame id="2551:6664" name="Group 6" x="65" y="5" width="143" height="42">
+                  <text id="2551:6665" name="用户昵称" x="65" y="5" width="64" height="22" />
+                  <frame id="2551:6666" name="Frame 7" x="65" y="29" width="143" height="18">
+                    <instance id="2551:6667" name="icon/占位" x="0" y="1" width="16" height="16" hidden="true" />
+                    <text id="2551:6668" name="[文本]" x="0" y="0" width="35" height="18" />
+                    <text id="2551:6669" name="这是消息外显内容" x="39" y="0" width="104" height="18" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <text id="2551:6670" name="12:12" x="315" y="0" width="28" height="17" hidden="true" />
+          </frame>
+          <instance id="2551:6671" name="基础控件/标签/通知" x="24" y="0" width="28" height="15" />
+        </frame>
+        <text id="2551:6615" name="12:12" x="283" y="0" width="28" height="17" />
+      </frame>
+    </frame>
+    <frame id="2551:6679" name="Frame 5239" x="16" y="180" width="343" height="76">
+      <frame id="2551:6680" name="Frame 2" x="0" y="0" width="343" height="76">
+        <frame id="2551:6681" name="Frame 1" x="0" y="0" width="343" height="76" />
+        <instance id="2551:6682" name="基础组件/分割线" x="0" y="75" width="343" height="1" />
+      </frame>
+      <frame id="2551:6683" name="Frame 5237" x="16" y="8" width="311" height="56">
+        <frame id="2551:6684" name="Group 5236" x="0" y="0" width="208" height="56">
+          <frame id="2551:6685" name="Frame 7" x="0" y="4" width="208" height="52">
+            <frame id="2551:6686" name="Frame 7" x="0" y="0" width="208" height="52">
+              <rounded-rectangle id="2551:6687" name="Rectangle 54" x="0" y="0" width="52" height="52" />
+              <frame id="2551:6688" name="Group 5" x="65" y="5" width="143" height="42">
+                <frame id="2551:6689" name="Group 6" x="65" y="5" width="143" height="42">
+                  <text id="2551:6690" name="用户昵称" x="65" y="5" width="64" height="22" />
+                  <frame id="2551:6691" name="Frame 7" x="65" y="29" width="143" height="18">
+                    <instance id="2551:6692" name="icon/占位" x="0" y="1" width="16" height="16" hidden="true" />
+                    <text id="2551:6693" name="[文本]" x="0" y="0" width="35" height="18" />
+                    <text id="2551:6694" name="这是消息外显内容" x="39" y="0" width="104" height="18" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <text id="2551:6695" name="12:12" x="315" y="0" width="28" height="17" hidden="true" />
+          </frame>
+          <instance id="2551:6696" name="基础控件/标签/通知" x="24" y="0" width="28" height="15" />
+        </frame>
+        <text id="2551:6697" name="12:12" x="283" y="0" width="28" height="17" />
+      </frame>
+    </frame>
+    <frame id="2551:6700" name="Frame 5240" x="16" y="264" width="343" height="76">
+      <frame id="2551:6701" name="Frame 2" x="0" y="0" width="343" height="76">
+        <frame id="2551:6702" name="Frame 1" x="0" y="0" width="343" height="76" />
+        <instance id="2551:6703" name="基础组件/分割线" x="0" y="75" width="343" height="1" />
+      </frame>
+      <frame id="2551:6704" name="Frame 5237" x="16" y="8" width="311" height="56">
+        <frame id="2551:6705" name="Group 5236" x="0" y="0" width="208" height="56">
+          <frame id="2551:6706" name="Frame 7" x="0" y="4" width="208" height="52">
+            <frame id="2551:6707" name="Frame 7" x="0" y="0" width="208" height="52">
+              <rounded-rectangle id="2551:6708" name="Rectangle 54" x="0" y="0" width="52" height="52" />
+              <frame id="2551:6709" name="Group 5" x="65" y="5" width="143" height="42">
+                <frame id="2551:6710" name="Group 6" x="65" y="5" width="143" height="42">
+                  <text id="2551:6711" name="用户昵称" x="65" y="5" width="64" height="22" />
+                  <frame id="2551:6712" name="Frame 7" x="65" y="29" width="143" height="18">
+                    <instance id="2551:6713" name="icon/占位" x="0" y="1" width="16" height="16" hidden="true" />
+                    <text id="2551:6714" name="[文本]" x="0" y="0" width="35" height="18" />
+                    <text id="2551:6715" name="这是消息外显内容" x="39" y="0" width="104" height="18" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <text id="2551:6716" name="12:12" x="315" y="0" width="28" height="17" hidden="true" />
+          </frame>
+          <instance id="2551:6717" name="基础控件/标签/通知" x="24" y="0" width="28" height="15" />
+        </frame>
+        <text id="2551:6718" name="12:12" x="283" y="0" width="28" height="17" />
+      </frame>
+    </frame>
+    <frame id="2551:6721" name="Frame 5241" x="16" y="348" width="343" height="76">
+      <frame id="2551:6722" name="Frame 2" x="0" y="0" width="343" height="76">
+        <frame id="2551:6723" name="Frame 1" x="0" y="0" width="343" height="76" />
+        <instance id="2551:6724" name="基础组件/分割线" x="0" y="75" width="343" height="1" />
+      </frame>
+      <frame id="2551:6725" name="Frame 5237" x="16" y="8" width="311" height="56">
+        <frame id="2551:6726" name="Group 5236" x="0" y="0" width="208" height="56">
+          <frame id="2551:6727" name="Frame 7" x="0" y="4" width="208" height="52">
+            <frame id="2551:6728" name="Frame 7" x="0" y="0" width="208" height="52">
+              <rounded-rectangle id="2551:6729" name="Rectangle 54" x="0" y="0" width="52" height="52" />
+              <frame id="2551:6730" name="Group 5" x="65" y="5" width="143" height="42">
+                <frame id="2551:6731" name="Group 6" x="65" y="5" width="143" height="42">
+                  <text id="2551:6732" name="用户昵称" x="65" y="5" width="64" height="22" />
+                  <frame id="2551:6733" name="Frame 7" x="65" y="29" width="143" height="18">
+                    <instance id="2551:6734" name="icon/占位" x="0" y="1" width="16" height="16" hidden="true" />
+                    <text id="2551:6735" name="[文本]" x="0" y="0" width="35" height="18" />
+                    <text id="2551:6736" name="这是消息外显内容" x="39" y="0" width="104" height="18" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <text id="2551:6737" name="12:12" x="315" y="0" width="28" height="17" hidden="true" />
+          </frame>
+          <instance id="2551:6738" name="基础控件/标签/通知" x="24" y="0" width="28" height="15" />
+        </frame>
+        <text id="2551:6739" name="12:12" x="283" y="0" width="28" height="17" />
+      </frame>
+    </frame>
+    <frame id="2551:6742" name="Frame 5242" x="16" y="432" width="343" height="76">
+      <frame id="2551:6743" name="Frame 2" x="0" y="0" width="343" height="76">
+        <frame id="2551:6744" name="Frame 1" x="0" y="0" width="343" height="76" />
+        <instance id="2551:6745" name="基础组件/分割线" x="0" y="75" width="343" height="1" />
+      </frame>
+      <frame id="2551:6746" name="Frame 5237" x="16" y="8" width="311" height="56">
+        <frame id="2551:6747" name="Group 5236" x="0" y="0" width="208" height="56">
+          <frame id="2551:6748" name="Frame 7" x="0" y="4" width="208" height="52">
+            <frame id="2551:6749" name="Frame 7" x="0" y="0" width="208" height="52">
+              <rounded-rectangle id="2551:6750" name="Rectangle 54" x="0" y="0" width="52" height="52" />
+              <frame id="2551:6751" name="Group 5" x="65" y="5" width="143" height="42">
+                <frame id="2551:6752" name="Group 6" x="65" y="5" width="143" height="42">
+                  <text id="2551:6753" name="用户昵称" x="65" y="5" width="64" height="22" />
+                  <frame id="2551:6754" name="Frame 7" x="65" y="29" width="143" height="18">
+                    <instance id="2551:6755" name="icon/占位" x="0" y="1" width="16" height="16" hidden="true" />
+                    <text id="2551:6756" name="[文本]" x="0" y="0" width="35" height="18" />
+                    <text id="2551:6757" name="这是消息外显内容" x="39" y="0" width="104" height="18" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <text id="2551:6758" name="12:12" x="315" y="0" width="28" height="17" hidden="true" />
+          </frame>
+          <instance id="2551:6759" name="基础控件/标签/通知" x="24" y="0" width="28" height="15" />
+        </frame>
+        <text id="2551:6760" name="12:12" x="283" y="0" width="28" height="17" />
+      </frame>
+    </frame>
+    <frame id="2551:6445" name="导航" x="0" y="722" width="376" height="90">
+      <frame id="2551:6446" name="Group 5202" x="0" y="0" width="94" height="58">
+        <frame id="2551:6447" name="Group 5197" x="0" y="0" width="94" height="58">
+          <rounded-rectangle id="2551:6448" name="Rectangle 4156" x="0" y="0" width="94" height="58" />
+          <instance id="2551:6449" name="tabbar" x="33" y="7" width="28" height="28" />
+          <text id="2551:6450" name="首页" x="37" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2551:6451" name="Group 5203" x="94" y="0" width="94" height="58">
+        <frame id="2551:6452" name="Group 5197" x="94" y="0" width="94" height="58">
+          <rounded-rectangle id="2551:6453" name="Rectangle 4156" x="94" y="0" width="94" height="58" />
+          <instance id="2551:6454" name="tabbar" x="127" y="7" width="28" height="28" />
+          <text id="2551:6455" name="探索" x="131" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2551:6456" name="Group 5204" x="188" y="0" width="94" height="58">
+        <frame id="2551:6457" name="Group 5197" x="188" y="0" width="94" height="58">
+          <rounded-rectangle id="2551:6458" name="Rectangle 4156" x="188" y="0" width="94" height="58" />
+          <instance id="2551:6459" name="tabbar" x="221" y="7" width="28" height="28" />
+          <text id="2551:6460" name="聊天" x="225" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2551:6461" name="Group 5205" x="282" y="0" width="94" height="58">
+        <frame id="2551:6462" name="Group 5197" x="282" y="0" width="94" height="58">
+          <rounded-rectangle id="2551:6463" name="Rectangle 4156" x="282" y="0" width="94" height="58" />
+          <instance id="2551:6464" name="tabbar" x="315" y="7" width="28" height="28" />
+          <text id="2551:6465" name="我的" x="319" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <instance id="2551:6466" name="系统控件/Home" x="0" y="58" width="376" height="32" />
+    </frame>
+  </frame>
+  <frame id="2551:6763" name="岛屿-声音" x="2125" y="0" width="375" height="1029">
+    <frame id="2554:7140" name="Frame 5243" x="16" y="460" width="343" height="428">
+      <frame id="2554:7072" name="Frame 5238" x="0" y="4" width="343" height="420">
+        <frame id="2554:7141" name="Frame 5234" x="0" y="0" width="343" height="60">
+          <frame id="2554:7142" name="Frame 5227" x="16" y="16" width="130" height="28">
+            <frame id="2554:7143" name="Frame" x="0" y="0" width="28" height="28" />
+            <text id="2554:7146" name="我的动态" x="40" y="3.5" width="90" height="21" />
+          </frame>
+          <instance id="2554:7147" name="icon/箭头" x="327" y="38" width="16.000001398764653" height="16.000001398764425" />
+        </frame>
+        <frame id="2554:7009" name="Frame 5228" x="0" y="60" width="343" height="60">
+          <frame id="2554:7010" name="Frame 5227" x="16" y="16" width="100" height="28">
+            <symbol id="2554:7160" name="Rss (订阅)" x="0" y="0" width="28" height="28" />
+            <text id="2554:7014" name="我的关注" x="40" y="3.5" width="60" height="21" />
+          </frame>
+          <instance id="2554:7015" name="icon/箭头" x="327" y="38" width="16.000001398764653" height="16.000001398764425" />
+        </frame>
+        <frame id="2554:7088" name="Frame 5229" x="0" y="120" width="343" height="60">
+          <frame id="2554:7089" name="Frame 5227" x="16" y="16" width="100" height="28">
+            <frame id="2554:7090" name="Group 5229" x="0" y="0" width="28" height="28">
+              <rounded-rectangle id="2554:7091" name="Rectangle 4180" x="0" y="0" width="28" height="28" />
+              <frame id="2554:7092" name="Frame" x="2" y="2" width="23.53143882751465" height="24">
+                <frame id="2554:7093" name="Group 5228" x="2" y="0" width="19.53143882751465" height="24" />
+              </frame>
+            </frame>
+            <text id="2554:7097" name="隐私政策" x="40" y="3.5" width="60" height="21" />
+          </frame>
+          <instance id="2554:7098" name="icon/箭头" x="327" y="38" width="16.000001398764653" height="16.000001398764425" />
+        </frame>
+        <frame id="2554:7099" name="Frame 5230" x="0" y="180" width="343" height="60">
+          <frame id="2554:7100" name="Frame 5227" x="16" y="16" width="100" height="28">
+            <frame id="2554:7101" name="Group 5230" x="0" y="0" width="28" height="28">
+              <rounded-rectangle id="2554:7102" name="Rectangle 4181" x="0" y="0" width="28" height="28" />
+              <frame id="2554:7103" name="Frame" x="2" y="2" width="24" height="24" />
+            </frame>
+            <text id="2554:7107" name="用户协议" x="40" y="3.5" width="60" height="21" />
+          </frame>
+          <instance id="2554:7108" name="icon/箭头" x="327" y="38" width="16.000001398764653" height="16.000001398764425" />
+        </frame>
+        <frame id="2554:7027" name="Frame 5230" x="0" y="240" width="343" height="60">
+          <frame id="2554:7028" name="Frame 5227" x="16" y="16" width="100" height="28">
+            <frame id="2554:7029" name="Frame" x="0" y="0" width="28" height="28" />
+            <text id="2554:7032" name="真人认证" x="40" y="3.5" width="60" height="21" />
+          </frame>
+          <instance id="2554:7033" name="icon/箭头" x="327" y="38" width="16.000001398764653" height="16.000001398764425" />
+        </frame>
+        <frame id="2554:7109" name="Frame 5231" x="0" y="300" width="343" height="60">
+          <frame id="2554:7110" name="Frame 5227" x="16" y="16" width="100" height="28">
+            <frame id="2554:7111" name="Group 5231" x="0" y="0" width="28" height="28">
+              <rounded-rectangle id="2554:7112" name="Rectangle 4182" x="0" y="0" width="28" height="28" />
+              <frame id="2554:7113" name="Frame" x="2" y="2" width="24" height="24" />
+            </frame>
+            <text id="2554:7116" name="客服中心" x="40" y="3.5" width="60" height="21" />
+          </frame>
+          <instance id="2554:7117" name="icon/箭头" x="327" y="38" width="16.000001398764653" height="16.000001398764425" />
+        </frame>
+        <frame id="2554:7118" name="Frame 5232" x="0" y="360" width="343" height="60">
+          <frame id="2554:7119" name="Frame 5227" x="16" y="16" width="70" height="28">
+            <frame id="2554:7120" name="Group 5232" x="0" y="0" width="28" height="28">
+              <rounded-rectangle id="2554:7121" name="Rectangle 4183" x="0" y="0" width="28" height="28" />
+              <frame id="2554:7122" name="Frame" x="2" y="2" width="24" height="24" />
+            </frame>
+            <text id="2554:7125" name="设置" x="40" y="3.5" width="30" height="21" />
+          </frame>
+          <instance id="2554:7126" name="icon/箭头" x="327" y="38" width="16.000001398764653" height="16.000001398764425" />
+        </frame>
+      </frame>
+    </frame>
+    <rounded-rectangle id="2551:6955" name="Background" x="0" y="0" width="375" height="235" />
+    <instance id="2551:6764" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <frame id="2551:6765" name="Group 5207" x="0" y="48" width="375" height="48">
+      <rounded-rectangle id="2551:6766" name="Rectangle 4159" x="0" y="48" width="375" height="48" />
+      <frame id="2551:6767" name="Group 5206" x="16" y="60" width="34" height="24">
+        <text id="2551:6768" name="我的" x="16" y="60" width="34" height="24" />
+      </frame>
+    </frame>
+    <ellipse id="2551:6948" name="Ellipse 20" x="139" y="112" width="98" height="98" />
+    <text id="2551:6949" name="用户昵称" x="154" y="222" width="68" height="24" />
+    <frame id="2551:6954" name="Frame 5237" x="144" y="250" width="88" height="25">
+      <text id="2551:6953" name="ID：1234444" x="8" y="4" width="72" height="17" />
+    </frame>
+    <frame id="2560:7726" name="Group 5314" x="16" y="287" width="348" height="161">
+      <vector id="2551:6936" name="Rectangle 4180" x="16" y="287" width="343" height="161" />
+      <rounded-rectangle id="2551:6937" name="Rectangle 4181" x="28" y="328" width="78" height="78" />
+      <rounded-rectangle id="2551:6938" name="Rectangle 4182" x="114" y="328" width="78" height="78" />
+      <rounded-rectangle id="2554:6979" name="image 3" x="114" y="328" width="78" height="78" />
+      <rounded-rectangle id="2551:6939" name="Rectangle 4183" x="200" y="328" width="78" height="78" />
+      <rounded-rectangle id="2551:6940" name="Rectangle 4184" x="286" y="328" width="78" height="78" />
+      <text id="2551:6941" name="岛名字" x="46" y="414" width="42" height="20" />
+      <text id="2551:6942" name="岛名字" x="132" y="414" width="42" height="20" />
+      <text id="2551:6943" name="岛名字" x="218" y="414" width="42" height="20" />
+      <text id="2551:6944" name="岛名字" x="304" y="414" width="42" height="20" />
+      <rounded-rectangle id="2551:6945" name="image 2" x="30" y="330" width="74" height="73" />
+      <text id="2551:6947" name="我加入的岛" x="28" y="299" width="75" height="21" />
+      <rounded-rectangle id="2554:6984" name="image 4" x="200" y="328" width="78" height="78" />
+      <rounded-rectangle id="2554:6986" name="image 5" x="286" y="328" width="78" height="78" />
+    </frame>
+    <frame id="2551:6864" name="导航" x="0" y="939" width="376" height="90">
+      <frame id="2551:6865" name="Group 5202" x="0" y="0" width="94" height="58">
+        <frame id="2551:6866" name="Group 5197" x="0" y="0" width="94" height="58">
+          <rounded-rectangle id="2551:6867" name="Rectangle 4156" x="0" y="0" width="94" height="58" />
+          <instance id="2551:6868" name="tabbar" x="33" y="7" width="28" height="28" />
+          <text id="2551:6869" name="首页" x="37" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2551:6870" name="Group 5203" x="94" y="0" width="94" height="58">
+        <frame id="2551:6871" name="Group 5197" x="94" y="0" width="94" height="58">
+          <rounded-rectangle id="2551:6872" name="Rectangle 4156" x="94" y="0" width="94" height="58" />
+          <instance id="2551:6873" name="tabbar" x="127" y="7" width="28" height="28" />
+          <text id="2551:6874" name="探索" x="131" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2551:6875" name="Group 5204" x="188" y="0" width="94" height="58">
+        <frame id="2551:6876" name="Group 5197" x="188" y="0" width="94" height="58">
+          <rounded-rectangle id="2551:6877" name="Rectangle 4156" x="188" y="0" width="94" height="58" />
+          <instance id="2551:6878" name="tabbar" x="221" y="7" width="28" height="28" />
+          <text id="2551:6879" name="聊天" x="225" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <frame id="2551:6880" name="Group 5205" x="282" y="0" width="94" height="58">
+        <frame id="2551:6881" name="Group 5197" x="282" y="0" width="94" height="58">
+          <rounded-rectangle id="2551:6882" name="Rectangle 4156" x="282" y="0" width="94" height="58" />
+          <instance id="2551:6883" name="tabbar" x="315" y="7" width="28" height="28" />
+          <text id="2551:6884" name="我的" x="319" y="39" width="20" height="12" />
+        </frame>
+      </frame>
+      <instance id="2551:6885" name="系统控件/Home" x="0" y="58" width="376" height="32" />
+    </frame>
+  </frame>
+  <frame id="2548:5840" name="岛屿-岛民" x="850" y="0" width="375" height="812">
+    <rounded-rectangle id="2548:5841" name="Rectangle 4166" x="0" y="0" width="375" height="235" />
+    <rounded-rectangle id="2548:5842" name="Background" x="0" y="0" width="375" height="235" />
+    <rounded-rectangle id="2548:5843" name="image 2" x="167" y="53" width="232" height="182" />
+    <text id="2548:5844" name="夜间聊点啥" x="16" y="109" width="100" height="28" />
+    <instance id="2548:5852" name="基础控件/Bar" x="0" y="48" width="375" height="48" />
+    <instance id="2548:5853" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <frame id="2548:5854" name="Group 5217" x="0" y="198" width="375" height="52">
+      <rounded-rectangle id="2548:5855" name="Rectangle 4171" x="0" y="198" width="375" height="52" />
+      <frame id="2548:5856" name="Group 5216" x="16" y="209" width="84" height="30">
+        <text id="2548:5858" name="岛语" x="16" y="211" width="32" height="22" />
+        <frame id="2551:6968" name="Group 5237" x="64" y="209" width="36" height="30">
+          <text id="2548:5857" name="岛民" x="64" y="209" width="36" height="25" />
+          <rounded-rectangle id="2548:5859" name="Rectangle 4169" x="75" y="236" width="12" height="3" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2548:6050" name="Group 5223" x="16" y="254" width="343" height="82">
+      <vector id="2548:5931" name="Rectangle 4170" x="16" y="254" width="343" height="82" />
+      <ellipse id="2548:5934" name="Ellipse 16" x="28" y="269" width="52" height="52" />
+      <text id="2548:5937" name="阿布实验室" x="90" y="274" width="80" height="22" />
+      <text id="2548:5938" name="NO.1岛民" x="90" y="298" width="54" height="18" />
+      <frame id="2548:6049" name="Frame 5223" x="271" y="281" width="72" height="28">
+        <text id="2548:6041" name="查看主页" x="8" y="4" width="56" height="20" />
+      </frame>
+    </frame>
+    <frame id="2548:6051" name="Group 5224" x="16" y="348" width="343" height="82">
+      <vector id="2548:6052" name="Rectangle 4170" x="16" y="348" width="343" height="82" />
+      <ellipse id="2548:6053" name="Ellipse 16" x="28" y="363" width="52" height="52" />
+      <text id="2548:6054" name="薄荷同学" x="90" y="368" width="64" height="22" />
+      <text id="2548:6055" name="NO.2岛民" x="90" y="392" width="57" height="18" />
+      <frame id="2548:6056" name="Frame 5223" x="271" y="375" width="72" height="28">
+        <text id="2548:6057" name="查看主页" x="8" y="4" width="56" height="20" />
+      </frame>
+    </frame>
+    <frame id="2548:6058" name="Group 5225" x="16" y="442" width="343" height="82">
+      <vector id="2548:6059" name="Rectangle 4170" x="16" y="442" width="343" height="82" />
+      <ellipse id="2548:6060" name="Ellipse 16" x="28" y="457" width="52" height="52" />
+      <text id="2548:6061" name="青柠" x="90" y="462" width="32" height="22" />
+      <text id="2548:6062" name="NO.3岛民" x="90" y="486" width="57" height="18" />
+      <frame id="2548:6063" name="Frame 5223" x="271" y="469" width="72" height="28">
+        <text id="2548:6064" name="查看主页" x="8" y="4" width="56" height="20" />
+      </frame>
+    </frame>
+    <frame id="2548:6065" name="Group 5226" x="16" y="536" width="343" height="82">
+      <vector id="2548:6066" name="Rectangle 4170" x="16" y="536" width="343" height="82" />
+      <ellipse id="2548:6067" name="Ellipse 16" x="28" y="551" width="52" height="52" />
+      <text id="2548:6068" name="阿布实验室" x="90" y="556" width="80" height="22" />
+      <text id="2548:6069" name="NO.4岛民" x="90" y="580" width="57" height="18" />
+      <frame id="2548:6070" name="Frame 5223" x="271" y="563" width="72" height="28">
+        <text id="2548:6071" name="查看主页" x="8" y="4" width="56" height="20" />
+      </frame>
+    </frame>
+    <frame id="2548:6072" name="Group 5227" x="16" y="630" width="343" height="82">
+      <vector id="2548:6073" name="Rectangle 4170" x="16" y="630" width="343" height="82" />
+      <ellipse id="2548:6074" name="Ellipse 16" x="28" y="645" width="52" height="52" />
+      <text id="2548:6075" name="小满" x="90" y="650" width="32" height="22" />
+      <text id="2548:6076" name="NO.5岛民" x="90" y="674" width="57" height="18" />
+      <frame id="2548:6077" name="Frame 5223" x="271" y="657" width="72" height="28">
+        <text id="2548:6078" name="查看主页" x="8" y="4" width="56" height="20" />
+      </frame>
+    </frame>
+    <frame id="2548:6087" name="Frame 5207" x="16" y="725" width="167" height="48">
+      <frame id="2548:6088" name="Frame 5214" x="52" y="13" width="64" height="22">
+        <text id="2548:6089" name="成为岛民" x="0" y="0" width="64" height="22" />
+      </frame>
+    </frame>
+    <frame id="2548:6090" name="Frame 5221" x="191" y="725" width="167" height="48">
+      <frame id="2548:6091" name="Frame 5214" x="52" y="13" width="64" height="22">
+        <text id="2548:6092" name="发布声音" x="0" y="0" width="64" height="22" />
+      </frame>
+    </frame>
+    <frame id="2553:6969" name="Frame 5219" x="16" y="141" width="67" height="21">
+      <text id="2553:6970" name="100条声音" x="8" y="3" width="51" height="15" />
+    </frame>
+    <frame id="2553:6971" name="Frame 5217" x="87" y="141" width="69" height="21">
+      <text id="2553:6972" name="1.2k人来过" x="8" y="3" width="53" height="15" />
+    </frame>
+    <frame id="2553:6973" name="Frame 5218" x="16" y="166" width="56" height="21">
+      <text id="2553:6974" name="100岛民" x="8" y="3" width="40" height="15" />
+    </frame>
+  </frame>
+  <text id="2554:6989" name="我的动态" x="2455" y="-261" width="60" height="21" />
+  <text id="2554:6990" name="我的关注" x="2455" y="-233" width="60" height="21" />
+  <text id="2554:6991" name="隐私政策" x="2455" y="-202" width="60" height="21" />
+  <text id="2554:6992" name="用户协议" x="2455" y="-181" width="60" height="21" />
+  <text id="2554:6993" name="真人认证" x="2455" y="-154" width="60" height="21" />
+  <text id="2554:6994" name="客服中心" x="2455" y="-133" width="60" height="21" />
+  <text id="2554:6995" name="设置" x="2455" y="-106" width="30" height="21" />
+  <text id="2554:6996" name="黑名单" x="2455" y="-81" width="45" height="21" />
+  <text id="2554:6997" name="注销" x="2455" y="-61" width="30" height="21" />
+  <frame id="2554:7161" name="更多" x="2550" y="0" width="375" height="812">
+    <rounded-rectangle id="2554:7162" name="Rectangle 4227" x="0" y="0" width="375" height="812" />
+    <frame id="2554:7163" name="Group 5310" x="0" y="508" width="375" height="304">
+      <instance id="2554:7164" name="基础组件/弹出/选项弹窗" x="0" y="616" width="375" height="54" />
+      <instance id="2554:7185" name="基础组件/弹出/选项弹窗" x="0" y="562" width="375" height="54" />
+      <instance id="2554:7179" name="基础组件/弹出/选项弹窗" x="0" y="508" width="375" height="54" />
+      <instance id="2554:7165" name="基础组件/弹出/选项弹窗" x="0" y="670" width="375" height="54" />
+      <instance id="2554:7166" name="基础组件/弹出/选项弹窗" x="0" y="724" width="375" height="88" />
+    </frame>
+  </frame>
+  <frame id="2560:7188" name="个人主页" x="2975" y="0" width="375" height="1983">
+    <rounded-rectangle id="2560:7687" name="Rectangle 4233" x="0" y="0" width="375" height="468" />
+    <instance id="2560:7597" name="基础控件/Bar" x="0" y="48" width="375" height="48" />
+    <instance id="2560:7608" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <frame id="2560:7654" name="Group 5313" x="16" y="632" width="343" height="66">
+      <vector id="2560:7650" name="Rectangle 4232" x="16" y="632" width="343" height="66" />
+      <text id="2560:7651" name="真人认证" x="28" y="644" width="64" height="20" />
+      <text id="2560:7652" name="该用户已应平台要求完成真人认证，可以放心沟通！" x="28" y="668" width="299" height="18" />
+    </frame>
+    <instance id="2560:7655" name="基础控件/Bar" x="0" y="48" width="375" height="48" />
+    <instance id="2560:7656" name="基础页面组件/状态栏" x="0" y="0" width="375" height="48" />
+    <frame id="2560:7727" name="Group 5314" x="16" y="710" width="348" height="161">
+      <vector id="2560:7728" name="Rectangle 4180" x="16" y="710" width="343" height="161" />
+      <rounded-rectangle id="2560:7729" name="Rectangle 4181" x="28" y="751" width="78" height="78" />
+      <rounded-rectangle id="2560:7730" name="Rectangle 4182" x="114" y="751" width="78" height="78" />
+      <rounded-rectangle id="2560:7731" name="image 3" x="114" y="751" width="78" height="78" />
+      <rounded-rectangle id="2560:7732" name="Rectangle 4183" x="200" y="751" width="78" height="78" />
+      <rounded-rectangle id="2560:7733" name="Rectangle 4184" x="286" y="751" width="78" height="78" />
+      <text id="2560:7734" name="岛名字" x="46" y="837" width="42" height="20" />
+      <text id="2560:7735" name="岛名字" x="132" y="837" width="42" height="20" />
+      <text id="2560:7736" name="岛名字" x="218" y="837" width="42" height="20" />
+      <text id="2560:7737" name="岛名字" x="304" y="837" width="42" height="20" />
+      <rounded-rectangle id="2560:7738" name="image 2" x="30" y="753" width="74" height="73" />
+      <text id="2560:7739" name="Ta加入的岛" x="28" y="722" width="78" height="21" />
+      <rounded-rectangle id="2560:7740" name="image 4" x="200" y="751" width="78" height="78" />
+      <rounded-rectangle id="2560:7741" name="image 5" x="286" y="751" width="78" height="78" />
+    </frame>
+    <text id="2560:7790" name="用户昵称" x="16" y="484" width="80" height="28" />
+    <frame id="2560:7966" name="Group 5322" x="16" y="883" width="343" height="114">
+      <vector id="2560:7876" name="Rectangle 4180" x="16" y="883" width="343" height="114" />
+      <text id="2560:7887" name="心情记录仪" x="28" y="895" width="75" height="21" />
+      <frame id="2560:7905" name="Group 5315" x="28" y="924" width="39" height="57">
+        <rounded-rectangle id="2560:7890" name="Rectangle 4234" x="28" y="924" width="39" height="38" />
+        <text id="2560:7904" name="Day1" x="36" y="966" width="24" height="15" />
+      </frame>
+      <frame id="2560:7906" name="Group 5316" x="75" y="924" width="39" height="57">
+        <rounded-rectangle id="2560:7907" name="Rectangle 4234" x="75" y="924" width="39" height="38" />
+        <text id="2560:7908" name="Day2" x="83" y="966" width="26" height="15" />
+      </frame>
+      <frame id="2560:7909" name="Group 5317" x="122" y="924" width="39" height="57">
+        <rounded-rectangle id="2560:7910" name="Rectangle 4234" x="122" y="924" width="39" height="38" />
+        <text id="2560:7911" name="Day3" x="130" y="966" width="26" height="15" />
+      </frame>
+      <frame id="2560:7912" name="Group 5318" x="169" y="924" width="39" height="57">
+        <rounded-rectangle id="2560:7913" name="Rectangle 4234" x="169" y="924" width="39" height="38" />
+        <text id="2560:7914" name="Day4" x="177" y="966" width="26" height="15" />
+      </frame>
+      <frame id="2560:7915" name="Group 5319" x="216" y="924" width="39" height="57">
+        <rounded-rectangle id="2560:7916" name="Rectangle 4234" x="216" y="924" width="39" height="38" />
+        <text id="2560:7917" name="Day5" x="224" y="966" width="26" height="15" />
+      </frame>
+      <frame id="2560:7918" name="Group 5320" x="263" y="924" width="39" height="57">
+        <rounded-rectangle id="2560:7919" name="Rectangle 4234" x="263" y="924" width="39" height="38" />
+        <text id="2560:7920" name="Day6" x="271" y="966" width="26" height="15" />
+      </frame>
+      <frame id="2560:7921" name="Group 5321" x="310" y="924" width="39" height="57">
+        <rounded-rectangle id="2560:7922" name="Rectangle 4234" x="310" y="924" width="39" height="38" />
+        <text id="2560:7923" name="Day7" x="318" y="966" width="26" height="15" />
+      </frame>
+    </frame>
+    <vector id="2560:7968" name="Rectangle 4180" x="16" y="1009" width="343" height="114" />
+    <text id="2560:7969" name="个人动态" x="28" y="1021" width="60" height="21" />
+  </frame>
+  <frame id="2560:7991" name="Group 5220" x="2991" y="1046" width="343" height="239">
+    <rounded-rectangle id="2560:7992" name="Rectangle 4170" x="2991" y="1046" width="343" height="239" />
+    <rounded-rectangle id="2560:7993" name="Rectangle 4172" x="3003" y="1058" width="101" height="101" />
+    <rounded-rectangle id="2560:7994" name="Rectangle 4173" x="3112" y="1058" width="101" height="101" />
+    <rounded-rectangle id="2560:7995" name="Rectangle 4174" x="3221" y="1058" width="101" height="101" />
+    <text id="2560:7996" name="文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案" x="3003" y="1167" width="319" height="63" />
+    <frame id="2560:7997" name="Frame 5219" x="3003" y="1238" width="92" height="32">
+      <frame id="2560:7998" name="Group 5218" x="4" y="4" width="76" height="24">
+        <ellipse id="2560:7999" name="Ellipse 15" x="4" y="4" width="24" height="24" />
+        <text id="2560:8000" name="用户昵称" x="32" y="7" width="48" height="17" />
+      </frame>
+    </frame>
+    <frame id="2560:8001" name="Group 5219" x="3228" y="1244" width="50" height="20">
+      <frame id="2560:8002" name="Frame" x="3228" y="1244" width="20" height="20" />
+      <text id="2560:8004" name="点赞" x="3252" y="1245" width="26" height="18" />
+    </frame>
+    <frame id="2560:8005" name="Frame" x="3302" y="1244" width="20" height="20" />
+  </frame>
+  <frame id="2560:8008" name="Group 5221" x="2991" y="1285" width="343" height="239">
+    <rounded-rectangle id="2560:8009" name="Rectangle 4170" x="2991" y="1285" width="343" height="239" />
+    <rounded-rectangle id="2560:8010" name="Rectangle 4172" x="3003" y="1297" width="101" height="101" />
+    <rounded-rectangle id="2560:8011" name="Rectangle 4173" x="3112" y="1297" width="101" height="101" />
+    <rounded-rectangle id="2560:8012" name="Rectangle 4174" x="3221" y="1297" width="101" height="101" />
+    <text id="2560:8013" name="文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案" x="3003" y="1406" width="319" height="63" />
+    <frame id="2560:8014" name="Frame 5219" x="3003" y="1477" width="92" height="32">
+      <frame id="2560:8015" name="Group 5218" x="4" y="4" width="76" height="24">
+        <ellipse id="2560:8016" name="Ellipse 15" x="4" y="4" width="24" height="24" />
+        <text id="2560:8017" name="用户昵称" x="32" y="7" width="48" height="17" />
+      </frame>
+    </frame>
+    <frame id="2560:8018" name="Group 5219" x="3228" y="1483" width="50" height="20">
+      <frame id="2560:8019" name="Frame" x="3228" y="1483" width="20" height="20" />
+      <text id="2560:8021" name="点赞" x="3252" y="1484" width="26" height="18" />
+    </frame>
+    <frame id="2560:8022" name="Frame" x="3302" y="1483" width="20" height="20" />
+  </frame>
+  <frame id="2560:8024" name="Group 5222" x="2991" y="1524" width="343" height="239">
+    <vector id="2560:8025" name="Rectangle 4170" x="2991" y="1524" width="343" height="239" />
+    <rounded-rectangle id="2560:8026" name="Rectangle 4172" x="3003" y="1536" width="101" height="101" />
+    <rounded-rectangle id="2560:8027" name="Rectangle 4173" x="3112" y="1536" width="101" height="101" />
+    <rounded-rectangle id="2560:8028" name="Rectangle 4174" x="3221" y="1536" width="101" height="101" />
+    <text id="2560:8029" name="文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案" x="3003" y="1645" width="319" height="63" />
+    <frame id="2560:8030" name="Frame 5219" x="3003" y="1716" width="92" height="32">
+      <frame id="2560:8031" name="Group 5218" x="4" y="4" width="76" height="24">
+        <ellipse id="2560:8032" name="Ellipse 15" x="4" y="4" width="24" height="24" />
+        <text id="2560:8033" name="用户昵称" x="32" y="7" width="48" height="17" />
+      </frame>
+    </frame>
+    <frame id="2560:8034" name="Group 5219" x="3228" y="1722" width="50" height="20">
+      <frame id="2560:8035" name="Frame" x="3228" y="1722" width="20" height="20" />
+      <text id="2560:8037" name="点赞" x="3252" y="1723" width="26" height="18" />
+    </frame>
+    <frame id="2560:8038" name="Frame" x="3302" y="1722" width="20" height="20" />
+  </frame>
+</canvas>
+IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

@@ -1,24 +1,31 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final counterProvider = NotifierProvider<CounterNotifier, int>(
+import '../../../../core/storage/mock_json_store.dart';
+
+final counterProvider = AsyncNotifierProvider<CounterNotifier, int>(
   CounterNotifier.new,
 );
 
-class CounterNotifier extends Notifier<int> {
+/// 计数器示例使用本地 JSON 保存数值。
+class CounterNotifier extends AsyncNotifier<int> {
+  static const _path = 'example/counter';
+
   @override
-  int build() {
-    return 0;
-  }
+  Future<int> build() => ref.watch(mockJsonStoreProvider).read(_path, _decode);
 
-  void increment() {
-    state++;
-  }
+  int _decode(Object? json) => (json as Map<String, dynamic>)['count'] as int;
 
-  void decrement() {
-    state--;
-  }
+  Future<void> increment() => _change((count) => count + 1);
+  Future<void> decrement() => _change((count) => count - 1);
+  Future<void> reset() => _change((count) => 0);
 
-  void reset() {
-    state = 0;
+  Future<void> _change(int Function(int) update) async {
+    final store = ref.read(mockJsonStoreProvider);
+    state = const AsyncLoading();
+    final result = await AsyncValue.guard(() async {
+      await store.update(_path, _decode, (count) => {'count': update(count)});
+      return store.read(_path, _decode);
+    });
+    if (ref.mounted) state = result;
   }
 }

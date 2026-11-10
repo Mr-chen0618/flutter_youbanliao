@@ -1,0 +1,5 @@
+<canvas id="0:1" name="微撩-设计图" x="0" y="0" width="0" height="0">
+  <vector id="1457:1907" name="Vector 21" x="8852.40625" y="-1076" width="127.71221160888672" height="383" hidden="true" />
+  <vector id="1457:1910" name="Vector 22" x="9141.1943359375" y="-1057" width="101.2735824584961" height="355" hidden="true" />
+</canvas>
+IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

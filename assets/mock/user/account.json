@@ -1,0 +1,25 @@
+{
+  "profile": {
+    "id": "U001",
+    "name": "橘子汽水",
+    "avatar": "assets/mock/media/IMG025.jpg",
+    "signature": "周末有空，喜欢把日子过得有趣。",
+    "gender": "男",
+    "age": 21,
+    "birthday": null,
+    "city": "深圳·南山区",
+    "interests": [
+      "美食探店",
+      "街头小吃",
+      "登山露营"
+    ],
+    "tags": [
+      "守时靠谱",
+      "咖啡爱好者",
+      "饭量在线"
+    ],
+    "following": 0,
+    "followers": 0,
+    "friends": 0
+  }
+}

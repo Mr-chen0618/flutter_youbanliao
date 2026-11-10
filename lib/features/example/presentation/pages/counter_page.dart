@@ -13,12 +13,20 @@ class CounterPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Riverpod Counter')),
       body: Center(
-        child: Text('Count: $count', style: const TextStyle(fontSize: 24)),
+        child: count.when(
+          data: (value) =>
+              Text('Count: $value', style: const TextStyle(fontSize: 24)),
+          loading: () => const CircularProgressIndicator(),
+          error: (_, _) => TextButton(
+            onPressed: () => ref.invalidate(counterProvider),
+            child: const Text('读取失败，点击重试'),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ref.read(counterProvider.notifier).increment();
-        },
+        onPressed: count.hasValue
+            ? ref.read(counterProvider.notifier).increment
+            : null,
         child: const Icon(Icons.add),
       ),
     );

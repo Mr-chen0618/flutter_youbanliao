@@ -1,0 +1,193 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/f8db62be-7ed8-4832-91d5-d7d7863055ef";
+const imgOn1 = `${assetPathPrefix}/8f3f1.svg`;
+const imgOff2 = `${assetPathPrefix}/3ac28.svg`;
+const imgOn4 = `${assetPathPrefix}/0c0b1.svg`;
+const imgOn5 = `${assetPathPrefix}/1dc2e.svg`;
+const imgRectangle4252 = `${assetPathPrefix}/b155f.png`;
+const imgEllipse20 = `${assetPathPrefix}/d7cd4.png`;
+const imgBattery = `${assetPathPrefix}/45436.svg`;
+const imgWifi = `${assetPathPrefix}/6f597.svg`;
+const imgCellularConnection = `${assetPathPrefix}/a2970.svg`;
+const imgFrame = `${assetPathPrefix}/8428f.svg`;
+const imgFrame1 = `${assetPathPrefix}/3598b.svg`;
+const imgFrame2 = `${assetPathPrefix}/04e2c.svg`;
+const imgFrame3 = `${assetPathPrefix}/f146a.svg`;
+const imgFrame4 = `${assetPathPrefix}/cac83.svg`;
+const imgGroup5352 = `${assetPathPrefix}/01fa2.svg`;
+
+type Component1Props = {
+  className?: string;
+  propValue?: boolean;
+  propValue1?: "5" | "1" | "2" | "4";
+};
+
+function Component1({ className, propValue = true, propValue1 = "1" }: Component1Props) {
+  const isFalseAnd2 = !propValue && propValue1 === "2";
+  const isTrueAnd4 = propValue && propValue1 === "4";
+  const isTrueAnd5 = propValue && propValue1 === "5";
+  return (
+    <div className={className || "relative size-[28px]"} id={isTrueAnd5 ? "node-1876_11231" : isTrueAnd4 ? "node-1876_11239" : isFalseAnd2 ? "node-1876_11234" : "node-1876_11240"}>
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={isTrueAnd5 ? imgOn5 : isTrueAnd4 ? imgOn4 : isFalseAnd2 ? imgOff2 : imgOn1} />
+    </div>
+  );
+}
+
+export default function Component() {
+  return (
+    <div className="bg-black relative size-full" data-node-id="3163:24193" data-name="动态-视频">
+      <div className="absolute h-[609px] left-[-1px] top-[113px] w-[375px]" data-node-id="3163:24194">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle4252} />
+      </div>
+      <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0)] h-[139px] left-[-2px] to-[rgba(0,0,0,0.7)] top-[583px] w-[377px]" data-node-id="3163:24195" />
+      <div className="-translate-x-1/2 absolute bottom-0 contents left-[calc(50%+0.5px)]" data-node-id="3163:29189">
+        <div className="absolute contents inset-[88.92%_74.93%_3.94%_0]" data-node-id="3163:29190">
+          <div className="absolute contents inset-[88.92%_74.93%_3.94%_0]" data-node-id="3163:29191">
+            <div className="absolute bg-white inset-[88.92%_74.93%_3.94%_0]" data-node-id="3163:29192" />
+            <Component1 className="absolute left-[33px] size-[28px] top-[729px]" />
+            <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal inset-[93.72%_84.8%_4.8%_9.87%] leading-[normal] not-italic text-[#ccc] text-[10px] text-center whitespace-nowrap" data-node-id="3163:29194">
+              首页
+            </p>
+          </div>
+        </div>
+        <div className="absolute contents inset-[88.92%_49.87%_3.94%_25.07%]" data-node-id="3163:29195">
+          <div className="absolute contents inset-[88.92%_49.87%_3.94%_25.07%]" data-node-id="3163:29196">
+            <div className="absolute bg-white inset-[88.92%_49.87%_3.94%_25.07%]" data-node-id="3163:29197" />
+            <Component1 className="absolute left-[127px] size-[28px] top-[729px]" propValue={false} propValue1="2" />
+            <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal inset-[93.72%_59.73%_4.8%_34.93%] leading-[normal] not-italic text-[#333] text-[10px] text-center whitespace-nowrap" data-node-id="3163:29199">
+              广场
+            </p>
+          </div>
+        </div>
+        <div className="absolute contents inset-[88.92%_24.8%_3.94%_50.13%]" data-node-id="3163:29200">
+          <div className="absolute contents inset-[88.92%_24.8%_3.94%_50.13%]" data-node-id="3163:29201">
+            <div className="absolute bg-white inset-[88.92%_24.8%_3.94%_50.13%]" data-node-id="3163:29202" />
+            <Component1 className="absolute left-[221px] size-[28px] top-[729px]" propValue1="4" />
+            <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal inset-[93.72%_34.67%_4.8%_60%] leading-[normal] not-italic text-[#ccc] text-[10px] text-center whitespace-nowrap" data-node-id="3163:29204">
+              消息
+            </p>
+          </div>
+        </div>
+        <div className="absolute contents inset-[88.92%_-0.27%_3.94%_75.2%]" data-node-id="3163:29205">
+          <div className="absolute contents inset-[88.92%_-0.27%_3.94%_75.2%]" data-node-id="3163:29206">
+            <div className="absolute bg-white inset-[88.92%_-0.27%_3.94%_75.2%]" data-node-id="3163:29207" />
+            <Component1 className="absolute left-[315px] size-[28px] top-[729px]" propValue1="5" />
+            <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal inset-[93.72%_9.6%_4.8%_85.07%] leading-[normal] not-italic text-[#ccc] text-[10px] text-center whitespace-nowrap" data-node-id="3163:29209">
+              我的
+            </p>
+          </div>
+        </div>
+        <div className="absolute inset-[96.06%_-0.27%_0_0]" data-node-id="3163:29210" data-name="系统控件/Home">
+          <div className="absolute bg-white inset-0" data-node-id="I3163:29210;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3163:29210;7122:3671" />
+        </div>
+      </div>
+      <div className="absolute h-[48px] left-0 top-0 w-[375px]" data-node-id="3163:24204" data-name="基础页面组件/状态栏">
+        <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3163:24204;1:946" data-name="矩形" />
+        <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I3163:24204;1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I3163:24204;1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+            <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I3163:24204;1:947;0:182" data-name="Battery">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+            </div>
+            <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I3163:24204;1:947;0:188" data-name="Wifi">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+            </div>
+            <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I3163:24204;1:947;0:192" data-name="Cellular Connection">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+            </div>
+            <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I3163:24204;1:947;0:195" data-name="Time Style">
+              <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[0] left-[27px] text-[14px] text-center text-white top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I3163:24204;1:947;0:196" style={{ fontVariationSettings: '"wdth" 100' }}>
+                <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  9:4
+                </span>
+                <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  1
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute left-[15px] size-[58px] top-[634px]" data-node-id="3163:24233">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" height="58" src={imgEllipse20} width="58" />
+      </div>
+      <p className="[word-break:break-word] absolute font-['PingFang_SC:Medium'] leading-[normal] left-[81px] not-italic text-[18px] text-white top-[640px] whitespace-nowrap" data-node-id="3163:24234">
+        用户昵称
+      </p>
+      <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[81px] not-italic text-[13px] text-[rgba(255,255,255,0.7)] top-[667px] whitespace-nowrap" data-node-id="3163:24235">
+        真人认证用户，喜欢咖啡和电影
+      </p>
+      <div className="absolute contents left-[318px] top-[388px]" data-node-id="3163:24236">
+        <div className="absolute left-[318px] size-[36px] top-[388px]" data-node-id="3163:24237" data-name="Frame">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[325px] not-italic text-[11px] text-white top-[434px] whitespace-nowrap" data-node-id="3163:24239">
+          喜欢
+        </p>
+      </div>
+      <div className="absolute contents left-[257px] top-[363px]" data-node-id="3163:24240">
+        <div className="absolute left-[257px] size-[36px] top-[363px]" data-node-id="3163:24241" data-name="Frame">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[264px] not-italic text-[11px] text-white top-[409px] whitespace-nowrap" data-node-id="3163:24243">
+          喜欢
+        </p>
+      </div>
+      <div className="absolute contents left-[318px] top-[469px]" data-node-id="3163:24244">
+        <div className="absolute left-[318px] size-[36px] top-[469px]" data-node-id="3163:24245" data-name="Frame">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame2} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[325px] not-italic text-[11px] text-white top-[515px] whitespace-nowrap" data-node-id="3163:24247">
+          喜欢
+        </p>
+      </div>
+      <div className="absolute contents left-[257px] top-[444px]" data-node-id="3163:24248">
+        <div className="absolute left-[257px] size-[36px] top-[444px]" data-node-id="3163:24249" data-name="Frame">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame3} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[264px] not-italic text-[11px] text-white top-[490px] whitespace-nowrap" data-node-id="3163:24251">
+          喜欢
+        </p>
+      </div>
+      <div className="absolute contents left-[318px] top-[550px]" data-node-id="3163:24252">
+        <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] leading-[normal] left-[325px] not-italic text-[11px] text-white top-[596px] whitespace-nowrap" data-node-id="3163:24253">
+          喜欢
+        </p>
+        <div className="absolute left-[318px] size-[36px] top-[550px]" data-node-id="3163:24254" data-name="Frame">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame4} />
+        </div>
+      </div>
+      <div className="absolute contents left-0 top-[48px]" data-node-id="3218:33224">
+        <div className="absolute h-[48px] left-0 top-[48px] w-[375px]" data-node-id="3218:33225" />
+        <div className="absolute content-stretch flex gap-[16px] items-center left-[16px] top-[60px]" data-node-id="3218:33226">
+          <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[24px] not-italic relative shrink-0 text-[#999] text-[15px] text-center tracking-[-0.9492px] whitespace-nowrap" data-node-id="3218:33227">
+            关注
+          </p>
+          <p className="[word-break:break-word] font-['PingFang_SC:Regular'] leading-[24px] not-italic relative shrink-0 text-[#999] text-[15px] text-center tracking-[-0.9492px] whitespace-nowrap" data-node-id="3218:33234">
+            视频
+          </p>
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="3218:33228">
+            <p className="[word-break:break-word] col-1 font-['PingFang_SC:Semibold'] leading-[24px] ml-0 mt-0 not-italic relative row-1 text-[17px] text-center text-white tracking-[-0.9492px] whitespace-nowrap" data-node-id="3218:33229">
+              视频
+            </p>
+            <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[28px] mt-[2px] place-items-start relative row-1" data-node-id="3218:33230">
+              <div className="col-1 h-[22px] ml-0 mt-0 relative row-1 w-[16px]" data-node-id="3218:33231">
+                <div className="absolute inset-[0_0_-5.68%_-7.81%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup5352} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

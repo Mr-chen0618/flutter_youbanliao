@@ -35,7 +35,7 @@ class OfflineQueueManager {
   Timer? _replayDebounceTimer;
 
   /// 网络变化监听
-  late final StreamSubscription _netSub;
+  StreamSubscription? _netSub;
 
   /// 重放中
   bool _replaying = false;
@@ -54,6 +54,7 @@ class OfflineQueueManager {
     AppLogger.info('[Queue] manager init');
     _queue.addAll(await storage.loadQueue());
     _dead.addAll(await storage.loadDead());
+    if (_stateCtrl.isClosed) return;
     _sort();
     _emit();
 
@@ -217,7 +218,7 @@ class OfflineQueueManager {
   /// 释放资源
   void dispose() {
     _replayDebounceTimer?.cancel();
-    _netSub.cancel();
+    _netSub?.cancel();
     _stateCtrl.close();
   }
 }

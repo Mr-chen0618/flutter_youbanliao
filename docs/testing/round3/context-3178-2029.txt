@@ -1,0 +1,221 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/96e51b25-a2d9-495a-8677-688ff2b50119";
+const imgIcon = `${assetPathPrefix}/b5636.svg`;
+const imgIcon1 = `${assetPathPrefix}/9d66e.svg`;
+const img = `${assetPathPrefix}/b749f.svg`;
+const imgImage10 = `${assetPathPrefix}/85ca4.png`;
+const img1 = `${assetPathPrefix}/f74b7.png`;
+const img2 = `${assetPathPrefix}/894ae.png`;
+const img3 = `${assetPathPrefix}/41e8c.png`;
+const imgBattery = `${assetPathPrefix}/f80d4.svg`;
+const imgWifi = `${assetPathPrefix}/eb198.svg`;
+const imgCellularConnection = `${assetPathPrefix}/d5602.svg`;
+
+function Icon({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="2710:11665" data-name="icon/发送图片">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+    </div>
+  );
+}
+
+function Icon1({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="370:4072" data-name="icon/更多">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon1} />
+    </div>
+  );
+}
+
+type Icon2Props = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon2({ className, propValue = "左" }: Icon2Props) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+export default function Component() {
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start justify-between relative size-full" data-node-id="3178:2029" data-name="聊天 页">
+      <div className="absolute h-[242px] left-0 overflow-clip top-0 w-[375px]" data-node-id="3178:2030" data-name="页面氛围">
+        <div className="absolute bg-gradient-to-b from-[#fffbbf] inset-0 to-white" data-node-id="I3178:2030;3109:19306" />
+        <div className="absolute aspect-[274/360] left-[56.27%] opacity-25 right-[-4.27%] top-[-39px]" data-node-id="I3178:2030;3109:19311" data-name="image 10">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+        </div>
+        <div className="absolute aspect-[236.5010055239154/280.49248874424575] flex items-center justify-center left-[-10.93%] right-[47.87%] top-[-98px]" data-node-id="I3178:2030;3109:19313" style={{ containerType: "size" }}>
+          <div className="-scale-x-100 flex-none h-[hypot(-23.1311cqw,85.1558cqh)] rotate-[12.9deg] w-[hypot(-76.8689cqw,-14.8442cqh)]">
+            <div className="opacity-25 relative size-full" data-name="image 11">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3178:2034" data-name="聊天内容">
+        <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3178:2035" data-name="会话导航">
+          <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3178:2036" data-name="状态栏">
+            <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3178:2036;1:946" data-name="矩形" />
+            <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I3178:2036;1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+              <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I3178:2036;1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+                <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I3178:2036;1:947;0:182" data-name="Battery">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+                </div>
+                <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I3178:2036;1:947;0:188" data-name="Wifi">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+                </div>
+                <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I3178:2036;1:947;0:192" data-name="Cellular Connection">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+                </div>
+                <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I3178:2036;1:947;0:195" data-name="Time Style">
+                  <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I3178:2036;1:947;0:196">
+                    <span className="leading-[normal]">9:4</span>
+                    <span className="leading-[normal]">1</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex h-[52px] items-center overflow-clip px-[16px] relative shrink-0 w-full" data-node-id="3178:2057" data-name="联系人">
+            <Icon2 className="relative shrink-0 size-[24px]" />
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Bold'] font-bold leading-[normal] min-w-px relative text-[#333] text-[17px] text-center" data-node-id="3178:2061">
+              薄荷同学
+            </p>
+            <Icon1 className="relative shrink-0 size-[24px]" />
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[14px] items-start overflow-clip pb-[20px] pt-[10px] px-[16px] relative shrink-0 w-full" data-node-id="3178:2068" data-name="聊天记录">
+          <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[18px] relative shrink-0 text-[#999] text-[11px] text-center w-full" data-node-id="3178:2069">
+            2026年12月11日 18:30
+          </p>
+          <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3178:2070" data-name="收到的消息">
+            <div className="relative shrink-0 size-[36px]" data-node-id="3178:2071" data-name="薄荷同学头像">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" height="36" src={img1} width="36" />
+            </div>
+            <div className="bg-[#f8f8f8] content-stretch flex flex-col items-start max-w-[260px] overflow-clip px-[12px] py-[10px] relative rounded-bl-[14px] rounded-br-[14px] rounded-tl-[4px] rounded-tr-[14px] shrink-0" data-node-id="3178:2072" data-name="文本消息">
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[22px] relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3178:2073">
+                12月12日中午，约羽毛球吗？
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[8px] items-start justify-end overflow-clip relative shrink-0 w-full" data-node-id="3178:2074" data-name="发出的消息">
+            <div className="content-stretch flex flex-col gap-[8px] items-end overflow-clip relative shrink-0" data-node-id="3178:2075" data-name="消息内容">
+              <div className="bg-[#fff1bb] content-stretch flex flex-col items-start max-w-[260px] overflow-clip px-[12px] py-[10px] relative rounded-bl-[14px] rounded-br-[14px] rounded-tl-[14px] rounded-tr-[4px] shrink-0" data-node-id="3178:2076" data-name="文本消息">
+                <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[22px] relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3178:2077">
+                  约！我把球局封面发你～
+                </p>
+              </div>
+              <div className="h-[118px] relative rounded-[14px] shrink-0 w-[176px]" data-node-id="3178:2078" data-name="已发送的球局图片">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[14px]">
+                  <img alt="" className="absolute h-[225.02%] left-[-36.66%] max-w-none top-[-50.86%] w-[149.99%]" src={img2} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[15px] relative shrink-0 text-[#999] text-[10px] whitespace-nowrap" data-node-id="3178:2079">
+                已送达
+              </p>
+            </div>
+            <div className="relative shrink-0 size-[36px]" data-node-id="3178:2080" data-name="橘子海来信头像">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" height="36" src={img3} width="36" />
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3178:2081" data-name="收到的消息">
+            <div className="relative shrink-0 size-[36px]" data-node-id="3178:2082" data-name="薄荷同学头像">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" height="36" src={img1} width="36" />
+            </div>
+            <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0" data-node-id="3178:2083" data-name="消息内容">
+              <div className="bg-[#f8f8f8] content-stretch flex flex-col items-start max-w-[260px] overflow-clip px-[12px] py-[10px] relative rounded-bl-[14px] rounded-br-[14px] rounded-tl-[4px] rounded-tr-[14px] shrink-0" data-node-id="3178:2084" data-name="文本消息">
+                <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[22px] relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3178:2085">
+                  发你邀约，球馆入口集合～
+                </p>
+              </div>
+              <div className="[word-break:break-word] bg-white border border-[#ecedef] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[16px] shrink-0 w-[272px]" data-node-id="3178:2086" data-name="活动邀约消息">
+                <div className="bg-[#fff9df] content-stretch flex flex-col gap-[4px] items-start overflow-clip pb-[13px] pt-[14px] px-[16px] relative shrink-0 w-full" data-node-id="3178:2087" data-name="邀约标题">
+                  <p className="font-['Noto_Sans_SC:Bold'] font-bold leading-[27px] min-w-full relative shrink-0 text-[#262626] text-[18px] w-[min-content]" data-node-id="3178:2089">
+                    主标题主标题
+                  </p>
+                  <p className="font-['Noto_Sans_SC:Medium'] font-medium leading-[15px] relative shrink-0 text-[#a58028] text-[10px] whitespace-nowrap" data-node-id="3178:2088">
+                    副标题副标题副标题副标题副标题副标题
+                  </p>
+                  <div className="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="3178:2091" data-name="邀约字段">
+                    <p className="font-['Noto_Sans_SC:Regular'] font-normal leading-[15px] relative shrink-0 text-[#a08f66] text-[10px]" data-node-id="3178:2092">
+                      活动类型
+                    </p>
+                    <p className="font-['Noto_Sans_SC:Medium'] font-medium leading-[17px] relative shrink-0 text-[#76603b] text-[11px]" data-node-id="3178:2093">
+                      运动
+                    </p>
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col gap-[12px] items-start overflow-clip pb-[14px] pt-[13px] px-[16px] relative shrink-0 w-full" data-node-id="3178:2090" data-name="邀约安排">
+                  <div className="content-stretch flex flex-col gap-[4px] h-[59px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3178:2094" data-name="邀约字段">
+                    <p className="font-['Noto_Sans_SC:Regular'] font-normal leading-[15px] relative shrink-0 text-[#999] text-[10px] w-full" data-node-id="3178:2095">
+                      活动时间
+                    </p>
+                    <div className="flex-[1_0_0] font-['Noto_Sans_SC:Medium'] font-medium leading-[0] min-h-px relative text-[#333] text-[13px] w-full" data-node-id="3178:2096">
+                      <p className="leading-[20px] mb-0">2026年12月12日</p>
+                      <p className="leading-[20px]">12:00–13:00</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[4px] h-[59px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3178:2097" data-name="邀约字段">
+                    <p className="font-['Noto_Sans_SC:Regular'] font-normal leading-[15px] relative shrink-0 text-[#999] text-[10px] w-full" data-node-id="3178:2098">
+                      活动地址
+                    </p>
+                    <div className="flex-[1_0_0] font-['Noto_Sans_SC:Medium'] font-medium leading-[0] min-h-px relative text-[#333] text-[13px] w-full" data-node-id="3178:2099">
+                      <p className="leading-[20px] mb-0">深圳市宝安区</p>
+                      <p className="leading-[20px]">宝安体育馆羽毛球馆入口</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[8px] items-start justify-end overflow-clip relative shrink-0 w-full" data-node-id="3178:2106" data-name="发出的消息">
+            <div className="bg-[#fff1bb] content-stretch flex flex-col items-start max-w-[260px] overflow-clip px-[12px] py-[10px] relative rounded-bl-[14px] rounded-br-[14px] rounded-tl-[14px] rounded-tr-[4px] shrink-0" data-node-id="3178:2107" data-name="文本消息">
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[22px] relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3178:2108">
+                收到！我提前十分钟到入口等你。
+              </p>
+            </div>
+            <div className="relative shrink-0 size-[36px]" data-node-id="3178:2109" data-name="橘子海来信头像">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" height="36" src={img3} width="36" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white border-[#f1f1f1] border-solid border-t content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3178:2110" data-name="固定消息编辑区">
+        <div className="content-stretch flex gap-[10px] items-center overflow-clip pb-[10px] pt-[12px] px-[16px] relative shrink-0 w-full" data-node-id="3178:2111" data-name="消息编辑">
+          <Icon className="relative shrink-0 size-[24px]" />
+          <div className="flex-[1_0_0] h-[42px] min-w-px relative" data-node-id="3178:2116" data-name="文本输入框">
+            <div className="absolute bg-[#f8f8f8] border-0 border-[#d4d9dd] border-solid content-stretch flex flex-col inset-0 items-start justify-center px-[12px] py-[10px] rounded-[12px]" data-node-id="I3178:2116;9:557">
+              <div className="content-stretch flex items-center relative shrink-0" data-node-id="I3178:2116;9:558">
+                <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] relative shrink-0 text-[#999] text-[14px] whitespace-nowrap" data-node-id="I3178:2116;9:561">
+                  输入消息…
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[#ffd152] content-stretch flex gap-[10px] h-[42px] items-center justify-center px-[12px] py-[10px] relative rounded-[12px] shrink-0 w-[64px]" data-node-id="3178:2122" data-name="发送消息">
+            <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[22px] relative shrink-0 text-[#333] text-[14px] whitespace-nowrap" data-node-id="I3178:2122;9:423">
+              发送
+            </p>
+          </div>
+        </div>
+        <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3178:2126" data-name="底部安全区">
+          <div className="absolute bg-white inset-0" data-node-id="I3178:2126;7122:3669" />
+          <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3178:2126;7122:3671" />
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/主要文字: #333333, 灰色/辅助文字: #999999, 灰色/背景2: #F8F8F8, 灰色/默认文字: #D4D9DD, 颜色/主色: #FFD152, 灰色/白色: #FFFFFF.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

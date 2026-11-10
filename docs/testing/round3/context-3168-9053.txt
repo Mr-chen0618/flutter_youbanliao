@@ -1,0 +1,251 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/907ba9a9-c90a-4f02-b59c-da4b8c504054";
+const img = `${assetPathPrefix}/b749f.svg`;
+const imgImage10 = `${assetPathPrefix}/85ca4.png`;
+const img1 = `${assetPathPrefix}/b5e1d.png`;
+const imgBattery = `${assetPathPrefix}/f80d4.svg`;
+const imgWifi = `${assetPathPrefix}/eb198.svg`;
+const imgCellularConnection = `${assetPathPrefix}/d5602.svg`;
+const img2 = `${assetPathPrefix}/6d800.svg`;
+const imgUnion = `${assetPathPrefix}/aee62.svg`;
+const imgShieldCheck = `${assetPathPrefix}/a20ec.svg`;
+
+type ComponentProps = {
+  className?: string;
+  type?: "center";
+};
+
+function Component({ className, type = "center" }: ComponentProps) {
+  return (
+    <div className={className || "content-stretch flex flex-col h-px items-start px-[16px] relative w-[375px]"} data-node-id="192:1939">
+      <div className="bg-[#f1f1f1] h-[0.5px] relative shrink-0 w-full" data-node-id="192:1934" />
+    </div>
+  );
+}
+
+type IconProps = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon({ className, propValue = "左" }: IconProps) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+export default function Component1() {
+  return (
+    <div className="bg-white content-stretch flex flex-col items-start justify-between relative size-full" data-node-id="3168:9053" data-name="举报">
+      <div className="absolute h-[242px] left-0 overflow-clip top-0 w-[375px]" data-node-id="3168:9054" data-name="浅黄色氛围">
+        <div className="absolute bg-gradient-to-b from-[#fffbbf] inset-0 to-white" data-node-id="I3168:9054;3109:19306" />
+        <div className="absolute aspect-[274/360] left-[56.27%] opacity-25 right-[-4.27%] top-[-39px]" data-node-id="I3168:9054;3109:19311" data-name="image 10">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+        </div>
+        <div className="absolute aspect-[236.5010055239154/280.49248874424575] flex items-center justify-center left-[-10.93%] right-[47.87%] top-[-98px]" data-node-id="I3168:9054;3109:19313" style={{ containerType: "size" }}>
+          <div className="-scale-x-100 flex-none h-[hypot(-23.1311cqw,85.1558cqh)] rotate-[12.9deg] w-[hypot(-76.8689cqw,-14.8442cqh)]">
+            <div className="opacity-25 relative size-full" data-name="image 11">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage10} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9058" data-name="页面内容">
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3168:9059" data-name="状态栏">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3168:9059;1:946" data-name="矩形" />
+          <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I3168:9059;1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I3168:9059;1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+              <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I3168:9059;1:947;0:182" data-name="Battery">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+              </div>
+              <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I3168:9059;1:947;0:188" data-name="Wifi">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+              </div>
+              <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I3168:9059;1:947;0:192" data-name="Cellular Connection">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+              </div>
+              <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I3168:9059;1:947;0:195" data-name="Time Style">
+                <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I3168:9059;1:947;0:196">
+                  <span className="leading-[normal]">9:4</span>
+                  <span className="leading-[normal]">1</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[48px] relative shrink-0 w-[375px]" data-node-id="3168:9080" data-name="返回导航">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3168:9080;9:464" />
+          <Icon className="absolute h-[24px] left-[4.27%] right-[89.33%] top-[12px]" />
+          <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Bold'] font-bold inset-[27.08%_45.87%_33.33%_45.6%] leading-[normal] text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3168:9080;9:473">
+            举报
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip pb-[24px] pt-[16px] px-[16px] relative shrink-0 w-full" data-node-id="3168:9091" data-name="举报内容">
+          <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[8px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3168:9092" data-name="被举报对象">
+            <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] relative shrink-0 text-[#999] text-[12px] w-full" data-node-id="3168:9093">
+              举报
+            </p>
+            <div className="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3168:9094" data-name="对象摘要">
+              <div className="relative shrink-0 size-[40px]" data-node-id="3168:9095" data-name="用户头像">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={img1} width="40" />
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start leading-[1.5] min-w-px overflow-clip relative" data-node-id="3168:9096" data-name="动态信息">
+                <p className="font-['Noto_Sans_SC:Medium'] font-medium relative shrink-0 text-[#333] text-[14px] w-full" data-node-id="3168:9097">
+                  薄荷同学
+                </p>
+                <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[12px] w-full" data-node-id="3168:9098">
+                  接受一切事与愿违，人生缓缓自有答案。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[8px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3168:9099" data-name="举报原因">
+            <p className="[word-break:break-word] font-['Noto_Sans_SC:Bold'] font-bold leading-[1.5] relative shrink-0 text-[#333] text-[16px] w-full" data-node-id="3168:9100">
+              请选择举报原因
+            </p>
+            <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] relative shrink-0 text-[#999] text-[12px] w-full" data-node-id="3168:9101">
+              必选，选择最符合的一项
+            </p>
+            <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9102" data-name="原因选项">
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9103" data-name="举报原因选项">
+                <div className="content-stretch flex gap-[12px] h-[40px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3168:9104" data-name="单选原因">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-px relative text-[#333] text-[14px]" data-node-id="3168:9105">
+                    广告引流 / 垃圾信息
+                  </p>
+                  <div className="relative shrink-0 size-[16px]" data-node-id="3168:9106" data-name="单选状态">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={img2} />
+                  </div>
+                </div>
+                <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+              </div>
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9112" data-name="举报原因选项">
+                <div className="content-stretch flex gap-[12px] h-[40px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3168:9113" data-name="单选原因">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-px relative text-[#333] text-[14px]" data-node-id="3168:9114">
+                    色情低俗
+                  </p>
+                  <div className="relative shrink-0 size-[16px]" data-node-id="3168:9115" data-name="单选状态">
+                    <div className="absolute aspect-[18/18] bg-white border border-[#d5d5d5] border-solid left-0 right-0 rounded-[8px] top-0" data-node-id="I3168:9115;4:106" />
+                  </div>
+                </div>
+                <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+              </div>
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9119" data-name="举报原因选项">
+                <div className="content-stretch flex gap-[12px] h-[40px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3168:9120" data-name="单选原因">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-px relative text-[#333] text-[14px]" data-node-id="3168:9121">
+                    辱骂骚扰 / 人身攻击
+                  </p>
+                  <div className="relative shrink-0 size-[16px]" data-node-id="3168:9122" data-name="单选状态">
+                    <div className="absolute aspect-[18/18] bg-white border border-[#d5d5d5] border-solid left-0 right-0 rounded-[8px] top-0" data-node-id="I3168:9122;4:106" />
+                  </div>
+                </div>
+                <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+              </div>
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9126" data-name="举报原因选项">
+                <div className="content-stretch flex gap-[12px] h-[40px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3168:9127" data-name="单选原因">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-px relative text-[#333] text-[14px]" data-node-id="3168:9128">
+                    虚假信息 / 欺诈
+                  </p>
+                  <div className="relative shrink-0 size-[16px]" data-node-id="3168:9129" data-name="单选状态">
+                    <div className="absolute aspect-[18/18] bg-white border border-[#d5d5d5] border-solid left-0 right-0 rounded-[8px] top-0" data-node-id="I3168:9129;4:106" />
+                  </div>
+                </div>
+                <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+              </div>
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9133" data-name="举报原因选项">
+                <div className="content-stretch flex gap-[12px] h-[40px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3168:9134" data-name="单选原因">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-px relative text-[#333] text-[14px]" data-node-id="3168:9135">
+                    侵犯隐私
+                  </p>
+                  <div className="relative shrink-0 size-[16px]" data-node-id="3168:9136" data-name="单选状态">
+                    <div className="absolute aspect-[18/18] bg-white border border-[#d5d5d5] border-solid left-0 right-0 rounded-[8px] top-0" data-node-id="I3168:9136;4:106" />
+                  </div>
+                </div>
+                <Component className="content-stretch flex flex-col h-px items-start px-[16px] relative shrink-0 w-full" />
+              </div>
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9140" data-name="举报原因选项">
+                <div className="content-stretch flex gap-[12px] h-[40px] items-center overflow-clip relative shrink-0 w-full" data-node-id="3168:9141" data-name="单选原因">
+                  <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-px relative text-[#333] text-[14px]" data-node-id="3168:9142">
+                    其他问题
+                  </p>
+                  <div className="relative shrink-0 size-[16px]" data-node-id="3168:9143" data-name="单选状态">
+                    <div className="absolute aspect-[18/18] bg-white border border-[#d5d5d5] border-solid left-0 right-0 rounded-[8px] top-0" data-node-id="I3168:9143;4:106" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white border-2 border-[#f1f1f1] border-solid content-stretch flex flex-col gap-[12px] items-start p-[16px] relative rounded-[20px] shrink-0 w-full" data-node-id="3168:9145" data-name="补充与佐证">
+            <div className="[word-break:break-word] content-stretch flex items-start justify-between leading-[1.5] overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="3168:9146" data-name="补充标题">
+              <p className="font-['Noto_Sans_SC:Bold'] font-bold relative shrink-0 text-[#333] text-[14px]" data-node-id="3168:9147">
+                补充说明
+              </p>
+              <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[12px]" data-node-id="3168:9148">
+                选填
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col gap-[8px] items-end relative shrink-0 w-full" data-node-id="3168:9149" data-name="补充说明输入">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="3168:9150" data-name="输入区域">
+                <div className="bg-[#f8f8f8] col-1 h-[96px] ml-0 mt-0 relative rounded-[16px] row-1 w-[311px]" data-node-id="3168:9152" data-name="输入底板" />
+                <p className="[word-break:break-word] col-1 font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] ml-[12px] mt-[12px] relative row-1 text-[#333] text-[14px] w-[287px]" data-node-id="3168:9151">
+                  该动态包含引流广告，请平台核实处理。
+                </p>
+              </div>
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] min-w-full relative shrink-0 text-[#999] text-[13px] text-right w-[min-content]" data-node-id="3168:9153">
+                18/200
+              </p>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex items-start justify-between leading-[1.5] overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="3168:9154" data-name="佐证标题">
+              <p className="font-['Noto_Sans_SC:Bold'] font-bold relative shrink-0 text-[#333] text-[14px]" data-node-id="3168:9155">
+                图片佐证
+              </p>
+              <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[12px]" data-node-id="3168:9156">
+                0 / 3
+              </p>
+            </div>
+            <div className="bg-white border border-[#f1f1f1] border-dashed content-stretch flex items-center justify-center pl-[22px] pr-[23px] py-[22px] relative rounded-[12px] shrink-0 size-[93px]" data-node-id="3168:9157" data-name="添加图片">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I3168:9157;2812:11612">
+                <div className="col-1 ml-[12px] mt-0 relative row-1 size-[24px]" data-node-id="I3168:9157;2812:11607" data-name="Union">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgUnion} />
+                </div>
+                <p className="[word-break:break-word] col-1 font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] ml-0 mt-[32px] relative row-1 text-[#999] text-[12px] whitespace-nowrap" data-node-id="I3168:9157;2812:11608">
+                  添加图片
+                </p>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-full relative shrink-0 text-[#999] text-[11px] w-[min-content]" data-node-id="3168:9163">
+              可上传相关截图，请勿包含身份证等敏感信息
+            </p>
+          </div>
+          <div className="bg-[#ffd152] content-stretch flex gap-[10px] h-[52px] items-center justify-center px-[76px] py-[15px] relative rounded-[16px] shrink-0 w-full" data-node-id="3168:9164" data-name="主要操作">
+            <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] relative shrink-0 text-[#333] text-[16px] whitespace-nowrap" data-node-id="I3168:9164;9:423">
+              提交举报
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[6px] items-start overflow-clip relative shrink-0 w-full" data-node-id="3168:9168" data-name="隐私提示">
+            <div className="relative shrink-0 size-[14px]" data-node-id="3168:9439" data-name="shield-check">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgShieldCheck} />
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Regular'] font-normal leading-[1.5] min-w-px relative text-[#999] text-[11px]" data-node-id="3168:9170">
+              举报信息将严格保密，不会向对方公开。处理结果将通过友伴消息通知你。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3168:9171" data-name="底部安全区">
+        <div className="absolute bg-white inset-0" data-node-id="I3168:9171;7122:3669" />
+        <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3168:9171;7122:3671" />
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/透明: #FFFFFF, 灰色/主要文字: #333333, 灰色/辅助文字: #999999, 灰色/白色: #FFFFFF, 颜色/主色: #FFD152, 颜色/辅色: #180E04.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

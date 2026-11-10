@@ -16,13 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
-                            </imageView>
+                            <imageView opaque="NO" contentMode="scaleAspectFit" image="LaunchSloganFirst" translatesAutoresizingMaskIntoConstraints="NO" id="launch-slogan-first"/>
+                            <imageView opaque="NO" contentMode="scaleAspectFit" image="LaunchSloganSecond" translatesAutoresizingMaskIntoConstraints="NO" id="launch-slogan-second"/>
+                            <imageView opaque="NO" contentMode="scaleAspectFit" image="LaunchBrand" translatesAutoresizingMaskIntoConstraints="NO" id="launch-brand"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1a2-6s-vTC"/>
-                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4X2-HB-R7a"/>
+                            <constraint firstItem="launch-slogan-first" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="34:375" id="launch-first-width"/>
+                            <constraint firstItem="launch-slogan-first" firstAttribute="height" secondItem="launch-slogan-first" secondAttribute="width" multiplier="162:34" id="launch-first-height"/>
+                            <constraint firstItem="launch-slogan-first" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="trailing" multiplier="162:375" id="launch-first-x"/>
+                            <constraint firstItem="launch-slogan-first" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="bottom" multiplier="194:812" id="launch-first-top"/>
+                            <constraint firstItem="launch-slogan-second" firstAttribute="width" secondItem="launch-slogan-first" secondAttribute="width" id="launch-second-width"/>
+                            <constraint firstItem="launch-slogan-second" firstAttribute="height" secondItem="launch-slogan-first" secondAttribute="height" id="launch-second-height"/>
+                            <constraint firstItem="launch-slogan-second" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="trailing" multiplier="210:375" id="launch-second-x"/>
+                            <constraint firstItem="launch-slogan-second" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="bottom" multiplier="219:812" id="launch-second-top"/>
+                            <constraint firstItem="launch-brand" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="118:375" id="launch-brand-width"/>
+                            <constraint firstItem="launch-brand" firstAttribute="height" secondItem="launch-brand" secondAttribute="width" multiplier="38:118" id="launch-brand-height"/>
+                            <constraint firstItem="launch-brand" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="launch-brand-x"/>
+                            <constraint firstItem="Ze5-6b-2t3" firstAttribute="bottom" secondItem="launch-brand" secondAttribute="bottom" constant="69" id="launch-brand-bottom"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -32,6 +43,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImage" width="168" height="185"/>
+        <image name="LaunchSloganFirst" width="34" height="162"/>
+        <image name="LaunchSloganSecond" width="34" height="162"/>
+        <image name="LaunchBrand" width="118" height="38"/>
     </resources>
 </document>

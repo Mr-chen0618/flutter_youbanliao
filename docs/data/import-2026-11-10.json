@@ -1,0 +1,18 @@
+{
+  "source": "/Users/tabier/Downloads/应用数据-11:9/搭子App模拟数据.xlsx",
+  "sha256": "a10af639c621c9e9f597e82042013e3901a4a6ce067f2ff2321c2d4f6836a1c5",
+  "users": 20,
+  "activities": 24,
+  "posts": 20,
+  "interests": 60,
+  "copiedImages": 172,
+  "referencedImages": 172,
+  "outputs": [
+    "home/catalog",
+    "square/feed",
+    "user/account",
+    "user/interests",
+    "activity/my_activities"
+  ],
+  "note": "公开目录包含所有用户；既有磁盘快照保留。发布时间不作为活动排期，未生成报名/消息/认证记录。"
+}
