@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/images/app_image.dart';
 import '../../../../shared/widgets/images/mock_photo_attachments.dart';
 import '../../../square/presentation/providers/square_provider.dart';
 import 'package:flutter/material.dart';
@@ -10,15 +11,18 @@ import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../shared/widgets/layout/companion_page_surface.dart';
 import '../../../../shared/widgets/layout/companion_card_surface_widget.dart';
 
-/// 动态和聊天共用的举报表单，按对象 ID 隔离提交记录。
+/// 用户、活动、动态和聊天共用的举报表单，按对象类型和 ID 隔离记录。
 class ReportPage extends ConsumerStatefulWidget {
   const ReportPage({
     super.key,
     required this.targetId,
     required this.targetType,
     required this.targetName,
+    this.targetAvatar,
+    this.targetSummary,
   });
   final String targetId, targetType, targetName;
+  final String? targetAvatar, targetSummary;
   @override
   ConsumerState<ReportPage> createState() => _ReportPageState();
 }
@@ -52,6 +56,9 @@ class _ReportPageState extends ConsumerState<ReportPage> {
             ReportRequestModel(
               targetId: widget.targetId,
               targetType: widget.targetType,
+              targetName: widget.targetName,
+              targetAvatar: widget.targetAvatar,
+              targetSummary: widget.targetSummary,
               reason: _reason,
               description: _description.text.trim(),
               photos: List.unmodifiable(_photos),
@@ -76,8 +83,20 @@ class _ReportPageState extends ConsumerState<ReportPage> {
         CompanionCardSurfaceWidget(
           padding: EdgeInsets.all(16.w),
           child: ListTile(
+            leading: widget.targetAvatar == null || widget.targetAvatar!.isEmpty
+                ? null
+                : AppImage(
+                    src: widget.targetAvatar!,
+                    width: 44.r,
+                    height: 44.r,
+                    radius: 8.r,
+                  ),
             title: Text(widget.targetName),
-            subtitle: const Text('举报对象'),
+            subtitle: Text(
+              widget.targetSummary?.isNotEmpty == true
+                  ? widget.targetSummary!
+                  : '举报对象',
+            ),
           ),
         ),
         SizedBox(height: 16.h),

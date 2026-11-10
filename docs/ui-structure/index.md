@@ -120,3 +120,9 @@
 广场、用户详情及活动详情的关注统一使用 activity/participation.json 中的用户 ID，旧广场昵称关注在首次读取时按动态 authorId 迁移一次。无用户 ID 的历史作者保留原广场关注；取消关注后不会被旧快照重新迁入。
 
 本轮设计更新：3262:33636现为完整启动页（替代前轮空背景状态），入口AuthGate，启动恢复分流与短编号/预置账号/H5协议见[认证与启动](auth.md)。
+
+## 2026-11-10 输入与详情举报交互
+
+- `lib/shared/widgets/keyboard/keyboard_dismiss_scope.dart` 的 `KeyboardDismissScope` 在 `Application` 的 MaterialApp builder 统一覆盖 `EditableTextTapOutsideIntent`，移动端点击输入区域外释放该输入焦点，不创建抢占按钮或滚动的全屏手势。既有AppTextField自行处理onTapOutside，保持兼容。MaterialApp ScrollBehavior采用onDrag，覆盖登录/资料、发布、聊天/评论、搜索、反馈/举报及弹窗输入，保留控制器内容。
+- 活动详情和用户详情右上更多调用举报模块公开入口 `showReportActions`，复用AppActionSheet呈现举报/取消。选择举报后进入ReportPage，分别传递activity/user稳定目标ID、名称、封面或头像和内容摘要；ReportRequestModel将目标快照与原原因/说明/附件共同写回举报JSON。历史调用缺少快照字段仍兼容，取消面板不生成记录。
+- 定向键盘Widget回归覆盖输入切换、空白收起、按钮不吞事件、拖动收起及文本保留；与现有smoke/mainTabs共12项通过。未操作模拟器。

@@ -1770,4 +1770,4 @@ Framework 升级必须有版本
 
 启动页按新版Figma3262:33636实现，并行恢复会话后分流。新注册ID采用8位数字，旧local内部ID兼容保留且界面显示短businessId。预置账号手机号17000000888：点击获取验证码后输入8888，资料已完成且私有业务初始为空；既有安装也会幂等补齐。
 
-用户协议/隐私政策通过应用内WebView打开；当前按要求均指向百度占位。后续分别修改lib/app/config/legal_links.dart的userAgreementUrl/privacyPolicyUrl即可。
+用户协议/隐私政策通过应用内WebView打开；2026-11-10已替换为用户提供的腾讯文档地址，登录与关于页共用lib/app/config/legal_links.dart配置。文档须允许未登录访问；当前代码检查不代替腾讯文档分享权限验证。

@@ -1,3 +1,4 @@
+import '../../../report/presentation/widgets/report_action.dart';
 import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../app/widgets/business_refresh.dart';
 import 'package:flutter/material.dart';
@@ -126,16 +127,20 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
           icon: _navigationIcon('back'),
         ),
         actions: [
-          PopupMenuButton<void>(
+          IconButton(
             tooltip: '更多',
             icon: _navigationIcon('more'),
-            itemBuilder: (_) => [
-              PopupMenuItem<void>(
-                onTap: () =>
-                    Clipboard.setData(ClipboardData(text: person.displayId)),
-                child: const Text('复制用户 ID'),
-              ),
-            ],
+            onPressed: () => showReportActions(
+              context,
+              targetId: person.id,
+              targetType: 'user',
+              targetName: person.name,
+              targetAvatar: person.avatar,
+              targetSummary: [
+                person.city,
+                ...person.interests,
+              ].where((value) => value.isNotEmpty).join(' · '),
+            ),
           ),
         ],
       ),

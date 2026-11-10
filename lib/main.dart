@@ -1,3 +1,4 @@
+import 'shared/widgets/keyboard/keyboard_dismiss_scope.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -48,23 +49,28 @@ class Application extends ConsumerWidget {
           theme: AppTheme.light(),
           darkTheme: AppTheme.dark(),
           debugShowCheckedModeBanner: false,
+          scrollBehavior: const MaterialScrollBehavior().copyWith(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          ),
           builder: EasyLoading.init(
             builder: (context, child) {
               return MediaQuery(
                 data: MediaQuery.of(
                   context,
                 ).copyWith(textScaler: const TextScaler.linear(1)),
-                child: Stack(
-                  children: [
-                    child ?? const SizedBox.shrink(),
-                    if (showNetworkStatus)
-                      const Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        child: NetworkStatusBanner(),
-                      ),
-                  ],
+                child: KeyboardDismissScope(
+                  child: Stack(
+                    children: [
+                      child ?? const SizedBox.shrink(),
+                      if (showNetworkStatus)
+                        const Positioned(
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          child: NetworkStatusBanner(),
+                        ),
+                    ],
+                  ),
                 ),
               );
             },

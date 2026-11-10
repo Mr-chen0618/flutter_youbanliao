@@ -103,19 +103,30 @@ class AppScaffold extends StatelessWidget {
               scrolledUnderElevation: 0,
               leading:
                   navigatorBackWidget ??
-                  Center(
-                    child: AppTapArea(
-                      behavior: HitTestBehavior.opaque,
-                      child: AppImage(src: navigatorBackIconPath ?? ""),
-                      onTap: () {
-                        if (navigatorBackPressed != null) {
-                          navigatorBackPressed!();
-                          return;
-                        }
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
+                  // 未提供自定义资源时使用返回按钮，不能让空图片显示错误占位。
+                  (navigatorBackIconPath?.isNotEmpty == true
+                      ? Center(
+                          child: AppTapArea(
+                            behavior: HitTestBehavior.opaque,
+                            child: AppImage(
+                              src: navigatorBackIconPath,
+                              width: 24.r,
+                              height: 24.r,
+                              iconColor: backIconColor,
+                            ),
+                            onTap: () {
+                              if (navigatorBackPressed != null) {
+                                navigatorBackPressed!();
+                                return;
+                              }
+                              Navigator.maybePop(context);
+                            },
+                          ),
+                        )
+                      : BackButton(
+                          color: backIconColor ?? Colors.black87,
+                          onPressed: navigatorBackPressed,
+                        )),
               actions: navigatorActionWidget,
               bottom: isShowBottomBorder ?? false
                   ? PreferredSize(

@@ -1,3 +1,4 @@
+import '../../../report/presentation/widgets/report_action.dart';
 import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../app/widgets/business_refresh.dart';
 import 'activity_join_page.dart';
@@ -104,16 +105,17 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
           icon: _navigationIcon('back'),
         ),
         actions: [
-          PopupMenuButton<void>(
+          IconButton(
             tooltip: '更多',
             icon: _navigationIcon('more'),
-            itemBuilder: (_) => [
-              PopupMenuItem<void>(
-                onTap: () =>
-                    Clipboard.setData(ClipboardData(text: widget.activityId)),
-                child: const Text('复制活动编号'),
-              ),
-            ],
+            onPressed: () => showReportActions(
+              context,
+              targetId: widget.activityId,
+              targetType: 'activity',
+              targetName: activity.title,
+              targetAvatar: activity.cover,
+              targetSummary: activity.description,
+            ),
           ),
         ],
       ),
