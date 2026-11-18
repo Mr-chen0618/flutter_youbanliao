@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../app/navigation/app_navigator.dart';
 import '../../../../app/navigation/route_names.dart';
 import '../../../../shared/widgets/layout/companion_page_surface.dart';
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import '../providers/home_provider.dart';
 import '../widgets/home_activity_card_widget.dart';
 import '../widgets/home_companion_item_widget.dart';
@@ -28,7 +29,8 @@ class _SearchPageState extends ConsumerState<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    final feed = ref.watch(homeProvider).feed.value;
+    final feedState = ref.watch(homeProvider).feed;
+    final feed = feedState.value;
     final query = _query.trim().toLowerCase();
     final people =
         feed?.companions
@@ -109,12 +111,32 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                         ),
                       ),
                     ),
-                  Center(
-                    child: Text(
-                      query.isEmpty ? '输入关键词搜索' : '已展示全部相关结果',
-                      style: TextStyle(fontSize: 11.sp, color: Colors.grey),
+                  if (query.isEmpty)
+                    Center(
+                      child: Text(
+                        '输入关键词搜索',
+                        style: TextStyle(fontSize: 11.sp, color: Colors.grey),
+                      ),
+                    )
+                  else if (feedState.isLoading && feed == null)
+                    const Center(child: CircularProgressIndicator())
+                  else if (feedState.hasError)
+                    Center(
+                      child: TextButton(
+                        onPressed: () =>
+                            ref.read(homeProvider.notifier).loadHome(),
+                        child: const Text('加载失败，点击重试'),
+                      ),
+                    )
+                  else if (feed != null && people.isEmpty && events.isEmpty)
+                    const AppEmptyState(message: '未找到相关结果')
+                  else if (people.isNotEmpty || events.isNotEmpty)
+                    Center(
+                      child: Text(
+                        '已展示全部相关结果',
+                        style: TextStyle(fontSize: 11.sp, color: Colors.grey),
+                      ),
                     ),
-                  ),
                 ],
               ),
             ),

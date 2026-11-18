@@ -33,17 +33,21 @@ class MessageThread {
     return switch (last.kind) {
       ChatEntryKind.text => last.content,
       ChatEntryKind.photo => '[图片]',
+      ChatEntryKind.voice => '[语音]',
+      ChatEntryKind.voiceCall => '[语音通话]',
+      ChatEntryKind.videoCall => '[视频通话]',
       ChatEntryKind.invitation => '[活动邀约]',
     };
   }
 
   MessageThread copyWith({
+    String? peerId,
     List<ChatEntry>? entries,
     int? unread,
     String? time,
   }) => MessageThread(
     id: id,
-    peerId: peerId,
+    peerId: peerId ?? this.peerId,
     name: name,
     avatar: avatar,
     entries: entries ?? this.entries,

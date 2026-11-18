@@ -1,5 +1,5 @@
-import 'dart:convert';
 import 'dart:io';
+import 'auth_test_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -42,7 +42,7 @@ void main() {
         }
         return result;
       }))!;
-      final store = _GateStore(seeds);
+      final store = AuthTestStore(seeds);
       final auth = AuthMockRepository(store, delay: Duration.zero);
       final session = await tester.runAsync(() async {
         await auth.sendCode('14444000003');
@@ -101,11 +101,9 @@ void main() {
       await drain(tester);
       await tester.tap(find.text('设置').hitTestable());
       await drain(tester);
-      await tester.tap(find.text('退出登录').hitTestable());
-      await drain(tester);
       await tester.tap(find.widgetWithText(FilledButton, '退出登录'));
       await drain(tester);
-      expect(find.text('确认退出登录？'), findsOneWidget);
+      expect(find.text('退出登录后，你将无法收到新的信息，确定要退出登录吗？'), findsOneWidget);
       await tester.tap(find.widgetWithText(TextButton, '取消'));
       await drain(tester);
       expect(
@@ -114,50 +112,18 @@ void main() {
       );
       await tester.tap(find.widgetWithText(FilledButton, '退出登录'));
       await drain(tester);
-      await tester.tap(find.widgetWithText(TextButton, '确认退出'));
+      await tester.tap(
+        find.descendant(
+          of: find.byType(AlertDialog),
+          matching: find.widgetWithText(FilledButton, '退出登录'),
+        ),
+      );
       await drain(tester);
-      expect(find.text('登录/注册'), findsOneWidget);
+      expect(find.text('手机号登录'), findsOneWidget);
       expect(find.text('导航改名'), findsNothing);
       expect(find.byTooltip('返回').hitTestable(), findsNothing);
       expect(await tester.runAsync(auth.restore), isNull);
       expect(tester.takeException(), isNull);
     },
   );
-}
-
-class _GateStore extends MockJsonStore {
-  _GateStore(this.seeds);
-  final Map<String, String> seeds;
-  final data = <String, String>{};
-  @override
-  Future<void> initialize(String path, Map<String, dynamic> value) async {
-    data.putIfAbsent(path, () => jsonEncode(value));
-  }
-
-  @override
-  Future<bool> exists(String path) async => data.containsKey(path);
-  @override
-  Future<void> delete(String path) async {
-    data.remove(path);
-  }
-
-  @override
-  Future<T> seed<T>(String path, T Function(Object?) decode) async =>
-      decode(jsonDecode(seeds[path]!));
-  @override
-  Future<T> read<T>(String path, T Function(Object?) decode) async =>
-      decode(jsonDecode(data[path] ??= seeds[path]!));
-  @override
-  Future<void> write(String path, Map<String, dynamic> value) async {
-    data[path] = jsonEncode(value);
-  }
-
-  @override
-  Future<void> update<T>(
-    String path,
-    T Function(Object?) decode,
-    Map<String, dynamic> Function(T) change,
-  ) async {
-    data[path] = jsonEncode(change(await read(path, decode)));
-  }
 }

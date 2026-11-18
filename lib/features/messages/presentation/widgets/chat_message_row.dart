@@ -7,10 +7,16 @@ import '../../../../shared/widgets/images/app_image.dart';
 import '../../data/messages_repository.dart';
 
 class ChatMessageRow extends StatelessWidget {
-  const ChatMessageRow({super.key, required this.entry, required this.avatar});
+  const ChatMessageRow({
+    super.key,
+    required this.entry,
+    required this.avatar,
+    this.onPlayVoice,
+  });
 
   final ChatEntry entry;
   final String avatar;
+  final VoidCallback? onPlayVoice;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +27,14 @@ class ChatMessageRow extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: 36.r,
+            width: 40.r,
             child: entry.continuesGroup
                 ? null
                 : AppImage(
                     src: avatar,
-                    width: 36.r,
-                    height: 36.r,
-                    radius: 18.r,
+                    width: 40.r,
+                    height: 40.r,
+                    radius: 20.r,
                   ),
           ),
           SizedBox(width: 8.w),
@@ -104,28 +110,73 @@ class ChatMessageRow extends StatelessWidget {
     if (entry.invitation case final invitation?) {
       return _ChatInvitationCard(invitation: invitation);
     }
-    return Container(
-      constraints: BoxConstraints(maxWidth: 260.w),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
-      decoration: BoxDecoration(
-        color: entry.isMine ? const Color(0xFFFFF1BB) : const Color(0xFFF8F8F8),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(entry.isMine ? 14.r : 4.r),
-          topRight: Radius.circular(entry.isMine ? 4.r : 14.r),
-          bottomLeft: Radius.circular(14.r),
-          bottomRight: Radius.circular(14.r),
-        ),
+    final color = entry.isMine ? const Color(0xFF333333) : Colors.white;
+    final bubble = switch (entry.kind) {
+      ChatEntryKind.voice => _mediaLabel(
+        'voice_bubble',
+        '${entry.durationSeconds ?? 0}″',
+        color,
+        reverse: entry.isMine,
       ),
-      child: Text(
+      ChatEntryKind.voiceCall => _mediaLabel(
+        'voice_call',
         entry.content,
-        style: TextStyle(
-          color: const Color(0xFF333333),
-          fontSize: 14.sp,
-          height: 22 / 14,
+        color,
+      ),
+      ChatEntryKind.videoCall => _mediaLabel(
+        'video_bubble',
+        entry.content,
+        color,
+      ),
+      _ => Text(
+        entry.content,
+        style: TextStyle(color: color, fontSize: 14.sp, height: 21 / 14),
+      ),
+    };
+    return Semantics(
+      label: onPlayVoice == null ? null : '播放语音',
+      button: onPlayVoice != null,
+      child: Material(
+        color: entry.isMine ? const Color(0xFFFFD152) : const Color(0xFF333333),
+        borderRadius: BorderRadius.circular(13.r),
+        child: InkWell(
+          onTap: onPlayVoice,
+          borderRadius: BorderRadius.circular(13.r),
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 245.w),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+            child: bubble,
+          ),
         ),
       ),
     );
   }
+
+  Widget _mediaLabel(
+    String icon,
+    String text,
+    Color color, {
+    bool reverse = false,
+  }) => Row(
+    mainAxisSize: MainAxisSize.min,
+    textDirection: reverse ? TextDirection.rtl : TextDirection.ltr,
+    children: [
+      AppImage(
+        src: 'assets/messages/messages_chat_$icon.svg',
+        width: 22.r,
+        height: 22.r,
+        fit: BoxFit.contain,
+        iconColor: color,
+      ),
+      SizedBox(width: 6.w),
+      Flexible(
+        child: Text(
+          text,
+          style: TextStyle(color: color, fontSize: 14.sp),
+        ),
+      ),
+    ],
+  );
 }
 
 class _ChatInvitationCard extends StatelessWidget {

@@ -66,7 +66,7 @@ void main() {
       await tester.pump(const Duration(seconds: 3));
       await tester.tap(find.text('获取验证码'));
       await tester.pumpAndSettle();
-      expect(find.text('发送成功'), findsOneWidget);
+      expect(find.text('验证码已发送'), findsOneWidget);
       expect(tester.getRect(button), before);
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -90,12 +90,12 @@ void main() {
       final before = tester.getRect(enter);
       await tester.tap(enter);
       await tester.pumpAndSettle();
-      expect(find.textContaining('请添加头像'), findsOneWidget);
+      expect(find.text('请上传头像'), findsOneWidget);
       expect(tester.getRect(enter), before);
       expect(
         find.descendant(
           of: find.byType(SingleChildScrollView),
-          matching: find.textContaining('请添加头像'),
+          matching: find.text('请上传头像'),
         ),
         findsNothing,
       );

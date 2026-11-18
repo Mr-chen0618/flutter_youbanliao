@@ -11,6 +11,7 @@ class SquarePost {
     this.isPrivate = false,
     this.activityId,
     this.authorId,
+    this.reviewStatus,
     this.publishedAt,
     this.category = '运动',
     this.location = "深圳  |  18km  |  音乐",
@@ -26,6 +27,8 @@ class SquarePost {
   final bool isPrivate;
   final String? activityId;
   final String? authorId;
+  final SquarePostReviewStatus? reviewStatus;
+  bool get isPublic => !isPrivate && reviewStatus == null;
   final DateTime? publishedAt;
   final String location;
   final String category;
@@ -41,6 +44,8 @@ class SquarePost {
     isPrivate: json['isPrivate'] as bool? ?? false,
     activityId: json['activityId'] as String?,
     authorId: json['authorId'] as String?,
+    reviewStatus: SquarePostReviewStatus.values
+        .asNameMap()[json['reviewStatus']],
     publishedAt: DateTime.tryParse(json['publishedAt'] as String? ?? ''),
     location: json['location'] as String? ?? '',
     category: json['category'] as String? ?? '运动',
@@ -58,8 +63,12 @@ class SquarePost {
     'isPrivate': isPrivate,
     'activityId': activityId,
     if (authorId != null) 'authorId': authorId,
+    if (reviewStatus != null) 'reviewStatus': reviewStatus!.name,
     if (publishedAt != null) 'publishedAt': publishedAt!.toIso8601String(),
     'location': location,
     'category': category,
   };
 }
+
+/// 本地数据或未来服务端提供的发布审核状态。
+enum SquarePostReviewStatus { pending, rejected }

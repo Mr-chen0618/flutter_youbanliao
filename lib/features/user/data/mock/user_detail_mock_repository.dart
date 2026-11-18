@@ -22,13 +22,22 @@ class UserDetailMockRepository implements UserDetailRepository {
     final account = await store.read('user/account', _object);
     final profile = _object(account['profile']);
     final isSelf = id == profile['id'];
+    final birthday = DateTime.tryParse(profile['birthday'] as String? ?? '');
+    final now = DateTime.now();
+    final birthdayPending =
+        birthday != null &&
+        (now.month < birthday.month ||
+            (now.month == birthday.month && now.day < birthday.day));
+    final age = birthday == null
+        ? profile['age'] as int? ?? 0
+        : now.year - birthday.year - (birthdayPending ? 1 : 0);
     final entry = isSelf
         ? {
             ...profile,
-            'photos': [profile['avatar']],
-            'heightCm': 0,
-            'weightKg': 0,
-            'age': profile['age'] ?? 0,
+            'photos': profile['photos'] ?? const [],
+            'heightCm': profile['heightCm'] ?? 0,
+            'weightKg': profile['weightKg'] ?? 0,
+            'age': age,
             'categoryIds': <String>[],
           }
         : (catalog['companions'] as List)
@@ -42,6 +51,16 @@ class UserDetailMockRepository implements UserDetailRepository {
       person: HomeCompanionModel.fromJson(entry),
       signature: entry['signature'] as String? ?? '',
       tags: List<String>.from(entry['tags'] as List? ?? const []),
+      occupation: entry['occupation'] as String? ?? '',
+      education: entry['education'] as String? ?? '',
+      hometown: entry['hometown'] as String? ?? '',
+      relationshipStatus: entry['relationshipStatus'] as String? ?? '',
+      incomeRange: entry['incomeRange'] as String? ?? '',
+      blockedByPeer:
+          !isSelf &&
+          (entry['blockedUserIds'] as List? ?? const []).contains(
+            profile['id'],
+          ),
       categories: (catalog['categories'] as List)
           .cast<Map<String, dynamic>>()
           .map(HomeCategoryModel.fromJson)

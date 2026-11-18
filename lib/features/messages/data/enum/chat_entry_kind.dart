@@ -1,1 +1,1 @@
-enum ChatEntryKind { text, photo, invitation }
+enum ChatEntryKind { text, photo, invitation, voice, voiceCall, videoCall }

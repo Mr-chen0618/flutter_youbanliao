@@ -1,3 +1,11 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
+import 'dart:async';
+import 'dart:io';
+
+import 'package:audioplayers/audioplayers.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:record/record.dart';
+
 import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../app/widgets/business_refresh.dart';
 import '../../../../core/media/app_media_picker.dart';
@@ -8,12 +16,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../shared/widgets/feedback/app_action_sheet.dart';
 import '../../../../shared/widgets/images/app_image.dart';
-import '../../../../shared/widgets/layout/companion_page_surface.dart';
+import '../widgets/messages_page_surface.dart';
 import '../../../user/presentation/providers/profile_provider.dart';
 import '../../data/messages_repository.dart';
 import '../../../report/presentation/pages/report_page.dart';
 import '../providers/messages_provider.dart';
 import '../widgets/chat_message_row.dart';
+import '../widgets/chat_composer.dart';
+import 'call_page.dart';
 
 enum _ChatAction { block, report }
 
@@ -25,13 +35,49 @@ class ChatPage extends ConsumerStatefulWidget {
   ConsumerState<ChatPage> createState() => _ChatPageState();
 }
 
-class _ChatPageState extends ConsumerState<ChatPage> {
+class _ChatPageState extends ConsumerState<ChatPage>
+    with WidgetsBindingObserver {
   final _input = TextEditingController();
   final _scroll = ScrollController();
+  AudioRecorder? _recorder;
+  AudioPlayer? _player;
+  Future<DateTime?>? _starting;
+  bool _voiceMode = false;
+  bool _holding = false;
+  bool _cancelRecording = false;
+  double _startY = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scroll.hasClients) {
+        _scroll.jumpTo(_scroll.position.maxScrollExtent);
+      }
+    });
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state != AppLifecycleState.resumed && _holding) {
+      unawaited(_finishRecording(cancel: true));
+    }
+    if (state != AppLifecycleState.resumed) {
+      final player = _player;
+      if (player != null) unawaited(player.stop());
+    }
+  }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _input.dispose();
+    _holding = false;
+    final recorder = _recorder;
+    if (recorder != null) unawaited(_disposeRecorder(recorder));
+    final player = _player;
+    if (player != null) unawaited(player.dispose());
     _scroll.dispose();
     super.dispose();
   }
@@ -59,7 +105,7 @@ class _ChatPageState extends ConsumerState<ChatPage> {
         .where((item) => item.id == widget.threadId)
         .firstOrNull;
     if (thread == null) {
-      return const CompanionPageSurface(
+      return const MessagesPageSurface(
         title: '聊天',
         child: Center(child: Text('当前会话不可用')),
       );
@@ -68,7 +114,7 @@ class _ChatPageState extends ConsumerState<ChatPage> {
         (ref.watch(profileProvider).value ?? ref.read(userBlocProvider).state)
             .profile
             .avatar;
-    return CompanionPageSurface(
+    return MessagesPageSurface(
       title: thread.name,
       titleStyle: TextStyle(
         color: const Color(0xFF333333),
@@ -87,96 +133,78 @@ class _ChatPageState extends ConsumerState<ChatPage> {
           onPressed: () => _showActions(thread),
         ),
       ],
-      child: Column(
+      child: Stack(
+        fit: StackFit.expand,
         children: [
-          Expanded(
-            child: BusinessRefresh(
-              scope: 'messages',
-              child: ListView.builder(
-                physics: const AlwaysScrollableScrollPhysics(),
-                controller: _scroll,
-                padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 14.h),
-                itemCount: thread.entries.length + 1,
-                itemBuilder: (_, index) {
-                  if (index == 0) {
-                    return thread.historyLabel == null
-                        ? const SizedBox.shrink()
-                        : Center(
-                            child: Text(
-                              thread.historyLabel!,
-                              style: TextStyle(
-                                color: const Color(0xFF999999),
-                                fontSize: 11.sp,
-                              ),
-                            ),
+          Column(
+            children: [
+              Expanded(
+                child: BusinessRefresh(
+                  scope: 'messages',
+                  child: ListView.builder(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    controller: _scroll,
+                    padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 14.h),
+                    itemCount: thread.entries.length + 1,
+                    itemBuilder: (_, index) {
+                      if (index == 0) {
+                        if (thread.entries.isEmpty) {
+                          return const AppEmptyState(
+                            message: '暂无聊天记录',
+                            compact: true,
                           );
-                  }
-                  final entry = thread.entries[index - 1];
-                  return ChatMessageRow(
-                    entry: entry,
-                    avatar: entry.isMine
-                        ? myAvatar
-                        : thread.chatAvatar ?? thread.avatar,
-                  );
-                },
+                        }
+                        return thread.historyLabel == null
+                            ? const SizedBox.shrink()
+                            : Center(
+                                child: Text(
+                                  thread.historyLabel!,
+                                  style: TextStyle(
+                                    color: const Color(0xFF999999),
+                                    fontSize: 11.sp,
+                                  ),
+                                ),
+                              );
+                      }
+                      final entry = thread.entries[index - 1];
+                      return ChatMessageRow(
+                        entry: entry,
+                        onPlayVoice: entry.kind == ChatEntryKind.voice
+                            ? () => _playVoice(entry.content)
+                            : null,
+                        avatar: entry.isMine
+                            ? myAvatar
+                            : thread.chatAvatar ?? thread.avatar,
+                      );
+                    },
+                  ),
+                ),
               ),
-            ),
+              ChatComposer(
+                controller: _input,
+                voiceMode: _voiceMode,
+                onToggleMode: () {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                  setState(() => _voiceMode = !_voiceMode);
+                },
+                onSend: _sendText,
+                onPhoto: _choosePhoto,
+                onVoiceCall: () => _call(thread, video: false),
+                onVideoCall: () => _call(thread, video: true),
+                onEmoji: _chooseEmoji,
+                onRecordStart: _startRecording,
+                onRecordMove: (details) {
+                  final cancel = details.globalPosition.dy < _startY - 52.h;
+                  if (_holding && cancel != _cancelRecording) {
+                    setState(() => _cancelRecording = cancel);
+                  }
+                },
+                onRecordEnd: (_) => _finishRecording(cancel: _cancelRecording),
+                onRecordCancel: () => _finishRecording(cancel: true),
+              ),
+            ],
           ),
-          const Divider(height: 1, color: Color(0xFFECEDEF)),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-            child: Row(
-              children: [
-                IconButton(
-                  tooltip: '添加图片',
-                  constraints: BoxConstraints(minWidth: 24.w, minHeight: 42.h),
-                  padding: EdgeInsets.zero,
-                  onPressed: _choosePhoto,
-                  icon: _icon('image'),
-                ),
-                SizedBox(width: 10.w),
-                Expanded(
-                  child: TextField(
-                    controller: _input,
-                    textInputAction: TextInputAction.send,
-                    onSubmitted: _sendText,
-                    style: TextStyle(fontSize: 14.sp),
-                    decoration: InputDecoration(
-                      hintText: '输入消息…',
-                      hintStyle: const TextStyle(color: Color(0xFF999999)),
-                      filled: true,
-                      fillColor: const Color(0xFFF8F8F8),
-                      isDense: true,
-                      constraints: BoxConstraints(minHeight: 42.h),
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: 12.w,
-                        vertical: 10.h,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12.r),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 10.w),
-                FilledButton(
-                  style: FilledButton.styleFrom(
-                    minimumSize: Size(64.w, 42.h),
-                    padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    backgroundColor: const Color(0xFFFFD152),
-                    foregroundColor: const Color(0xFF333333),
-                  ),
-                  onPressed: () => _sendText(_input.text),
-                  child: const Text('发送'),
-                ),
-              ],
-            ),
-          ),
+          if (_holding) ChatRecordingFeedback(cancel: _cancelRecording),
         ],
       ),
     );
@@ -204,6 +232,166 @@ class _ChatPageState extends ConsumerState<ChatPage> {
     );
   }
 
+  Future<void> _call(MessageThread thread, {required bool video}) async {
+    FocusManager.instance.primaryFocus?.unfocus();
+    await CallPage.open(
+      context,
+      peerId: thread.peerId ?? thread.id,
+      name: thread.name,
+      avatar: thread.chatAvatar ?? thread.avatar,
+      video: video,
+      threadId: thread.id,
+    );
+  }
+
+  Future<void> _chooseEmoji() async {
+    final emoji = await showModalBottomSheet<String>(
+      context: context,
+      builder: (sheet) => SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(16.w),
+          child: Wrap(
+            children: [
+              for (final emoji in [
+                '😀',
+                '😂',
+                '🥰',
+                '👏',
+                '👍',
+                '❤️',
+                '🎉',
+                '🤝',
+              ])
+                TextButton(
+                  onPressed: () => Navigator.pop(sheet, emoji),
+                  child: Text(emoji, style: TextStyle(fontSize: 22.sp)),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+    if (!mounted || emoji == null) return;
+    final cursor = _input.selection.isValid
+        ? _input.selection
+        : TextSelection.collapsed(offset: _input.text.length);
+    final text = _input.text.replaceRange(cursor.start, cursor.end, emoji);
+    _input.value = TextEditingValue(
+      text: text,
+      selection: TextSelection.collapsed(offset: cursor.start + emoji.length),
+    );
+    setState(() => _voiceMode = false);
+  }
+
+  void _startRecording(LongPressStartDetails details) {
+    if (_starting != null) return;
+    _startY = details.globalPosition.dy;
+    setState(() {
+      _holding = true;
+      _cancelRecording = false;
+    });
+    final recorder = _recorder ??= AudioRecorder();
+    final accountId = ref.read(userBlocProvider).state.profile.id;
+    _starting = _beginRecording(recorder, accountId);
+  }
+
+  Future<DateTime?> _beginRecording(
+    AudioRecorder recorder,
+    String accountId,
+  ) async {
+    try {
+      if (!await recorder.hasPermission()) {
+        if (mounted) AppToast.show('请开启麦克风权限');
+        return null;
+      }
+      if (!_holding || !mounted) return null;
+      final root = await getApplicationSupportDirectory();
+      final key = Uri.encodeComponent('account-$accountId');
+      final folder = await Directory(
+        '${root.path}/chat-voice/$key',
+      ).create(recursive: true);
+      if (!_holding || !mounted) return null;
+      final path =
+          '${folder.path}/${DateTime.now().microsecondsSinceEpoch}.m4a';
+      await _player?.stop();
+      if (!_holding || !mounted) return null;
+      await recorder.start(
+        const RecordConfig(encoder: AudioEncoder.aacLc),
+        path: path,
+      );
+      return DateTime.now();
+    } catch (_) {
+      if (mounted) AppToast.show('暂时无法录音，请重试');
+      return null;
+    }
+  }
+
+  Future<void> _finishRecording({required bool cancel}) async {
+    if (!_holding) return;
+    final releasedAt = DateTime.now();
+    setState(() => _holding = false);
+    try {
+      final startedAt = await _starting;
+      final recorder = _recorder;
+      if (startedAt == null || recorder == null || !mounted) return;
+      final seconds = releasedAt.difference(startedAt).inSeconds;
+      if (cancel || seconds < 1) {
+        await recorder.cancel();
+        if (!cancel && mounted) AppToast.show('说话时间太短');
+        return;
+      }
+      final path = await recorder.stop();
+      if (path == null) return;
+      if (!mounted ||
+          !ref
+              .read(messagesProvider)
+              .threads
+              .any((thread) => thread.id == widget.threadId)) {
+        await File(path).delete();
+        return;
+      }
+      _send(
+        ChatEntry(
+          path,
+          isMine: true,
+          kind: ChatEntryKind.voice,
+          durationSeconds: seconds,
+          showDelivery: true,
+        ),
+      );
+    } catch (_) {
+      if (mounted) AppToast.show('录音保存失败，请重试');
+    } finally {
+      _starting = null;
+    }
+  }
+
+  Future<void> _disposeRecorder(AudioRecorder recorder) async {
+    await _starting;
+    try {
+      if (await recorder.isRecording()) await recorder.cancel();
+    } finally {
+      await recorder.dispose();
+    }
+  }
+
+  Future<void> _playVoice(String path) async {
+    try {
+      final player = _player ??= AudioPlayer();
+      if (player.state == PlayerState.playing) {
+        await player.stop();
+        return;
+      }
+      if (!await File(path).exists()) {
+        if (mounted) AppToast.show('语音文件已失效');
+        return;
+      }
+      if (mounted) await player.play(DeviceFileSource(path));
+    } catch (_) {
+      if (mounted) AppToast.show('语音播放失败');
+    }
+  }
+
   Future<void> _showActions(MessageThread thread) async {
     final action = await showAppActionSheet<_ChatAction>(
       context,
@@ -225,38 +413,23 @@ class _ChatPageState extends ConsumerState<ChatPage> {
       await AppNavigator.push(
         context,
         page: ReportPage(
-          targetId: thread.id,
+          targetId: thread.peerId ?? thread.id,
+          targetAvatar: thread.avatar,
+          targetSummary: thread.preview,
           targetType: 'chat',
           targetName: thread.name,
         ),
       );
       return;
     }
-    final options = action == _ChatAction.block
-        ? ['确认加入黑名单']
-        : ['垃圾广告', '骚扰辱骂', '不当内容', '其他'];
-    final selected = await showModalBottomSheet<String>(
-      context: context,
-      builder: (sheet) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (final option in options)
-              ListTile(
-                title: Text(option),
-                onTap: () => Navigator.pop(sheet, option),
-              ),
-          ],
-        ),
-      ),
+    final confirmed = await showAppActionSheet<bool>(
+      context,
+      actions: const [
+        AppSheetAction(value: true, label: '确认加入黑名单', isDestructive: true),
+      ],
     );
-    if (!mounted || selected == null) return;
-    if (action == _ChatAction.block) {
-      ref.read(messagesProvider.notifier).block(thread);
-      Navigator.pop(context);
-    } else {
-      ref.read(messagesProvider.notifier).report(thread.id, selected);
-      AppToast.show('举报已提交');
-    }
+    if (!mounted || confirmed != true) return;
+    ref.read(messagesProvider.notifier).block(thread);
+    Navigator.pop(context);
   }
 }

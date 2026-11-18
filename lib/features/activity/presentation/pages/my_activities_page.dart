@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import '../../../../app/widgets/business_refresh.dart';
 import '../../../../app/navigation/app_navigator.dart';
 import '../../../../app/navigation/route_names.dart';
@@ -118,7 +119,7 @@ class MyActivitiesPage extends ConsumerWidget {
           physics: const AlwaysScrollableScrollPhysics(),
           padding: EdgeInsets.fromLTRB(12.w, 8.h, 12.w, 20.h),
           children: [
-            if (activities.isEmpty) const Center(child: Text('暂无组队')),
+            if (activities.isEmpty) const AppEmptyState(message: '暂无组队'),
             for (final activity in activities)
               Padding(
                 padding: EdgeInsets.only(bottom: 8.h),

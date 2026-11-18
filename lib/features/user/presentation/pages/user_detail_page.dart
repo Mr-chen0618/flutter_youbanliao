@@ -1,4 +1,7 @@
-import '../../../report/presentation/widgets/report_action.dart';
+import '../../../../shared/widgets/layout/app_empty_state.dart';
+import '../../../report/presentation/pages/report_page.dart';
+import '../../../../shared/widgets/feedback/app_action_sheet.dart';
+import '../../../messages/data/model/message_thread.dart';
 import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../app/widgets/business_refresh.dart';
 import 'package:flutter/material.dart';
@@ -16,10 +19,18 @@ import '../../../home/data/model/home_category_model.dart';
 import '../../../activity/data/model/home_activity_model.dart';
 import '../../../activity/presentation/widgets/activity_invite_action_widget.dart';
 import '../../../messages/presentation/providers/messages_provider.dart';
+import '../../../messages/presentation/pages/call_page.dart';
+import 'profile_album_page.dart';
+import 'profile_edit_page.dart';
+import 'profile_field_page.dart';
+import 'profile_interests_page.dart';
+import '../../../square/presentation/pages/square_publish_page.dart';
 import '../../../square/data/square_repository.dart';
 import '../../../square/presentation/providers/square_provider.dart';
 import '../../../square/presentation/widgets/square_post_actions_widget.dart';
 import '../../data/model/user_detail.dart';
+import '../bloc/user_event.dart';
+import '../providers/profile_provider.dart';
 import '../providers/user_detail_provider.dart';
 
 /// 按用户 ID 展示相册、资料、发布活动和动态。
@@ -93,12 +104,53 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
   /// 组合照片、资料和用户发布的内容。
   Widget _content(UserDetail detail) {
     final person = detail.person;
+    if (detail.isSelf) {
+      ref.listen(profileProvider, (previous, next) {
+        if (previous?.hasValue == true &&
+            previous?.value?.profile != next.value?.profile) {
+          ref.invalidate(userDetailProvider(widget.userId));
+        }
+      });
+    }
+    final isFemale = person.gender == '女' || person.gender == '女性';
+    final isMale = person.gender == '男' || person.gender == '男性';
+    final blocked = ref
+        .watch(messagesProvider)
+        .blocked
+        .values
+        .where(
+          (thread) =>
+              thread.peerId == person.id ||
+              thread.id == person.id ||
+              (thread.peerId == null &&
+                  thread.name == person.name &&
+                  thread.avatar == person.avatar),
+        )
+        .firstOrNull;
+    if (!detail.isSelf && (blocked != null || detail.blockedByPeer)) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(person.name),
+          actions: [
+            if (blocked != null)
+              IconButton(
+                tooltip: '更多',
+                onPressed: () => _more(detail, false, blocked: blocked),
+                icon: const Icon(Icons.more_horiz),
+              ),
+          ],
+        ),
+        body: Center(
+          child: Text(blocked != null ? '你已将对方拉黑，无法查看主页' : '对方已将你屏蔽'),
+        ),
+      );
+    }
     final followedIds = ref.watch(followedActivityPublisherIdsProvider).value;
     final followed = followedIds?.contains(person.id) ?? false;
     final square = ref.watch(squareProvider);
     final posts = square.posts.where(
       (post) =>
-          !post.isPrivate &&
+          (detail.isSelf || post.isPublic) &&
           (post.authorId == person.id ||
               (post.authorId == null &&
                   (detail.isSelf
@@ -110,7 +162,7 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
         .where((category) => person.categoryIds.contains(category.id))
         .toList();
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF8F8F8),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -130,17 +182,9 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
           IconButton(
             tooltip: '更多',
             icon: _navigationIcon('more'),
-            onPressed: () => showReportActions(
-              context,
-              targetId: person.id,
-              targetType: 'user',
-              targetName: person.name,
-              targetAvatar: person.avatar,
-              targetSummary: [
-                person.city,
-                ...person.interests,
-              ].where((value) => value.isNotEmpty).join(' · '),
-            ),
+            onPressed: detail.isSelf
+                ? () => _edit(const ProfileEditPage())
+                : () => _more(detail, followed),
           ),
         ],
       ),
@@ -152,7 +196,11 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
           padding: EdgeInsets.zero,
           children: [
             // 相册封面与缩略图
-            _gallery(person.photos.isEmpty ? [person.avatar] : person.photos),
+            _gallery(
+              person.photos.isEmpty ? [person.avatar] : person.photos,
+              avatar: person.avatar,
+              editable: detail.isSelf,
+            ),
             Padding(
               padding: EdgeInsets.all(12.w),
               child: Column(
@@ -170,7 +218,7 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
                       ),
                       if (!detail.isSelf)
                         _pill(
-                          followed ? '已关注' : '关注',
+                          followed ? '已关注' : '关注Ta',
                           colors: _yellow,
                           foreground: Colors.black,
                           onTap: followedIds == null || _saving
@@ -184,23 +232,36 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
                     spacing: 8.w,
                     runSpacing: 4.h,
                     children: [
-                      if (person.age > 0 ||
-                          (person.gender?.isNotEmpty ?? false))
+                      if (person.isOnline)
+                        _chip(
+                          '● 在线',
+                          background: const Color(0xFF00C98A),
+                          foreground: Colors.white,
+                        ),
+                      if (person.age > 0 || isFemale || isMale)
                         Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 6.w,
                             vertical: 2.h,
                           ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF40C8FF),
+                            color: isFemale
+                                ? const Color(0xFFE96AA3)
+                                : const Color(0xFF40C8FF),
                             borderRadius: BorderRadius.circular(6.r),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              _assetIcon('gender', 14),
+                              if (isFemale)
+                                Icon(
+                                  Icons.female,
+                                  size: 14.r,
+                                  color: Colors.white,
+                                ),
+                              if (isMale) _assetIcon('gender', 14),
                               if (person.age > 0) ...[
-                                SizedBox(width: 4.w),
+                                if (isFemale || isMale) SizedBox(width: 4.w),
                                 Text(
                                   '${person.age}',
                                   style: _style(12, color: Colors.white),
@@ -215,32 +276,79 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
                       ),
                     ],
                   ),
-                  if (detail.signature.isNotEmpty)
+                  if (detail.signature.isNotEmpty || detail.isSelf)
                     Padding(
                       padding: EdgeInsets.only(top: 8.h),
-                      child: Text(detail.signature, style: _style(13)),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(16.r),
+                        onTap: detail.isSelf ? _editSignature : null,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 9.h,
+                          ),
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFFFFF1C7), Color(0xFFFFE6D2)],
+                            ),
+                            borderRadius: BorderRadius.circular(16.r),
+                            border: Border.all(color: Colors.white, width: 2),
+                          ),
+                          child: Text(
+                            detail.signature.isEmpty
+                                ? '点击编辑个性签名，让Ta更了解你～'
+                                : '个性签名：${detail.signature}',
+                            style: _style(13),
+                          ),
+                        ),
+                      ),
                     ),
+                  _basicProfile(detail),
+                  _profileSection(
+                    '个性标签',
+                    detail.tags,
+                    edit: detail.isSelf ? () => _editLabels(tags: true) : null,
+                  ),
+                  _interests(detail),
                   // 我想约玩
                   if (categories.isNotEmpty)
                     _playCard(categories, person.interests),
+                  if (!detail.isSelf)
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: ActivityInviteActionWidget(
+                        personId: person.id,
+                        isInvited: detail.isInvited,
+                        builder: (onInvite, label) => TextButton(
+                          onPressed: onInvite,
+                          child: Text(label == '邀约Ta' ? '直接邀约' : label),
+                        ),
+                      ),
+                    ),
                   // 发布的活动
                   _heading('发布的活动'),
-                  if (detail.activities.isEmpty) const Text('暂无发布的活动'),
+                  if (detail.activities.isEmpty)
+                    const AppEmptyState(message: '暂无发布的活动', compact: true),
                   for (final activity in detail.activities)
                     Padding(
                       padding: EdgeInsets.only(bottom: 8.h),
                       child: _activityCard(activity),
                     ),
-                  _tags('Ta的兴趣', person.interests),
-                  _tags('Ta的标签', detail.tags),
                   Divider(
                     height: 24.h,
                     thickness: 0.5,
                     color: const Color(0xFFE7E7E7),
                   ),
                   // Ta 的公开动态
-                  _heading('Ta的动态'),
-                  if (posts.isEmpty) const Text('暂无动态'),
+                  _sectionHeading(
+                    detail.isSelf ? '我的动态' : 'Ta的动态',
+                    detail.isSelf ? '发布动态' : null,
+                    detail.isSelf
+                        ? () => _edit(const SquarePublishPage())
+                        : null,
+                  ),
+                  if (posts.isEmpty)
+                    const AppEmptyState(message: '暂无动态', compact: true),
                   for (final post in posts)
                     Padding(
                       padding: EdgeInsets.only(bottom: 8.h),
@@ -260,29 +368,38 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
                 child: Row(
                   children: [
                     Expanded(
-                      child: ActivityInviteActionWidget(
-                        personId: person.id,
-                        isInvited: detail.isInvited,
-                        builder: (onInvite, label) => _pill(
-                          label == '邀约Ta' ? '直接邀约' : label,
-                          colors: const [Color(0xFFFF7BF6), Color(0xFFFF54F4)],
-                          foreground: Colors.white,
-                          icon: 'invite',
-                          onTap: onInvite,
+                      flex: 216,
+                      child: _contactButton(
+                        '视频通话',
+                        'video',
+                        onPressed: () => CallPage.open(
+                          context,
+                          peerId: person.id,
+                          name: person.name,
+                          avatar: person.avatar,
+                          video: true,
                         ),
                       ),
                     ),
-                    SizedBox(width: 8.w),
+                    SizedBox(width: 12.w),
                     Expanded(
-                      child: _pill(
-                        '先聊聊',
-                        colors: _yellow,
-                        foreground: const Color(0xFF333333),
-                        icon: 'chat',
-                        onTap: () {
+                      flex: 115,
+                      child: _contactButton(
+                        '私信',
+                        'message',
+                        outlined: true,
+                        onPressed: () {
                           final id = ref
                               .read(messagesProvider.notifier)
-                              .greet(person.name, person.avatar);
+                              .openConversation(
+                                person.id,
+                                person.name,
+                                person.avatar,
+                              );
+                          if (id == null) {
+                            AppToast.show('请先解除黑名单');
+                            return;
+                          }
                           AppNavigator.pushNamed<void>(
                             context,
                             RouteNames.chat(id),
@@ -299,7 +416,11 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
   }
 
   /// 封面与可切换的相册缩略图。
-  Widget _gallery(List<String> photos) => SizedBox(
+  Widget _gallery(
+    List<String> photos, {
+    required String avatar,
+    required bool editable,
+  }) => SizedBox(
     height: 440.w,
     child: Stack(
       fit: StackFit.expand,
@@ -324,45 +445,92 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
             ),
           ),
         ),
-        if (photos.length > 1)
-          Positioned(
-            left: 12.w,
-            right: 12.w,
-            bottom: 12.h,
-            child: SizedBox(
-              height: 44.r,
-              child: ListView.separated(
-                reverse: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: photos.length,
-                separatorBuilder: (_, _) => SizedBox(width: 4.w),
-                itemBuilder: (context, position) {
-                  final index = photos.length - 1 - position;
-                  return GestureDetector(
-                    onTap: () => setState(() => _photo = index),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2.r,
-                          color: _photo == index
-                              ? Colors.white
-                              : Colors.transparent,
-                        ),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: AppImage(
-                        src: photos[index],
-                        width: 40.r,
-                        height: 40.r,
-                        radius: 10.r,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  );
-                },
+        Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: SizedBox(
+            height: 78.w,
+            child: const DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Color(0x00F8F8F8), Color(0xFFF8F8F8)],
+                ),
               ),
             ),
           ),
+        ),
+        Positioned(
+          left: 16.w,
+          right: 16.w,
+          bottom: 4.h,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              DecoratedBox(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(2.r),
+                  child: AppImage(
+                    src: avatar,
+                    width: 64.r,
+                    height: 64.r,
+                    radius: 32.r,
+                  ),
+                ),
+              ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: SizedBox(
+                  height: 44.r,
+                  child: ListView.separated(
+                    reverse: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: photos.length + (editable ? 1 : 0),
+                    separatorBuilder: (_, _) => SizedBox(width: 4.w),
+                    itemBuilder: (context, position) {
+                      if (editable && position == 0) {
+                        return IconButton.filled(
+                          tooltip: '编辑相册',
+                          onPressed: () => _edit(const ProfileAlbumPage()),
+                          icon: const Icon(Icons.add),
+                        );
+                      }
+                      final index =
+                          photos.length - 1 - position + (editable ? 1 : 0);
+                      return GestureDetector(
+                        onTap: () => setState(() => _photo = index),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 2.r,
+                              color: _photo == index
+                                  ? Colors.white
+                                  : Colors.transparent,
+                            ),
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
+                          child: AppImage(
+                            src: photos[index],
+                            width: 40.r,
+                            height: 40.r,
+                            radius: 10.r,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     ),
   );
@@ -390,35 +558,341 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
     ),
   );
 
-  Widget _tags(String title, List<String> tags) => tags.isEmpty
-      ? const SizedBox.shrink()
-      : Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _heading(title),
-            Wrap(
-              spacing: 8.w,
-              runSpacing: 4.h,
-              children: [
-                for (final tag in tags)
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFFF6CB),
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    child: Text(
-                      tag,
-                      style: _style(14, color: const Color(0xFF8C651C)),
-                    ),
-                  ),
-              ],
+  Future<void> _more(
+    UserDetail detail,
+    bool followed, {
+    MessageThread? blocked,
+  }) async {
+    final person = detail.person;
+    final action = await showAppActionSheet<String>(
+      context,
+      actions: [
+        if (blocked == null)
+          AppSheetAction(value: 'follow', label: followed ? '取消关注' : '关注'),
+        AppSheetAction(
+          value: 'block',
+          label: blocked == null ? '加入黑名单' : '移除黑名单',
+          isDestructive: blocked == null,
+        ),
+        const AppSheetAction(value: 'report', label: '举报', isDestructive: true),
+      ],
+    );
+    if (!mounted) return;
+    switch (action) {
+      case 'follow':
+        await _follow(followed);
+      case 'block':
+        final messages = ref.read(messagesProvider.notifier);
+        if (blocked != null) {
+          messages.unblock(blocked.id);
+          return;
+        }
+        final accepted = await _confirm(
+          '确定要拉黑吗？',
+          '拉黑后，你们将不能进行聊天，同时也看不到Ta的近况。',
+          '确定拉黑',
+        );
+        if (mounted && accepted) {
+          messages.blockAuthor(person.id, person.name, person.avatar);
+        }
+      case 'report':
+        await AppNavigator.push<void>(
+          context,
+          page: ReportPage(
+            targetId: person.id,
+            targetType: 'user',
+            targetName: person.name,
+            targetAvatar: person.avatar,
+            targetSummary: detail.signature,
+          ),
+        );
+    }
+  }
+
+  Future<bool> _confirm(
+    String title,
+    String description,
+    String action,
+  ) async =>
+      await showDialog<bool>(
+        context: context,
+        builder: (dialogContext) => AlertDialog(
+          title: Text(title),
+          content: Text(description),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(dialogContext, false),
+              child: const Text('取消'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(dialogContext, true),
+              child: Text(action),
             ),
           ],
-        );
+        ),
+      ) ??
+      false;
+
+  Future<void> _removePost(SquarePost post) async {
+    final action = await showAppActionSheet<String>(
+      context,
+      actions: const [
+        AppSheetAction(value: 'delete', label: '删除', isDestructive: true),
+      ],
+    );
+    if (!mounted || action != 'delete') return;
+    final accepted = await _confirm('删除动态', '删除后将不可恢复，你确认要删除吗？', '删除');
+    if (mounted && accepted) ref.read(squareProvider.notifier).delete(post.id);
+  }
+
+  Future<void> _edit(Widget page) async {
+    await AppNavigator.push<void>(context, page: page);
+    if (mounted) ref.invalidate(userDetailProvider(widget.userId));
+  }
+
+  Future<void> _editSignature() async {
+    final bloc = ref.read(userBlocProvider);
+    final value = await AppNavigator.push<String>(
+      context,
+      page: ProfileFieldPage(
+        title: '编辑个性签名',
+        initial: bloc.state.profile.signature,
+        limit: 100,
+      ),
+    );
+    if (mounted && value != null) {
+      bloc.add(
+        UserProfileEdited((profile) => profile.copyWith(signature: value)),
+      );
+    }
+  }
+
+  Future<void> _editLabels({bool tags = false}) async {
+    final bloc = ref.read(userBlocProvider);
+    final profile = bloc.state.profile;
+    final Map<String, List<String>> options;
+    try {
+      options = await ref.read(profileInterestsProvider.future);
+    } catch (_) {
+      if (mounted) AppToast.show('加载失败，请重试');
+      return;
+    }
+    if (!mounted) return;
+    final values = await AppNavigator.push<List<String>>(
+      context,
+      page: ProfileInterestsPage(
+        title: tags ? '我的标签' : '编辑兴趣偏好',
+        initial: tags ? profile.tags : profile.interests,
+        options: options[tags ? '用户标签' : '兴趣'] ?? const [],
+      ),
+    );
+    if (mounted && values != null) {
+      bloc.add(
+        UserProfileEdited(
+          (profile) => tags
+              ? profile.copyWith(tags: values)
+              : profile.copyWith(interests: values),
+        ),
+      );
+    }
+  }
+
+  Widget _contactButton(
+    String label,
+    String icon, {
+    required VoidCallback onPressed,
+    bool outlined = false,
+  }) {
+    final style = FilledButton.styleFrom(
+      backgroundColor: outlined ? Colors.white : const Color(0xFFFFD152),
+      foregroundColor: const Color(0xFF333333),
+      minimumSize: Size(0, 52.h),
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+      side: outlined
+          ? const BorderSide(color: Color(0xFF333333), width: 2)
+          : null,
+    );
+    return FilledButton.icon(
+      onPressed: onPressed,
+      style: style,
+      icon: _versionIcon(icon, 24),
+      label: Text(label, style: _style(16, weight: FontWeight.w500)),
+    );
+  }
+
+  Widget _versionIcon(String icon, double size) => SvgPicture.asset(
+    'assets/profile/profile_detail_v2_${icon}_icon.svg',
+    width: size.r,
+    height: size.r,
+  );
+
+  Widget _sectionHeading(String title, String? action, VoidCallback? onTap) =>
+      Row(
+        children: [
+          Expanded(child: _heading(title)),
+          if (onTap != null)
+            TextButton(
+              onPressed: onTap,
+              child: Text(action!, style: _style(12, color: _muted)),
+            ),
+        ],
+      );
+
+  Widget _profileSection(
+    String title,
+    List<String> labels, {
+    VoidCallback? edit,
+  }) {
+    if (labels.isEmpty && edit == null) return const SizedBox.shrink();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _sectionHeading(title, '编辑$title', edit),
+        _infoCard(
+          Wrap(
+            spacing: 6.w,
+            runSpacing: 6.h,
+            children: [
+              for (final label in labels) _chip(label),
+              if (labels.isEmpty)
+                TextButton(onPressed: edit, child: Text('添加$title')),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _basicProfile(UserDetail detail) {
+    final person = detail.person;
+    final fields = [
+      if (person.age > 0) '年龄：${person.age}岁',
+      if (person.heightCm > 0) '身高：${person.heightCm}cm',
+      if (person.weightKg > 0) '体重：${person.weightKg}kg',
+      if (detail.occupation.isNotEmpty) '职业：${detail.occupation}',
+      if (detail.education.isNotEmpty) '学历：${detail.education}',
+      if (detail.relationshipStatus.isNotEmpty)
+        '感情状况：${detail.relationshipStatus}',
+      if (detail.incomeRange.isNotEmpty) '年收入：${detail.incomeRange}',
+      if (detail.hometown.isNotEmpty) '家乡：${detail.hometown}',
+      if (person.city.isNotEmpty) '城市：${person.city}',
+    ];
+    return _profileSection(
+      '基本资料',
+      fields,
+      edit: detail.isSelf ? () => _edit(const ProfileEditPage()) : null,
+    );
+  }
+
+  Widget _interests(UserDetail detail) {
+    if (detail.person.interests.isEmpty && !detail.isSelf) {
+      return const SizedBox.shrink();
+    }
+    const groups = [
+      ('travel', '旅游足迹', '去过的地方', 0xFF1BAFA2, 0xFFF3FFFE),
+      ('sports', '运动', '喜欢的运动', 0xFF3775E2, 0xFFF5F8FF),
+      ('food', '美食', '喜欢的美食', 0xFFD67A50, 0xFFFFFAF8),
+      ('films', '影视', '喜欢的影视作品', 0xFF9E50FF, 0xFFF9F4FF),
+      ('music', '音乐', '喜欢的音乐', 0xFFDE579E, 0xFFFFF6FB),
+    ];
+    final tags = <String, List<String>>{};
+    for (final interest in detail.person.interests) {
+      final parts = interest.split('：');
+      final title = parts.length > 1 ? parts.first : '其他兴趣';
+      tags
+          .putIfAbsent(title, () => [])
+          .add(parts.length > 1 ? parts.skip(1).join('：') : interest);
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _sectionHeading('兴趣爱好', '编辑兴趣爱好', detail.isSelf ? _editLabels : null),
+        _infoCard(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              for (final (icon, key, label, color, background) in groups)
+                if (tags.remove(key) case final values?)
+                  _interestGroup(
+                    label,
+                    values,
+                    icon: icon,
+                    color: Color(color),
+                    background: Color(background),
+                  ),
+              for (final entry in tags.entries)
+                _interestGroup(entry.key, entry.value),
+              if (detail.person.interests.isEmpty)
+                TextButton(onPressed: _editLabels, child: const Text('添加兴趣爱好')),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _interestGroup(
+    String label,
+    List<String> values, {
+    String? icon,
+    Color? color,
+    Color? background,
+  }) => Padding(
+    padding: EdgeInsets.only(bottom: 8.h),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            if (icon != null) ...[_versionIcon(icon, 16), SizedBox(width: 4.w)],
+            Text('$label：', style: _style(11)),
+          ],
+        ),
+        SizedBox(height: 4.h),
+        Wrap(
+          spacing: 6.w,
+          runSpacing: 4.h,
+          children: [
+            for (final value in values)
+              _chip(
+                value,
+                foreground: color,
+                background: background,
+                border: color,
+              ),
+          ],
+        ),
+      ],
+    ),
+  );
+
+  Widget _infoCard(Widget child) => Container(
+    padding: EdgeInsets.all(12.r),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(16.r),
+    ),
+    child: child,
+  );
+
+  Widget _chip(
+    String label, {
+    Color? background,
+    Color? foreground,
+    Color? border,
+  }) => Container(
+    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+    decoration: BoxDecoration(
+      color: background ?? Colors.white,
+      borderRadius: BorderRadius.circular(8.r),
+      border: Border.all(color: border ?? const Color(0xFFF1F1F1)),
+    ),
+    child: Text(
+      label,
+      style: _style(12, color: foreground ?? const Color(0xFF666666)),
+    ),
+  );
 
   static const _yellow = [Color(0xFFFFDF87), Color(0xFFFFCE45)];
   static const _muted = Color(0xFF999999);
@@ -631,9 +1105,8 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
   /// 用户动态沿用广场操作，采用详情页的无卡片时间线布局。
   Widget _post(SquarePost post, SquareState state) {
     final actions = buildSquarePostCard(context, ref, state, post);
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 4.w),
-      child: Column(
+    return _infoCard(
+      Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (post.publishedAt case final date?)
@@ -648,15 +1121,37 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
             onTap: actions.onDetail,
             child: Text(post.text, style: _style(14)),
           ),
-          for (final photo in post.photos)
+          if (post.photos.isNotEmpty)
             Padding(
               padding: EdgeInsets.only(top: 8.h),
-              child: AppImage(
-                src: photo,
-                width: double.infinity,
-                height: 299.w,
-                radius: 12.r,
-                fit: BoxFit.cover,
+              child: Wrap(
+                spacing: 4.w,
+                runSpacing: 4.h,
+                children: [
+                  for (final photo in post.photos)
+                    AppImage(
+                      src: photo,
+                      width: post.photos.length == 1 ? 290.w : 145.w,
+                      height: 145.w,
+                      radius: 12.r,
+                      fit: BoxFit.cover,
+                    ),
+                ],
+              ),
+            ),
+          if (post.reviewStatus case final status? when post.isMine)
+            Padding(
+              padding: EdgeInsets.only(top: 6.h),
+              child: Text(
+                status == SquarePostReviewStatus.pending
+                    ? '审核中…'
+                    : '审核未通过，请删除重新编辑',
+                style: _style(
+                  12,
+                  color: status == SquarePostReviewStatus.pending
+                      ? const Color(0xFFD49334)
+                      : const Color(0xFFDB6464),
+                ),
               ),
             ),
           if (actions.onActivity case final open?)
@@ -666,7 +1161,9 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
             children: [
               IconButton(
                 tooltip: '更多操作',
-                onPressed: actions.onMore,
+                onPressed: post.isMine
+                    ? () => _removePost(post)
+                    : actions.onMore,
                 icon: _assetIcon('post_more', 24),
               ),
               TextButton.icon(
@@ -699,13 +1196,12 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
     );
   }
 
-  /// 关注和底部操作使用同一胶囊形状及原稿渐变。
+  /// 关注按钮使用原稿渐变。
   Widget _pill(
     String label, {
     required List<Color> colors,
     required Color foreground,
     required VoidCallback? onTap,
-    String? icon,
   }) {
     final radius = BorderRadius.circular(26.r);
     return Semantics(
@@ -726,30 +1222,10 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
             borderRadius: radius,
             onTap: onTap,
             child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 12.w,
-                vertical: icon == null ? 6.h : 0,
-              ),
-              child: SizedBox(
-                height: icon == null ? null : 52.h,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (icon != null) ...[
-                      _assetIcon(icon, 24),
-                      SizedBox(width: 8.w),
-                    ],
-                    Text(
-                      label,
-                      style: _style(
-                        icon == null ? 13 : 16,
-                        color: foreground,
-                        weight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+              child: Text(
+                label,
+                style: _style(13, color: foreground, weight: FontWeight.w500),
               ),
             ),
           ),

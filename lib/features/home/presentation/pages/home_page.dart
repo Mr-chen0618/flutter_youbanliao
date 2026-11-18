@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -148,7 +149,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                   SliverFillRemaining(
                     hasScrollBody: false,
                     child: Center(
-                      child: homeText(activities ? '暂无活动' : '暂无友伴', 15),
+                      child: AppEmptyState(
+                        message: activities ? '暂无活动' : '暂无友伴',
+                      ),
                     ),
                   )
                 else

@@ -12,6 +12,12 @@ class UserDetail {
     required this.categories,
     required this.isSelf,
     required this.isInvited,
+    this.occupation = '',
+    this.education = '',
+    this.hometown = '',
+    this.relationshipStatus = '',
+    this.blockedByPeer = false,
+    this.incomeRange = '',
   });
 
   final HomeCompanionModel person;
@@ -20,4 +26,7 @@ class UserDetail {
   final List<String> tags;
   final List<HomeCategoryModel> categories;
   final bool isSelf, isInvited;
+  final String occupation, education, hometown, relationshipStatus;
+  final bool blockedByPeer;
+  final String incomeRange;
 }

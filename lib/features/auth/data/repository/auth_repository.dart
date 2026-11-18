@@ -10,3 +10,11 @@ abstract interface class AuthRepository {
   Future<void> signOut();
   Future<void> deleteAccount(String accountId);
 }
+
+/// 支持冷静期撤销的认证实现提供此扩展能力。
+abstract interface class AuthRecoveryRepository {
+  Future<AuthSession> recoverAccount(
+    String accountId,
+    PhoneLoginRequest request,
+  );
+}

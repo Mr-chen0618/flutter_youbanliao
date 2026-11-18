@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import '../../../../app/widgets/business_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -148,7 +149,10 @@ class ActivityReputationPage extends ConsumerWidget {
                       if (data.records.isEmpty)
                         const Padding(
                           padding: EdgeInsets.all(16),
-                          child: Text('暂无活动记录'),
+                          child: AppEmptyState(
+                            message: '暂无活动记录',
+                            compact: true,
+                          ),
                         ),
                       for (final (index, record) in data.records.indexed) ...[
                         if (index > 0) const Divider(color: Color(0xFFF3F3F3)),

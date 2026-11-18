@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter_app_framework/features/auth/data/model/auth_login_restriction.dart';
 import 'package:flutter_app_framework/features/user/presentation/bloc/user_bloc.dart';
 import 'package:flutter_app_framework/features/user/presentation/bloc/user_event.dart';
 import 'package:flutter_app_framework/features/user/data/profile_repository.dart';
@@ -59,6 +60,46 @@ void main() {
   );
 
   test(
+    'registration rejects invalid fields without marking profile completed',
+    () async {
+      final repository = auth();
+      await repository.sendCode('14444000011');
+      final session = await repository.login(
+        const PhoneLoginRequest('14444000011', '8888'),
+      );
+      final valid = profile(session.accountId);
+      final now = DateTime.now();
+      for (final invalid in [
+        valid.copyWith(avatar: ''),
+        valid.copyWith(gender: ''),
+        valid.copyWith(name: '123456'),
+        valid.copyWith(birthday: DateTime(now.year, now.month, now.day)),
+        valid.copyWith(birthday: DateTime(now.year + 1)),
+      ]) {
+        await expectLater(
+          repository.completeProfile(session.accountId, invalid),
+          throwsStateError,
+        );
+        expect((await auth().restore())?.profileCompleted, isFalse);
+      }
+      await repository.completeProfile(session.accountId, valid);
+      await expectLater(
+        repository.completeProfile(
+          session.accountId,
+          valid.copyWith(name: '第二次保存'),
+        ),
+        throwsStateError,
+      );
+      final restored = await ProfileMockRepository(
+        AccountMockJsonStore(store(), session.accountId),
+      ).load();
+      expect(restored.profile.name, valid.name);
+      expect(restored.profile.avatar, valid.avatar);
+      expect(restored.profile.birthday, valid.birthday);
+    },
+  );
+
+  test(
     'fresh installation does not authenticate from bundled U001; pending profile survives reopening',
     () async {
       final repository = auth();
@@ -112,9 +153,12 @@ void main() {
   );
 
   test(
-    'two phone accounts isolate private state and deletion cannot resurrect former identity',
+    'two accounts stay isolated; deletion can recover within seven days and expires to new identity',
     () async {
-      final repository = auth();
+      var clock = DateTime(2026, 11, 17);
+      AuthMockRepository clockAuth() =>
+          AuthMockRepository(store(), delay: Duration.zero, now: () => clock);
+      final repository = clockAuth();
       await repository.sendCode('14444000001');
       final a = await repository.login(
         const PhoneLoginRequest('14444000001', '8888'),
@@ -140,10 +184,63 @@ void main() {
       expect((await bStore.read('home/invites', object))['ids'], isEmpty);
       expect((await bStore.read('report/reports', object))['items'], isEmpty);
       expect((await aStore.read('home/invites', object))['ids'], ['U002']);
+      await expectLater(
+        repository.deleteAccount(a.accountId),
+        throwsStateError,
+      );
+      expect((await repository.restore())!.accountId, b.accountId);
+      await repository.sendCode('14444000001');
+      await repository.login(const PhoneLoginRequest('14444000001', '8888'));
       await repository.deleteAccount(a.accountId);
-      final reopened = auth();
+      expect(await clockAuth().restore(), isNull);
+      final reopened = clockAuth();
       await reopened.sendCode('14444000001');
-      final fresh = await reopened.login(
+      await expectLater(
+        reopened.login(const PhoneLoginRequest('14444000001', '8888')),
+        throwsA(isA<AuthAccountPendingDeletion>()),
+      );
+      expect(await clockAuth().restore(), isNull);
+      expect((await aStore.read('home/invites', object))['ids'], ['U002']);
+      await expectLater(
+        reopened.recoverAccount(
+          b.accountId,
+          const PhoneLoginRequest('14444000001', '8888'),
+        ),
+        throwsStateError,
+      );
+      await expectLater(
+        reopened.recoverAccount(
+          a.accountId,
+          const PhoneLoginRequest('14444000001', '1111'),
+        ),
+        throwsStateError,
+      );
+      expect(await clockAuth().restore(), isNull);
+      final recovered = await reopened.recoverAccount(
+        a.accountId,
+        const PhoneLoginRequest('14444000001', '8888'),
+      );
+      expect(recovered.accountId, a.accountId);
+      expect(recovered.profileCompleted, isTrue);
+      final state = await aStore.read('user/account', object);
+      expect(state['isDeleted'], isFalse);
+      expect(state['isSignedIn'], isTrue);
+      expect((await clockAuth().restore())!.accountId, a.accountId);
+      await reopened.deleteAccount(a.accountId);
+      final registry = await store().read('auth/accounts', object);
+      final firstDeadline =
+          (registry['pendingDeletions'] as Map)[a.accountId]['deadline'];
+      clock = clock.add(const Duration(days: 1));
+      await reopened.deleteAccount(a.accountId);
+      expect(
+        ((await store().read('auth/accounts', object))['pendingDeletions']
+            as Map)[a.accountId]['deadline'],
+        firstDeadline,
+      );
+      clock = clock.add(const Duration(days: 6));
+      final expired = clockAuth();
+      await expired.sendCode('14444000001');
+      final fresh = await expired.login(
         const PhoneLoginRequest('14444000001', '8888'),
       );
       expect(fresh.accountId, isNot(a.accountId));
@@ -153,6 +250,11 @@ void main() {
       expect(
         await store().exists('accounts/${a.accountId}/user/account'),
         isFalse,
+      );
+      expect((await bStore.read('home/invites', object))['ids'], isEmpty);
+      expect(
+        await store().exists('accounts/${b.accountId}/user/account'),
+        isTrue,
       );
     },
   );

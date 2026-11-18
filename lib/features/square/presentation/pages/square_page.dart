@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,13 +27,14 @@ class _SquarePageState extends ConsumerState<SquarePage> {
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(squareProvider);
-    final followedIds = ref.watch(followedActivityPublisherIdsProvider).value;
+    final followedState = ref.watch(followedActivityPublisherIdsProvider);
+    final followedIds = followedState.value;
     final section = _section;
     final isVideo = section == DiscoverySection.video;
     final posts = state.posts
         .where(
           (post) =>
-              !post.isPrivate &&
+              post.isPublic &&
               (section == DiscoverySection.discover ||
                   (post.authorId == null
                       ? state.following.contains(post.author)
@@ -58,12 +60,32 @@ class _SquarePageState extends ConsumerState<SquarePage> {
               ? _video()
               : RefreshIndicator(
                   onRefresh: ref.read(squareProvider.notifier).refresh,
-                  child: posts.isEmpty
+                  child:
+                      section == DiscoverySection.following &&
+                          posts.isEmpty &&
+                          followedState.isLoading
+                      ? const Center(child: CircularProgressIndicator())
+                      : section == DiscoverySection.following &&
+                            posts.isEmpty &&
+                            followedState.hasError
+                      ? Center(
+                          child: TextButton(
+                            onPressed: () => ref.invalidate(
+                              followedActivityPublisherIdsProvider,
+                            ),
+                            child: const Text('加载失败，点击重试'),
+                          ),
+                        )
+                      : posts.isEmpty
                       ? ListView(
                           physics: const AlwaysScrollableScrollPhysics(),
-                          children: const [
-                            SizedBox(height: 150),
-                            Center(child: Text('关注的人发布动态后会显示在这里')),
+                          children: [
+                            SizedBox(height: 48.h),
+                            AppEmptyState(
+                              message: section == DiscoverySection.discover
+                                  ? '暂无动态'
+                                  : '关注的人发布动态后会显示在这里',
+                            ),
                           ],
                         )
                       : ListView.separated(

@@ -1,3 +1,4 @@
+import '../../../user/presentation/pages/account_deletion_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../app/navigation/main_tab_shell.dart';
@@ -9,7 +10,7 @@ import '../../../user/presentation/providers/profile_provider.dart';
 import '../../data/model/auth_session.dart';
 import '../../data/repository/auth_repository.dart';
 import '../providers/auth_provider.dart';
-import 'phone_login_page.dart';
+import 'auth_entry_page.dart';
 import 'registration_profile_page.dart';
 
 /// 根路由只由持久化会话决定，退出时销毁账号下的全部页面和状态。
@@ -34,7 +35,7 @@ class AuthGate extends ConsumerWidget {
         final auth = ref.read(authRepositoryProvider);
         void reload() => ref.invalidate(authSessionProvider);
         if (session == null) {
-          return PhoneLoginPage(auth: auth, onSignedIn: reload);
+          return AuthEntryPage(auth: auth, onSignedIn: reload);
         }
         if (!session.profileCompleted) {
           return RegistrationProfilePage(
@@ -77,6 +78,7 @@ class _AccountNavigator extends ConsumerStatefulWidget {
 class _AccountNavigatorState extends ConsumerState<_AccountNavigator> {
   bool _leaving = false, _deleteRequested = false;
   Object? _exitError;
+  bool _deletionCompleted = false;
   Future<void> _leave(bool deleted) async {
     if (_leaving) return;
     _deleteRequested = deleted;
@@ -90,7 +92,12 @@ class _AccountNavigatorState extends ConsumerState<_AccountNavigator> {
       } else {
         await widget.auth.signOut();
       }
-      if (mounted) widget.reload();
+      if (!mounted) return;
+      if (deleted) {
+        setState(() => _deletionCompleted = true);
+      } else {
+        widget.reload();
+      }
     } catch (error) {
       if (mounted) {
         setState(() {
@@ -124,6 +131,9 @@ class _AccountNavigatorState extends ConsumerState<_AccountNavigator> {
       if (account == null || account.isSignedIn || _leaving) return;
       await _leave(account.isDeleted);
     });
+    if (_deletionCompleted) {
+      return AccountDeletionCompletedPage(onDone: widget.reload);
+    }
     if (_exitError != null) {
       return Scaffold(
         body: Center(

@@ -63,16 +63,73 @@ class MessagesNotifier extends Notifier<MessagesState> {
     state = state.copyWith(threads: List.unmodifiable(threads));
   }
 
-  String greet(String author, String avatar) {
+  /// 打开已存在的私信，或为真实对端创建一个空会话。
+  String? openConversation(String peerId, String name, String avatar) {
+    final id = peerId.trim();
+    if (id.isEmpty ||
+        isBlocked(id) ||
+        state.blocked.values.any(
+          (thread) =>
+              thread.peerId == null &&
+              thread.name == name &&
+              thread.avatar == avatar,
+        )) {
+      return null;
+    }
     final existing = state.threads
-        .where((thread) => thread.name == author)
+        .where((thread) => thread.peerId == id || thread.id == id)
         .firstOrNull;
-    final blocked = state.blocked.values
-        .where((thread) => thread.name == author)
+    if (existing != null) return existing.id;
+    // 旧版打招呼会话仅通过昵称命名，精确匹配后迁移其对端 ID。
+    final legacy = state.threads
+        .where(
+          (thread) =>
+              thread.peerId == null &&
+              thread.name == name &&
+              thread.avatar == avatar,
+        )
         .firstOrNull;
-    if (blocked != null) return blocked.id;
-    final id = existing?.id ?? 'greeting-$author';
+    if (legacy != null) {
+      state = state.copyWith(
+        threads: [
+          for (final thread in state.threads)
+            if (thread.id == legacy.id) thread.copyWith(peerId: id) else thread,
+        ],
+      );
+      return legacy.id;
+    }
+    final thread = MessageThread(
+      id: 'peer-$id',
+      peerId: id,
+      name: name,
+      avatar: avatar,
+      entries: const [],
+      time: '',
+    );
+    state = state.copyWith(threads: [thread, ...state.threads]);
+    return thread.id;
+  }
+
+  bool isBlocked(String id) => state.blocked.values.any(
+    (thread) => thread.peerId == id || thread.id == id,
+  );
+
+  String? greet(String author, String avatar, {String? peerId}) {
     const greeting = ChatEntry('你好，很高兴认识你！', isMine: true);
+    if (peerId != null) {
+      final id = openConversation(peerId, author, avatar);
+      if (id == null) return null;
+      send(id, greeting);
+      return id;
+    }
+    final blocked = state.blocked.values
+        .where((thread) => thread.name == author && thread.avatar == avatar)
+        .firstOrNull;
+    if (blocked != null) return null;
+    final existing = state.threads
+        .where((thread) => thread.name == author && thread.avatar == avatar)
+        .firstOrNull;
+    final id = existing?.id ?? 'greeting-$author';
     if (existing == null) {
       state = state.copyWith(
         threads: List.unmodifiable([
@@ -116,11 +173,24 @@ class MessagesNotifier extends Notifier<MessagesState> {
   /// 从动态入口拉黑作者，复用消息模块的黑名单记录。
   void blockAuthor(String id, String name, String avatar) {
     final thread = state.threads
-        .where((item) => item.id == id || item.name == name)
+        .where(
+          (item) =>
+              item.peerId == id ||
+              item.id == id ||
+              (item.peerId == null &&
+                  item.name == name &&
+                  item.avatar == avatar),
+        )
         .firstOrNull;
     block(
-      thread ??
-          MessageThread(id: id, name: name, avatar: avatar, entries: const []),
+      thread?.copyWith(peerId: id) ??
+          MessageThread(
+            id: id,
+            peerId: id,
+            name: name,
+            avatar: avatar,
+            entries: const [],
+          ),
     );
   }
 

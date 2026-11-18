@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import '../../../../app/widgets/business_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../app/navigation/app_navigator.dart';
 import '../../../../app/navigation/route_names.dart';
 import '../../../../shared/widgets/images/app_image.dart';
-import '../../../../shared/widgets/layout/companion_page_surface.dart';
+import '../widgets/messages_page_surface.dart';
 import '../../data/messages_repository.dart';
 import '../providers/messages_provider.dart';
 
@@ -17,101 +18,126 @@ class MessagesPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(messagesProvider);
     final notifier = ref.read(messagesProvider.notifier);
-    return CompanionPageSurface(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: 48.h,
-            child: Padding(
-              padding: EdgeInsets.only(left: 16.w),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Stack(
-                  clipBehavior: Clip.none,
+    int unread(MessageNotice notice) => state.readNotices.contains(notice)
+        ? 0
+        : state.noticeUnread[notice.name] ?? 0;
+
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: AppImage(
+            src: 'assets/messages/messages_v2_backdrop.svg',
+            height: 255.h,
+            fit: BoxFit.fill,
+          ),
+        ),
+        SafeArea(
+          bottom: false,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 16.w, right: 10.w),
+                child: Row(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 13.w),
-                      child: Text(
-                        '消息',
-                        style: TextStyle(
-                          color: const Color(0xFF333333),
-                          fontSize: 17.sp,
-                          height: 24 / 17,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: -.95.sp,
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              '聊天',
+                              style: TextStyle(
+                                fontSize: 17.sp,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            AppImage(
+                              src:
+                                  'assets/messages/messages_v2_title_accent.svg',
+                              width: 24.w,
+                              height: 8.h,
+                              fit: BoxFit.contain,
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                    Positioned(
-                      top: 2.h,
-                      right: 0,
-                      child: AppImage(
-                        src: messagesAsset('title_decoration_icon'),
-                        width: 17.25.w,
-                        height: 23.25.h,
-                        fit: BoxFit.contain,
+                    PopupMenuButton<MessageNotice>(
+                      tooltip: '消息通知',
+                      icon: _UnreadBadge(
+                        count: MessageNotice.values.fold<int>(
+                          0,
+                          (sum, notice) => sum + unread(notice),
+                        ),
+                        child: const Icon(Icons.notifications_none_rounded),
                       ),
+                      itemBuilder: (_) => [
+                        for (final notice in MessageNotice.values)
+                          PopupMenuItem(
+                            value: notice,
+                            child: Row(
+                              children: [
+                                _UnreadBadge(
+                                  count: unread(notice),
+                                  child: AppImage(
+                                    src: messagesAsset('${notice.icon}_icon'),
+                                    width: 26.r,
+                                    height: 26.r,
+                                  ),
+                                ),
+                                SizedBox(width: 16.w),
+                                Text(notice.label),
+                              ],
+                            ),
+                          ),
+                      ],
+                      onSelected: (notice) {
+                        notifier.readNotice(notice);
+                        AppNavigator.push(
+                          context,
+                          page: _NoticePage(notice: notice),
+                          name: 'message-notice-${notice.name}',
+                        );
+                      },
                     ),
                   ],
                 ),
               ),
-            ),
+              Expanded(child: _ThreadList(threads: state.threads)),
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(12.w, 10.h, 12.w, 10.h),
-            child: Row(
-              children: [
-                for (final notice in MessageNotice.values)
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        notifier.readNotice(notice);
-                        AppNavigator.push(
-                          context,
-                          page: CompanionPageSurface(
-                            title: notice.label,
-                            child: BusinessRefresh(
-                              scope: 'messages',
-                              child: ListView(
-                                physics: const AlwaysScrollableScrollPhysics(),
-                                children: [
-                                  ListTile(
-                                    title: Text(
-                                      state.notices[notice.name] ?? '暂无消息',
-                                    ),
-                                    subtitle: const Text('12:12'),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          name: 'message-notice-${notice.name}',
-                        );
-                      },
-                      child: Column(
-                        children: [
-                          _UnreadBadge(
-                            count: state.readNotices.contains(notice)
-                                ? 0
-                                : (state.noticeUnread[notice.name] ?? 0),
-                            child: AppImage(
-                              src: messagesAsset('${notice.icon}_icon'),
-                              width: 52.r,
-                              height: 52.r,
-                            ),
-                          ),
-                          SizedBox(height: 8.h),
-                          Text(notice.label, style: TextStyle(fontSize: 12.sp)),
-                        ],
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-          ),
-          Expanded(child: _ThreadList(threads: state.threads)),
-        ],
+        ),
+      ],
+    );
+  }
+}
+
+class _NoticePage extends ConsumerWidget {
+  const _NoticePage({required this.notice});
+  final MessageNotice notice;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final message = ref.watch(messagesProvider).notices[notice.name];
+    return MessagesPageSurface(
+      title: notice.label,
+      child: BusinessRefresh(
+        scope: 'messages',
+        child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          children: [
+            if (message == null || message.isEmpty)
+              const AppEmptyState(message: '暂无消息')
+            else
+              ListTile(title: Text(message)),
+          ],
+        ),
       ),
     );
   }
@@ -131,7 +157,7 @@ class _ThreadList extends ConsumerWidget {
           children: const [
             Padding(
               padding: EdgeInsets.all(32),
-              child: Center(child: Text('暂无会话')),
+              child: AppEmptyState(message: '暂无会话'),
             ),
           ],
         ),
@@ -200,7 +226,11 @@ class _ThreadList extends ConsumerWidget {
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontSize: 13.sp,
-                                  color: const Color(0xFF666666),
+                                  color:
+                                      thread.unread > 0 &&
+                                          thread.preview.startsWith('[')
+                                      ? const Color(0xFFFF416D)
+                                      : const Color(0xFF666666),
                                 ),
                               ),
                             ],

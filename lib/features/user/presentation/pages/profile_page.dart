@@ -1,211 +1,299 @@
-import '../../../../app/widgets/business_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../app/navigation/app_navigator.dart';
+import '../../../../app/navigation/route_names.dart';
+import '../../../../app/widgets/business_refresh.dart';
 import '../../../../shared/widgets/images/app_image.dart';
-import '../../../../shared/widgets/layout/companion_card_surface_widget.dart';
-import '../../../../shared/widgets/layout/companion_page_surface.dart';
+import '../../../activity/presentation/providers/activity_detail_provider.dart';
 import '../../../activity/presentation/pages/activity_reputation_page.dart';
-import '../../../activity/presentation/pages/my_activities_page.dart';
 import '../providers/profile_provider.dart';
 import 'about_page.dart';
 import 'my_posts_page.dart';
+import 'profile_album_page.dart';
 import 'profile_edit_page.dart';
+import 'profile_points_page.dart';
+import 'profile_relationships_page.dart';
 import 'profile_settings_page.dart';
+import 'profile_shop_page.dart';
 import 'user_feedback_page.dart';
 import 'user_verification_page.dart';
 
+/// 个人中心展示账号、关系和本人功能入口。
 class ProfilePage extends ConsumerWidget {
   const ProfilePage({super.key});
 
+  static const _coinBalance = 0;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state =
-        (ref.watch(profileProvider).value ?? ref.read(userBlocProvider).state);
-    final profile = state.profile;
-    return CompanionPageSurface(
-      child: BusinessRefresh(
-        scope: 'profile',
-        child: ListView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          padding: EdgeInsets.fromLTRB(16.w, 32.h, 16.w, 16.h),
-          children: [
-            Row(
-              children: [
-                if (state.isSignedIn)
-                  AppImage(
-                    src: profile.avatar,
-                    width: 78.r,
-                    height: 78.r,
-                    radius: 39.r,
-                  )
-                else
-                  CircleAvatar(
-                    radius: 39.r,
-                    child: const Icon(Icons.person_outline),
-                  ),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        state.isSignedIn ? profile.name : '未登录',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      if (state.isSignedIn) ...[
-                        SizedBox(height: 4.h),
-                        Text(
-                          'ID: ${profile.displayId}',
-                          style: TextStyle(
-                            color: const Color(0xFF999999),
-                            fontSize: 13.sp,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Wrap(
-                          spacing: 12.w,
-                          runSpacing: 4.h,
-                          children: [
-                            _stat('关注', profile.following),
-                            _stat('粉丝', profile.followers),
-                            _stat('好友', profile.friends),
-                          ],
-                        ),
-                      ] else
-                        const Text('请重新登录'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            if (state.isSignedIn) ...[SizedBox(height: 16.h), _teams(context)],
-            SizedBox(height: 12.h),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 8.h),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: const Color(0xFFF1F1F1), width: 2.w),
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-              child: Column(
+    final account =
+        ref.watch(profileProvider).value ?? ref.read(userBlocProvider).state;
+    final profile = account.profile;
+    final following =
+        ref.watch(followedActivityPublisherIdsProvider).value?.length ?? 0;
+    return ColoredBox(
+      color: Colors.white,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 255.h,
+            child: _asset('background', fit: BoxFit.fill),
+          ),
+          SafeArea(
+            bottom: false,
+            child: BusinessRefresh(
+              scope: 'profile',
+              child: ListView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: EdgeInsets.fromLTRB(16.w, 34.h, 16.w, 16.h),
                 children: [
-                  if (state.isSignedIn) ...[
-                    _entry(
-                      context,
-                      'edit_icon',
-                      '编辑资料',
-                      const ProfileEditPage(),
+                  Center(
+                    child: InkWell(
+                      onTap: account.isSignedIn
+                          ? () => AppNavigator.pushNamed<void>(
+                              context,
+                              RouteNames.userDetail(profile.id),
+                              arguments: profile.id,
+                            )
+                          : null,
+                      child: AppImage(
+                        src: profile.avatar,
+                        width: 86.r,
+                        height: 86.r,
+                        radius: 43.r,
+                      ),
                     ),
+                  ),
+                  SizedBox(height: 12.h),
+                  InkWell(
+                    onTap: account.isSignedIn
+                        ? () => AppNavigator.pushNamed<void>(
+                            context,
+                            RouteNames.userDetail(profile.id),
+                            arguments: profile.id,
+                          )
+                        : null,
+                    child: Text(
+                      account.isSignedIn ? profile.name : '未登录',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  if (account.isSignedIn) ...[
+                    SizedBox(height: 4.h),
+                    Text(
+                      'ID: ${profile.displayId}',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                    ),
+                    SizedBox(height: 12.h),
+                    Row(
+                      children: [
+                        for (final (index, entry) in [
+                          ('关注', following),
+                          ('粉丝', profile.followerIds.length),
+                          ('好友', profile.friendIds.length),
+                        ].indexed)
+                          Expanded(
+                            child: InkWell(
+                              onTap: () => AppNavigator.push<void>(
+                                context,
+                                page: ProfileRelationshipsPage(initial: index),
+                              ),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    '${entry.$2}',
+                                    style: TextStyle(
+                                      fontSize: 20.sp,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Text(
+                                    entry.$1,
+                                    style: TextStyle(
+                                      fontSize: 13.sp,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    SizedBox(height: 12.h),
+                    _vip(context),
+                    SizedBox(height: 8.h),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _balance(context, '积分', '点击查看', 'points'),
+                        ),
+                        SizedBox(width: 9.w),
+                        Expanded(
+                          child: _balance(context, '金币', '点击充值', 'coins'),
+                        ),
+                      ],
+                    ),
+                    _entry(context, '编辑资料', 'edit', const ProfileEditPage()),
+                    _entry(context, '我的相册', 'album', const ProfileAlbumPage()),
+                    _entry(context, '我的动态', 'posts', const MyPostsPage()),
                     _entry(
                       context,
-                      'verification_icon',
-                      '我的认证',
+                      '真人认证',
+                      'verification',
                       const UserVerificationPage(),
                     ),
-                    _entry(context, 'posts_icon', '我的动态', const MyPostsPage()),
                   ],
-                  _entry(context, 'support_icon', '联系客服', const FeedbackPage()),
-                  _entry(context, 'about_icon', '关于我们', const AboutPage()),
-                  if (state.isSignedIn)
-                    _entry(
-                      context,
-                      'reputation_icon',
-                      '活动信誉分',
-                      const ActivityReputationPage(),
-                    ),
                   _entry(
                     context,
-                    'settings_icon',
+                    '活动信誉分',
+                    'reputation',
+                    const ActivityReputationPage(),
+                  ),
+                  _entry(context, '联系客服', 'support', const FeedbackPage()),
+                  _entry(context, '关于我们', 'about', const AboutPage()),
+                  _entry(
+                    context,
                     '设置',
+                    'settings',
                     const ProfileSettingsPage(),
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _stat(String label, int count) => Text.rich(
-    TextSpan(
-      style: TextStyle(fontSize: 14.sp, color: const Color(0xFF333333)),
+  Widget _vip(BuildContext context) => SizedBox(
+    height: 69.h,
+    child: Stack(
+      fit: StackFit.expand,
       children: [
-        TextSpan(
-          text: '$label ',
-          style: const TextStyle(color: Color(0xFF999999)),
-        ),
-        TextSpan(
-          text: '$count',
-          style: const TextStyle(fontWeight: FontWeight.w500),
+        _asset('vip_card', fit: BoxFit.fill),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'VIP会员',
+                      style: TextStyle(
+                        color: const Color(0xFF004867),
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    Text('开通会员，享专属权益', style: TextStyle(fontSize: 13.sp)),
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () => AppNavigator.push<void>(
+                  context,
+                  page: const MembershipCenterPage(),
+                ),
+                child: SizedBox(
+                  width: 76.w,
+                  height: 30.h,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      _asset('vip_button', fit: BoxFit.fill),
+                      Center(
+                        child: Text(
+                          '前往开通',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13.sp,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     ),
   );
 
-  Widget _teams(BuildContext context) => Stack(
-    children: [
-      Positioned.fill(
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.r),
-            gradient: const LinearGradient(
-              colors: [Color(0xFFFFF098), Color(0xFFFFF5BF)],
-            ),
-          ),
-        ),
-      ),
-      Positioned(
-        top: 0,
-        right: 0,
-        child: AppImage(
-          src: 'assets/profile/profile_teams_background.png',
-          width: 220.w,
-          height: 53.h,
-          fit: BoxFit.fill,
-        ),
-      ),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+  Widget _balance(
+    BuildContext context,
+    String title,
+    String subtitle,
+    String icon,
+  ) => InkWell(
+    onTap: () {
+      if (icon == 'coins') {
+        AppNavigator.push<void>(
+          context,
+          page: const CoinRechargePage(balance: _coinBalance),
+        );
+      } else {
+        AppNavigator.push<void>(context, page: const ProfilePointsPage());
+      }
+    },
+    child: SizedBox(
+      height: 67.h,
+      child: Stack(
+        fit: StackFit.expand,
         children: [
+          _asset('balance_card', fit: BoxFit.fill),
           Padding(
-            padding: EdgeInsets.fromLTRB(16.w, 6.h, 16.w, 6.h),
-            child: Text(
-              '我的组队',
-              style: TextStyle(
-                color: const Color(0xFF783C14),
-                fontSize: 15.sp,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          CompanionCardSurfaceWidget(
+            padding: EdgeInsets.all(12.w),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                _asset(icon, width: 24.r, height: 24.r),
+                SizedBox(width: 4.w),
                 Expanded(
-                  child: _teamAction(
-                    context,
-                    'published_icon',
-                    '我发布的',
-                    const MyActivitiesPage(),
-                  ),
-                ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: _teamAction(
-                    context,
-                    'joined_icon',
-                    '我参加的',
-                    const MyActivitiesPage(joined: true),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '我的$title',
+                        style: TextStyle(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              subtitle,
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                          _asset('balance_chevron', width: 16.r, height: 16.r),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -213,69 +301,32 @@ class ProfilePage extends ConsumerWidget {
           ),
         ],
       ),
-    ],
-  );
-
-  Widget _teamAction(
-    BuildContext context,
-    String icon,
-    String title,
-    Widget page,
-  ) => Material(
-    color: const Color(0xFFF5F5F5),
-    borderRadius: BorderRadius.circular(12.r),
-    child: InkWell(
-      borderRadius: BorderRadius.circular(12.r),
-      onTap: () => AppNavigator.push(context, page: page, name: title),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-        child: Row(
-          children: [
-            _icon(icon, 24),
-            SizedBox(width: 8.w),
-            Flexible(
-              child: Text(
-                title,
-                style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
-              ),
-            ),
-          ],
-        ),
-      ),
     ),
   );
 
-  Widget _entry(BuildContext context, String icon, String title, Widget page) =>
-      InkWell(
-        onTap: () => AppNavigator.push(context, page: page),
-        child: ConstrainedBox(
-          constraints: BoxConstraints(minHeight: 60.h),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-            child: Row(
-              children: [
-                _icon(icon, 28),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      color: const Color(0xFF333333),
-                      fontSize: 15.sp,
-                    ),
-                  ),
-                ),
-                RotatedBox(quarterTurns: 3, child: _icon('chevron_icon', 20)),
-              ],
-            ),
+  Widget _entry(BuildContext context, String title, String icon, Widget page) =>
+      Column(
+        children: [
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: _asset(icon, width: 24.r, height: 24.r),
+            title: Text(title),
+            trailing: _asset('chevron', width: 16.r, height: 16.r),
+            onTap: () => AppNavigator.push<void>(context, page: page),
           ),
-        ),
+          const Divider(height: 1, color: Color(0xFFF5F5F5)),
+        ],
       );
 
-  Widget _icon(String name, double size) => AppImage(
-    src: 'assets/profile/profile_$name.png',
-    width: size.r,
-    height: size.r,
-    fit: BoxFit.contain,
+  Widget _asset(
+    String name, {
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+  }) => SvgPicture.asset(
+    'assets/profile/profile_v2_$name.svg',
+    width: width,
+    height: height,
+    fit: fit,
   );
 }

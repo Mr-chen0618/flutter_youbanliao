@@ -15,3 +15,11 @@ python3 tool/import_mock_workbook.py --source '/Users/tabier/Downloads/应用数
 ```
 
 导入只修改工程内assets/mock及图片，不访问或覆盖手机已有账号快照。公开目录与兴趣读取新的打包数据；已写入手机的动态快照和用户编辑保留，新的账号快照使用新样本。原始文件未修改。导入清单和源文件哈希见import-2026-11-10.json。
+
+## 2026-11-17 登录注销冷静期增量
+
+按本次用户要求实现Figma7503恢复账号交互，auth/accounts新增可选pendingDeletions，键为稳定accountId，值为requestedAt和deadline两个ISO8601时间，默认7天。旧文件缺此字段按空集合兼容；原账号、目录和公开关联ID继续使用原身份。申请时只允许当前登录账号，重复申请保留原时间，auth/session置空。
+
+冷静期登录通过验证码后返回受限结果，不先创建有效业务会话。选择恢复时绑定accountId/手机号/验证码，取消注销并将user/account的isDeleted清为false、isSignedIn设true，保留原资料和业务数据。到期后首次登录时幂等清理私有文件和本人公开活动，最后删除账号映射及pending，再分配新的递增ID。旧已永久删除账号保持删除，不复活。
+
+auth/accounts另支持可选suspendedAccounts，键为手机号，值为reason和可选unblocksAt（ISO8601），用于认证返回的封禁说明。没有预置封禁数据。验证码时间与冷静期时间由AuthMockRepository可注入的now函数驱动，默认当前时间。此次无业务种子更改。上述均为磁盘Mock契约，真实短信和服务端定时清理仍待接入。

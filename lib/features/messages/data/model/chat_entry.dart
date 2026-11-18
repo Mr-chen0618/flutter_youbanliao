@@ -10,9 +10,11 @@ class ChatEntry {
     this.showDelivery = false,
     this.invitation,
     this.idempotencyKey,
+    this.durationSeconds,
   });
   final String content;
   final String? idempotencyKey;
+  final int? durationSeconds;
   final bool isMine;
   final ChatEntryKind kind;
   final bool continuesGroup;
@@ -21,6 +23,7 @@ class ChatEntry {
   factory ChatEntry.fromJson(Map<String, dynamic> json) => ChatEntry(
     json['content'] as String,
     idempotencyKey: json['idempotencyKey'] as String?,
+    durationSeconds: json['durationSeconds'] as int?,
     isMine: json['isMine'] as bool? ?? false,
     continuesGroup: json['continuesGroup'] as bool? ?? false,
     showDelivery: json['showDelivery'] as bool? ?? false,
@@ -33,6 +36,7 @@ class ChatEntry {
   Map<String, dynamic> toJson() => {
     'content': content,
     'idempotencyKey': idempotencyKey,
+    if (durationSeconds != null) 'durationSeconds': durationSeconds,
     'isMine': isMine,
     'continuesGroup': continuesGroup,
     'showDelivery': showDelivery,

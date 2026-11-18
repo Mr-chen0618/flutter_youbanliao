@@ -1,16 +1,17 @@
-import '../../../../shared/widgets/feedback/app_toast.dart';
-import 'account_action_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../app/config/legal_links.dart';
 import '../../../../app/navigation/app_navigator.dart';
+import '../../../../shared/pages/app_web_page.dart';
+import '../../../../shared/widgets/layout/app_scaffold.dart';
 import '../../../messages/presentation/pages/blocked_users_page.dart';
-import '../../../../shared/widgets/layout/companion_page_surface.dart';
-import '../../../../shared/widgets/layout/companion_card_surface_widget.dart';
-import '../../../messages/presentation/providers/messages_provider.dart';
 import '../providers/profile_provider.dart';
+import '../bloc/user_event.dart';
+import 'account_action_page.dart';
 
+/// 设置聚合协议、黑名单与账号操作。
 class ProfileSettingsPage extends ConsumerWidget {
   const ProfileSettingsPage({super.key});
 
@@ -19,93 +20,118 @@ class ProfileSettingsPage extends ConsumerWidget {
     final signedIn =
         (ref.watch(profileProvider).value ?? ref.read(userBlocProvider).state)
             .isSignedIn;
-    final blockedCount = ref.watch(messagesProvider).blocked.length;
-    return CompanionPageSurface(
-      title: '设置',
-      child: ListView(
-        padding: EdgeInsets.all(16.w),
-        children: [
-          const Text('账号管理', style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 8.h),
-          CompanionCardSurfaceWidget(
-            child: Column(
-              children: [
-                ListTile(
-                  title: const Text('黑名单'),
-                  trailing: _value('$blockedCount 人'),
-                  onTap: () => AppNavigator.push(
-                    context,
-                    page: const BlockedUsersPage(),
-                  ),
-                ),
-                const Divider(height: 1, color: Color(0xFFF4F4F4)),
-                ListTile(
-                  title: const Text('版本更新'),
-                  trailing: _value('v1.0.0'),
-                  onTap: () => AppToast.show('当前已是最新版本'),
-                ),
-              ],
-            ),
-          ),
-          if (signedIn) ...[
-            SizedBox(height: 16.h),
-            const Text('账号操作', style: TextStyle(fontWeight: FontWeight.bold)),
-            SizedBox(height: 8.h),
-            CompanionCardSurfaceWidget(
-              child: Column(
+    return AppScaffold(
+      navigatorTitle: '设置',
+      navigatorBackWidget: const BackButton(),
+      backgroundColor: const Color(0xFFF6F6F6),
+      body: SafeArea(
+        top: false,
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 16.h),
                 children: [
-                  ListTile(
-                    title: const Text('退出登录'),
-                    trailing: _value('确认退出'),
-                    onTap: () => _confirm(context, ref, delete: false),
-                  ),
-                  const Divider(height: 1, color: Color(0xFFF4F4F4)),
-                  ListTile(
-                    title: const Text(
-                      '注销账号',
-                      style: TextStyle(color: Colors.redAccent),
+                  Material(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16.r),
+                    clipBehavior: Clip.antiAlias,
+                    child: Column(
+                      children: [
+                        _row(
+                          context,
+                          '隐私政策',
+                          const AppWebPage(
+                            title: '隐私政策',
+                            url: LegalLinks.privacyPolicyUrl,
+                          ),
+                          name: 'settings-privacy',
+                        ),
+                        const Divider(height: 1, indent: 16, endIndent: 16),
+                        _row(
+                          context,
+                          '用户协议',
+                          const AppWebPage(
+                            title: '用户协议',
+                            url: LegalLinks.userAgreementUrl,
+                          ),
+                          name: 'settings-agreement',
+                        ),
+                        const Divider(height: 1, indent: 16, endIndent: 16),
+                        _row(context, '黑名单', const BlockedUsersPage()),
+                        if (signedIn) ...[
+                          const Divider(height: 1, indent: 16, endIndent: 16),
+                          _row(
+                            context,
+                            '注销账号 (慎用)',
+                            const AccountActionPage(delete: true),
+                          ),
+                        ],
+                      ],
                     ),
-                    trailing: _value('请谨慎操作'),
-                    onTap: () => _confirm(context, ref, delete: true),
                   ),
                 ],
               ),
             ),
+            if (signedIn)
+              Padding(
+                padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 10.h),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 52.h,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: const Color(0xFFFFE0E8),
+                      foregroundColor: const Color(0xFFFA1950),
+                    ),
+                    onPressed: () => _confirmLogout(context, ref),
+                    child: const Text('退出登录'),
+                  ),
+                ),
+              ),
           ],
-          SizedBox(height: 24.h),
-          Text(
-            '友伴 v1.0.0 · 用心守护你的每一次相遇',
-            textAlign: TextAlign.center,
-            style: TextStyle(color: const Color(0xFF999999), fontSize: 12.sp),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _confirmLogout(BuildContext context, WidgetRef ref) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialog) => AlertDialog(
+        content: const Text(
+          '退出登录后，你将无法收到新的信息，确定要退出登录吗？',
+          textAlign: TextAlign.center,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialog, false),
+            child: const Text('取消'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(dialog, true),
+            style: FilledButton.styleFrom(
+              backgroundColor: const Color(0xFFFFD152),
+              foregroundColor: Colors.black,
+            ),
+            child: const Text('退出登录'),
           ),
         ],
       ),
     );
+    if (confirmed == true && context.mounted) {
+      ref.read(userBlocProvider).add(const UserSignedOut());
+    }
   }
 
-  /// 设置项右侧的说明和导航图标。
-  Widget _value(String value) => Row(
-    mainAxisSize: MainAxisSize.min,
-    children: [
-      Text(
-        value,
-        style: TextStyle(fontSize: 12.sp, color: const Color(0xFF999999)),
-      ),
-      SizedBox(width: 8.w),
-      Icon(Icons.chevron_right, size: 20.r),
-    ],
-  );
-
-  Future<void> _confirm(
+  Widget _row(
     BuildContext context,
-    WidgetRef ref, {
-    required bool delete,
-  }) async {
-    final confirmed = await AppNavigator.push<bool>(
-      context,
-      page: AccountActionPage(delete: delete),
-    );
-    if (!context.mounted || confirmed != true) return;
-    Navigator.pop(context);
-  }
+    String title,
+    Widget page, {
+    String? name,
+  }) => ListTile(
+    title: Text(title),
+    trailing: const Icon(Icons.chevron_right, color: Colors.grey),
+    onTap: () => AppNavigator.push<void>(context, page: page, name: name),
+  );
 }

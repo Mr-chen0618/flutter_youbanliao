@@ -1,6 +1,5 @@
 import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../shared/widgets/images/mock_photo_attachments.dart';
-import '../../../square/presentation/providers/square_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -120,12 +119,7 @@ class _FeedbackPageState extends ConsumerState<FeedbackPage> {
                 ),
                 SizedBox(height: 10.h),
                 MockPhotoAttachments(
-                  options: ref
-                      .watch(squareProvider)
-                      .posts
-                      .expand((post) => post.photos)
-                      .toSet()
-                      .toList(),
+                  feedbackStyle: true,
                   selected: _photos,
                   onChanged: (photos) => setState(() => _photos = photos),
                 ),

@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon/&#229;&#143;&#141;&#232;&#189;&#172;&#230;&#145;&#132;&#229;&#131;&#143;&#229;&#164;&#180;">
+<mask id="stroke0_0_113" fill="white">
+<path d="M1 10.2792C1 8.37248 2.34584 6.73082 4.21553 6.35688L6 5.99999L6.0883 5.73508C6.63276 4.10172 8.16131 3 9.88303 3H14.117C15.8387 3 17.3672 4.10172 17.9117 5.73508L18 5.99999L19.7845 6.35688C21.6542 6.73082 23 8.37248 23 10.2792V18C23 20.2091 21.2091 22 19 22H5C2.79086 22 1 20.2091 1 18V10.2792Z"/>
+</mask>
+<path id="Rectangle 3491" d="M18 5.99999L19.7845 6.35688C21.6542 6.73082 23 8.37248 23 10.2792V18C23 20.2091 21.2091 22 19 22H5C2.79086 22 1 20.2091 1 18V10.2792C1 8.37248 2.34584 6.73082 4.21553 6.35688L6 5.99999L6.0883 5.73508C6.63276 4.10172 8.16131 3 9.88303 3H14.117C15.8387 3 17.3672 4.10172 17.9117 5.73508L18 5.99999Z" stroke-width="4" stroke-linejoin="round" stroke="white" mask="url(#stroke0_0_113)"/>
+<path id="Vector 14" d="M9 9.99999C11.5714 8.5 15 9.79999 15 13V9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+<path id="Vector 15" d="M15 16C12.4286 17.5 9 16.2 9 13V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+</g>
+</svg>

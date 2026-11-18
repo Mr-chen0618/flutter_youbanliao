@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../app/navigation/app_navigator.dart';
 import '../../../../app/navigation/route_names.dart';
 import '../../../../shared/widgets/feedback/app_action_sheet.dart';
+import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../messages/presentation/providers/messages_provider.dart';
 import '../../data/square_repository.dart';
 import '../../../report/presentation/pages/report_page.dart';
@@ -93,7 +94,11 @@ SquarePostCardWidget buildSquarePostCard(
         : () {
             final id = ref
                 .read(messagesProvider.notifier)
-                .greet(post.author, post.avatar);
+                .greet(post.author, post.avatar, peerId: post.authorId);
+            if (id == null) {
+              AppToast.show('请先解除黑名单');
+              return;
+            }
             AppNavigator.pushNamed<void>(
               context,
               RouteNames.chat(id),

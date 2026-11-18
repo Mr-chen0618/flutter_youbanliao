@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import '../../../report/presentation/widgets/report_action.dart';
 import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../app/widgets/business_refresh.dart';
@@ -241,7 +242,7 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
                               Expanded(child: Text(activity.viewer.name)),
                             ],
                           )
-                        : const Text('暂无报名'),
+                        : const AppEmptyState(message: '暂无报名', compact: true),
                   ),
                   // 活动图片
                   if (activity.photos.isNotEmpty) ...[
@@ -289,7 +290,15 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
                         child: _button('聊一聊', const Color(0xFFFFCE45), () {
                           final id = ref
                               .read(messagesProvider.notifier)
-                              .greet(publisher.name, publisher.avatar);
+                              .greet(
+                                publisher.name,
+                                publisher.avatar,
+                                peerId: publisher.id,
+                              );
+                          if (id == null) {
+                            AppToast.show('请先解除黑名单');
+                            return;
+                          }
                           AppNavigator.pushNamed<void>(
                             context,
                             RouteNames.chat(id),

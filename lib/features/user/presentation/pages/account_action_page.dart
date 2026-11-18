@@ -1,3 +1,4 @@
+import 'account_deletion_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,9 +17,9 @@ class AccountActionPage extends ConsumerStatefulWidget {
 }
 
 class _AccountActionPageState extends ConsumerState<AccountActionPage> {
-  bool _agreed = false;
   @override
   Widget build(BuildContext context) {
+    if (widget.delete) return const AccountDeletionPage();
     final account =
         ref.watch(profileProvider).value ?? ref.read(userBlocProvider).state;
     return CompanionPageSurface(
@@ -61,16 +62,10 @@ class _AccountActionPageState extends ConsumerState<AccountActionPage> {
                   padding: EdgeInsets.all(16.w),
                   child: Text(
                     widget.delete
-                        ? '注销完成后，你将无法恢复\n\n• 账号资料将重置。\n\n• 认证和反馈记录将清除。\n\n请保存需要保留的资料，妥善处理未完成的组队与沟通。'
+                        ? '注销申请提交后进入7天冷静期，期间登录可选择恢复账号。\n\n冷静期届满后账号资料和记录会被清除。\n\n请保存需要保留的资料，妥善处理未完成的组队与沟通。'
                         : '退出后将返回登录页。重新登录后可继续使用已保存的资料并参与活动。',
                   ),
                 ),
-                if (widget.delete)
-                  CheckboxListTile(
-                    value: _agreed,
-                    onChanged: (value) => setState(() => _agreed = value!),
-                    title: const Text('我已阅读并理解注销后果，自愿申请注销'),
-                  ),
               ],
             ),
           ),
@@ -82,38 +77,36 @@ class _AccountActionPageState extends ConsumerState<AccountActionPage> {
                 foregroundColor: Colors.black,
                 minimumSize: Size.fromHeight(52.h),
               ),
-              onPressed: widget.delete && !_agreed
-                  ? null
-                  : () async {
-                      if (!widget.delete) {
-                        final confirmed = await showDialog<bool>(
-                          context: context,
-                          builder: (dialog) => AlertDialog(
-                            title: const Text('确认退出登录？'),
-                            content: const Text('退出后可重新登录，已保存的资料和记录会保留。'),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.pop(dialog, false),
-                                child: const Text('取消'),
-                              ),
-                              TextButton(
-                                onPressed: () => Navigator.pop(dialog, true),
-                                child: const Text('确认退出'),
-                              ),
-                            ],
-                          ),
-                        );
-                        if (confirmed != true || !context.mounted) return;
-                      }
-                      ref
-                          .read(userBlocProvider)
-                          .add(
-                            widget.delete
-                                ? const UserAccountDeleted()
-                                : const UserSignedOut(),
-                          );
-                      Navigator.pop(context, true);
-                    },
+              onPressed: () async {
+                if (!widget.delete) {
+                  final confirmed = await showDialog<bool>(
+                    context: context,
+                    builder: (dialog) => AlertDialog(
+                      title: const Text('确认退出登录？'),
+                      content: const Text('退出后可重新登录，已保存的资料和记录会保留。'),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(dialog, false),
+                          child: const Text('取消'),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(dialog, true),
+                          child: const Text('确认退出'),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (confirmed != true || !context.mounted) return;
+                }
+                ref
+                    .read(userBlocProvider)
+                    .add(
+                      widget.delete
+                          ? const UserAccountDeleted()
+                          : const UserSignedOut(),
+                    );
+                Navigator.pop(context, true);
+              },
               child: Text(widget.delete ? '申请注销' : '退出登录'),
             ),
           ),

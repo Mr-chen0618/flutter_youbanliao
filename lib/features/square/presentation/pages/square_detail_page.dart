@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,7 +43,9 @@ class _SquareDetailPageState extends ConsumerState<SquareDetailPage> {
   Widget build(BuildContext context) {
     final state = ref.watch(squareProvider);
     final post = state.posts
-        .where((item) => item.id == widget.postId)
+        .where(
+          (item) => item.id == widget.postId && (item.isMine || item.isPublic),
+        )
         .firstOrNull;
     final actions = post == null
         ? null
@@ -70,7 +73,7 @@ class _SquareDetailPageState extends ConsumerState<SquareDetailPage> {
       body: SafeArea(
         top: false,
         child: post == null
-            ? const Center(child: Text('动态已删除'))
+            ? const Center(child: Text('动态不可查看'))
             : Column(
                 children: [
                   Expanded(
@@ -89,7 +92,10 @@ class _SquareDetailPageState extends ConsumerState<SquareDetailPage> {
                           for (final comment in state.comments[post.id] ?? [])
                             SquareCommentTile(comment: comment),
                           if ((state.comments[post.id] ?? []).isEmpty)
-                            const ListTile(title: Text('还没有评论')),
+                            const AppEmptyState(
+                              message: '还没有评论',
+                              compact: true,
+                            ),
                         ],
                       ),
                     ),

@@ -1,10 +1,11 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../shared/widgets/layout/companion_page_surface.dart';
 import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../shared/widgets/layout/companion_card_surface_widget.dart';
 
-/// 编辑兴趣或标签，最多保存六项。
+/// 编辑个性标签或分组兴趣。旧平铺兴趣继续显示并可移除。
 class ProfileInterestsPage extends StatefulWidget {
   const ProfileInterestsPage({
     super.key,
@@ -19,61 +20,61 @@ class ProfileInterestsPage extends StatefulWidget {
 }
 
 class _ProfileInterestsPageState extends State<ProfileInterestsPage> {
+  static const _interestGroups = {
+    '旅游足迹': ['杭州', '厦门', '天津', '北京', '上海', '深圳', '成都', '重庆'],
+    '运动': ['羽毛球', '篮球', '网球', '跑步', '游泳', '徒步', '骑行', '飞盘'],
+    '音乐': ['流行音乐', '古典音乐', 'R&B', '民谣', '摇滚', '爵士'],
+    '美食': ['火锅', '烧烤', '甜品', '咖啡', '日料', '探店'],
+    '影视': ['剧情', '喜剧', '科幻', '纪录片', '动画', '悬疑'],
+  };
+  static const _personality = [
+    '内向',
+    '外向',
+    '热情',
+    '冷静',
+    '乐观',
+    '悲观',
+    '创新者',
+    '传统主义者',
+    '细心',
+    '粗心',
+  ];
   late final _selected = widget.initial.toSet();
-  Widget _chip(String value) => Padding(
+  String _active = _interestGroups.keys.first;
+  bool get _isInterest => widget.title.contains('兴趣');
+  String _label(String value) =>
+      RegExp(r'^([^：]+)：(.+)$').firstMatch(value)?.group(2) ?? value;
+  int _count(String group) =>
+      _selected.where((value) => value.startsWith('$group：')).length;
+
+  void _toggle(String value, {String? group}) {
+    if (_selected.contains(value)) {
+      setState(() => _selected.remove(value));
+      return;
+    }
+    if (group != null && _count(group) >= 3) {
+      AppToast.show('最多选择3个$group标签');
+      return;
+    }
+    if (!_isInterest && _selected.length >= 10) {
+      AppToast.show('最多选择10项');
+      return;
+    }
+    setState(() => _selected.add(value));
+  }
+
+  Widget _chip(String value, {String? group}) => Padding(
     padding: EdgeInsets.only(right: 8.w, bottom: 8.h),
-    child: InkWell(
-      borderRadius: BorderRadius.circular(8.r),
-      onTap: () {
-        if (!_selected.contains(value) && _selected.length >= 6) {
-          AppToast.show('最多选择 6 项');
-          return;
-        }
-        setState(() {
-          if (!_selected.remove(value)) _selected.add(value);
-        });
-      },
-      child: Container(
-        height: 36.h,
-        padding: EdgeInsets.symmetric(horizontal: 12.w),
-        alignment: Alignment.center,
-        constraints: BoxConstraints(minWidth: 66.w),
-        decoration: BoxDecoration(
-          color: _selected.contains(value)
-              ? const Color(0xFFFFF6CB)
-              : const Color(0xFFF8F8F8),
-          borderRadius: BorderRadius.circular(8.r),
-          border: _selected.contains(value)
-              ? Border.all(color: const Color(0xFFFFD152))
-              : null,
-        ),
-        child: Text(
-          '$value${_selected.contains(value) ? ' ✓' : ''}',
-          style: TextStyle(fontSize: 13.sp),
-        ),
-      ),
+    child: FilterChip(
+      label: Text(_label(value)),
+      selected: _selected.contains(value),
+      checkmarkColor: Colors.black,
+      selectedColor: const Color(0xFFFFEDB6),
+      backgroundColor: const Color(0xFFF6F6F6),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
+      onSelected: (_) => _toggle(value, group: group),
     ),
   );
-  Map<String, List<String>> _groups() {
-    final all = {...widget.initial, ...widget.options};
-    final outdoor = all
-        .where((s) => RegExp('运动|球|跑|徒步|登山|露营|骑行|健身|游泳|瑜伽|飞盘').hasMatch(s))
-        .toList();
-    final art = all
-        .where(
-          (s) =>
-              RegExp('摄影|音乐|阅读|手作|绘画|电影|艺术|展|旅行').hasMatch(s) &&
-              !outdoor.contains(s),
-        )
-        .toList();
-    return {
-      '户外与运动': outdoor,
-      '城市与生活': all
-          .where((s) => !outdoor.contains(s) && !art.contains(s))
-          .toList(),
-      '文艺与记录': art,
-    };
-  }
 
   @override
   Widget build(BuildContext context) => CompanionPageSurface(
@@ -84,65 +85,76 @@ class _ProfileInterestsPageState extends State<ProfileInterestsPage> {
           child: ListView(
             padding: EdgeInsets.all(16.w),
             children: [
-              CompanionCardSurfaceWidget(
-                padding: EdgeInsets.all(16.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(
-                      '已选兴趣        ${_selected.length} / 6',
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 12.h),
-                    Wrap(
-                      children: _selected
-                          .map((v) => IntrinsicWidth(child: _chip(v)))
-                          .toList(),
-                    ),
-                    Text(
-                      '最多选择 6 项，还可以再选 ${6 - _selected.length} 项',
-                      style: const TextStyle(color: Colors.grey),
-                    ),
-                  ],
+              Center(
+                child: Text(
+                  _isInterest ? '请选择你的兴趣爱好' : '填写个性标签，更快找到兴趣相投的Ta',
+                  style: const TextStyle(color: Colors.grey),
                 ),
               ),
-              SizedBox(height: 24.h),
-              for (final group in _groups().entries) ...[
-                Text(
-                  group.key,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15.sp,
+              SizedBox(height: 12.h),
+              CompanionCardSurfaceWidget(
+                padding: EdgeInsets.all(16.w),
+                child: _selected.isEmpty
+                    ? AppEmptyState(
+                        message: _isInterest ? '暂无兴趣' : '暂无标签',
+                        compact: true,
+                      )
+                    : Wrap(
+                        children: [for (final value in _selected) _chip(value)],
+                      ),
+              ),
+              SizedBox(height: 16.h),
+              if (_isInterest) ...[
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      for (final group in _interestGroups.keys)
+                        TextButton(
+                          onPressed: () => setState(() => _active = group),
+                          child: Text(
+                            '$group (${_count(group)}/3)',
+                            style: TextStyle(
+                              color: group == _active
+                                  ? Colors.black87
+                                  : Colors.grey,
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
                 ),
                 SizedBox(height: 8.h),
                 Wrap(
-                  children: group.value
-                      .map((v) => IntrinsicWidth(child: _chip(v)))
-                      .toList(),
+                  children: [
+                    for (final value in _interestGroups[_active]!)
+                      _chip('$_active：$value', group: _active),
+                  ],
                 ),
-                SizedBox(height: 20.h),
-              ],
+              ] else
+                Wrap(
+                  children: [
+                    for (final value in {..._personality, ...widget.options})
+                      _chip(value),
+                  ],
+                ),
             ],
           ),
         ),
         Padding(
           padding: EdgeInsets.all(16.w),
-          child: FilledButton(
-            style: FilledButton.styleFrom(
-              backgroundColor: const Color(0xFFFFD04F),
-              foregroundColor: Colors.black,
-              minimumSize: Size.fromHeight(52.h),
+          child: SizedBox(
+            width: double.infinity,
+            height: 52.h,
+            child: FilledButton(
+              style: FilledButton.styleFrom(
+                backgroundColor: const Color(0xFFFFD152),
+                foregroundColor: Colors.black,
+              ),
+              onPressed: () =>
+                  Navigator.pop(context, List<String>.unmodifiable(_selected)),
+              child: const Text('保存'),
             ),
-            onPressed: () => Navigator.pop(context, _selected.toList()),
-            child: const Text('保存'),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(bottom: 16.h),
-          child: Text(
-            '让友伴为你推荐更合拍的组队',
-            style: TextStyle(fontSize: 11.sp, color: Colors.grey),
           ),
         ),
       ],

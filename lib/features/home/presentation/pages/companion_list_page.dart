@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -35,10 +36,11 @@ class _CompanionListPageState extends ConsumerState<CompanionListPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted)
+      if (mounted) {
         ref
             .read(companionListProvider(widget.arguments).notifier)
             .loadCompanions();
+      }
     });
   }
 
@@ -103,8 +105,9 @@ class _CompanionListPageState extends ConsumerState<CompanionListPage> {
                         onSelected: (id) {
                           if (id == state.categoryId) return;
                           model.changeCategory(id);
-                          if (_listController.hasClients)
+                          if (_listController.hasClients) {
                             _listController.jumpTo(0);
+                          }
                         },
                       ),
                     ),
@@ -141,9 +144,11 @@ class _CompanionListPageState extends ConsumerState<CompanionListPage> {
                               ),
                             )
                           else if (people.isEmpty)
-                            SliverFillRemaining(
+                            const SliverFillRemaining(
                               hasScrollBody: false,
-                              child: Center(child: homeText('暂无该分类的搭子', 15)),
+                              child: Center(
+                                child: AppEmptyState(message: '暂无该分类的搭子'),
+                              ),
                             )
                           else
                             SliverPadding(

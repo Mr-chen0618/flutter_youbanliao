@@ -9,8 +9,62 @@ import 'mock_json_test_store.dart';
 import 'package:flutter_app_framework/features/square/presentation/widgets/square_post_card_widget.dart';
 import 'package:flutter_app_framework/core/media/app_media_picker.dart';
 import 'package:flutter_app_framework/features/square/presentation/providers/square_provider.dart';
+import 'package:flutter_app_framework/features/activity/presentation/pages/activity_reputation_page.dart';
+import 'package:flutter_app_framework/shared/widgets/images/photo_upload_tile.dart';
+import 'package:flutter_app_framework/shared/widgets/images/mock_photo_attachments.dart';
 
 void main() {
+  testWidgets('profile reputation entry and feedback photo selection work', (
+    tester,
+  ) async {
+    await _openTabs(tester);
+    await tester.tap(find.byKey(const ValueKey('main-tab-3')));
+    await tester.pumpAndSettle();
+    Future<void> openEntry(String title) async {
+      await tester.scrollUntilVisible(
+        find.text(title),
+        180,
+        scrollable: find.byType(Scrollable).last,
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(title).hitTestable());
+      await tester.pumpAndSettle();
+    }
+
+    await openEntry('活动信誉分');
+    expect(find.byType(ActivityReputationPage), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    await openEntry('联系客服');
+    await tester.scrollUntilVisible(
+      find.text('添加图片'),
+      150,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.pumpAndSettle();
+    expect(find.byType(PhotoUploadTile), findsOneWidget);
+    addTearDown(() => AppMediaPicker.pickOverride = null);
+    AppMediaPicker.pickOverride = () async => null;
+    await tester.tap(find.text('添加图片'));
+    await tester.pumpAndSettle();
+    expect(
+      tester
+          .widget<MockPhotoAttachments>(find.byType(MockPhotoAttachments))
+          .selected,
+      isEmpty,
+    );
+    AppMediaPicker.pickOverride = () async => 'assets/mock/media/IMG025.jpg';
+    await tester.tap(find.text('添加图片'));
+    await tester.pumpAndSettle();
+    expect(
+      tester
+          .widget<MockPhotoAttachments>(find.byType(MockPhotoAttachments))
+          .selected,
+      ['assets/mock/media/IMG025.jpg'],
+    );
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets(
     'feed and detail share only block/report actions; counts toggle numerically and refresh preserves likes',
     (tester) async {
@@ -109,16 +163,22 @@ void main() {
     await openActions();
     await tester.tap(find.text('举报').hitTestable());
     await tester.pumpAndSettle();
-    await tester.tap(find.text('广告引流 / 垃圾信息').hitTestable());
-    await tester.scrollUntilVisible(
-      find.text('提交举报'),
-      250,
-      scrollable: find.byType(Scrollable).last,
-    );
+    expect(find.text('选择举报类型'), findsOneWidget);
+    await tester.tap(find.text('资料作假/冒用他人身份').hitTestable());
     await tester.pumpAndSettle();
-    await tester.tap(find.text('提交举报'));
+    expect(find.text('上传图片（0/6）：'), findsOneWidget);
+    final description = find.byType(TextField).hitTestable();
+    await tester.enterText(description, '举报');
+    await tester.tap(find.widgetWithText(FilledButton, '提交').hitTestable());
     await tester.pumpAndSettle();
-    expect(find.text('举报').hitTestable(), findsNothing);
+    expect(find.text('输入的内容太少啦'), findsOneWidget);
+    expect(find.text('举报提交成功'), findsNothing);
+    await tester.enterText(description, '用户资料与本人身份不一致');
+    await tester.tap(find.widgetWithText(FilledButton, '提交').hitTestable());
+    await tester.pumpAndSettle();
+    expect(find.text('举报提交成功'), findsOneWidget);
+    await tester.tap(find.text('我知道了').hitTestable());
+    await tester.pumpAndSettle();
 
     await openActions();
     await tester.tap(find.text('拉黑').hitTestable());
@@ -126,7 +186,7 @@ void main() {
     await tester.tap(find.text('确认加入黑名单').hitTestable());
     await tester.pumpAndSettle();
     expect(find.text('晴天队长').hitTestable(), findsNothing);
-    expect(find.text('系统消息').hitTestable(), findsOneWidget);
+    expect(find.text('聊天').hitTestable(), findsOneWidget);
   });
 
   testWidgets('chat renders the design history and sends a selected image', (
@@ -138,6 +198,11 @@ void main() {
     await tester.tap(find.text('薄荷同学').hitTestable());
     await tester.pumpAndSettle();
 
+    await tester.drag(
+      find.byType(ListView).hitTestable().first,
+      const Offset(0, 1500),
+    );
+    await tester.pumpAndSettle();
     expect(find.text('2026年12月11日 18:30'), findsOneWidget);
     expect(find.text('周末羽毛球局'), findsOneWidget);
     expect(find.text('已送达'), findsOneWidget);
@@ -168,7 +233,9 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('main-tab-2')));
     await tester.pumpAndSettle();
 
-    expect(find.text('消息').hitTestable(), findsNWidgets(2));
+    expect(find.text('聊天').hitTestable(), findsOneWidget);
+    await tester.tap(find.byTooltip('消息通知'));
+    await tester.pumpAndSettle();
     expect(find.text('发现').hitTestable(), findsNothing);
     expect(find.byTooltip('搜索消息').hitTestable(), findsNothing);
     for (final label in ['系统消息', '互动消息', '谁看过我']) {
@@ -185,8 +252,8 @@ void main() {
     await _openTabs(tester);
     for (final (index, content) in [
       (1, '发现'),
-      (2, '系统消息'),
-      (3, '我的组队'),
+      (2, '聊天'),
+      (3, '编辑资料'),
       (0, '海盐芝士'),
     ]) {
       await tester.tap(find.byKey(ValueKey('main-tab-$index')));
@@ -194,6 +261,56 @@ void main() {
       expect(find.text(content).hitTestable(), findsOneWidget);
       expect(tester.takeException(), isNull);
     }
+  });
+
+  testWidgets('profile opens the membership and coin recharge pages', (
+    tester,
+  ) async {
+    bool? selected(Finder label) => tester
+        .widgetList<Semantics>(
+          find.ancestor(of: label, matching: find.byType(Semantics)),
+        )
+        .firstWhere((widget) => widget.properties.selected != null)
+        .properties
+        .selected;
+
+    await _openTabs(tester);
+    await tester.tap(find.byKey(const ValueKey('main-tab-3')));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('前往开通').hitTestable());
+    await tester.pumpAndSettle();
+    expect(find.text('会员中心').hitTestable(), findsOneWidget);
+    expect(selected(find.text('12个月会员')), isTrue);
+    await tester.tap(find.text('3个月会员').hitTestable());
+    await tester.pumpAndSettle();
+    expect(selected(find.text('3个月会员')), isTrue);
+    expect(selected(find.text('12个月会员')), isFalse);
+    expect(tester.takeException(), isNull);
+
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('点击充值').hitTestable());
+    await tester.pumpAndSettle();
+    expect(find.text('金币充值').hitTestable(), findsOneWidget);
+    expect(selected(find.text('¥6')), isTrue);
+    await tester.tap(find.text('¥30').hitTestable());
+    await tester.pumpAndSettle();
+    expect(selected(find.text('¥30')), isTrue);
+    expect(selected(find.text('¥6')), isFalse);
+    expect(tester.takeException(), isNull);
+
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('我的积分').hitTestable());
+    await tester.pumpAndSettle();
+    expect(find.text('积分记录').hitTestable(), findsOneWidget);
+    expect(find.text('暂无积分记录').hitTestable(), findsOneWidget);
+    expect(find.text('0').hitTestable(), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    expect(find.text('编辑资料').hitTestable(), findsOneWidget);
   });
 
   testWidgets(
@@ -206,6 +323,7 @@ void main() {
       await tester.pumpAndSettle();
 
       await tester.enterText(find.byType(TextField), '周末见');
+      await tester.pump();
       await tester.tap(find.text('发送'));
       await tester.pumpAndSettle();
       expect(find.text('周末见'), findsOneWidget);
@@ -228,15 +346,15 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('昵称').hitTestable());
     await tester.pumpAndSettle();
-    expect(find.text('修改昵称'), findsOneWidget);
+    expect(find.text('昵称').hitTestable(), findsOneWidget);
     await tester.enterText(find.byType(TextField), '更新后的昵称');
     await tester.tap(find.text('保存').hitTestable());
     await tester.pumpAndSettle();
     expect(find.text('更新后的昵称'), findsOneWidget);
     await tester.tap(find.text('出生日期').hitTestable());
     await tester.pumpAndSettle();
-    expect(find.text('选择生日'), findsOneWidget);
-    await tester.tap(find.text('完成').hitTestable());
+    expect(find.textContaining('设置你的出生日期'), findsOneWidget);
+    await tester.tap(find.text('保存').hitTestable());
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
   });

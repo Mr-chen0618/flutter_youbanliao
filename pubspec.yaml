@@ -28,6 +28,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flutter_svga: 0.0.8
+  record: ^6.2.1
+  audioplayers: ^6.7.1
   flutter:
     sdk: flutter
   #屏幕适配
@@ -110,6 +113,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - assets/shared/
     - assets/auth/
     - assets/activity/
     - assets/home/

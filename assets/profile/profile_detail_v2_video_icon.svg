@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon/&#230;&#139;&#168;&#230;&#137;&#147;&#232;&#167;&#134;&#233;&#162;&#145;">
+<mask id="stroke0_0_405" fill="white">
+<path d="M1 9C1 5.68629 3.68629 3 7 3L13 3C16.3137 3 19 5.68629 19 9V15C19 18.3137 16.3137 21 13 21H7C3.68629 21 1 18.3137 1 15V9Z"/>
+</mask>
+<path id="Rectangle 3491" d="M7 21H13C16.3137 21 19 18.3137 19 15V9C19 5.68629 16.3137 3 13 3L7 3C3.68629 3 1 5.68629 1 9V15C1 18.3137 3.68629 21 7 21Z" stroke-width="4" stroke="#333333" mask="url(#stroke0_0_405)"/>
+<path id="Rectangle 3492" d="M18 15C19.5588 17.1823 23 16.0795 23 13.3977V10.6023C23 7.92046 19.5588 6.81767 18 9" stroke-width="2" stroke="#333333"/>
+<path id="Vector" d="M11.575 9C12.6383 9 13.5 9.81081 13.5 10.9459C13.5 13.2162 10.875 14.5135 10 15C9.125 14.5135 6.5 13.2162 6.5 10.9459C6.5 9.81081 7.375 9 8.425 9C9.076 9 9.65 9.32432 10 9.64865C10.35 9.32432 10.924 9 11.575 9Z" fill="white" stroke-width="2" stroke-linejoin="round" stroke="#333333"/>
+</g>
+</svg>

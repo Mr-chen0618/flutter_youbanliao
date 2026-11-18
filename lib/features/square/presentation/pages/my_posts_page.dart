@@ -1,3 +1,4 @@
+import '../../../../shared/widgets/layout/app_empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -86,7 +87,7 @@ class MyPostsPage extends ConsumerWidget {
                         padding: EdgeInsets.all(16.w),
                         children: [
                           if (section.isEmpty)
-                            const Center(child: Text('暂无动态')),
+                            const AppEmptyState(message: '暂无动态'),
                           for (final post in section)
                             Padding(
                               padding: EdgeInsets.only(bottom: 16.h),
