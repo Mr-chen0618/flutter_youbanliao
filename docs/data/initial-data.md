@@ -23,3 +23,15 @@ python3 tool/import_mock_workbook.py --source '/Users/tabier/Downloads/应用数
 冷静期登录通过验证码后返回受限结果，不先创建有效业务会话。选择恢复时绑定accountId/手机号/验证码，取消注销并将user/account的isDeleted清为false、isSignedIn设true，保留原资料和业务数据。到期后首次登录时幂等清理私有文件和本人公开活动，最后删除账号映射及pending，再分配新的递增ID。旧已永久删除账号保持删除，不复活。
 
 auth/accounts另支持可选suspendedAccounts，键为手机号，值为reason和可选unblocksAt（ISO8601），用于认证返回的封禁说明。没有预置封禁数据。验证码时间与冷静期时间由AuthMockRepository可注入的now函数驱动，默认当前时间。此次无业务种子更改。上述均为磁盘Mock契约，真实短信和服务端定时清理仍待接入。
+
+## 2026-11-18 内购权益边界
+
+六个苹果商品均为消耗型。商品目录在 purchases 模块内，不更改初始种子或 Mock 账号余额。真实权益从 PurchaseFulfillmentRepository 获取并按 accountId 隔离展示；当前无后端实现，不伪造落账，默认禁用购买。服务端需要按 Apple 交易 ID 持久化幂等发放记录及 appAccountToken 账号归属。契约及剩余事项见 [苹果内购客户端](../ui-structure/apple-iap-2026-11-18.md)。
+
+## 2026-11-18 苹果支付后端交接
+
+[后端接入契约草案](apple-iap-backend-contract.md) 列明线上账号 token、验单发放、权益快照与通知建议接口。该文档不代表已实现服务，也未更改磁盘 Mock 数据；后端确认后再落实真实 HTTP 适配和持久化账本。
+
+## 2026-11-18 本机支付账本
+
+用户后续选择无业务后端方案。付费数据现存应用支持目录 purchases/apple_ledger.json（version=1），账号 UUID、环境分区余额/会员和交易去重原子提交，不改变初始样本或 Mock 资料快照。覆盖此前默认等后端开通的约定；数据字段、UTC 日历月规则、保留与恢复限制见 [本机支付](../ui-structure/apple-iap-local-2026-11-18.md)。

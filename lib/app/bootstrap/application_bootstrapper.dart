@@ -12,6 +12,7 @@ import '../../core/network/providers/network_providers.dart';
 import '../../core/network/providers/offline_queue_provider.dart';
 import '../config/app_globals.dart';
 import '../../features/auth/presentation/providers/auth_provider.dart';
+import '../../features/purchases/presentation/providers/apple_purchase_provider.dart';
 import 'application_runner.dart';
 import 'application_startup_page.dart';
 
@@ -95,6 +96,8 @@ class ApplicationBootstrapper {
     container.read(dioProvider);
     container.read(dioInterceptorsProvider);
     container.read(offlineQueueManagerProvider);
+    // 应用级监听，不依赖用户是否打开充值页。
+    container.read(applePurchaseControllerProvider);
   }
 
   void _run(Widget startPage) {

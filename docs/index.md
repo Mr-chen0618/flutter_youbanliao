@@ -11,7 +11,9 @@
 | 欢迎SVGA、手机号登录及注销恢复 | [欢迎与登录实现](ui-structure/login-welcome-2026-11-17.md) | 含11-18两页背景渐隐修复；[流程验证](testing/login-deletion-2026-11-17.md)，7503恢复弹窗及7日冷静期覆盖历史即时删除约定 |
 | 登录后的完善资料及弹层 | [完善资料九稿实现](ui-structure/registration-2026-11-17.md) | [本轮验证](testing/registration-2026-11-17.md)，对应 `2937:27256` 上方整行；返回挽留覆盖旧返回登录约定 |
 | 个人中心、编辑资料、关系 | [个人中心迭代](ui-structure/profile-iteration-2026-11-17.md) | 11-18恢复活动信誉分入口并修正客服上传卡；历史字段约定见 [第三轮字段整改](ui-structure/profile-edit-round3.md) |
-| 会员中心、金币充值 | [页面实现记录](ui-structure/profile-membership-coins-2026-11-17.md) | [入口和档位验证](testing/profile-shop-2026-11-17.md)，支付及正式服务协议仍待接入 |
+| 会员中心、金币充值 | [页面实现记录](ui-structure/profile-membership-coins-2026-11-17.md) | [本机支付实现](ui-structure/apple-iap-local-2026-11-18.md)、[本轮验证及沙盒步骤](testing/apple-iap-local-2026-11-18.md)；已改用本机验证发放，真实沙盒未验，正式协议待接 |
+| 苹果支付后端接入 | [后端交接与建议接口](data/apple-iap-backend-contract.md) | 商品、Apple 配置、三个 App 接口、通知、验单幂等及联调清单；后端尚未实现 |
+| 当前提审检查 | [11-18 独立提审审计](testing/submission-audit-2026-11-18.md) | 用户本轮收窄为购买页：修复后29项定向回归及Release编译通过；真实Apple商品查询/系统面板未验证，完整产品历史风险保留报告 |
 | 我的积分 | [积分页面实现与验证](ui-structure/profile-points-2026-11-18.md) | `3463:20998`，个人中心入口、余额及记录空态 |
 | 消息、语音、通话、举报、黑名单 | [通信模块迭代](ui-structure/communications-iteration-2026-11-17.md) | 本地业务与真实服务边界，以及对应测试报告 |
 | 个人入口箭头、相册上传卡、呼叫等待与声音修复 | [本轮回归报告](testing/call-profile-fixes-2026-11-17.md) | 两份模块迭代末尾更正；所有构建移除拨出模拟接通入口，原生视觉及听感仍待设备验收 |

@@ -1,0 +1,9 @@
+# 2026-11-18 原生 StoreKitTest 执行记录
+
+范围为本地 .storekit 配置、SKTestSession.buyProduct(identifier:options:) 与实际 LocalApplePurchaseVerifier.handle 的桥接验证。环境为 Xcode 26.1、iOS26.1 模拟器 AB611B83-31F7-4EA0-B571-E5CC43F2AD62，Debug 宿主、CODE_SIGNING_ALLOWED=NO，命令覆盖最低系统版本15.6。六档商品均配置为Consumable，测试调用带appAccountToken购买，退款调用SDK的refundTransaction。
+
+首轮因原测试目标iOS13低于应用15.6失败，第二轮在测试源码定位到API需iOS17标注及退款identifier需UInt，已仅修测试。最终编译成功并执行3项，1项通过2项失败。退款后验证器拒绝用例通过。六商品用例第一档交易创建成功，但handle结果非Dictionary，断言终止，未获得六档verified证据。错误商品/无token用例中无token返回transaction_not_found而预期transaction_unverified，未通过。详native-storekit-final.log及native-results/native-storekit-audit-final.xcresult。
+
+该运行是Xcode本地StoreKitTest，未验证App Store Sandbox或App Store Connect商品可见性，亦未执行Dart InAppPurchase购买按钮和系统付款面板。产品代码未修改，Release Scheme及签名配置未修改。只新增RunnerTests测试和本地配置，并在pbxproj测试资源阶段注册配置。首笔handle失败的实际错误在单项诊断日志native-storekit-diagnostic.log进一步记录。本轮不将失败归为已确认的传播竞态，待诊断结果与签名环境分开判断。
+
+单项诊断实际结果：coins60的本地交易ID0包含appAccountToken，handle返回verified字典，environment为Xcode，transactionId/productId/accountToken断言均通过。coins320的下一笔本地交易ID1包含相同token，handle返回FlutterError，code为transaction_not_found，message为“未找到苹果交易，请重试”。六档用例在第二笔停止，因此仅获得一档真实本地verified执行证据，未获得六档成功结论。此差异的原因尚未确认，日志也含未签名keychain entitlement OSStatus -34018。诊断xcresult保存在native-results/native-storekit-audit-diagnostic.xcresult。后续应在受控签名和交易处理环境定位未找到交易，继续覆盖其余商品与拒绝分支。

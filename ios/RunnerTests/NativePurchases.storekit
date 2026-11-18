@@ -1,0 +1,106 @@
+{
+  "identifier": "NativePurchases",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "6",
+      "familyShareable": false,
+      "internalID": "100",
+      "localizations": [
+        {
+          "description": "youbanliao.coins.60",
+          "displayName": "youbanliao.coins.60",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "youbanliao.coins.60",
+      "referenceName": "youbanliao.coins.60",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "30",
+      "familyShareable": false,
+      "internalID": "101",
+      "localizations": [
+        {
+          "description": "youbanliao.coins.320",
+          "displayName": "youbanliao.coins.320",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "youbanliao.coins.320",
+      "referenceName": "youbanliao.coins.320",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "80",
+      "familyShareable": false,
+      "internalID": "102",
+      "localizations": [
+        {
+          "description": "youbanliao.coins.820",
+          "displayName": "youbanliao.coins.820",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "youbanliao.coins.820",
+      "referenceName": "youbanliao.coins.820",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "18",
+      "familyShareable": false,
+      "internalID": "103",
+      "localizations": [
+        {
+          "description": "youbanliao.vip.1months",
+          "displayName": "youbanliao.vip.1months",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "youbanliao.vip.1months",
+      "referenceName": "youbanliao.vip.1months",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "48",
+      "familyShareable": false,
+      "internalID": "104",
+      "localizations": [
+        {
+          "description": "youbanliao.vip.3months",
+          "displayName": "youbanliao.vip.3months",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "youbanliao.vip.3months",
+      "referenceName": "youbanliao.vip.3months",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "138",
+      "familyShareable": false,
+      "internalID": "105",
+      "localizations": [
+        {
+          "description": "youbanliao.vip.12months",
+          "displayName": "youbanliao.vip.12months",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "youbanliao.vip.12months",
+      "referenceName": "youbanliao.vip.12months",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "CHN"
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

@@ -1771,3 +1771,9 @@ Framework 升级必须有版本
 启动页按新版Figma3262:33636实现，并行恢复会话后分流。新注册ID采用8位数字，旧local内部ID兼容保留且界面显示短businessId。预置账号手机号17000000888：点击获取验证码后输入8888，资料已完成且私有业务初始为空；既有安装也会幂等补齐。
 
 用户协议/隐私政策通过应用内WebView打开；2026-11-10已替换为用户提供的腾讯文档地址，登录与关于页共用lib/app/config/legal_links.dart配置。文档须允许未登录访问；当前代码检查不代替腾讯文档分享权限验证。
+
+## 苹果内购
+
+金币与固定月数会员均为消耗型，客户端使用 in_app_purchase / in_app_purchase_storekit。应用级交易服务位于 `lib/features/purchases/`，从启动流程开始监听，会员与金币页面共享使用。当前 iOS 默认使用 StoreKit 2 本机验证和支付专用原子 JSON 账本，登录且商品可用时开放购买，无需业务后端。账本丢失或换机不能承诺恢复已消费权益。商品与接入契约见 [苹果内购记录](docs/ui-structure/apple-iap-2026-11-18.md)，验证边界见 [测试报告](docs/testing/apple-iap-2026-11-18.md)。
+
+当前本机方案及沙盒操作见 [本机支付](docs/ui-structure/apple-iap-local-2026-11-18.md) 和 [本轮验证](docs/testing/apple-iap-local-2026-11-18.md)。

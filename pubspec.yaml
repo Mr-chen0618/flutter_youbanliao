@@ -76,6 +76,8 @@ dependencies:
   image_picker: ^1.2.2
   # 应用内协议H5页面
   webview_flutter: ^4.13.1
+  in_app_purchase: 3.2.3
+  in_app_purchase_storekit: 0.4.8+1
 
 dev_dependencies:
   flutter_test:

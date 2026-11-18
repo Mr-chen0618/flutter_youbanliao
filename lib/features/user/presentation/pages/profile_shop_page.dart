@@ -1,9 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../../../shared/widgets/images/app_image.dart';
+import '../../../auth/presentation/providers/auth_provider.dart';
+import '../../../purchases/data/model/apple_product.dart';
+import '../../../purchases/presentation/providers/apple_purchase_provider.dart';
 
 const _ink = Color(0xFF333333);
 const _muted = Color(0xFF999999);
@@ -36,12 +42,11 @@ enum _Shop {
     action: '立即开通',
     agreementLead: '开通即表示同意',
     agreement: '《会员服务协议》',
-    unavailable: '会员开通暂不可用',
     defaultIndex: 2,
     options: [
-      _ShopOption(1, 18),
-      _ShopOption(3, 48, monthlyPrice: '16'),
-      _ShopOption(12, 138, monthlyPrice: '11.5'),
+      _ShopOption(AppleProduct.vip1),
+      _ShopOption(AppleProduct.vip3),
+      _ShopOption(AppleProduct.vip12),
     ],
   ),
   coins(
@@ -49,9 +54,12 @@ enum _Shop {
     action: '立即充值',
     agreementLead: '充值即代表你已同意',
     agreement: '《用户充值协议》',
-    unavailable: '金币充值暂不可用',
     defaultIndex: 0,
-    options: [_ShopOption(60, 6), _ShopOption(320, 30), _ShopOption(820, 80)],
+    options: [
+      _ShopOption(AppleProduct.coins60),
+      _ShopOption(AppleProduct.coins320),
+      _ShopOption(AppleProduct.coins820),
+    ],
   );
 
   const _Shop({
@@ -59,7 +67,6 @@ enum _Shop {
     required this.action,
     required this.agreementLead,
     required this.agreement,
-    required this.unavailable,
     required this.defaultIndex,
     required this.options,
   });
@@ -68,39 +75,78 @@ enum _Shop {
   final String action;
   final String agreementLead;
   final String agreement;
-  final String unavailable;
   final int defaultIndex;
   final List<_ShopOption> options;
 
   bool get isMembership => this == membership;
 }
 
-/// 画板中的展示档位，金额不用于交易。
+/// 页面档位映射到唯一的 App Store 商品。
 class _ShopOption {
-  const _ShopOption(this.count, this.price, {this.monthlyPrice});
-
-  final int count;
-  final int price;
-  final String? monthlyPrice;
+  const _ShopOption(this.product);
+  final AppleProduct product;
+  int get count => product.quantity;
 }
 
 /// 两页共用导航、选项及操作区，保留各自的卡片内容和默认选择。
-class _ProfileShopPage extends StatefulWidget {
+class _ProfileShopPage extends ConsumerStatefulWidget {
   const _ProfileShopPage({required this.shop, this.balance = 0});
 
   final _Shop shop;
   final int balance;
 
   @override
-  State<_ProfileShopPage> createState() => _ProfileShopPageState();
+  ConsumerState<_ProfileShopPage> createState() => _ProfileShopPageState();
 }
 
-class _ProfileShopPageState extends State<_ProfileShopPage> {
+class _ProfileShopPageState extends ConsumerState<_ProfileShopPage>
+    with WidgetsBindingObserver {
   late int _selected = widget.shop.defaultIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _refreshStore());
+  }
+
+  void _refreshStore() {
+    if (!mounted || ModalRoute.of(context)?.isCurrent == false) return;
+    final controller = ref.read(applePurchaseControllerProvider);
+    if (controller.state.busy || controller.state.loading) return;
+    unawaited(() async {
+      if (controller.state.recoveryFailed) await controller.retryUnfinished();
+      if (mounted) await controller.reloadProducts();
+    }());
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) _refreshStore();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final shop = widget.shop;
+    final controller = ref.watch(applePurchaseControllerProvider);
+    final purchase =
+        ref.watch(applePurchaseStateProvider).value ?? controller.state;
+    final accountId = ref.watch(authSessionProvider).value?.accountId;
+    final entitlements = purchase.entitlements[accountId];
+    final product = shop.options[_selected].product;
+    final status =
+        purchase.message ??
+        (controller.supported
+            ? controller.fulfillment.isConfigured
+                  ? null
+                  : '充值服务暂未开放'
+            : '苹果支付仅支持 iOS');
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
@@ -139,22 +185,56 @@ class _ProfileShopPageState extends State<_ProfileShopPage> {
                     child: ListView(
                       padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 12.h),
                       children: [
-                        _ShopHero(shop: shop, balance: widget.balance),
+                        _ShopHero(
+                          shop: shop,
+                          balance: entitlements?.coinBalance ?? widget.balance,
+                          vipExpiresAt: entitlements?.vipExpiresAt,
+                          environment: entitlements?.environment,
+                        ),
                         SizedBox(height: shop.isMembership ? 40.h : 16.h),
                         for (final (index, option) in shop.options.indexed) ...[
                           if (index > 0) SizedBox(height: 12.h),
                           _ShopOptionTile(
                             shop: shop,
                             option: option,
+                            priceLabel:
+                                purchase
+                                    .products[option.product.productId]
+                                    ?.price ??
+                                '¥${option.product.previewPrice}',
+                            available: purchase.products.containsKey(
+                              option.product.productId,
+                            ),
                             selected: index == _selected,
-                            onTap: () => setState(() => _selected = index),
+                            onTap: purchase.busy
+                                ? null
+                                : () => setState(() => _selected = index),
                           ),
                         ],
                         if (shop.isMembership) const _MemberBenefits(),
                       ],
                     ),
                   ),
-                  _ShopFooter(shop: shop),
+                  _ShopFooter(
+                    shop: shop,
+                    onBuy: controller.canBuy(product)
+                        ? () => controller.buy(product)
+                        : null,
+                    busy: purchase.busy || purchase.loading,
+                    status: status,
+                    onReload:
+                        purchase.busy ||
+                            purchase.loading ||
+                            !controller.supported
+                        ? null
+                        : controller.reloadProducts,
+                    onRetry:
+                        (purchase.unfinishedCount > 0 ||
+                                purchase.recoveryFailed) &&
+                            !purchase.busy
+                        ? controller.retryUnfinished
+                        : null,
+                  ),
                 ],
               ),
             ),
@@ -167,10 +247,17 @@ class _ProfileShopPageState extends State<_ProfileShopPage> {
 
 /// 会员卡与余额卡的图层均来自 Figma，文本来自当前页面状态。
 class _ShopHero extends StatelessWidget {
-  const _ShopHero({required this.shop, required this.balance});
+  const _ShopHero({
+    required this.shop,
+    required this.balance,
+    this.vipExpiresAt,
+    this.environment,
+  });
 
   final _Shop shop;
   final int balance;
+  final DateTime? vipExpiresAt;
+  final String? environment;
 
   @override
   Widget build(BuildContext context) => ConstrainedBox(
@@ -204,7 +291,9 @@ class _ShopHero extends StatelessWidget {
             children: [
               if (shop.isMembership) ...[
                 Text(
-                  '友伴聊 VIP',
+                  environment == 'Sandbox' || environment == 'Xcode'
+                      ? '友伴聊 VIP（测试）'
+                      : '友伴聊 VIP',
                   style: TextStyle(
                     color: _ink,
                     fontSize: 18.sp,
@@ -213,7 +302,9 @@ class _ShopHero extends StatelessWidget {
                 ),
                 SizedBox(height: 4.h),
                 Text(
-                  '开通会员，享专属社交礼遇',
+                  vipExpiresAt != null && vipExpiresAt!.isAfter(DateTime.now())
+                      ? '有效期至 ${vipExpiresAt!.year}-${vipExpiresAt!.month.toString().padLeft(2, '0')}-${vipExpiresAt!.day.toString().padLeft(2, '0')}'
+                      : '开通会员，享专属社交礼遇',
                   style: TextStyle(
                     color: const Color(0xFF614A1A),
                     fontSize: 13.sp,
@@ -221,7 +312,9 @@ class _ShopHero extends StatelessWidget {
                 ),
               ] else ...[
                 Text(
-                  '金币余额',
+                  environment == 'Sandbox' || environment == 'Xcode'
+                      ? '金币余额（测试）'
+                      : '金币余额',
                   style: TextStyle(
                     color: const Color(0xFFC2971C),
                     fontSize: 12.sp,
@@ -252,15 +345,18 @@ class _ShopOptionTile extends StatelessWidget {
     required this.option,
     required this.selected,
     required this.onTap,
+    required this.priceLabel,
+    required this.available,
   });
   final _Shop shop;
   final _ShopOption option;
   final bool selected;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
+  final String priceLabel;
+  final bool available;
 
   @override
   Widget build(BuildContext context) {
-    final monthlyPrice = option.monthlyPrice;
     final radius = BorderRadius.circular(20.r);
     return Semantics(
       selected: selected,
@@ -337,17 +433,17 @@ class _ShopOptionTile extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        '¥${option.price}',
+                        priceLabel,
                         style: TextStyle(
                           color: _ink,
                           fontSize: shop.isMembership ? 18.sp : 20.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      if (monthlyPrice != null) ...[
+                      if (!available) ...[
                         SizedBox(height: 3.h),
                         Text(
-                          '¥$monthlyPrice/月',
+                          '参考价',
                           style: TextStyle(color: _muted, fontSize: 11.sp),
                         ),
                       ],
@@ -423,16 +519,47 @@ class _MemberBenefits extends StatelessWidget {
   );
 }
 
-/// 底部操作延用全局反馈，支付和专用协议配置到位后可接入。
+/// 交易状态来自应用级监听器，页面销毁不终止交易处理。
 class _ShopFooter extends StatelessWidget {
-  const _ShopFooter({required this.shop});
+  const _ShopFooter({
+    required this.shop,
+    this.onBuy,
+    this.onReload,
+    this.onRetry,
+    required this.busy,
+    this.status,
+  });
   final _Shop shop;
+  final VoidCallback? onBuy;
+  final VoidCallback? onReload;
+  final VoidCallback? onRetry;
+  final bool busy;
+  final String? status;
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 4.h),
     child: Column(
       children: [
+        if (status != null)
+          Padding(
+            padding: EdgeInsets.only(bottom: 4.h),
+            child: Text(
+              status!,
+              textAlign: TextAlign.center,
+              style: TextStyle(color: _muted, fontSize: 11.sp),
+            ),
+          ),
+        if (onReload != null || onRetry != null)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (onReload != null)
+                TextButton(onPressed: onReload, child: const Text('刷新商品')),
+              if (onRetry != null)
+                TextButton(onPressed: onRetry, child: const Text('重试确认')),
+            ],
+          ),
         SizedBox(
           width: double.infinity,
           child: FilledButton(
@@ -445,8 +572,8 @@ class _ShopFooter extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            onPressed: () => AppToast.show(shop.unavailable),
-            child: Text(shop.action),
+            onPressed: onBuy,
+            child: Text(busy ? '处理中…' : shop.action),
           ),
         ),
         Wrap(
