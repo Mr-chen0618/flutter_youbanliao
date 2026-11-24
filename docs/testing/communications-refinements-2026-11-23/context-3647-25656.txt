@@ -1,0 +1,107 @@
+const img = "https://www.figma.com/api/mcp/asset/9c5275d7-d782-4dc6-817b-4a77777a74e9.svg";
+const imgBattery = "https://www.figma.com/api/mcp/asset/5cf112cd-2426-449e-8f35-37ec6d39fcdc.svg";
+const imgWifi = "https://www.figma.com/api/mcp/asset/8f947c8b-1e8c-448e-ada6-14d4e8b1ff09.svg";
+const imgCellularConnection = "https://www.figma.com/api/mcp/asset/85ca7a38-d09f-4472-822e-04ce5d4dc8a1.svg";
+const imgFrame5273 = "https://www.figma.com/api/mcp/asset/bc489803-dd21-4328-8042-2501be09df5b.svg";
+
+type IconProps = {
+  className?: string;
+  propValue?: "左";
+};
+
+function Icon({ className, propValue = "左" }: IconProps) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="9:533">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+    </div>
+  );
+}
+
+type ComponentProps = {
+  className?: string;
+  style?: "Light";
+};
+
+function Component({ className, style = "Light" }: ComponentProps) {
+  return (
+    <div className={className || "h-[48px] relative w-[375px]"} data-node-id="1:989">
+      <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="1:946" data-name="矩形" />
+      <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+          <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I1:947;0:182" data-name="Battery">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+          </div>
+          <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I1:947;0:188" data-name="Wifi">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+          </div>
+          <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I1:947;0:192" data-name="Cellular Connection">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+          </div>
+          <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I1:947;0:195" data-name="Time Style">
+            <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I1:947;0:196" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                9:4
+              </span>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                1
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type Component1Props = {
+  className?: string;
+  property1?: "2";
+};
+
+function Component1({ className, property1 = "2" }: Component1Props) {
+  return (
+    <div className={className || "bg-white h-[812px] overflow-clip relative w-[375px]"} data-node-id="2745:5255">
+      <div className="absolute h-[255px] left-[-1px] top-[-1px] w-[375px]" data-node-id="2745:5252">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame5273} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component2() {
+  return (
+    <div className="bg-white relative size-full" data-node-id="3647:25656" data-name="视频聊天-拨打鉴权">
+      <div className="absolute contents left-0 top-0" data-node-id="3647:25657">
+        <Component1 className="-translate-x-1/2 absolute bg-white h-[812px] left-1/2 overflow-clip top-0 w-[375px]" />
+        <Component className="absolute h-[48px] left-0 top-0 w-[375px]" />
+        <div className="absolute h-[48px] left-0 top-[48px] w-[375px]" data-node-id="3647:25660" data-name="基础控件/Bar">
+          <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="I3647:25660;9:464" />
+          <Icon className="absolute h-[24px] left-[4.27%] right-[89.33%] top-[12px]" />
+          <div className="absolute content-stretch flex h-[24px] items-center left-[89.33%] right-[4.27%] top-[12px]" data-node-id="I3647:25660;9:469" data-name="icon/占位" />
+          <div className="absolute content-stretch flex h-[24px] items-center left-[79.73%] right-[13.87%] top-[12px]" data-node-id="I3647:25660;9:471" data-name="icon/占位" />
+          <p className="[word-break:break-word] absolute font-['PingFang_SC:Regular'] inset-[27.08%_41.6%_27.08%_41.33%] leading-[normal] not-italic text-[#333] text-[16px] text-center whitespace-nowrap" data-node-id="I3647:25660;9:473">
+            动态通知
+          </p>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex flex-col gap-[16px] items-center justify-center left-1/2 top-[calc(50%-20px)]" data-node-id="3647:25794" data-name="基础组件/缺省页">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I3647:25794;2889:11383">
+          <div className="bg-[#d9d9d9] col-1 ml-0 mt-0 relative row-1 size-[138px]" data-node-id="I3647:25794;2889:11335" />
+          <p className="[word-break:break-word] col-1 font-['PingFang_SC:Regular'] leading-[normal] ml-[36px] mt-[150px] not-italic relative row-1 text-[#333] text-[13px] text-center whitespace-nowrap" data-node-id="I3647:25794;2889:11336">
+            暂无新通知
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: 灰色/白色: #FFFFFF, 灰色/透明: #FFFFFF, 灰色/主要文字: #333333.
+The generated code contains image and SVG URL constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

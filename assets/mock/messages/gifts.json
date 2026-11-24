@@ -1,0 +1,52 @@
+{
+  "gifts": [
+    {
+      "id": "cola",
+      "name": "冰可乐",
+      "coins": 28,
+      "asset": "assets/messages/gifts/cola.png"
+    },
+    {
+      "id": "star",
+      "name": "幸运星",
+      "coins": 38,
+      "asset": "assets/messages/gifts/star.png"
+    },
+    {
+      "id": "heart",
+      "name": "笔芯",
+      "coins": 88,
+      "asset": "assets/messages/gifts/heart.png"
+    },
+    {
+      "id": "rainbow",
+      "name": "彩虹桥",
+      "coins": 138,
+      "asset": "assets/messages/gifts/rainbow.png"
+    },
+    {
+      "id": "beer",
+      "name": "扎啤",
+      "coins": 188,
+      "asset": "assets/messages/gifts/beer.png"
+    },
+    {
+      "id": "koi",
+      "name": "幸运锦鲤",
+      "coins": 580,
+      "asset": "assets/messages/gifts/koi.png"
+    },
+    {
+      "id": "teddy",
+      "name": "泰迪熊",
+      "coins": 1888,
+      "asset": "assets/messages/gifts/teddy.png"
+    },
+    {
+      "id": "rose",
+      "name": "玫瑰花",
+      "coins": 3288,
+      "asset": "assets/messages/gifts/rose.png"
+    }
+  ]
+}

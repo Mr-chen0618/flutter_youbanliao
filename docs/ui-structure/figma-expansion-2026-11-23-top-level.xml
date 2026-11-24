@@ -1,0 +1,24 @@
+<!-- 2026-11-23 get_metadata 205:2421 的顶层摘录；非完整子树，3618:22658子树排除 -->
+  <section id="3618:22658" name="1.1.0" x="-1124" y="-5943" width="6210" height="27252">
+  <frame id="3835:20334" name="我的" x="7935" y="-5493" width="375" height="984">
+  <frame id="3647:25656" name="视频聊天-拨打鉴权" x="7032" y="-4535" width="375" height="812">
+  <frame id="3618:22659" name="IM-新增热料值入口/风控提醒/聊天卡片" x="6607" y="-5493" width="375" height="812">
+  <frame id="3628:23332" name="签到" x="7048" y="-5493" width="375" height="812">
+  <frame id="3628:23601" name="签到-已签到" x="7473" y="-5493" width="375" height="812">
+  <frame id="3667:26063" name="首页-友伴" x="6607" y="-2513" width="375" height="812">
+  <frame id="3647:25806" name="首页-消息" x="6607" y="-3521" width="375" height="812">
+  <frame id="3647:25346" name="动态" x="6607" y="-4535" width="375" height="818">
+  <frame id="3710:13927" name="聊天设置页" x="7100" y="-2513" width="375" height="812">
+  <frame id="3715:13618" name="视频秀上传" x="6607" y="498" width="375" height="812">
+  <frame id="3793:12435" name="视频秀-已上传" x="7041" y="498" width="375" height="812">
+  <frame id="3715:13692" name="真人认证" x="7458" y="-1498" width="375" height="812">
+  <frame id="3781:11614" name="实名认证" x="7033" y="-1498" width="375" height="812">
+  <frame id="3748:26714" name="任务中心" x="6607" y="-570" width="375" height="976">
+  <frame id="3781:12261" name="认证中心" x="6607" y="-1498" width="375" height="812">
+  <frame id="3805:13772" name="青少年模式/03 设置密码" x="7464" y="1437" width="375" height="812">
+  <frame id="3805:13804" name="青少年模式/04 确认密码" x="7887" y="1437" width="375" height="812">
+  <frame id="3805:13836" name="青少年模式/06 关闭验证" x="8733" y="1437" width="375" height="812">
+  <frame id="3805:13867" name="青少年模式/05 模式已开启" x="8310" y="1437" width="375" height="812">
+  <frame id="3805:13899" name="青少年模式/07 退出成功" x="9156" y="1437" width="375" height="812">
+  <frame id="3805:20105" name="设置" x="6607" y="1437" width="375" height="812">
+  <frame id="3830:13864" name="青少年模式/开启页-未开启状态" x="7041" y="1437" width="375" height="812">

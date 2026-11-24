@@ -1,0 +1,142 @@
+const imgBattery = "https://www.figma.com/api/mcp/asset/b63e07cd-8db2-4487-94f6-96ed63f5dc0f.svg";
+const imgWifi = "https://www.figma.com/api/mcp/asset/32dabfad-d222-4e4d-9963-647467a52f4d.svg";
+const imgCellularConnection = "https://www.figma.com/api/mcp/asset/f32595ef-6b22-40b6-8fe9-d8c9074b9e77.svg";
+const img = "https://www.figma.com/api/mcp/asset/0e572d13-5c93-4bbc-9c86-43cae55e5334.png";
+
+type ComponentProps = {
+  className?: string;
+  style?: "Light";
+};
+
+function Component({ className, style = "Light" }: ComponentProps) {
+  return (
+    <div className={className || "h-[48px] relative w-[375px]"} data-node-id="1:989">
+      <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="1:946" data-name="矩形" />
+      <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+          <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I1:947;0:182" data-name="Battery">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+          </div>
+          <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I1:947;0:188" data-name="Wifi">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+          </div>
+          <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I1:947;0:192" data-name="Cellular Connection">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+          </div>
+          <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I1:947;0:195" data-name="Time Style">
+            <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I1:947;0:196" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                9:4
+              </span>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                1
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Component1() {
+  return (
+    <div className="bg-[#f7f7f7] content-stretch flex flex-col items-start relative size-full" data-node-id="3710:13927" data-name="聊天设置页">
+      <Component className="h-[48px] relative shrink-0 w-[375px]" />
+      <div className="bg-[#f7f7f7] content-stretch flex h-[48px] items-center justify-between overflow-clip px-[16px] relative shrink-0 w-[375px]" data-node-id="3710:13949" data-name="标题栏">
+        <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] relative shrink-0 text-[#333] text-[32px] whitespace-nowrap" data-node-id="3710:13950">
+          ‹
+        </p>
+        <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] relative shrink-0 text-[#333] text-[16px] whitespace-nowrap" data-node-id="3710:13951">
+          聊天设置
+        </p>
+        <div className="relative shrink-0 size-[24px]" data-node-id="3710:13952" data-name="导航占位" />
+      </div>
+      <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px overflow-clip pb-[12px] pt-[8px] px-[16px] relative w-[375px]" data-node-id="3710:13953" data-name="内容">
+        <div className="bg-white content-stretch flex gap-[12px] h-[84px] items-center overflow-clip px-[16px] relative rounded-[14px] shrink-0 w-[343px]" data-node-id="3710:13954" data-name="好友资料卡">
+          <div className="relative shrink-0 size-[56px]" data-node-id="3710:13955" data-name="薄荷同学头像">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" height="56" src={img} width="56" />
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[5px] items-start leading-[normal] min-w-px overflow-clip relative whitespace-nowrap" data-node-id="3710:13956" data-name="用户信息">
+            <p className="font-['Noto_Sans_SC:Medium'] font-medium relative shrink-0 text-[#333] text-[16px]" data-node-id="3710:13957">
+              薄荷同学
+            </p>
+            <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[12px]" data-node-id="3710:13958">
+              24岁｜164cm｜音乐
+            </p>
+          </div>
+          <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] relative shrink-0 text-[#999] text-[21px] whitespace-nowrap" data-node-id="3710:13959">
+            ›
+          </p>
+        </div>
+        <div className="bg-white content-stretch flex flex-col items-start overflow-clip relative rounded-[14px] shrink-0 w-[343px]" data-node-id="3710:13960" data-name="互动设置">
+          <div className="[word-break:break-word] bg-white content-stretch flex gap-[8px] h-[53px] items-center leading-[normal] overflow-clip px-[16px] relative shrink-0 w-[343px]" data-node-id="3710:13961" data-name="查看主页行">
+            <p className="flex-[1_0_0] font-['Noto_Sans_SC:Medium'] font-medium min-w-px relative text-[#333] text-[14px]" data-node-id="3710:13962">
+              查看主页
+            </p>
+            <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[21px] whitespace-nowrap" data-node-id="3710:13963">
+              ›
+            </p>
+          </div>
+          <div className="bg-[#f0f0f0] h-px relative shrink-0 w-[311px]" data-node-id="3710:13964" data-name="分割线" />
+          <div className="bg-white content-stretch flex gap-[8px] h-[53px] items-center overflow-clip px-[16px] relative shrink-0 w-[343px]" data-node-id="3710:13965" data-name="关注行">
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_SC:Medium'] font-medium leading-[normal] min-w-px relative text-[#333] text-[14px]" data-node-id="3710:13966">
+              关注
+            </p>
+            <div className="bg-[#ffd14a] content-stretch flex h-[30px] items-center justify-center overflow-clip relative rounded-[15px] shrink-0 w-[62px]" data-node-id="3710:13967" data-name="关注操作">
+              <p className="[word-break:break-word] font-['Noto_Sans_SC:Medium'] font-medium leading-[normal] relative shrink-0 text-[#333] text-[12px] whitespace-nowrap" data-node-id="3710:13968">
+                + 关注
+              </p>
+            </div>
+            <p className="[word-break:break-word] font-['Noto_Sans_SC:Regular'] font-normal leading-[normal] relative shrink-0 text-[#999] text-[21px] whitespace-nowrap" data-node-id="3710:13969">
+              ›
+            </p>
+          </div>
+          <div className="bg-[#f0f0f0] h-px relative shrink-0 w-[311px]" data-node-id="3710:13970" data-name="分割线" />
+          <div className="[word-break:break-word] bg-white content-stretch flex gap-[8px] h-[53px] items-center leading-[normal] overflow-clip px-[16px] relative shrink-0 w-[343px]" data-node-id="3710:13971" data-name="设置备注行">
+            <p className="flex-[1_0_0] font-['Noto_Sans_SC:Medium'] font-medium min-w-px relative text-[#333] text-[14px]" data-node-id="3710:13972">
+              设置备注
+            </p>
+            <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[12px] whitespace-nowrap" data-node-id="3710:13973">
+              添加
+            </p>
+            <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[21px] whitespace-nowrap" data-node-id="3710:13974">
+              ›
+            </p>
+          </div>
+        </div>
+        <div className="bg-white content-stretch flex flex-col items-start overflow-clip relative rounded-[14px] shrink-0 w-[343px]" data-node-id="3710:13975" data-name="安全管理">
+          <div className="[word-break:break-word] bg-white content-stretch flex gap-[8px] h-[53px] items-center leading-[normal] overflow-clip px-[16px] relative shrink-0 w-[343px]" data-node-id="3710:13976" data-name="举报行">
+            <p className="flex-[1_0_0] font-['Noto_Sans_SC:Medium'] font-medium min-w-px relative text-[#333] text-[14px]" data-node-id="3710:13977">
+              举报
+            </p>
+            <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[21px] whitespace-nowrap" data-node-id="3710:13978">
+              ›
+            </p>
+          </div>
+          <div className="bg-[#f0f0f0] h-px relative shrink-0 w-[311px]" data-node-id="3710:13979" data-name="分割线" />
+          <div className="[word-break:break-word] bg-white content-stretch flex gap-[8px] h-[53px] items-center leading-[normal] overflow-clip px-[16px] relative shrink-0 w-[343px]" data-node-id="3710:13980" data-name="拉黑行">
+            <p className="flex-[1_0_0] font-['Noto_Sans_SC:Medium'] font-medium min-w-px relative text-[#333] text-[14px]" data-node-id="3710:13981">
+              拉黑
+            </p>
+            <p className="font-['Noto_Sans_SC:Regular'] font-normal relative shrink-0 text-[#999] text-[21px] whitespace-nowrap" data-node-id="3710:13982">
+              ›
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="h-[32px] relative shrink-0 w-[375px]" data-node-id="3710:13983" data-name="底部安全区">
+        <div className="absolute bg-[#3c3c3c] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="I3710:13983;7122:3671" />
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+The generated code contains image and SVG URL constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

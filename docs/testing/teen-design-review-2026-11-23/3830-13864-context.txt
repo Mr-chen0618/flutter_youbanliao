@@ -1,0 +1,114 @@
+const imgBattery = "https://www.figma.com/api/mcp/asset/c27afde7-746f-4c42-aa85-cbc18dcd7ad4.svg";
+const imgWifi = "https://www.figma.com/api/mcp/asset/255a80ed-3f71-4d3c-82a1-a062dbec9731.svg";
+const imgCellularConnection = "https://www.figma.com/api/mcp/asset/d581949d-e18e-48ca-b084-c569d8b2e9ec.svg";
+const img = "https://www.figma.com/api/mcp/asset/165b52d0-80e9-42c6-8185-5138c5e6fc2a.svg";
+
+type ComponentProps = {
+  className?: string;
+  label?: string;
+};
+
+function Component({ className, label = "开启青少年模式" }: ComponentProps) {
+  return (
+    <div className={className || "bg-[#ffd13f] content-stretch flex h-[52px] items-center justify-center relative rounded-[24px] w-[343px]"} data-node-id="3801:1993" data-name="青少年模式/主按钮">
+      <p className="[word-break:break-word] font-['Noto_Sans_SC:Medium'] font-medium leading-[normal] relative shrink-0 text-[#333] text-[16px] whitespace-nowrap" data-node-id="3801:1994">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type HomeProps = {
+  className?: string;
+  style?: "Light";
+};
+
+function Home({ className, style = "Light" }: HomeProps) {
+  return (
+    <div className={className || "h-[32px] relative w-[376px]"} data-node-id="1535:4325">
+      <div className="absolute bg-white inset-0" data-node-id="1535:4326" />
+      <div className="absolute bg-[#2f2f2f] bottom-[31.25%] left-[33.78%] right-[33.78%] rounded-[6px] top-1/2" data-node-id="1535:4327" />
+    </div>
+  );
+}
+
+type Component1Props = {
+  className?: string;
+  style?: "Light";
+};
+
+function Component1({ className, style = "Light" }: Component1Props) {
+  return (
+    <div className={className || "h-[48px] relative w-[375px]"} data-node-id="1:989">
+      <div className="absolute bg-[rgba(255,255,255,0)] inset-0" data-node-id="1:946" data-name="矩形" />
+      <div className="absolute inset-[4.17%_0] overflow-clip" data-node-id="I1:947;0:179" data-name="iPhone X/Status Bars/Status Bar (Black)">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[44px] left-1/2 overflow-clip top-1/2 w-[375px]" data-node-id="I1:947;0:180" data-name="iPhone X/Status Bars/Status Bar (Black)">
+          <div className="absolute h-[11.333px] right-[14.67px] top-[17.33px] w-[24.328px]" data-node-id="I1:947;0:182" data-name="Battery">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBattery} />
+          </div>
+          <div className="absolute inset-[39.39%_11.74%_35.69%_84.18%]" data-node-id="I1:947;0:188" data-name="Wifi">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgWifi} />
+          </div>
+          <div className="absolute inset-[40.15%_17.16%_35.61%_78.31%]" data-node-id="I1:947;0:192" data-name="Cellular Connection">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCellularConnection} />
+          </div>
+          <div className="absolute h-[17px] left-[21px] overflow-clip top-[15px] w-[54px]" data-node-id="I1:947;0:195" data-name="Time Style">
+            <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[0] left-[27px] text-[#111] text-[14px] text-center top-[calc(50%-8px)] tracking-[-0.28px] w-[54px]" data-node-id="I1:947;0:196" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                9:4
+              </span>
+              <span className="leading-[normal]" style={{ fontVariationSettings: '"wdth" 100' }}>
+                1
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Component2() {
+  return (
+    <div className="bg-[#f6f6f6] relative size-full" data-node-id="3830:13864" data-name="青少年模式/开启页-未开启状态">
+      <Component1 className="absolute h-[48px] left-0 top-0 w-[375px]" />
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal h-[38px] leading-[normal] left-[16px] text-[#333] text-[30px] top-[52px] w-[24px]" data-node-id="3830:13886">
+        ‹
+      </p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Sans_SC:Medium'] font-medium h-[22px] leading-[normal] left-[187.5px] text-[#333] text-[17px] text-center top-[62px] w-[223px]" data-node-id="3830:13887">
+        青少年模式
+      </p>
+      <Home className="absolute h-[32px] left-0 top-[780px] w-[375px]" />
+      <div className="absolute h-[150px] left-[97px] top-[120px] w-[180px]" data-node-id="3830:13891" data-name="青少年保护伞插画">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Sans_SC:Medium'] font-medium h-[30px] leading-[normal] left-[187.5px] text-[#333] text-[21px] text-center top-[286px] w-[327px]" data-node-id="3830:13902">
+        青少年模式未开启
+      </p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal h-[42px] leading-[normal] left-[187.5px] text-[#888] text-[13px] text-center top-[332px] w-[327px]" data-node-id="3830:13905">
+        开启后，友伴聊平台内容与服务将暂停。关闭青少年模式后，方可继续使用。
+      </p>
+      <div className="absolute bg-white h-[170px] left-[16px] rounded-[18px] top-[382px] w-[343px]" data-node-id="3830:13906" data-name="使用方法卡" />
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Medium'] font-medium h-[21px] leading-[normal] left-[32px] text-[#333] text-[15px] top-[400px] w-[295px]" data-node-id="3830:13907">
+        使用方法
+      </p>
+      <div className="absolute bg-[#ebebeb] h-px left-[32px] top-[431px] w-[311px]" data-node-id="3830:13908" data-name="方法分隔线" />
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Medium'] font-medium h-[20px] leading-[normal] left-[32px] text-[#b18000] text-[11px] top-[447px] w-[28px]" data-node-id="3830:13909">
+        01
+      </p>
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal h-[34px] leading-[normal] left-[68px] text-[#888] text-[12px] top-[447px] w-[264px]" data-node-id="3830:13910">
+        开启后立即生效，关闭时需验证监护密码。
+      </p>
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Medium'] font-medium h-[20px] leading-[normal] left-[32px] text-[#b18000] text-[11px] top-[485px] w-[28px]" data-node-id="3830:13911">
+        02
+      </p>
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal h-[38px] leading-[normal] left-[68px] text-[#888] text-[12px] top-[485px] w-[264px]" data-node-id="3830:13912">
+        关闭青少年模式后，方可继续使用平台内容与服务。
+      </p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Sans_SC:Regular'] font-normal h-[18px] leading-[normal] left-[187.5px] text-[#888] text-[11px] text-center top-[569px] w-[327px]" data-node-id="3830:13913">
+        请由监护人设置并妥善保管密码。
+      </p>
+      <Component className="absolute bg-[#ffd13f] content-stretch flex h-[52px] items-center justify-center left-[16px] rounded-[24px] top-[700px] w-[343px]" />
+    </div>
+  );
+}
