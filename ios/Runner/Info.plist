@@ -26,6 +26,8 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MinimumOSVersion</key>
+	<string>$(IPHONEOS_DEPLOYMENT_TARGET)</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>用于选择头像以及动态、聊天和反馈中的图片。</string>
 	<key>NSMicrophoneUsageDescription</key>
