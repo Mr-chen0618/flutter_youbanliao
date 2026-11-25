@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:flutter_app_framework/features/teen/presentation/teen_mode_provider.dart';
 import 'package:flutter_app_framework/core/storage/mock_json_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_framework/app/di/home_dependencies.dart';
@@ -20,12 +22,14 @@ Future<void> openHome(
   WidgetTester tester,
   HomeMockScenarioEnum scenario, {
   CallRingback? ringback,
+  TeenModeController? teen,
 }) async {
   final store = (await tester.runAsync(WidgetMockJsonStore.load))!;
   await tester.pumpWidget(
     ProviderScope(
       overrides: [
         mockJsonStoreProvider.overrideWithValue(store),
+        if (teen != null) teenModeProvider.overrideWith(() => teen),
         if (ringback != null)
           callRingbackFactoryProvider.overrideWithValue(() => ringback),
         homeServerProvider.overrideWithValue(
@@ -38,6 +42,55 @@ Future<void> openHome(
 }
 
 void main() {
+  for (final outcome in ['disabled', 'enabled', 'error', 'unmounted']) {
+    testWidgets('first call waits for teen setting: $outcome', (tester) async {
+      final teen = _DeferredTeenMode();
+      await openHome(
+        tester,
+        HomeMockScenarioEnum.success,
+        teen: teen,
+        ringback: _FakeRingback(),
+      );
+      await tester.pumpAndSettle();
+      final context = tester.element(find.byType(HomePage));
+      final container = ProviderScope.containerOf(context);
+      teen.pending = Completer<bool>();
+      container.invalidate(teenModeProvider);
+      unawaited(
+        CallPage.open(context, peerId: 'U002', name: '海盐芝士', avatar: ''),
+      );
+      await tester.pump();
+      expect(find.byType(CallPage), findsNothing);
+      expect(find.text('青少年模式下暂不可通话'), findsNothing);
+      if (outcome == 'unmounted') {
+        await tester.pumpWidget(const SizedBox());
+      }
+      if (outcome == 'error') {
+        teen.pending!.completeError(StateError('read failed'));
+      } else {
+        teen.pending!.complete(outcome == 'enabled');
+      }
+      await tester.pumpAndSettle();
+      expect(
+        find.byType(CallPage),
+        outcome == 'disabled' ? findsOneWidget : findsNothing,
+      );
+      if (outcome == 'enabled') {
+        expect(container.read(teenModeProvider).value, isTrue);
+      }
+      if (outcome == 'error') {
+        expect(container.read(teenModeProvider).hasError, isTrue);
+      }
+      if (outcome == 'disabled') {
+        await tester.tap(find.text('挂断').hitTestable());
+        await tester.pumpAndSettle();
+      }
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+      await tester.pump(const Duration(seconds: 3));
+    });
+  }
+
   for (final size in [
     const Size(320, 568),
     const Size(375, 812),
@@ -385,4 +438,10 @@ class _FakeRingback implements CallRingback {
   Future<void> dispose() async {
     disposals++;
   }
+}
+
+class _DeferredTeenMode extends TeenModeController {
+  Completer<bool>? pending;
+  @override
+  Future<bool> build() => pending?.future ?? Future.value(false);
 }

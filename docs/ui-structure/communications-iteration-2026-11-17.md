@@ -106,3 +106,9 @@ CallPage 新增 preparing 阶段，立即进入可取消的呼叫页，显示进
 已完成：移除右上通知菜单，三个入口直接展示；下载messages_notice_{system,interaction,visitor}.svg及notice_surface.svg，均为本地资源；导出的surface为透明空组，不增加可见底色。消息页与ProfilePage顶部统一直接复用首页同一CompanionBackdropWidget：FFFBBF→白色242h渐变及原背景装饰；没有复制新颜色或修改公共背景默认值。保留本轮之前的聊天标题及其他页面内容。
 
 验证：现有main_tabs_mock_test.dart改为直接点击入口，12项主导航回归通过；定向分析结果见[本轮报告](../testing/message-header-2026-11-20.md)。未验证：真机字体、安全区和视觉；未重复iOS构建。下一步设备核对消息三入口排列、点击和我的页背景。
+
+## 2026-11-25 首次呼叫青少年状态误判修复
+
+范围：用户反馈未开启青少年模式，第一次语音通话却提示限制、第二次可用。根因CallPage.open同步读取AsyncValue.value，首次AsyncLoading的null被`!= false`误当开启。已改为等待teenModeProvider.future完成再判断；false继续呼叫、true维持原拦截，读取异常给设置读取失败提示并停止，不按关闭默认放行。等待中页面卸载不创建通话；等待后原有会话占用检查仍阻止重复呼叫。语音/视频共用入口。涉及call_page.dart、home_page_test.dart，未更改青少年存储或真实RTC边界。
+
+已完成代码及四场景回归用例（延迟false、true、读取失败、等待中卸载）；定向静态分析零问题。具体测试结果见[本轮记录](../testing/call-teen-loading-2026-11-25.md)。未完成无本范围编码项；未验证真机冷启动通话、声音及设置读取失败UI，未构建。下一步设备首次进入账号后分别检查语音/视频与真实开启青少年时拦截。

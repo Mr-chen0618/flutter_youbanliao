@@ -208,7 +208,17 @@ class CallPage extends ConsumerStatefulWidget {
     bool incoming = false,
   }) async {
     final container = ProviderScope.containerOf(context);
-    if (container.read(teenModeProvider).value != false) {
+    final navigator = Navigator.of(context);
+    // 首次读取是AsyncLoading，先等待设备设置，不能把未知误报为已开启。
+    final bool teenEnabled;
+    try {
+      teenEnabled = await container.read(teenModeProvider.future);
+    } catch (_) {
+      if (context.mounted) AppToast.show('青少年模式设置读取失败，请稍后重试');
+      return;
+    }
+    if (!context.mounted) return;
+    if (teenEnabled) {
       AppToast.show('青少年模式下暂不可通话');
       return;
     }
@@ -239,7 +249,8 @@ class CallPage extends ConsumerStatefulWidget {
       ..video = video
       ..save = ((entry) => messages.send(id, entry))
       ..begin(incoming: incoming);
-    await _present(Navigator.of(context).context, session);
+    if (!navigator.mounted) return;
+    await _present(navigator.context, session);
   }
 
   static Future<void> _present(
