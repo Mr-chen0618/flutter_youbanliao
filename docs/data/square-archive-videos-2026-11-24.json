@@ -1,0 +1,232 @@
+[
+  {
+    "id": "archive_d47f0220d464",
+    "source": "/Users/tabier/Downloads/归档/w1__00931bd55cc9.mp4",
+    "asset": "assets/square/videos/archive_d47f0220d464.mp4",
+    "sha256": "d47f0220d4646286591de5b8d1fc92956932e7be57bfe38880188fce4a28aad9",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac"
+        },
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "format": {
+        "duration": "19.950998"
+      }
+    }
+  },
+  {
+    "id": "archive_8ea333e243fa",
+    "source": "/Users/tabier/Downloads/归档/w1__031c2f12988b.mp4",
+    "asset": "assets/square/videos/archive_8ea333e243fa.mp4",
+    "sha256": "8ea333e243fae194bbe7c19ed74dc554e117d744de71eaba976a448546c25afc",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac"
+        },
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "format": {
+        "duration": "19.266667"
+      }
+    }
+  },
+  {
+    "id": "archive_d7dda6c48e22",
+    "source": "/Users/tabier/Downloads/归档/w1__317e9a7ab3c9.mp4",
+    "asset": "assets/square/videos/archive_d7dda6c48e22.mp4",
+    "sha256": "d7dda6c48e22e654797e7c091367198e587e9bf031b8443d2d066a0fb2a11acd",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac"
+        },
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1440
+        }
+      ],
+      "format": {
+        "duration": "6.639002"
+      }
+    }
+  },
+  {
+    "id": "archive_bca2056f1e27",
+    "source": "/Users/tabier/Downloads/归档/w1__5def6213c03a.mp4",
+    "asset": "assets/square/videos/archive_bca2056f1e27.mp4",
+    "sha256": "bca2056f1e2740ed7e1b1c9a4ae4d7f8809f0122bef993bad87d70f12016f03f",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac"
+        },
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "format": {
+        "duration": "16.200000"
+      }
+    }
+  },
+  {
+    "id": "archive_0de19db15739",
+    "source": "/Users/tabier/Downloads/归档/w1__6e98adab8d1b.mp4",
+    "asset": "assets/square/videos/archive_0de19db15739.mp4",
+    "sha256": "0de19db157394c5f66333dcc96c9ab49a0595718e968df7ac8719e5771955cb8",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac"
+        },
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "format": {
+        "duration": "28.466667"
+      }
+    }
+  },
+  {
+    "id": "archive_cd640b6486ac",
+    "source": "/Users/tabier/Downloads/归档/w1__9dae8e376343.mp4",
+    "asset": "assets/square/videos/archive_cd640b6486ac.mp4",
+    "sha256": "cd640b6486acc1b85e0cca07bacd7494ebffb77ca460bf2c72294979ed76f6be",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "format": {
+        "duration": "6.616667"
+      }
+    }
+  },
+  {
+    "id": "archive_617ddff2b3a9",
+    "source": "/Users/tabier/Downloads/归档/w1__ab3213aff809.mp4",
+    "asset": "assets/square/videos/archive_617ddff2b3a9.mp4",
+    "sha256": "617ddff2b3a9d77cdaf49a906db8ce70ea66579897823ec9bae4238b7e9d98c7",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "format": {
+        "duration": "15.800000"
+      }
+    }
+  },
+  {
+    "id": "archive_f9b715083cf9",
+    "source": "/Users/tabier/Downloads/归档/w1__d5d7449e7322.mp4",
+    "asset": "assets/square/videos/archive_f9b715083cf9.mp4",
+    "sha256": "f9b715083cf9d6a2aca848a5a80d6d6f783962ca452b82eebbe0bc588b15dd08",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac"
+        },
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "format": {
+        "duration": "18.266667"
+      }
+    }
+  },
+  {
+    "id": "archive_f257faea1be2",
+    "source": "/Users/tabier/Downloads/归档/w1__ef472e69c00b.mp4",
+    "asset": "assets/square/videos/archive_f257faea1be2.mp4",
+    "sha256": "f257faea1be2f21fb6c31ca88948c079454a3531bca56c924c7b7602f68d68dc",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac"
+        },
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "format": {
+        "duration": "8.533333"
+      }
+    }
+  },
+  {
+    "id": "archive_587aeb0a91fb",
+    "source": "/Users/tabier/Downloads/归档/美丽的风景_如画的地方_心之所向_原创山水风景视频_原生态自然山水风景分享 _创作者中心 _创作灵感 _原生态山水秘境 _山间溪流.mp4",
+    "asset": "assets/square/videos/archive_587aeb0a91fb.mp4",
+    "sha256": "587aeb0a91fb538cb90b8b470aca38a3b7e0fa40e9f8530f0b17ca4adabc47a1",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac"
+        },
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "format": {
+        "duration": "8.566667"
+      }
+    }
+  }
+]

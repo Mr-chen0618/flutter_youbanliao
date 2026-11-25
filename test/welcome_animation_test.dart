@@ -1,3 +1,4 @@
+import 'teen_mode_test_fixture.dart';
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -13,8 +14,9 @@ void main() {
     'welcome animation pauses in background, resumes and releases on leave',
     (tester) async {
       await tester.pumpWidget(
-        const ProviderScope(
-          child: Application(startPage: Scaffold(body: WelcomeAnimation())),
+        ProviderScope(
+          overrides: [disabledTeenModeOverride],
+          child: const Application(startPage: Scaffold(body: WelcomeAnimation())),
         ),
       );
       // 解码在真实异步环境完成；不等待持续循环动画settle。
@@ -55,6 +57,7 @@ void main() {
     (tester) async {
       await tester.pumpWidget(
         ProviderScope(
+          overrides: [disabledTeenModeOverride],
           child: Application(
             startPage: Scaffold(
               body: WelcomeAnimation(
@@ -81,6 +84,7 @@ void main() {
       final pending = Completer<MovieEntity>();
       await tester.pumpWidget(
         ProviderScope(
+          overrides: [disabledTeenModeOverride],
           child: Application(
             startPage: Scaffold(
               body: WelcomeAnimation(

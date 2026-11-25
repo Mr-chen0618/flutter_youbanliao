@@ -31,3 +31,10 @@
 产品代码涉及 `auth/presentation/pages/registration_profile_page.dart`、`auth/presentation/widgets/registration_profile_sheets.dart`、`user/presentation/pages/profile_field_page.dart`、`user/presentation/widgets/profile_avatar_guide.dart`。注册资产按 `assets/auth/auth_registration_*` 打包，九份均从本轮 Figma context 下载。原有头像规则资产继续复用。
 
 已完成上述页面与全部九类状态的交互。未完成的外部依赖继续为真实认证和审核服务，本地图片规则提示不产生服务端审核。未验证原生相册授权、硬件键盘与设备滚轮手感。开发验证已在当前 Flutter 环境执行4个涉及文件的定向 `flutter analyze --no-pub`，退出0且无问题，见 [产品分析日志](../testing/registration-2026-11-17/product-analyze.log)。`git diff --check` 通过。tester 独立全量64/64通过，详细环境、用例与日志见 [本轮测试报告](../testing/registration-2026-11-17.md)。下一步按测试用例核对正常登录入口、昵称/生日取消保存、头像取消重试、提交失败和完成后的登录跳过。
+
+
+## 2026-11-24 新用户默认头像
+
+按用户提供的两张图片，男用第一张、女用第二张。已复制为 `assets/auth/auth_default_avatar_male.jpg` / `auth_default_avatar_female.jpg`（已有assets/auth目录打包，无新增依赖）。`registration_profile_page.dart` 增加有效头像派生：未上传时按当前性别展示及提交默认资产路径；上传成功使用本人照片，取消选择保留默认图，切换性别不覆盖已上传照片。昵称、生日及性别既有校验保留；取消“必须手动上传头像”限制。覆盖本记录早期“未选本人头像不能提交”约定。
+
+范围仅新用户完善资料；已完成账号头像不批量修改。默认路径通过原completeProfile写入账号快照，仓库非空校验和性别锁定不变；未提交草稿仍为页面内存。已完成资源及注册接入；未完成无新增业务项。未验证真机相册授权与视觉，未执行构建；下一步设备确认男/女默认、上传覆盖和重登头像恢复。测试和证据见[默认头像验证](../testing/default-avatars-2026-11-24.md)。

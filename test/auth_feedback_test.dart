@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_framework/features/teen/presentation/teen_mode_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_app_framework/main.dart';
@@ -28,7 +29,12 @@ Future<void> open(WidgetTester tester, Widget page) async {
   tester.view.physicalSize = const Size(375, 812);
   addTearDown(tester.view.resetDevicePixelRatio);
   addTearDown(tester.view.resetPhysicalSize);
-  await tester.pumpWidget(ProviderScope(child: Application(startPage: page)));
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [teenModeProvider.overrideWith(_DisabledTeenMode.new)],
+      child: Application(startPage: page),
+    ),
+  );
   await tester.pumpAndSettle();
 }
 
@@ -90,12 +96,12 @@ void main() {
       final before = tester.getRect(enter);
       await tester.tap(enter);
       await tester.pumpAndSettle();
-      expect(find.text('请上传头像'), findsOneWidget);
+      expect(find.text('请设置昵称'), findsOneWidget);
       expect(tester.getRect(enter), before);
       expect(
         find.descendant(
           of: find.byType(SingleChildScrollView),
-          matching: find.text('请上传头像'),
+          matching: find.text('请设置昵称'),
         ),
         findsNothing,
       );
@@ -103,4 +109,9 @@ void main() {
       await tester.pump(const Duration(seconds: 3));
     },
   );
+}
+
+class _DisabledTeenMode extends TeenModeController {
+  @override
+  Future<bool> build() async => false;
 }

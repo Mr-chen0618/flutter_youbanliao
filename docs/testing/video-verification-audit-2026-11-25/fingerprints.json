@@ -1,0 +1,9 @@
+{
+  "lib/features/square/data/model/square_video_catalog.dart": "487c9b18894ce093ff12dc8496e1128ca03ad75183d93aaac38270055533ac77",
+  "lib/features/square/data/model/square_video_publisher.dart": "8e17413b31a47d8b4bbb7f287e1e9d74a7c9a7e40ca62080b6ca4fa3e69c0e3b",
+  "lib/features/square/presentation/providers/square_video_publishers_provider.dart": "6fbdc7b2416e371031e68710111cf2e2b750fe690be3cfe76712f04890e3abe9",
+  "lib/features/square/presentation/widgets/square_video_feed.dart": "96012e9c5d34f6cf38d294cca0347f625a66e4ee3ce609ae70a725f8ac9b0f2c",
+  "lib/features/user/data/model/growth_state.dart": "eb8fa575288b8cd064cb416ebb4c9e19acf6df8cd29b3f1b3245ef868aab3b59",
+  "lib/features/user/presentation/pages/verification_center_page.dart": "cc5ed2fb3598081ed7d2ec9f5a1d9f3bff7522347338396343f77a5f6e161c50",
+  "test/video_verification_audit_test.dart": "92e5956186e4756062e7b4b8e6c408003e6b2e6b0ca2ee9f6553af1c0240e685"
+}

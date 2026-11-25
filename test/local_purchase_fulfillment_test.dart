@@ -45,6 +45,7 @@ void main() {
       LocalPurchaseFulfillmentRepository(
         PurchaseLedgerStore(directory: () async => directory),
         verifier,
+        initialCoins: 0,
         now: () => now,
       );
   setUp(() async {
@@ -56,6 +57,27 @@ void main() {
   });
   tearDown(() async => directory.delete(recursive: true));
 
+  test('default coins grant once and persist after spending', () async {
+    final store = PurchaseLedgerStore(directory: () async => directory);
+    final defaults = LocalPurchaseFulfillmentRepository(store, verifier);
+    expect((await defaults.loadEntitlements('new')).coinBalance, 10000);
+    await store.transaction((ledger) {
+      final account = (ledger['accounts'] as Map)['new'] as Map;
+      ((account['environments'] as Map)['Production'] as Map)['coins'] = 9972;
+    });
+    final reopened = LocalPurchaseFulfillmentRepository(
+      PurchaseLedgerStore(directory: () async => directory),
+      verifier,
+    );
+    expect((await reopened.loadEntitlements('new')).coinBalance, 9972);
+    await store.transaction((ledger) {
+      final account = (ledger['accounts'] as Map)['new'] as Map;
+      account.remove('initialCoinsGranted');
+      ((account['environments'] as Map)['Production'] as Map)['coins'] = 60;
+    });
+    expect((await reopened.loadEntitlements('new')).coinBalance, 10060);
+    expect((await reopened.loadEntitlements('new')).coinBalance, 10060);
+  });
   test('payment UUID persists across restart and differs by account', () async {
     expect(await open().accountToken('A'), verifier.token);
     expect(await repository.accountToken('B'), isNot(verifier.token));

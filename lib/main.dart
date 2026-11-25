@@ -1,4 +1,6 @@
+import 'features/user/presentation/widgets/daily_sign_in_gate.dart';
 import 'shared/widgets/keyboard/keyboard_dismiss_scope.dart';
+import 'features/teen/presentation/teen_mode_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -61,7 +63,11 @@ class Application extends ConsumerWidget {
                 child: KeyboardDismissScope(
                   child: Stack(
                     children: [
-                      child ?? const SizedBox.shrink(),
+                      TeenModeGate(
+                        child: DailySignInGate(
+                          child: child ?? const SizedBox.shrink(),
+                        ),
+                      ),
                       if (showNetworkStatus)
                         const Positioned(
                           top: 0,

@@ -35,3 +35,9 @@
 8. 记录设备/iOS/签名或 TestFlight/商品/交易号/预期与实际结果；订单号和账号敏感资料脱敏。若查询失败先核对商品配置、地区、签名与网络，不能将参考价档位当成已连通商店。
 
 下一步：由用户准备 Sandbox 账号后执行设备验收，补充真实交易结果和必要证据；原生桥接或沙盒不通过时按日志修复，不以构建成功替代交易成功。
+
+## 2026-11-24 月度 VIP ID 定向验证
+
+范围：月度 productId 改为 `youbanliao.vip.1month`，涉及 AppleProduct、apple_purchase_test.dart、NativePurchases.storekit 和 RunnerTests.swift；按用户提供的拼写修正，保留其他商品。
+
+macOS 本地执行 `flutter test --no-pub test/apple_purchase_test.dart`：17/17 通过，包含六个精确商品 ID 查询和页面购买流程；验证器及商品为测试替身，不是 Apple 真实商品证据。首次受 SDK 缓存写入权限限制，授权重试后退出码 0。`git diff --check` 通过。已完成映射和定向测试；未执行 Swift 原生测试、iOS 构建、签名安装或真实沙盒查询/购买。下一步重新打包，在设备核对后台对应 ID 与类型及沙盒支付。

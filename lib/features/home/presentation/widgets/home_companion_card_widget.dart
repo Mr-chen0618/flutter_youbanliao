@@ -124,7 +124,9 @@ class _HomeCompanionCardWidgetState extends State<HomeCompanionCardWidget> {
                     homeText(
                       '${widget.person.age}岁',
                       11,
-                      color: const Color(0xFFFF4288),
+                      color: widget.person.gender == '男'
+                          ? const Color(0xFF1C6CFF)
+                          : const Color(0xFFFF4288),
                     ),
                     Flexible(
                       child: homeText(

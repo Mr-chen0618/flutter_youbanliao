@@ -38,3 +38,9 @@
 商品查询对临时异常/空响应最多尝试 3 次，500/1000ms 间隔，单次 12 秒超时。只在有效查询结果返回后替换缓存；刷新暂时失败保留本次启动已经从 Apple 返回的 ProductDetails，冷启动从未获取商品则仍禁止付款，不构造本地假商品发起购买。查询成功的部分商品可以购买，未返回或类型错误商品不能购买。isAvailable 明确 false 时仍禁止付款。
 
 变更文件：apple_purchase_controller.dart、profile_shop_page.dart、test/apple_purchase_test.dart。tester 独立定向回归 29/29、定向静态分析无问题，证据与原生补测边界见 [本轮提审审计](../testing/submission-audit-2026-11-18.md)。进页恰逢启动查询时复用该查询及其有限重试，全部失败后显示重试入口，不保证外部商店始终可用。真实 ASC 商品、正式团队签名与审核环境仍未取得执行证据，不可把 fake 查询或本地 StoreKitTest 当成审核员支付面板已验证。
+
+## 2026-11-24 月度 VIP 商品 ID 更正
+
+范围：按用户要求将月度商品 ID 从 `youbanliao.vip.1months` 更正为 `youbanliao.vip.1month`，3/12 月商品不变。已同步商品枚举、Dart 支付用例、原生 StoreKit 测试配置和 Swift 测试商品清单。历史记录中的旧 ID 保留，仅代表当时配置。后台商品契约见对应文档追加更正。
+
+已完成代码映射修改；真实 App Store Connect 商品查询及真机购买未验证，尚未重新打包。下一步用新包核对月度商品加载、Apple 价格和沙盒购买；本地测试结果见支付验证报告末节。

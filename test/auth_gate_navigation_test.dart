@@ -1,3 +1,4 @@
+import 'auth_sign_in_test_helper.dart';
 import 'dart:io';
 import 'auth_test_store.dart';
 import 'package:flutter/material.dart';
@@ -79,6 +80,7 @@ void main() {
       );
       await drain(tester);
       expect(find.text('登录/注册'), findsNothing);
+      await dismissAutomaticSignIn(tester);
       await tester.tap(find.byKey(const ValueKey('main-tab-3')));
       await drain(tester);
       expect(find.text('导航测试用户'), findsOneWidget);

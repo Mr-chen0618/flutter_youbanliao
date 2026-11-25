@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../images/app_image.dart';
+import 'feed_tab_label.dart';
 
 enum DiscoverySection {
   following('关注'),
@@ -39,33 +39,12 @@ class DiscoveryHeader extends StatelessWidget {
               onTap: () => onSelected(item),
               child: SizedBox(
                 width: 53.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      item.label,
-                      style: TextStyle(
-                        fontSize: item == section ? 17.sp : 16.sp,
-                        fontWeight: item == section
-                            ? FontWeight.w600
-                            : FontWeight.normal,
-                        color: isDark
-                            ? (item == section ? Colors.white : Colors.white70)
-                            : (item == section
-                                  ? const Color(0xFF333333)
-                                  : const Color(0xFF666666)),
-                      ),
-                    ),
-                    if (item == section)
-                      AppImage(
-                        src: 'assets/square/square_active_indicator.png',
-                        width: 23.w,
-                        height: 8.h,
-                        fit: BoxFit.contain,
-                      )
-                    else
-                      SizedBox(height: 8.h),
-                  ],
+                child: Center(
+                  child: FeedTabLabel(
+                    label: item.label,
+                    selected: item == section,
+                    isDark: isDark,
+                  ),
                 ),
               ),
             ),

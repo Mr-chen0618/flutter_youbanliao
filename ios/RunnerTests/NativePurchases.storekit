@@ -53,13 +53,13 @@
       "internalID": "103",
       "localizations": [
         {
-          "description": "youbanliao.vip.1months",
-          "displayName": "youbanliao.vip.1months",
+          "description": "youbanliao.vip.1month",
+          "displayName": "youbanliao.vip.1month",
           "locale": "en_US"
         }
       ],
-      "productID": "youbanliao.vip.1months",
-      "referenceName": "youbanliao.vip.1months",
+      "productID": "youbanliao.vip.1month",
+      "referenceName": "youbanliao.vip.1month",
       "type": "Consumable"
     },
     {

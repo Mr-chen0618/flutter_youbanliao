@@ -1,3 +1,4 @@
+import 'teen_mode_test_fixture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_framework/features/auth/data/repository/auth_repository.dart';
 import 'package:flutter_app_framework/features/auth/presentation/pages/auth_entry_page.dart';
@@ -20,6 +21,7 @@ void main() {
       var entered = false;
       await tester.pumpWidget(
         ProviderScope(
+          overrides: [disabledTeenModeOverride],
           child: Application(
             startPage: AuthEntryPage(
               auth: EntryAuth(),

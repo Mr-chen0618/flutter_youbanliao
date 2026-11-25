@@ -2,5 +2,7 @@
 class LegalLinks {
   LegalLinks._();
   static const userAgreementUrl = 'https://docs.qq.com/doc/DYURWUkVmTmhsT09j';
+  static const rechargeAgreementUrl =
+      'https://docs.qq.com/doc/DYUtKYWJCTkZCZXdL';
   static const privacyPolicyUrl = 'https://docs.qq.com/doc/DYXJtUFBGdU1OdUhX';
 }

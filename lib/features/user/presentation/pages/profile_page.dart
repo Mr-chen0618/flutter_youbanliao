@@ -1,3 +1,5 @@
+import '../../../activity/presentation/pages/my_activities_page.dart';
+import '../../../../shared/widgets/layout/companion_backdrop_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +21,7 @@ import 'profile_relationships_page.dart';
 import 'profile_settings_page.dart';
 import 'profile_shop_page.dart';
 import 'user_feedback_page.dart';
-import 'user_verification_page.dart';
+import 'growth_pages.dart';
 
 /// 个人中心展示账号、关系和本人功能入口。
 class ProfilePage extends ConsumerWidget {
@@ -39,12 +41,11 @@ class ProfilePage extends ConsumerWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Positioned(
+          const Positioned(
             top: 0,
             left: 0,
             right: 0,
-            height: 255.h,
-            child: _asset('background', fit: BoxFit.fill),
+            child: CompanionBackdropWidget(),
           ),
           SafeArea(
             bottom: false,
@@ -147,14 +148,23 @@ class ProfilePage extends ConsumerWidget {
                         ),
                       ],
                     ),
+                    _activityEntry(context, joined: true),
+                    _activityEntry(context, joined: false),
                     _entry(context, '编辑资料', 'edit', const ProfileEditPage()),
+                    _entry(context, '我的视频秀', 'album', const VideoShowPage()),
+                    _entry(
+                      context,
+                      '任务中心',
+                      'reputation',
+                      const TaskCenterPage(),
+                    ),
                     _entry(context, '我的相册', 'album', const ProfileAlbumPage()),
                     _entry(context, '我的动态', 'posts', const MyPostsPage()),
                     _entry(
                       context,
                       '真人认证',
                       'verification',
-                      const UserVerificationPage(),
+                      const VerificationCenterPage(),
                     ),
                   ],
                   _entry(
@@ -302,6 +312,26 @@ class ProfilePage extends ConsumerWidget {
         ],
       ),
     ),
+  );
+
+  Widget _activityEntry(BuildContext context, {required bool joined}) => Column(
+    children: [
+      ListTile(
+        contentPadding: EdgeInsets.zero,
+        leading: _asset(
+          joined ? 'joined' : 'published',
+          width: 24.r,
+          height: 24.r,
+        ),
+        title: Text(joined ? '我参与的活动' : '我发布的活动'),
+        trailing: _asset('chevron', width: 16.r, height: 16.r),
+        onTap: () => AppNavigator.push<void>(
+          context,
+          page: MyActivitiesPage(joined: joined),
+        ),
+      ),
+      const Divider(height: 1, color: Color(0xFFF5F5F5)),
+    ],
   );
 
   Widget _entry(BuildContext context, String title, String icon, Widget page) =>

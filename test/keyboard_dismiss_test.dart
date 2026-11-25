@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_app_framework/features/teen/presentation/teen_mode_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_app_framework/main.dart';
 
@@ -10,29 +12,36 @@ void main() {
       final text = TextEditingController();
       var taps = 0;
       await tester.pumpWidget(
-        Application(
-          startPage: Scaffold(
-            body: ListView(
-              children: [
-                TextField(
-                  key: const ValueKey('first'),
-                  focusNode: first,
-                  controller: text,
-                ),
-                TextField(key: const ValueKey('second'), focusNode: second),
-                TextButton(onPressed: () => taps++, child: const Text('操作按钮')),
-                const SizedBox(
-                  key: ValueKey('blank'),
-                  height: 100,
-                  width: double.infinity,
-                  child: ColoredBox(color: Colors.white),
-                ),
-                const SizedBox(height: 1200),
-              ],
+        ProviderScope(
+          overrides: [teenModeProvider.overrideWith(_DisabledTeenMode.new)],
+          child: Application(
+            startPage: Scaffold(
+              body: ListView(
+                children: [
+                  TextField(
+                    key: const ValueKey('first'),
+                    focusNode: first,
+                    controller: text,
+                  ),
+                  TextField(key: const ValueKey('second'), focusNode: second),
+                  TextButton(
+                    onPressed: () => taps++,
+                    child: const Text('操作按钮'),
+                  ),
+                  const SizedBox(
+                    key: ValueKey('blank'),
+                    height: 100,
+                    width: double.infinity,
+                    child: ColoredBox(color: Colors.white),
+                  ),
+                  const SizedBox(height: 1200),
+                ],
+              ),
             ),
           ),
         ),
       );
+      await tester.pumpAndSettle();
       await tester.tap(find.byKey(const ValueKey('first')));
       await tester.pump();
       await tester.enterText(find.byKey(const ValueKey('first')), '保留内容');
@@ -61,4 +70,9 @@ void main() {
       text.dispose();
     },
   );
+}
+
+class _DisabledTeenMode extends TeenModeController {
+  @override
+  Future<bool> build() async => false;
 }

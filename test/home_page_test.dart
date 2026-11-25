@@ -73,18 +73,29 @@ void main() {
     });
   }
 
-  testWidgets('home opens the invite form and publish page', (tester) async {
+  testWidgets('home greets the selected peer and opens publish page', (
+    tester,
+  ) async {
     tester.view.devicePixelRatio = 1;
     tester.view.physicalSize = const Size(375, 812);
     addTearDown(tester.view.resetDevicePixelRatio);
     addTearDown(tester.view.resetPhysicalSize);
     await openHome(tester, HomeMockScenarioEnum.success);
     await tester.pumpAndSettle();
-    await tester.tap(find.text('邀约Ta').hitTestable().first);
+    await tester.tap(find.text('打招呼').hitTestable().first);
     await tester.pumpAndSettle();
-    expect(find.text('发起邀约'), findsOneWidget);
-    expect(find.text('发出邀约'), findsOneWidget);
-    await tester.tap(find.byTooltip('关闭'));
+    final chat = tester.widget<ChatPage>(find.byType(ChatPage));
+    final container = ProviderScope.containerOf(
+      tester.element(find.byType(ChatPage)),
+    );
+    final thread = container
+        .read(messagesProvider)
+        .threads
+        .firstWhere((item) => item.id == chat.threadId);
+    expect(thread.peerId, 'U002');
+    expect(thread.name, '海盐芝士');
+    expect(thread.entries.last.content, '你好，很高兴认识你！');
+    await tester.pageBack();
     await tester.pumpAndSettle();
     await tester.tap(find.text('活动').hitTestable());
     await tester.pumpAndSettle();

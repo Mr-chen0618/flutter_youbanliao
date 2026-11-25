@@ -1,3 +1,4 @@
+import 'teen_mode_test_fixture.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
+          disabledTeenModeOverride,
           networkStateProvider.overrideWith(
             (ref) => Stream.value(const NetworkState(Reachability.offline)),
           ),

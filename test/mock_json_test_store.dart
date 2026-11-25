@@ -22,9 +22,15 @@ class WidgetMockJsonStore extends MockJsonStore {
       'user/interests',
     ];
     return WidgetMockJsonStore._({
+      'device/teen_mode': jsonEncode({'enabled': false}),
       for (final path in paths)
         path: await File('assets/mock/$path.json').readAsString(),
     });
+  }
+
+  @override
+  Future<void> initialize(String path, Map<String, dynamic> data) async {
+    _samples.putIfAbsent(path, () => jsonEncode(data));
   }
 
   @override

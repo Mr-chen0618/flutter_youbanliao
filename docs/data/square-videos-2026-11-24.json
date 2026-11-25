@@ -1,0 +1,117 @@
+[
+  {
+    "id": "square_video_01",
+    "source": "fde871eba18ffe924fba5c196cd7ae3b.mp4",
+    "asset": "assets/square/videos/square_video_01.mp4",
+    "sha256": "a17c66175813dc4c9c3213ca2e8a4443765add96edfa6a64da2936c26cd7708a",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "hevc",
+          "width": 592,
+          "height": 1280
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "format": {
+        "duration": "50.100000"
+      }
+    }
+  },
+  {
+    "id": "square_video_02",
+    "source": "nvzhubo_voice2.MP4",
+    "asset": "assets/square/videos/square_video_02.mp4",
+    "sha256": "731ec17b6b713e3d444f9199f985916429d36ba6f980db8cf42606b7aef8e244",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "hevc",
+          "width": 1180,
+          "height": 2556
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "format": {
+        "duration": "23.256825"
+      }
+    }
+  },
+  {
+    "id": "square_video_03",
+    "source": "nvzhubo_voice3.MP4",
+    "asset": "assets/square/videos/square_video_03.mp4",
+    "sha256": "4b201f8db62221ecd7c134d0e3749f05bd2f482762881ede65ae45d285e607e9",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "hevc",
+          "width": 1180,
+          "height": 2556
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "format": {
+        "duration": "30.851667"
+      }
+    }
+  },
+  {
+    "id": "square_video_04",
+    "source": "nvzhubo_voice4.MP4",
+    "asset": "assets/square/videos/square_video_04.mp4",
+    "sha256": "d4b08a4c25e5ea2288243a17bd24d1717a8e70c3a92fe328d488de5f0762cabb",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "hevc",
+          "width": 1180,
+          "height": 2556
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "format": {
+        "duration": "19.648050"
+      }
+    }
+  },
+  {
+    "id": "square_video_05",
+    "source": "nvzhubo_voice5.MP4",
+    "asset": "assets/square/videos/square_video_05.mp4",
+    "sha256": "ba9060353a15b22067fd681c35fa34e6242a201ac4836b8f55dd9204ce8ef5ed",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "hevc",
+          "width": 1180,
+          "height": 2556
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "format": {
+        "duration": "19.649683"
+      }
+    }
+  }
+]

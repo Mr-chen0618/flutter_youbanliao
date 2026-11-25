@@ -6,9 +6,17 @@ import '../../../../shared/widgets/text/app_text.dart';
 
 /// 动态类型标签，图标和配色对应Figma 3163:24161的八种分类。
 class SquareCategoryBadgeWidget extends StatelessWidget {
-  const SquareCategoryBadgeWidget({super.key, required this.category});
+  const SquareCategoryBadgeWidget({
+    super.key,
+    required this.category,
+    this.backgroundColor,
+    this.foregroundColor,
+  });
 
   final String category;
+
+  /// 局部设计可覆盖标签色，默认仍沿用统一分类映射。
+  final Color? backgroundColor, foregroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +37,7 @@ class SquareCategoryBadgeWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
       decoration: BoxDecoration(
-        color: Color(background),
+        color: backgroundColor ?? Color(background),
         borderRadius: BorderRadius.circular(8.r),
       ),
       child: Row(
@@ -44,7 +52,11 @@ class SquareCategoryBadgeWidget extends StatelessWidget {
             ),
             SizedBox(width: 4.w),
           ],
-          AppText(label, fontSize: 12.sp, color: Color(foreground)),
+          AppText(
+            label,
+            fontSize: 12.sp,
+            color: foregroundColor ?? Color(foreground),
+          ),
         ],
       ),
     );

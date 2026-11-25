@@ -245,3 +245,7 @@ Future<PurchaseEntitlements> verifyAndDeliver(PurchaseDetails purchase);
 ## 2026-11-18 后续方案变更
 
 用户随后选择先实现无业务后端的 [本机支付](../ui-structure/apple-iap-local-2026-11-18.md)。本交接继续保留作为未来服务端方案草案，不是当前付款入口的必需依赖；后端接口仍未实现。
+
+## 2026-11-24 月度商品 ID 更正
+
+按用户要求，月度会员 productId 现改为 `youbanliao.vip.1month`（旧值 `youbanliao.vip.1months`）。Apple ID 6836201153、数量和参考价不变。客户端和原生测试配置已同步；后台配置与真机查询未验证，需用新包确认。上方旧表作为历史配置保留。

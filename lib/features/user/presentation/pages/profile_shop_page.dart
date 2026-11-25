@@ -1,3 +1,7 @@
+import 'user_feedback_page.dart';
+import '../../../../shared/pages/app_web_page.dart';
+import '../../../../app/config/legal_links.dart';
+import '../../../../app/navigation/app_navigator.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -592,9 +596,31 @@ class _ShopFooter extends StatelessWidget {
                 minimumSize: Size(0, 28.h),
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
-              onPressed: () => AppToast.show('协议暂不可查看'),
+              onPressed: () => shop.isMembership
+                  ? AppToast.show('协议暂不可查看')
+                  : AppNavigator.push(
+                      context,
+                      page: const AppWebPage(
+                        title: '用户充值协议',
+                        url: LegalLinks.rechargeAgreementUrl,
+                      ),
+                    ),
               child: Text(shop.agreement),
             ),
+            if (!shop.isMembership)
+              TextButton(
+                key: const ValueKey('recharge-feedback'),
+                style: TextButton.styleFrom(
+                  foregroundColor: const Color(0xFF1890FF),
+                  textStyle: TextStyle(fontSize: 11.sp),
+                  padding: EdgeInsets.only(left: 8.w),
+                  minimumSize: Size(0, 28.h),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                onPressed: () =>
+                    AppNavigator.push(context, page: const FeedbackPage()),
+                child: const Text('充值遇到问题？'),
+              ),
           ],
         ),
       ],

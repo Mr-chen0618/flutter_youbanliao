@@ -9,3 +9,43 @@
 SquarePost.likeCount/commentCount 为样本基数，旧数据缺省0。点赞显示基数加当前账号状态，取消恢复；评论显示基数加持久化新增评论数。视频点赞收藏继续持久化。
 
 动态详情3237:1887使用白底AppScaffold，标题“动态详情”、右上唯一更多动作复用动态卡片行为；卡片详情隐藏重复更多。底部36px灰色圆角单行评论输入，支持键盘发送及尾部发送图标。
+
+## 2026-11-20 首页同款Tab选中样式
+
+用户以首页截图指定广场Tab选中效果。已核对HomeFeedSwitchWidget实际实现：选中17sp/w600/333333、未选15sp/w400/999999，右侧-10w/top0放19r星光弧线资源home_feed_selected_icon.png。本轮提取shared/widgets/layout/FeedTabLabel，首页与广场DiscoveryHeader共同调用；广场替换旧下划线，保留关注/发现/视频切换、选择语义和视频深色文字适配。共享展示组件不依赖home状态或模型，只引用已存在的本地装饰资产。首页选项间距与广场53w点击区保持原调用方布局。
+
+已完成：共享标签、首页接入、广场接入，无数据契约变化。定向分析零问题，主导航13项回归通过，证据见[测试记录](../testing/square-profile-2026-11-20.md)。未完成：无新增业务。未验证：真机视觉、视频暗底下装饰效果；未执行构建。下一步设备切换广场三Tab核对选中和未选样式。
+
+
+## 2026-11-24 广场接入五个本地视频
+
+范围：用户确认下载目录根目录的 `fde871eba18ffe924fba5c196cd7ae3b.mp4` 和 `nvzhubo_voice2～5.MP4` 全部接入广场视频Tab。原指定“应用数据-11:9”目录仅有工作簿和图片，经用户确认改用上述5文件。
+
+已完成：原样复制至 `assets/square/videos/square_video_01～05.mp4`，提取对应首帧JPG并注册资源目录；以SquareVideoFeed替换历史静态封面演示。上下滑动切换，当前视频循环播放，点击画面暂停/继续，加载失败可重试；保留原比例、使用黑底。仅当前项挂载播放器，其他项显示封面。MainTabShell显式传入广场活跃状态；切换主Tab、广场子Tab、路由覆盖、后台与销毁分别暂停或释放，手动暂停恢复后保留。没有来源作者信息，展示视频序号，不沿用旧虚构昵称与认证文案。
+
+实现文件：`lib/features/square/presentation/widgets/square_video_feed.dart`、`square_page.dart`、`square_provider.dart`、`data/model/square_state.dart`、`lib/app/navigation/main_tab_shell.dart`、`pubspec.yaml`。每视频分别保存喜欢/收藏，首视频兼容旧布尔字段，其他使用稳定ID集合；属于本地Mock快照。素材保持原HEVC/AAC编码，总资源约179MiB；来源、时长、尺寸、SHA256见 [导入清单](../data/square-videos-2026-11-24.json)。不改动下载原文件或既有设备账号。
+
+验证：5个文件ffprobe读取成功，ffmpeg成功提取5张封面；格式化及定向分析通过；视频专项回归补充滑动和独立互动序列化检查后1/1通过。首轮导航文件13通过/1失败，失败在个人中心“我的动态”hitTestable定位，单独复跑仍失败，未据此声称全导航通过。详见[验证记录](../testing/square-videos-2026-11-24.md)。
+
+未完成：本次视频接入无剩余编码事项；上述个人中心测试失败待单独排查。未验证：原生解码、声音、滑动流畅度、路由/后台暂停的设备效果及其他平台HEVC支持；未执行iOS构建。下一步设备进入“广场→视频”，逐一播放5项，检查暂停、切Tab、推入发布/通知页、锁屏与恢复；按发布包体需求决定是否转码压缩。没有接入远端视频服务。
+
+
+## 2026-11-24 后续：改用归档视频并移除序号
+
+用户改为下载目录“归档”的全部10个MP4，覆盖上节5视频素材方案。已完成：删除工程中旧5个视频及封面，原样导入归档10视频并提取首帧；SquareVideoFeed读取 `data/model/square_video_catalog.dart` 的10项目录，不再固定数量。视频ID按SHA256前12位生成，避免替换素材后继承旧视频喜欢/收藏；旧账号快照保留但旧ID不参与本目录展示。按用户后续要求移除左下角序号及附带滑动提示。播放、暂停、滑动及右侧互动继续复用。
+
+文件：`assets/square/videos/`、`square_video_catalog.dart`、`square_video_feed.dart`、`test/main_tabs_mock_test.dart`；源文件不修改。总视频66,354,869字节，来源/哈希/媒体信息见[归档清单](../data/square-archive-videos-2026-11-24.json)。旧导入清单保留为历史证据，不能作为当前资源目录。
+
+未完成：本范围无剩余编码项；前轮个人中心测试失败仍待独立排查。未验证：真机解码、声音、后台暂停与视觉，未构建。下一步设备核对10条视频及无序号效果。验证结果见[专项报告后续节](../testing/square-videos-2026-11-24.md)。
+
+## 2026-11-25 视频固定模拟发布者
+
+按本轮用户要求参考Figma `sZdTOBC0a94JYUYKgAJr8e / 3163:24193`，本轮get_design_context含截图已读取，节点用户区为58px圆头像、18px昵称、13px简介和底部139px黑色渐变。已完成：square_video_catalog内将10个素材稳定ID固定映射U001～U010；square_video_publishers_provider从公共home/catalog种子读取类型化SquareVideoPublisher，不由当前账号或排序随机生成。SquareVideoFeed恢复左15/底30的用户区，简介用目录signature，不沿用设计占位“真人认证用户”宣称；点资料进入绑定ID用户详情。用户图区数据图片使用公共目录头像，保留无视频序号要求。涉及新增model/provider及既有catalog/feed。
+
+开发自测视频切换互动1/1通过；定向静态分析初轮仅一条插值info已修复，结果见本轮独立测试报告。未完成：无本范围编码项。未验证：真机视觉与视频播放，未构建。新视频的拉黑隐藏一致性作为审计问题保留，不在本轮扩展。下一步tester独立回归映射、点击参数和无序号。
+
+## 2026-11-25 后续授权：拉黑用户隐藏视频
+
+用户追加明确授权后，已接入现有账号messagesProvider.blocked来源；以peerId或thread.id匹配固定视频作者ID，拉黑后从当前列表移除，解除恢复。SquareVideoFeed以账号ID及过滤后视频ID序列为PageView key，变更时索引归零并销毁旧播放器；旧滚动回调校验目录key，避免异步回调污染过滤后的索引。全部作者拉黑显示统一AppEmptyState“暂无可展示的视频”。没有删除素材或修改账号黑名单契约。
+
+涉及square_video_feed.dart。已完成上述代码，定向静态分析零问题；视频互动回归结果和fake播放器独立回归由tester记录。未完成：无本次编码待办；其他审计风险仍仅列出。未验证：真机声音、后台播放及外部服务，未构建。下一步独立执行当前项/末项过滤、全空、解除恢复及账号切换。

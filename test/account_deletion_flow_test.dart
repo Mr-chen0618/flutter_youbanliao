@@ -1,3 +1,4 @@
+import 'auth_sign_in_test_helper.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_framework/core/storage/mock_json_store.dart';
@@ -77,6 +78,7 @@ void main() {
         ),
       );
       await settleIo(tester);
+      await dismissAutomaticSignIn(tester);
       await tester.tap(find.byKey(const ValueKey('main-tab-3')));
       await settleIo(tester);
       await tester.scrollUntilVisible(
@@ -144,6 +146,7 @@ void main() {
       expect(find.text('继续注销'), findsOneWidget);
       await tester.tap(find.widgetWithText(FilledButton, '恢复账号'));
       await settleIo(tester);
+      await dismissAutomaticSignIn(tester);
       await tester.tap(find.byKey(const ValueKey('main-tab-3')));
       await settleIo(tester);
       expect(find.text('注销流程用户'), findsOneWidget);

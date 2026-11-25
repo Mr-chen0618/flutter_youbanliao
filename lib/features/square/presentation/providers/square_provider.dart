@@ -6,6 +6,7 @@ import '../../../../shared/widgets/feedback/app_toast.dart';
 import '../../data/square_repository.dart';
 import '../../data/model/square_comment.dart';
 import '../../../user/data/model/member_profile.dart';
+import '../../../user/presentation/providers/growth_provider.dart';
 
 export '../../data/square_repository.dart' show SquareState;
 
@@ -27,9 +28,18 @@ class SquareNotifier extends Notifier<SquareState> {
     final repository = ref.watch(squareRepositoryProvider);
     listenSelf((previous, next) {
       if (previous != null) {
-        ref
-            .read(mockWritesProvider.notifier)
-            .save('square', () => repository.save(next));
+        final published = next.posts.any(
+          (post) =>
+              post.isMine && !previous.posts.any((old) => old.id == post.id),
+        );
+        final growth = published ? ref.read(growthRepositoryProvider) : null;
+        ref.read(mockWritesProvider.notifier).save('square', () async {
+          await repository.save(next);
+          if (growth != null && growth.accountId.isNotEmpty) {
+            await growth.recordPublish();
+            if (ref.mounted) ref.invalidate(growthProvider);
+          }
+        });
       }
     });
     return ref.watch(squareInitialProvider).requireValue;
@@ -48,10 +58,17 @@ class SquareNotifier extends Notifier<SquareState> {
   }
 
   /// 将视频互动同步到动态模块的磁盘快照。
-  void toggleVideoLike() =>
-      state = state.copyWith(videoLiked: !state.videoLiked);
-  void toggleVideoSave() =>
-      state = state.copyWith(videoSaved: !state.videoSaved);
+  void toggleVideoLike([String id = 'square_video_01']) {
+    state = id == 'square_video_01'
+        ? state.copyWith(videoLiked: !state.videoLiked)
+        : state.copyWith(videoLikes: _toggle(state.videoLikes, id));
+  }
+
+  void toggleVideoSave([String id = 'square_video_01']) {
+    state = id == 'square_video_01'
+        ? state.copyWith(videoSaved: !state.videoSaved)
+        : state.copyWith(videoSaves: _toggle(state.videoSaves, id));
+  }
 
   void toggleLike(String id) =>
       state = state.copyWith(likes: _toggle(state.likes, id));

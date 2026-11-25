@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/config/legal_links.dart';
 import '../../../../app/navigation/app_navigator.dart';
 import '../../../../shared/pages/app_web_page.dart';
-import '../../../../shared/widgets/layout/app_scaffold.dart';
 import '../../../messages/presentation/pages/blocked_users_page.dart';
 import '../providers/profile_provider.dart';
 import '../bloc/user_event.dart';
 import 'account_action_page.dart';
+import '../../../teen/presentation/teen_mode_page.dart';
 
 /// 设置聚合协议、黑名单与账号操作。
 class ProfileSettingsPage extends ConsumerWidget {
@@ -20,10 +21,27 @@ class ProfileSettingsPage extends ConsumerWidget {
     final signedIn =
         (ref.watch(profileProvider).value ?? ref.read(userBlocProvider).state)
             .isSignedIn;
-    return AppScaffold(
-      navigatorTitle: '设置',
-      navigatorBackWidget: const BackButton(),
-      backgroundColor: const Color(0xFFF6F6F6),
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 48.h,
+        title: Text(
+          '设置',
+          style: TextStyle(fontSize: 16.sp, color: const Color(0xFF333333)),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          tooltip: '返回',
+          onPressed: () => Navigator.maybePop(context),
+          icon: SvgPicture.asset(
+            'assets/profile/settings_back.svg',
+            width: 24.w,
+            height: 24.w,
+          ),
+        ),
+        backgroundColor: const Color(0xFFF8F8F8),
+        surfaceTintColor: Colors.transparent,
+      ),
+      backgroundColor: const Color(0xFFF8F8F8),
       body: SafeArea(
         top: false,
         child: Column(
@@ -58,6 +76,8 @@ class ProfileSettingsPage extends ConsumerWidget {
                           name: 'settings-agreement',
                         ),
                         const Divider(height: 1, indent: 16, endIndent: 16),
+                        _row(context, '青少年模式', const TeenModePage()),
+                        const Divider(height: 1, indent: 16, endIndent: 16),
                         _row(context, '黑名单', const BlockedUsersPage()),
                         if (signedIn) ...[
                           const Divider(height: 1, indent: 16, endIndent: 16),
@@ -66,6 +86,7 @@ class ProfileSettingsPage extends ConsumerWidget {
                             '注销账号 (慎用)',
                             const AccountActionPage(delete: true),
                           ),
+                          const Divider(height: 1, indent: 16, endIndent: 16),
                         ],
                       ],
                     ),
@@ -81,8 +102,16 @@ class ProfileSettingsPage extends ConsumerWidget {
                   height: 52.h,
                   child: FilledButton(
                     style: FilledButton.styleFrom(
-                      backgroundColor: const Color(0xFFFFE0E8),
-                      foregroundColor: const Color(0xFFFA1950),
+                      backgroundColor: const Color(0xFFFFE1E9),
+                      foregroundColor: const Color(0xFFEC1F59),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.r),
+                      ),
+                      textStyle: Theme.of(context).textTheme.labelLarge
+                          ?.copyWith(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
                     ),
                     onPressed: () => _confirmLogout(context, ref),
                     child: const Text('退出登录'),
@@ -129,9 +158,35 @@ class ProfileSettingsPage extends ConsumerWidget {
     String title,
     Widget page, {
     String? name,
-  }) => ListTile(
-    title: Text(title),
-    trailing: const Icon(Icons.chevron_right, color: Colors.grey),
-    onTap: () => AppNavigator.push<void>(context, page: page, name: name),
+  }) => SizedBox(
+    height: 52.h,
+    child: InkWell(
+      onTap: () => AppNavigator.push<void>(context, page: page, name: name),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: const Color(0xFF333333),
+                ),
+              ),
+            ),
+            RotatedBox(
+              quarterTurns: 2,
+              child: SvgPicture.asset(
+                'assets/profile/settings_chevron.svg',
+                width: 16.w,
+                height: 16.w,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
   );
 }

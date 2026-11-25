@@ -1,232 +1,293 @@
-import '../../../../shared/widgets/feedback/app_toast.dart';
+import '../../../../shared/widgets/images/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../shared/widgets/feedback/app_toast.dart';
+import '../providers/growth_provider.dart';
 
-import '../../../../shared/widgets/images/app_image.dart';
-import '../../../../shared/widgets/layout/companion_card_surface_widget.dart';
-import '../../../../shared/widgets/layout/companion_page_surface.dart';
-import '../bloc/user_event.dart';
-import '../providers/profile_provider.dart';
-
-/// 展示实名认证说明并收集核验信息。
+/// 实名信息只在表单内存中校验；本地实现保存待审状态，不冒充身份核验通过。
 class UserVerificationPage extends ConsumerStatefulWidget {
   const UserVerificationPage({super.key});
-
   @override
   ConsumerState<UserVerificationPage> createState() =>
       _UserVerificationPageState();
 }
 
 class _UserVerificationPageState extends ConsumerState<UserVerificationPage> {
-  final _formKey = GlobalKey<FormState>();
-  bool _valid = true;
-  static const _instructions = '请填写真实姓名与身份证号码，提交后即可完成实名认证。';
+  final form = GlobalKey<FormState>();
+  bool agreed = false, busy = false;
+  Future<void> submit() async {
+    if (!(form.currentState?.validate() ?? false)) return;
+    if (!agreed) {
+      AppToast.show('请先阅读并同意协议');
+      return;
+    }
+    setState(() => busy = true);
+    final repo = ref.read(growthRepositoryProvider);
+    try {
+      await repo.submitIdentity();
+      if (mounted) {
+        ref.invalidate(growthProvider);
+        AppToast.show('本地提交已保存，等待核验服务');
+      }
+    } catch (e) {
+      AppToast.show('提交失败，请重试');
+    } finally {
+      if (mounted) setState(() => busy = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final state =
-        ref.watch(profileProvider).value ?? ref.read(userBlocProvider).state;
-    final verified = state.isVerified;
-    return CompanionPageSurface(
-      title: '我的认证',
-      child: ListView(
-        padding: EdgeInsets.all(16.w),
+    final pending = ref.watch(growthProvider).value?.identityPending == true;
+    return Scaffold(
+      backgroundColor: const Color(0xFFF6F6F6),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFF6F6F6),
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: const Text('实名认证', style: TextStyle(fontSize: 16)),
+      ),
+      body: Column(
         children: [
-          // 认证简介
-          Container(
-            padding: EdgeInsets.all(20.w),
-            decoration: BoxDecoration(
-              color: const Color(0xFFFFF3BF),
-              borderRadius: BorderRadius.circular(20.r),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.all(16),
               children: [
-                Row(
-                  children: [
-                    AppImage(
-                      src: state.profile.avatar,
-                      width: 50.r,
-                      height: 50.r,
-                      radius: 25.r,
-                    ),
-                    SizedBox(width: 14.w),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            state.profile.name,
-                            style: const TextStyle(fontWeight: FontWeight.w600),
-                          ),
-                          SizedBox(height: 4.h),
-                          Text(
-                            _instructions,
-                            style: TextStyle(
-                              color: const Color(0xFF91641A),
-                              fontSize: 12.sp,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(width: 12.w),
-                    SvgPicture.asset(
-                      'assets/profile/profile_verification_shield.svg',
-                      width: 24.r,
-                      height: 24.r,
-                    ),
-                  ],
-                ),
-                SizedBox(height: 16.h),
-                const Text('给信任多一份保障， 让志趣相投的人放心靠近。'),
-              ],
-            ),
-          ),
-          SizedBox(height: 16.h),
-          const Text('实名认证', style: TextStyle(fontWeight: FontWeight.w600)),
-          SizedBox(height: 16.h),
-          // 实名认证表单
-          CompanionCardSurfaceWidget(
-            padding: EdgeInsets.all(14.w),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Container(
+                  height: 116,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFFFBEC),
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                  child: Row(
                     children: [
-                      const Text(
-                        '实名认证',
-                        style: TextStyle(fontWeight: FontWeight.w600),
+                      const Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '完成实名认证',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              '提升账号可信度，获得更多信任',
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            SizedBox(height: 3),
+                            Text(
+                              '信息仅用于本人身份核验',
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      DecoratedBox(
+                      Container(
+                        width: 82,
+                        height: 58,
                         decoration: BoxDecoration(
-                          color: const Color(0xFFFFF7E2),
-                          borderRadius: BorderRadius.circular(6.r),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 4.h,
-                          ),
-                          child: Text(
-                            verified ? '已认证' : '待提交',
-                            style: TextStyle(
-                              fontSize: 11.sp,
-                              color: const Color(0xFF91641A),
-                            ),
+                          padding: const EdgeInsets.all(8),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  const AppImage(
+                                    src:
+                                        'assets/profile/growth/identity_dot.svg',
+                                    width: 20,
+                                    height: 20,
+                                  ),
+                                  const SizedBox(width: 5),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 4,
+                                          color: const Color(0xFFEDEDED),
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Container(
+                                          height: 4,
+                                          color: const Color(0xFFEDEDED),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 3,
+                                color: const Color(0xFFEDEDED),
+                              ),
+                            ],
                           ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 10.h),
-                  Text(
-                    _instructions,
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      color: const Color(0xFF999999),
-                    ),
+                ),
+                const SizedBox(height: 14),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(18),
                   ),
-                  const Divider(color: Color(0xFFF3F3F3)),
-                  if (!verified) ...[
-                    _field(
-                      '真实姓名',
-                      '请输入真实姓名',
-                      (value) =>
-                          (value?.trim().isEmpty ?? true) ? '请输入真实姓名' : null,
-                    ),
-                    SizedBox(height: 10.h),
-                    _field(
-                      '身份证号码',
-                      '请输入身份证号码',
-                      (value) =>
-                          RegExp(
-                            r'^[0-9]{17}[0-9Xx]$',
-                          ).hasMatch(value?.trim() ?? '')
-                          ? null
-                          : '请输入有效的身份证号码',
-                    ),
-                    SizedBox(height: 10.h),
-                    FilledButton(
-                      style: FilledButton.styleFrom(
-                        backgroundColor: const Color(0xFFFFD04F),
-                        foregroundColor: const Color(0xFF333333),
-                        minimumSize: Size.fromHeight(52.h),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16.r),
+                  child: pending
+                      ? const Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Text('认证待审核'),
+                        )
+                      : Form(
+                          key: form,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                '👤 真实姓名',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              _field(
+                                '请输入与身份证一致的姓名',
+                                (v) => v?.trim().isNotEmpty == true
+                                    ? null
+                                    : '请输入真实姓名',
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                child: Divider(height: 1),
+                              ),
+                              const Text(
+                                '🪪 身份证号码',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              _field(
+                                '请输入 18 位身份证号码',
+                                (v) =>
+                                    RegExp(
+                                      r'^[0-9]{17}[0-9Xx]$',
+                                    ).hasMatch(v?.trim() ?? '')
+                                    ? null
+                                    : '请输入有效的身份证号码',
+                              ),
+                            ],
+                          ),
+                        ),
+                ),
+                const SizedBox(height: 14),
+                const Text(
+                  '🔐 身份信息仅用于实名认证，不会公开展示',
+                  style: TextStyle(fontSize: 11, color: Colors.grey),
+                ),
+                if (!pending)
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: agreed,
+                        onChanged: busy
+                            ? null
+                            : (v) => setState(() => agreed = v ?? false),
+                      ),
+                      const Text(
+                        '我已阅读并同意',
+                        style: TextStyle(fontSize: 11, color: Colors.grey),
+                      ),
+                      TextButton(
+                        onPressed: () => showDialog<void>(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: const Text('实名认证服务协议'),
+                            content: const Text(
+                              '正式协议正文尚未提供，当前认证仅为本地演示提交，不会进行真实身份核验。',
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(context),
+                                child: const Text('知道了'),
+                              ),
+                            ],
+                          ),
+                        ),
+                        child: const Text(
+                          '《实名认证服务协议》',
+                          style: TextStyle(fontSize: 11),
                         ),
                       ),
-                      onPressed: () {
-                        _valid = true;
-                        if (_formKey.currentState!.validate() && _valid) {
-                          ref.read(userBlocProvider).add(const UserVerified());
-                        }
-                      },
-                      child: const Text('提交认证'),
+                    ],
+                  ),
+              ],
+            ),
+          ),
+          SafeArea(
+            top: false,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: const Color(0xFFFFD23F),
+                    foregroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(13),
                     ),
-                  ],
-                ],
+                  ),
+                  onPressed: busy || pending ? null : submit,
+                  child: Text(
+                    pending
+                        ? '待审核'
+                        : busy
+                        ? '提交中…'
+                        : '提交认证',
+                  ),
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 16.h),
-          // 信息使用说明
-          Container(
-            padding: EdgeInsets.all(14.w),
-            decoration: BoxDecoration(
-              color: const Color(0xFFFFF8E2),
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Text(
-              '认证信息仅用于身份核验，不会公开展示你的真实姓名及证件号码。请勿冒用他人身份，携手维护真实、友善的友伴社区。',
-              style: TextStyle(fontSize: 12.sp, color: const Color(0xFF91641A)),
-            ),
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            '友伴守护每一次真诚的相遇',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 11.sp, color: const Color(0xFF999999)),
           ),
         ],
       ),
     );
   }
 
-  /// 单行核验字段。
-  Widget _field(
-    String label,
-    String hint,
-    FormFieldValidator<String> validator,
-  ) => Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(label),
-      SizedBox(height: 8.h),
+  Widget _field(String hint, FormFieldValidator<String> validator) =>
       TextFormField(
-        validator: (value) {
-          final error = validator(value);
-          if (error != null) {
-            _valid = false;
-            AppToast.show(error);
-          }
-          return null;
-        },
+        validator: validator,
+        enabled: !busy,
         decoration: InputDecoration(
           hintText: hint,
+          hintStyle: const TextStyle(fontSize: 13, color: Colors.grey),
           filled: true,
           fillColor: const Color(0xFFF6F6F6),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.r),
-            borderSide: const BorderSide(color: Color(0xFFE7D8BA)),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
           ),
         ),
-      ),
-    ],
-  );
+      );
 }

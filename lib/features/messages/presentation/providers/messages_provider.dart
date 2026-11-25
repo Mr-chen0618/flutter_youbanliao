@@ -1,3 +1,7 @@
+import '../../../user/presentation/providers/growth_provider.dart';
+import '../../../auth/presentation/providers/auth_provider.dart';
+import '../../../purchases/presentation/providers/apple_purchase_provider.dart';
+import '../../data/repository/chat_gift_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/storage/mock_json_store.dart';
@@ -8,9 +12,16 @@ export '../../data/messages_repository.dart' show MessagesState;
 final messagesRepositoryProvider = Provider<MessagesRepository>(
   (ref) => MessagesMockRepository(ref.watch(mockJsonStoreProvider)),
 );
-final messagesInitialProvider = FutureProvider<MessagesState>(
-  (ref) => ref.watch(messagesRepositoryProvider).load(),
+final chatGiftRepositoryProvider = Provider<ChatGiftRepository>(
+  (ref) => ChatGiftRepository(ref.watch(purchaseLedgerStoreProvider)),
 );
+final messagesInitialProvider = FutureProvider<MessagesState>((ref) async {
+  final repository = ref.watch(messagesRepositoryProvider);
+  final gifts = ref.watch(chatGiftRepositoryProvider);
+  final accountId = ref.watch(authSessionProvider).value?.accountId;
+  final loaded = await repository.load();
+  return accountId == null ? loaded : gifts.restore(accountId, loaded);
+});
 final messagesProvider = NotifierProvider<MessagesNotifier, MessagesState>(
   MessagesNotifier.new,
 );
@@ -21,9 +32,26 @@ class MessagesNotifier extends Notifier<MessagesState> {
     final repository = ref.watch(messagesRepositoryProvider);
     listenSelf((previous, next) {
       if (previous != null) {
-        ref
-            .read(mockWritesProvider.notifier)
-            .save('messages', () => repository.save(next));
+        final growth = ref.read(growthRepositoryProvider);
+        ref.read(mockWritesProvider.notifier).save('messages', () async {
+          await repository.save(next);
+          final oldCount = previous.threads.fold<int>(
+            0,
+            (n, t) => n + t.entries.where((e) => e.isMine).length,
+          );
+          final newCount = next.threads.fold<int>(
+            0,
+            (n, t) => n + t.entries.where((e) => e.isMine).length,
+          );
+          if (newCount > oldCount) {
+            try {
+              await growth.recordChat();
+              if (ref.mounted) ref.invalidate(growthProvider);
+            } catch (_) {
+              // 消息已落盘，任务记录失败不回滚消息。
+            }
+          }
+        });
       }
     });
     return ref.watch(messagesInitialProvider).requireValue;
@@ -33,6 +61,15 @@ class MessagesNotifier extends Notifier<MessagesState> {
     final loaded = await ref.read(messagesRepositoryProvider).load();
     if (ref.mounted) state = loaded;
   }
+
+  void setRemark(String id, String remark) => state = state.copyWith(
+    threads: List.unmodifiable(
+      state.threads.map(
+        (thread) =>
+            thread.id == id ? thread.copyWith(remark: remark.trim()) : thread,
+      ),
+    ),
+  );
 
   void readThread(String id) => state = state.copyWith(
     threads: List.unmodifiable(
@@ -50,6 +87,12 @@ class MessagesNotifier extends Notifier<MessagesState> {
     if (entry.content.trim().isEmpty) return;
     final index = state.threads.indexWhere((thread) => thread.id == id);
     if (index < 0) return;
+    if (entry.idempotencyKey != null &&
+        state.threads[index].entries.any(
+          (e) => e.idempotencyKey == entry.idempotencyKey,
+        )) {
+      return;
+    }
     final threads = [...state.threads];
     final thread = threads.removeAt(index);
     threads.insert(

@@ -1,3 +1,4 @@
+import '../../../square/presentation/widgets/square_category_badge_widget.dart';
 import '../../../../shared/widgets/layout/app_empty_state.dart';
 import '../../../report/presentation/widgets/report_action.dart';
 import '../../../../shared/widgets/feedback/app_toast.dart';
@@ -98,6 +99,9 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        scrolledUnderElevation: 0,
+        toolbarHeight: 48.h,
         foregroundColor: Colors.white,
         systemOverlayStyle: SystemUiOverlayStyle.light,
         leading: IconButton(
@@ -142,7 +146,7 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      colors: [Colors.black54, Colors.transparent],
+                      colors: [Color(0xB3000000), Colors.transparent],
                     ),
                   ),
                 ),
@@ -157,96 +161,111 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
                     activity.title,
                     style: TextStyle(
                       fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
+                      color: const Color(0xFF333333),
+                      height: 25 / 18,
                     ),
                   ),
-                  if (activity.category.isNotEmpty)
-                    Chip(
-                      label: Text(activity.category),
-                      backgroundColor: const Color(0xFFFFEFE4),
+                  if (activity.category.isNotEmpty) ...[
+                    SizedBox(height: 8.h),
+                    SquareCategoryBadgeWidget(
+                      category: activity.category,
+                      backgroundColor: const Color(0xFFFFF0E6),
+                      foregroundColor: const Color(0xFFFB5749),
                     ),
-                  // 发布人
+                  ],
+                  SizedBox(height: 16.h),
+                  // 发布人及关注，移除 Material 默认按钮留白。
+                  _divider(),
                   if (publisher != null) ...[
-                    const Divider(),
-                    Row(
-                      children: [
-                        AppImage(
-                          src: publisher.avatar,
-                          width: 28.r,
-                          height: 28.r,
-                          radius: 14.r,
-                        ),
-                        SizedBox(width: 8.w),
-                        Expanded(
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: TextButton(
-                              onPressed: () => AppNavigator.pushNamed<void>(
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 16.h),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: InkWell(
+                              onTap: () => AppNavigator.pushNamed<void>(
                                 context,
                                 RouteNames.userDetail(publisher.id),
                                 arguments: publisher.id,
                               ),
-                              child: Text('发布人：${publisher.name}'),
+                              child: Row(
+                                children: [
+                                  AppImage(
+                                    src: publisher.avatar,
+                                    width: 28.r,
+                                    height: 28.r,
+                                    radius: 14.r,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Expanded(
+                                    child: Text(
+                                      '发布人：${publisher.name}',
+                                      style: TextStyle(
+                                        fontSize: 12.sp,
+                                        color: const Color(0xFF333333),
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        if (!activity.isOwn)
-                          TextButton(
-                            onPressed: _saving
-                                ? null
-                                : () => _save(
-                                    () => ref
-                                        .read(activityDetailRepositoryProvider)
-                                        .follow(
-                                          publisher.id,
-                                          !activity.followed,
-                                        ),
-                                  ),
-                            child: Text(activity.followed ? '已关注' : '关注'),
-                          ),
-                      ],
+                          if (!activity.isOwn) _followButton(activity),
+                        ],
+                      ),
                     ),
+                    _divider(),
                   ],
-                  const Divider(),
+                  SizedBox(height: 8.h),
                   _section(
                     '发布的活动',
                     Column(
                       children: [
-                        _info('time', '发布时间：${activity.publishedAt}'),
                         if (activity.eventTime case final time?)
                           _info(
                             'time',
-                            '活动时间：${MaterialLocalizations.of(context).formatCompactDate(time)} ${TimeOfDay.fromDateTime(time).format(context)}',
-                          ),
-                        if (activity.gender case final gender?)
-                          Text('性别限制：$gender'),
+                            '时间：${MaterialLocalizations.of(context).formatCompactDate(time)} ${TimeOfDay.fromDateTime(time).format(context)}',
+                          )
+                        else
+                          _info('time', '发布时间：${activity.publishedAt}'),
                         _info('location', '地址：${activity.location}'),
-                        if (activity.description.isNotEmpty)
-                          _info('restriction', activity.description),
+                        _info(
+                          'restriction',
+                          '性别限制：${activity.gender?.isNotEmpty == true ? activity.gender : "不限"}',
+                        ),
                       ],
                     ),
                   ),
-                  // 报名人员
+                  // 描述独立展示，避免误用性别图标，也不丢失业务内容。
+                  if (activity.description.isNotEmpty) ...[
+                    SizedBox(height: 8.h),
+                    Text(
+                      activity.description,
+                      style: TextStyle(
+                        fontSize: 13.sp,
+                        color: const Color(0xFF666666),
+                        height: 1.5,
+                      ),
+                    ),
+                  ],
+                  // 仅展示有依据的领队和当前报名者，不虚构容量和成员。
                   _section(
                     '已报名（${activity.joined ? 1 : 0}）',
-                    activity.joined
-                        ? Row(
-                            children: [
-                              AppImage(
-                                src: activity.viewer.avatar,
-                                width: 44.r,
-                                height: 44.r,
-                                radius: 22.r,
-                              ),
-                              SizedBox(width: 8.w),
-                              Expanded(child: Text(activity.viewer.name)),
-                            ],
-                          )
-                        : const AppEmptyState(message: '暂无报名', compact: true),
+                    _participants(activity),
                   ),
                   // 活动图片
                   if (activity.photos.isNotEmpty) ...[
-                    const Text('活动图片'),
+                    Text(
+                      '发布的活动',
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xFF333333),
+                      ),
+                    ),
                     for (final photo in activity.photos)
                       Padding(
                         padding: EdgeInsets.only(top: 8.h),
@@ -269,7 +288,7 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
           ? null
           : SafeArea(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                 child: Row(
                   children: [
                     Expanded(
@@ -284,7 +303,7 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
                       ),
                     ),
                     if (canChat) ...[
-                      SizedBox(width: 8.w),
+                      SizedBox(width: 4.w),
                       Expanded(
                         flex: 184,
                         child: _button('聊一聊', const Color(0xFFFFCE45), () {
@@ -324,9 +343,9 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
           title,
           style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
         ),
-        SizedBox(height: 6.h),
+        SizedBox(height: 8.h),
         Container(
-          padding: EdgeInsets.all(12.w),
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
           decoration: BoxDecoration(
             border: Border.all(color: const Color(0xFFEDEDED)),
             borderRadius: BorderRadius.circular(16.r),
@@ -342,7 +361,7 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
     width: 32.r,
     height: 32.r,
     decoration: const BoxDecoration(
-      color: Colors.black54,
+      color: Color(0xB3000000),
       shape: BoxShape.circle,
     ),
     alignment: Alignment.center,
@@ -356,7 +375,7 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
   );
 
   Widget _info(String icon, String text) => Padding(
-    padding: EdgeInsets.symmetric(vertical: 5.h),
+    padding: EdgeInsets.symmetric(vertical: 6.h),
     child: Row(
       children: [
         _icon(icon, 16.r),
@@ -364,25 +383,170 @@ class _ActivityDetailPageState extends ConsumerState<ActivityDetailPage> {
         Expanded(
           child: Text(
             text,
-            style: TextStyle(fontSize: 13.sp, color: Colors.grey.shade700),
+            style: TextStyle(
+              fontSize: 13.sp,
+              height: 18 / 13,
+              color: const Color(0xFF999999),
+            ),
           ),
         ),
       ],
     ),
   );
 
+  /// 与设计一致的细分隔线。
+  Widget _divider() =>
+      const Divider(height: 1, thickness: 0.5, color: Color(0xFFF1F1F1));
+
+  /// 发布人关注，沿用原有持久化入口。
+  Widget _followButton(ActivityDetail activity) => DecoratedBox(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(26.r),
+      gradient: const LinearGradient(
+        colors: [Color(0xFFFFDF87), Color(0xFFFFCE45)],
+      ),
+    ),
+    child: TextButton(
+      style: TextButton.styleFrom(
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        minimumSize: Size.zero,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        foregroundColor: Colors.black,
+        textStyle: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
+      ),
+      onPressed: _saving
+          ? null
+          : () => _save(
+              () => ref
+                  .read(activityDetailRepositoryProvider)
+                  .follow(activity.publisher!.id, !activity.followed),
+            ),
+      child: Text(activity.followed ? '已关注' : '关注'),
+    ),
+  );
+
+  /// 成员横向列表，小屏和大字模式允许横向滚动。
+  Widget _participants(ActivityDetail activity) =>
+      activity.publisher == null &&
+          !activity.joined &&
+          activity.joinBlockedReason != null
+      ? const AppEmptyState(message: '暂无报名', compact: true)
+      : SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.h),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (activity.publisher case final publisher?)
+                  _member(publisher.avatar, publisher.name, leader: true),
+                if (activity.joined &&
+                    activity.publisher?.id != activity.viewer.id)
+                  _member(activity.viewer.avatar, activity.viewer.name),
+                if (!activity.isOwn && activity.joinBlockedReason == null)
+                  InkWell(
+                    onTap: () => _join(activity),
+                    child: SizedBox(
+                      width: 64.w,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/activity/activity_detail_join_placeholder.svg',
+                            width: 48.r,
+                            height: 48.r,
+                          ),
+                          SizedBox(height: 4.h),
+                          Text(
+                            '参加',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              color: const Color(0xFF333333),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        );
+
+  /// 48像素头像与领队角标；名字截断保持成员栏紧凑。
+  Widget _member(String avatar, String name, {bool leader = false}) => SizedBox(
+    width: 68.w,
+    child: Column(
+      children: [
+        Stack(
+          clipBehavior: Clip.none,
+          children: [
+            AppImage(src: avatar, width: 48.r, height: 48.r, radius: 24.r),
+            if (leader)
+              Positioned(
+                bottom: -2.h,
+                left: 0,
+                right: 0,
+                child: Center(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 4.w,
+                      vertical: 1.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFFD151),
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(6.r),
+                    ),
+                    child: Text(
+                      '领队',
+                      style: TextStyle(
+                        fontSize: 10.sp,
+                        color: const Color(0xFF333333),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+        SizedBox(height: 4.h),
+        Text(
+          name,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(fontSize: 12.sp, color: const Color(0xFF333333)),
+        ),
+      ],
+    ),
+  );
+
+  /// 胶囊操作按钮，保留禁用状态和长限制文案的换行空间。
   Widget _button(
     String label,
     Color color,
     VoidCallback? onPressed,
     Color foreground,
-  ) => FilledButton(
-    onPressed: onPressed,
-    style: FilledButton.styleFrom(
-      backgroundColor: color,
-      foregroundColor: foreground,
-      minimumSize: Size(0, 52.h),
+  ) => DecoratedBox(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(59.r),
+      gradient: LinearGradient(
+        colors: onPressed == null
+            ? [const Color(0xFFE0E0E0), const Color(0xFFE0E0E0)]
+            : color == const Color(0xFFFFCE45)
+            ? [const Color(0xFFFFDF87), color]
+            : [const Color(0xFFFF54F4), const Color(0xFFFF83E8)],
+      ),
     ),
-    child: Text(label),
+    child: TextButton(
+      onPressed: onPressed,
+      style: TextButton.styleFrom(
+        foregroundColor: foreground,
+        minimumSize: Size(0, 52.h),
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 10.h),
+        shape: const StadiumBorder(),
+        textStyle: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+      ),
+      child: Text(label, textAlign: TextAlign.center),
+    ),
   );
 }

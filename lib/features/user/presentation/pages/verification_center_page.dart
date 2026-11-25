@@ -81,6 +81,7 @@ class VerificationCenterPage extends ConsumerWidget {
                   '真人认证',
                   '认证后展示已认证标识',
                   data?.realPerson == true,
+                  data?.realPersonVerified == true,
                   const RealPersonPage(),
                 ),
               ),
@@ -91,6 +92,7 @@ class VerificationCenterPage extends ConsumerWidget {
                   '实名认证',
                   '提供真实可信的交友环境',
                   data?.identityPending == true,
+                  data?.identityVerified == true,
                   const UserVerificationPage(),
                 ),
               ),
@@ -106,6 +108,7 @@ class VerificationCenterPage extends ConsumerWidget {
     String title,
     String desc,
     bool pending,
+    bool verified,
     Widget page,
   ) => Container(
     height: 171,
@@ -117,22 +120,14 @@ class VerificationCenterPage extends ConsumerWidget {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            AppImage(
-              src: title == '真人认证'
-                  ? 'assets/profile/growth/3781_12261_img5.svg'
-                  : 'assets/profile/growth/3781_12261_img8.svg',
-              width: 38,
-              height: 38,
-            ),
-            const SizedBox(width: 3),
-            const AppImage(
-              src: 'assets/profile/growth/3781_12261_img6.svg',
-              width: 38,
-              height: 38,
-            ),
-          ],
+        AppImage(
+          key: ValueKey(
+            '$title-badge-${verified ? 'verified' : 'unverified'}',
+          ),
+          src:
+              'assets/profile/growth/3781_12261_img${title == '真人认证' ? (verified ? 5 : 6) : (verified ? 8 : 9)}.svg',
+          width: 38,
+          height: 38,
         ),
         const SizedBox(height: 12),
         Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
@@ -149,8 +144,16 @@ class VerificationCenterPage extends ConsumerWidget {
               padding: EdgeInsets.zero,
               shape: const StadiumBorder(),
             ),
-            onPressed: () => AppNavigator.push<void>(context, page: page),
-            child: Text(pending ? '审核中' : '去认证'),
+            onPressed: verified
+                ? null
+                : () => AppNavigator.push<void>(context, page: page),
+            child: Text(
+              verified
+                  ? '已认证'
+                  : pending
+                  ? '审核中'
+                  : '去认证',
+            ),
           ),
         ),
       ],

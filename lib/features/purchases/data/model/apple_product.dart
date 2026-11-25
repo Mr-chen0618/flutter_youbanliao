@@ -3,7 +3,7 @@ enum AppleProduct {
   coins60('youbanliao.coins.60', '6836163432', 60, 6),
   coins320('youbanliao.coins.320', '6836168415', 320, 30),
   coins820('youbanliao.coins.820', '6836168845', 820, 80),
-  vip1('youbanliao.vip.1months', '6836201153', 1, 18),
+  vip1('youbanliao.vip.1month', '6836201153', 1, 18),
   vip3('youbanliao.vip.3months', '6836203469', 3, 48),
   vip12('youbanliao.vip.12months', '6836206383', 12, 138);
 

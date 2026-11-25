@@ -1,3 +1,4 @@
+import '../../../teen/presentation/teen_mode_provider.dart';
 import 'dart:async';
 
 import 'package:audioplayers/audioplayers.dart';
@@ -42,6 +43,9 @@ final callRingbackFactoryProvider = Provider<CallRingback Function()>(
 
 final _callSessionProvider = Provider<_CallSession>((ref) {
   final session = _CallSession(ref.read(callRingbackFactoryProvider));
+  ref.listen(teenModeProvider, (_, next) {
+    if (next.value != false) session.finish('青少年模式限制通话');
+  });
   ref.onDispose(session.dispose);
   return session;
 });
@@ -204,6 +208,10 @@ class CallPage extends ConsumerStatefulWidget {
     bool incoming = false,
   }) async {
     final container = ProviderScope.containerOf(context);
+    if (container.read(teenModeProvider).value != false) {
+      AppToast.show('青少年模式下暂不可通话');
+      return;
+    }
     final session = container.read(_callSessionProvider);
     if (session.phase != _CallPhase.ended) {
       AppToast.show('正在通话中');

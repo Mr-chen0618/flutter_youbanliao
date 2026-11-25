@@ -1,5 +1,6 @@
 import '../enum/chat_entry_kind.dart';
 import 'chat_invitation.dart';
+import 'chat_gift.dart';
 
 class ChatEntry {
   const ChatEntry(
@@ -11,7 +12,11 @@ class ChatEntry {
     this.invitation,
     this.idempotencyKey,
     this.durationSeconds,
+    this.gift,
+    this.giftQuantity = 1,
   });
+  final ChatGift? gift;
+  final int giftQuantity;
   final String content;
   final String? idempotencyKey;
   final int? durationSeconds;
@@ -22,6 +27,10 @@ class ChatEntry {
   final ChatInvitation? invitation;
   factory ChatEntry.fromJson(Map<String, dynamic> json) => ChatEntry(
     json['content'] as String,
+    gift: json['gift'] == null
+        ? null
+        : ChatGift.fromJson(json['gift'] as Map<String, dynamic>),
+    giftQuantity: json['giftQuantity'] as int? ?? 1,
     idempotencyKey: json['idempotencyKey'] as String?,
     durationSeconds: json['durationSeconds'] as int?,
     isMine: json['isMine'] as bool? ?? false,
@@ -35,6 +44,8 @@ class ChatEntry {
 
   Map<String, dynamic> toJson() => {
     'content': content,
+    if (gift != null) 'gift': gift!.toJson(),
+    if (gift != null) 'giftQuantity': giftQuantity,
     'idempotencyKey': idempotencyKey,
     if (durationSeconds != null) 'durationSeconds': durationSeconds,
     'isMine': isMine,

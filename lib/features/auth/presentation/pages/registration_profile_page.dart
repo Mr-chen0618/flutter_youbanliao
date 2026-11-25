@@ -30,6 +30,10 @@ class RegistrationProfilePage extends StatefulWidget {
 class _RegistrationProfilePageState extends State<RegistrationProfilePage> {
   final _name = TextEditingController();
   String _avatar = '', _gender = '男';
+  // 未选本人照片时按当前性别展示并提交默认头像。
+  String get _effectiveAvatar => _avatar.isNotEmpty
+      ? _avatar
+      : 'assets/auth/auth_default_avatar_${_gender == '女' ? 'female' : 'male'}.jpg';
   DateTime? _birthday;
   bool _saving = false, _picking = false, _sheetOpen = false;
   final _random = Random.secure();
@@ -122,10 +126,6 @@ class _RegistrationProfilePageState extends State<RegistrationProfilePage> {
 
   Future<void> _submit() async {
     if (_saving) return;
-    if (_avatar.isEmpty) {
-      AppToast.show('请上传头像');
-      return;
-    }
     if (_name.text.trim().isEmpty) {
       AppToast.show('请设置昵称');
       return;
@@ -148,7 +148,7 @@ class _RegistrationProfilePageState extends State<RegistrationProfilePage> {
         MemberProfile(
           id: widget.session.accountId,
           name: _name.text.trim(),
-          avatar: _avatar,
+          avatar: _effectiveAvatar,
           gender: _gender,
           birthday: _birthday,
           signature: '',
@@ -251,9 +251,7 @@ class _RegistrationProfilePageState extends State<RegistrationProfilePage> {
                                 child: Stack(
                                   children: [
                                     AppImage(
-                                      src: _avatar.isEmpty
-                                          ? 'assets/auth/auth_registration_avatar.png'
-                                          : _avatar,
+                                      src: _effectiveAvatar,
                                       width: 108.r,
                                       height: 108.r,
                                       radius: 54.r,

@@ -9,8 +9,12 @@ class SquareState {
     this.comments = const {},
     this.videoLiked = false,
     this.videoSaved = false,
+    this.videoLikes = const {},
+    this.videoSaves = const {},
   });
   final List<SquarePost> posts;
+  final Set<String> videoLikes;
+  final Set<String> videoSaves;
   final bool videoLiked;
   final bool videoSaved;
   final Set<String> likes;
@@ -19,6 +23,8 @@ class SquareState {
 
   SquareState copyWith({
     List<SquarePost>? posts,
+    Set<String>? videoLikes,
+    Set<String>? videoSaves,
     bool? videoLiked,
     bool? videoSaved,
     Set<String>? likes,
@@ -26,6 +32,8 @@ class SquareState {
     Map<String, List<SquareComment>>? comments,
   }) => SquareState(
     posts ?? this.posts,
+    videoLikes: videoLikes ?? this.videoLikes,
+    videoSaves: videoSaves ?? this.videoSaves,
     videoLiked: videoLiked ?? this.videoLiked,
     videoSaved: videoSaved ?? this.videoSaved,
     likes: likes ?? this.likes,
@@ -37,6 +45,12 @@ class SquareState {
       (json['posts'] as List).map(
         (item) => SquarePost.fromJson(item as Map<String, dynamic>),
       ),
+    ),
+    videoLikes: Set.unmodifiable(
+      List<String>.from(json['videoLikes'] as List? ?? const []),
+    ),
+    videoSaves: Set.unmodifiable(
+      List<String>.from(json['videoSaves'] as List? ?? const []),
     ),
     videoLiked: json['videoLiked'] as bool? ?? false,
     videoSaved: json['videoSaved'] as bool? ?? false,
@@ -59,6 +73,8 @@ class SquareState {
   );
 
   Map<String, dynamic> toJson() => {
+    'videoLikes': videoLikes.toList(),
+    'videoSaves': videoSaves.toList(),
     'videoLiked': videoLiked,
     'videoSaved': videoSaved,
     'posts': posts.map((post) => post.toJson()).toList(),

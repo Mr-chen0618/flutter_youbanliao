@@ -80,11 +80,11 @@ class _MainTabShellState extends ConsumerState<MainTabShell> {
             Expanded(
               child: IndexedStack(
                 index: _selected,
-                children: const [
-                  HomePage(),
-                  SquarePage(),
-                  MessagesPage(),
-                  ProfilePage(),
+                children: [
+                  const HomePage(),
+                  SquarePage(isActive: _selected == 1),
+                  const MessagesPage(),
+                  const ProfilePage(),
                 ],
               ),
             ),

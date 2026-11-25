@@ -1,0 +1,7 @@
+{
+  "lib/app/config/legal_links.dart": "b1cf296f353caab5124c868523939601ea3755069620ffbff3d9dd2b70c7f652",
+  "lib/features/user/presentation/pages/profile_shop_page.dart": "1c05a33ca58c71de3638f9b481e5801d6b4c9f8463bb1c85a5e45983d13b5383",
+  "lib/features/square/presentation/widgets/square_video_feed.dart": "d5f9dafec925d41b3090f1339a2b16d5e26a34bf56885f3411825829299b723f",
+  "test/video_blocking_regression_test.dart": "631668ab1e0687e41de0ef1782f9d568a35f3761f9a8fa10a900b29be4f7d3cf",
+  "test/recharge_agreement_regression_test.dart": "2d4430ca2890a87e320a60cc885ecc10bea3952e3cc3fdf6d3dbb91e4cab047b"
+}

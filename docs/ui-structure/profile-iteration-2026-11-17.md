@@ -62,3 +62,27 @@ MockPhotoAttachments 加入选图防重复处理，选图回来后读取最新�
 用户指出旧图标不符。重新读取「我的」`2769:9603` 和其中活动信誉图标 `3387:16706`（Creative），取得截图与完整资源，Figma会话 `7d19cb05-9707-44f9-8801-2efc2b625c60`。导出 `assets/profile/profile_v2_reputation.svg`，替换此前误复用的 `profile_reputation_icon.png`。ProfilePage使用统一_entry图标入口，以24.r正方形显示原始24×24 SVG，取消该行专用leading分支。
 
 已完成本地资源及调用更正。SVG解析通过，24×24且无filter/mask。`flutter test --no-pub test/main_tabs_mock_test.dart --plain-name 'profile reputation entry and feedback photo selection work' --reporter expanded` 1/1通过，退出0，`git diff --check`通过；完整输出见本轮工具调用，未另存日志。输出仍含共享旧资源filter提示，新SVG无该元素。设备视觉未执行，下一步在设备个人中心核对新图标。
+
+## 2026-11-20 我的页顶部背景统一
+
+按用户要求，ProfilePage顶部由profile_v2_background资源改为首页同一公共CompanionBackdropWidget（242h，FFFBBF至白色渐变及同样装饰）。复用shared组件，保留资料、关系和各业务入口。消息页同时同步，详见[通信记录末节](communications-iteration-2026-11-17.md#2026-11-20-消息顶部入口与背景)。主导航12项通过；未操作设备验收视觉、未重复构建，下一步真机核对首页/消息/我的背景一致性。
+
+## 2026-11-20 恢复参与和发布活动入口
+
+范围：用户附图两行入口，并参考Figma3122:20484。已读取该稿高保真context与截图：3155:20974/20976是双卡背景，3156:20978/20982是发布/参加图标，3156:20981/20985为文字。本轮按用户附图恢复为积分/金币下方两行「我参与的活动」「我发布的活动」，顺序参与→发布；图标沿用已存在且与Figma同款的profile_joined_icon.png（紫色人群）/profile_published_icon.png（蓝色纸飞机）。未照搬旧版我的组队整体卡片。该项覆盖11-17移除两个入口的决定。
+
+已完成：ProfilePage._activityEntry组合既有ListTile、AppImage、chevron及分割线，点击AppNavigator打开MyActivitiesPage(joined:true/false)，使用既有myActivitiesProvider，无新数据或虚构活动。仅当前已登录区域恢复入口。组件归属个人中心入口，业务数据仍归activity。
+
+验证：主导航13项通过，新增两入口参数及页面返回验证；定向分析零问题。证据见[本轮报告](../testing/square-profile-2026-11-20.md)。未完成：无本轮待实现项。未验证：设备视觉/字体缩放；未重复iOS构建。下一步真机查看两行布局和本人活动列表。
+
+### 2026-11-20 活动入口使用用户SVG
+
+用户提供Downloads/我参与的.svg、我发布的.svg，覆盖本节此前彩色PNG图标选择。原样复制为assets/profile/profile_v2_joined.svg、profile_v2_published.svg，均为24×24/viewBox 0 0 24 24；ProfilePage._activityEntry复用现有_asset/SvgPicture.asset入口，以24.r显示。两行文字、顺序及joined参数保持已有接线。旧PNG保留供其他调用使用，无数据变更。
+
+已完成资源替换及代码接入；定向flutter analyze个人中心无问题；`flutter test --no-pub test/main_tabs_mock_test.dart --plain-name 'profile activity shortcuts open joined and published lists' --reporter expanded` 1项通过，日志docs/testing/square-profile-2026-11-20/activity-icons-tests.log，git diff --check通过。未完成：无；未验证：设备视觉，未构建。下一步设备查看两入口的新SVG图标。
+
+## 2026-11-25 认证中心单图状态
+
+用户指定真人/实名两个认证卡片顶部深色表示已认证、浅色表示未认证。已完成：VerificationCenterPage每卡仅显示一图，真人使用img5(深)/img6(浅)，实名使用img8(深)/img9(浅)，均38x38；原并排两图移除。GrowthState新增realPersonVerified和identityVerified可选字段，缺省false。现有realPerson/identityPending仅代表本地提交，仍显示浅色与“审核中”；只有verified=true时深色、“已认证”且禁用重复认证按钮。没有新增本地伪造审核通过逻辑。涉及growth_state.dart、verification_center_page.dart及原有四SVG资源。
+
+实现完成，真实核验服务仍未接；待审与可信通过严格区分。定向静态分析首轮info已修复，独立回归证据由tester保存。未验证：真机视觉与真实审核结果，未构建。下一步独立回归未提交/待审/已通过两种状态组合，保留外部服务边界。

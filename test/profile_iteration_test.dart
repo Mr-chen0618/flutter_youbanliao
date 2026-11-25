@@ -1,3 +1,4 @@
+import 'teen_mode_test_fixture.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -80,6 +81,7 @@ void main() {
       (tester) async {
         await tester.pumpWidget(
           ProviderScope(
+            overrides: [disabledTeenModeOverride],
             child: Application(
               startPage: Builder(
                 builder: (context) => Scaffold(

@@ -1,0 +1,11 @@
+{
+  "lib/features/auth/data/mock/auth_mock_repository.dart": "712abd41367c1e0060923eed5a51a5b5208fc264270f8b41f8cf189056634bed",
+  "lib/core/storage/account_mock_json_store.dart": "59a38115b7ec3766254080eaff8c4bef5fd6f3e05649d473333f6b2987b1699d",
+  "lib/features/user/data/repository/growth_repository.dart": "66a682e851defd2aed5c0fe55eea8d965f8ae585d1c0ff79b701825dc1f6cc07",
+  "lib/features/user/presentation/pages/task_center_page.dart": "fc1e8e875d7074e1c24b9f2bea7bdae44b4734bb021f18cc0eda338939e16a4c",
+  "lib/features/activity/data/repository/activity_detail_repository.dart": "84ce6ed32d3e5f66eb7dfb8e93dd5a4fef5ac2edff274e4af79a68dec93f073c",
+  "lib/features/activity/data/mock/activity_publication_mock_repository.dart": "1c33b4076e0d71bab77bd48b83e03976a8dc45318c8a2addb784f5d4145a8773",
+  "lib/features/square/presentation/widgets/square_comment_tile.dart": "94be2907075ac707ea9f7ee4c8bf6bcdd5666de5814b3ad29beb33ace44fb106",
+  "lib/features/messages/data/repository/chat_gift_repository.dart": "af2fa7e13983ab0423c2bb757c8846c6e502925c82ad06a6ccc9987560c7d1b4",
+  "lib/features/messages/presentation/pages/call_page.dart": "7ee28282ac62e88978d31f4c7721dc18b77fe372e342b64561e93a4d318bf9ac"
+}

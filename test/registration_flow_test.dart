@@ -1,3 +1,4 @@
+import 'teen_mode_test_fixture.dart';
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,10 @@ Future<void> mount(
   });
   await tester.pumpWidget(
     ProviderScope(
-      overrides: [authRepositoryProvider.overrideWithValue(auth)],
+      overrides: [
+        disabledTeenModeOverride,
+        authRepositoryProvider.overrideWithValue(auth),
+      ],
       child: Application(startPage: child),
     ),
   );
@@ -69,6 +73,47 @@ Future<void> mount(
 }
 
 void main() {
+  for (final gender in ['男', '女']) {
+    testWidgets('new $gender user saves default avatar without uploading', (
+      tester,
+    ) async {
+      final auth = RegistrationAuth();
+      auth.pending.complete();
+      await mount(
+        tester,
+        RegistrationProfilePage(
+          session: const AuthSession('registration-test'),
+          auth: auth,
+          onChanged: () {},
+        ),
+        auth,
+      );
+      if (gender == '女') {
+        await tester.tap(find.byKey(const ValueKey('registration-gender-女')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('我知道了'));
+        await tester.pumpAndSettle();
+      }
+      await tester.tap(find.byKey(const ValueKey('registration-name')));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextField), '新用户');
+      await tester.tap(find.text('保存'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey('registration-birthday')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('保存'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey('registration-submit')));
+      await tester.pumpAndSettle();
+      expect(
+        auth.saved!.avatar,
+        'assets/auth/auth_default_avatar_${gender == '女' ? 'female' : 'male'}.jpg',
+      );
+      expect(auth.saved!.gender, gender);
+      expect(auth.writes, 1);
+    });
+  }
+
   testWidgets(
     'normal phone login opens pending profile and retention keeps draft',
     (tester) async {
@@ -121,7 +166,7 @@ void main() {
       }
 
       await tapKey('registration-submit');
-      expect(find.text('请上传头像'), findsOneWidget);
+      expect(find.text('请设置昵称'), findsOneWidget);
       await tester.pump(const Duration(seconds: 3));
       await tapKey('registration-gender-女');
       expect(find.text('注册成功后，性别将无法更换，请谨慎选择'), findsOneWidget);
@@ -137,7 +182,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(picks, 1);
       await tapKey('registration-submit');
-      expect(find.text('请上传头像'), findsOneWidget);
+      expect(find.text('请设置昵称'), findsOneWidget);
       await tester.pump(const Duration(seconds: 3));
       AppMediaPicker.pickOverride = () async {
         picks++;

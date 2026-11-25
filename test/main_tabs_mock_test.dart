@@ -1,3 +1,5 @@
+import 'package:flutter_app_framework/features/square/data/model/square_video_catalog.dart';
+import 'package:flutter_app_framework/features/activity/presentation/pages/my_activities_page.dart';
 import 'package:flutter_app_framework/core/storage/mock_json_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_framework/app/navigation/main_tab_shell.dart';
@@ -14,6 +16,51 @@ import 'package:flutter_app_framework/shared/widgets/images/photo_upload_tile.da
 import 'package:flutter_app_framework/shared/widgets/images/mock_photo_attachments.dart';
 
 void main() {
+  testWidgets(
+    'square notifications return to feed and preserve publish entry',
+    (tester) async {
+      await _openTabs(tester);
+      await tester.tap(find.text('广场'));
+      await tester.pumpAndSettle();
+      expect(find.byTooltip('发布动态'), findsOneWidget);
+      await tester.tap(find.byTooltip('动态通知'));
+      await tester.pumpAndSettle();
+      expect(find.text('暂无新通知'), findsOneWidget);
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip('发布动态'));
+      await tester.pumpAndSettle();
+      expect(find.byType(TextField), findsOneWidget);
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets('profile activity shortcuts open joined and published lists', (
+    tester,
+  ) async {
+    await _openTabs(tester);
+    await tester.tap(find.byKey(const ValueKey('main-tab-3')));
+    await tester.pumpAndSettle();
+    for (final item in [('我参与的活动', true), ('我发布的活动', false)]) {
+      await tester.scrollUntilVisible(
+        find.text(item.$1),
+        120,
+        scrollable: find.byType(Scrollable).last,
+      );
+      await tester.tap(find.text(item.$1).hitTestable());
+      await tester.pumpAndSettle();
+      expect(
+        tester.widget<MyActivitiesPage>(find.byType(MyActivitiesPage)).joined,
+        item.$2,
+      );
+      expect(tester.takeException(), isNull);
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+    }
+  });
+
   testWidgets('profile reputation entry and feedback photo selection work', (
     tester,
   ) async {
@@ -125,19 +172,53 @@ void main() {
     final container = ProviderScope.containerOf(
       tester.element(find.byType(MainTabShell)),
     );
-    expect(container.read(squareProvider).videoLiked, isTrue);
-    expect(container.read(squareProvider).videoSaved, isTrue);
+    expect(
+      container.read(squareProvider).videoLikes.contains(squareVideoIds.first),
+      isTrue,
+    );
+    expect(
+      container.read(squareProvider).videoSaves.contains(squareVideoIds.first),
+      isTrue,
+    );
     await tester.tap(find.byKey(const ValueKey('main-tab-2')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const ValueKey('main-tab-1')));
     await tester.pumpAndSettle();
-    expect(container.read(squareProvider).videoLiked, isTrue);
-    expect(container.read(squareProvider).videoSaved, isTrue);
+    expect(
+      container.read(squareProvider).videoLikes.contains(squareVideoIds.first),
+      isTrue,
+    );
+    expect(
+      container.read(squareProvider).videoSaves.contains(squareVideoIds.first),
+      isTrue,
+    );
     await tester.tap(find.byTooltip('喜欢'));
     await tester.tap(find.byTooltip('收藏'));
     await tester.pumpAndSettle();
-    expect(container.read(squareProvider).videoLiked, isFalse);
-    expect(container.read(squareProvider).videoSaved, isFalse);
+    expect(
+      container.read(squareProvider).videoLikes.contains(squareVideoIds.first),
+      isFalse,
+    );
+    expect(
+      container.read(squareProvider).videoSaves.contains(squareVideoIds.first),
+      isFalse,
+    );
+    await tester.drag(find.byType(PageView), const Offset(0, -600));
+    await tester.pumpAndSettle();
+    expect(find.byKey(ValueKey(squareVideoIds[1])), findsOneWidget);
+    await tester.tap(find.byTooltip('喜欢').hitTestable());
+    await tester.tap(find.byTooltip('收藏').hitTestable());
+    await tester.pumpAndSettle();
+    final snapshot = SquareState.fromJson(
+      container.read(squareProvider).toJson(),
+    );
+    expect(snapshot.videoLikes, contains(squareVideoIds[1]));
+    expect(snapshot.videoSaves, contains(squareVideoIds[1]));
+    expect(snapshot.videoLiked, isFalse);
+    expect(snapshot.videoSaved, isFalse);
+    await tester.drag(find.byType(PageView), const Offset(0, 600));
+    await tester.pumpAndSettle();
+    expect(find.byKey(ValueKey(squareVideoIds.first)), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -156,7 +237,7 @@ void main() {
     }
 
     await openActions();
-    await tester.tap(find.text('取消').hitTestable());
+    await tester.pageBack();
     await tester.pumpAndSettle();
     expect(find.text('晴天队长').hitTestable(), findsOneWidget);
 
@@ -180,13 +261,13 @@ void main() {
     await tester.tap(find.text('我知道了').hitTestable());
     await tester.pumpAndSettle();
 
-    await openActions();
+    expect(find.text('聊天设置'), findsOneWidget);
     await tester.tap(find.text('拉黑').hitTestable());
     await tester.pumpAndSettle();
     await tester.tap(find.text('确认加入黑名单').hitTestable());
     await tester.pumpAndSettle();
     expect(find.text('晴天队长').hitTestable(), findsNothing);
-    expect(find.text('聊天').hitTestable(), findsOneWidget);
+    expect(find.text('消息').hitTestable(), findsWidgets);
   });
 
   testWidgets('chat renders the design history and sends a selected image', (
@@ -233,9 +314,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('main-tab-2')));
     await tester.pumpAndSettle();
 
-    expect(find.text('聊天').hitTestable(), findsOneWidget);
-    await tester.tap(find.byTooltip('消息通知'));
-    await tester.pumpAndSettle();
+    expect(find.text('消息').hitTestable(), findsWidgets);
     expect(find.text('发现').hitTestable(), findsNothing);
     expect(find.byTooltip('搜索消息').hitTestable(), findsNothing);
     for (final label in ['系统消息', '互动消息', '谁看过我']) {
@@ -252,13 +331,13 @@ void main() {
     await _openTabs(tester);
     for (final (index, content) in [
       (1, '发现'),
-      (2, '聊天'),
+      (2, '消息'),
       (3, '编辑资料'),
       (0, '海盐芝士'),
     ]) {
       await tester.tap(find.byKey(ValueKey('main-tab-$index')));
       await tester.pumpAndSettle();
-      expect(find.text(content).hitTestable(), findsOneWidget);
+      expect(find.text(content).hitTestable(), findsWidgets);
       expect(tester.takeException(), isNull);
     }
   });
@@ -398,6 +477,11 @@ void main() {
 
     await tester.tap(find.byKey(const ValueKey('main-tab-3')));
     await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('我的动态'),
+      150,
+      scrollable: find.byType(Scrollable).last,
+    );
     await tester.tap(find.text('我的动态').hitTestable());
     await tester.pumpAndSettle();
     expect(find.text('周末一起运动').hitTestable(), findsOneWidget);

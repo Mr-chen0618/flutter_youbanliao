@@ -14,6 +14,7 @@ class ChatComposer extends StatelessWidget {
     required this.onVoiceCall,
     required this.onVideoCall,
     required this.onEmoji,
+    this.onGift,
     required this.onRecordStart,
     required this.onRecordMove,
     required this.onRecordEnd,
@@ -22,6 +23,7 @@ class ChatComposer extends StatelessWidget {
 
   final TextEditingController controller;
   final bool voiceMode;
+  final VoidCallback? onGift;
   final VoidCallback onToggleMode, onPhoto, onVoiceCall, onVideoCall, onEmoji;
   final ValueChanged<String> onSend;
   final ValueChanged<LongPressStartDetails> onRecordStart;
@@ -102,6 +104,7 @@ class ChatComposer extends StatelessWidget {
           children: [
             _action('photo', '添加图片', onPhoto),
             _action('voice_call', '语音通话', onVoiceCall),
+            if (onGift != null) _action('gift', '赠送礼物', onGift!),
             _action('video_call', '视频通话', onVideoCall),
             _action('emoji', '表情', onEmoji),
           ],

@@ -96,3 +96,13 @@ CallPage 新增 preparing 阶段，立即进入可取消的呼叫页，显示进
 音频验证扩展点：`CallRingback` 的 start/stop/dispose 由 `callRingbackFactoryProvider` 装配，产品默认封装 AudioPlayer；测试可替换 fake 验证生命周期及迟到播放。全仓静态分析日志保存在 `docs/testing/review-fixes-2026-11-17/analyze.log`，未取得本轮修改前基线，不能将168项逐条断言为历史遗留。
 
 最终源码（含 CallRingback 装配边界）构建：`flutter build ios --release --no-codesign --no-pub` 成功，产物 `build/ios/iphoneos/Runner.app`；日志 `docs/testing/review-fixes-2026-11-17/build-ios.log`。该证据不替代音频硬件、RTC或设备后台验收。
+
+## 2026-11-20 消息顶部入口与背景
+
+范围：用户指定Figma `sZdTOBC0a94JYUYKgAJr8e / 3157:21069` 三个顶部入口，以及消息页、我的页背景。已读取目标完整高保真context及截图；本轮局部实现不声称其他列表/导航重新对稿。覆盖前文通知菜单约定。
+
+结构映射：3189:33154/33208 横排入口组 → MessagesPage顶部Row；3189:33207 系统消息（33156底层、33157图标、33161文字、33184角标），3189:33206 互动消息（33163底层、33164图标、33168文字、33185角标），3189:33205 谁看过我（33170底层、33171图标、33175文字、33186角标）。三项各93×97、图52×52、文字12，横向边距24；复用AppImage、_UnreadBadge、AppNavigator及原_NoticePage。零未读隐藏角标，点击清除对应未读并进入对应通知。无数据契约变化。
+
+已完成：移除右上通知菜单，三个入口直接展示；下载messages_notice_{system,interaction,visitor}.svg及notice_surface.svg，均为本地资源；导出的surface为透明空组，不增加可见底色。消息页与ProfilePage顶部统一直接复用首页同一CompanionBackdropWidget：FFFBBF→白色242h渐变及原背景装饰；没有复制新颜色或修改公共背景默认值。保留本轮之前的聊天标题及其他页面内容。
+
+验证：现有main_tabs_mock_test.dart改为直接点击入口，12项主导航回归通过；定向分析结果见[本轮报告](../testing/message-header-2026-11-20.md)。未验证：真机字体、安全区和视觉；未重复iOS构建。下一步设备核对消息三入口排列、点击和我的页背景。

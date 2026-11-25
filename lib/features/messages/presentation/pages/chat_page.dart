@@ -1,3 +1,6 @@
+import '../../../user/presentation/providers/user_detail_provider.dart';
+import 'chat_settings_page.dart';
+import '../widgets/chat_gift_sheet.dart';
 import '../../../../shared/widgets/layout/app_empty_state.dart';
 import 'dart:async';
 import 'dart:io';
@@ -14,18 +17,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../shared/widgets/feedback/app_action_sheet.dart';
 import '../../../../shared/widgets/images/app_image.dart';
 import '../widgets/messages_page_surface.dart';
 import '../../../user/presentation/providers/profile_provider.dart';
 import '../../data/messages_repository.dart';
-import '../../../report/presentation/pages/report_page.dart';
 import '../providers/messages_provider.dart';
 import '../widgets/chat_message_row.dart';
 import '../widgets/chat_composer.dart';
 import 'call_page.dart';
-
-enum _ChatAction { block, report }
 
 class ChatPage extends ConsumerStatefulWidget {
   const ChatPage({super.key, required this.threadId});
@@ -115,7 +114,7 @@ class _ChatPageState extends ConsumerState<ChatPage>
             .profile
             .avatar;
     return MessagesPageSurface(
-      title: thread.name,
+      title: thread.displayName,
       titleStyle: TextStyle(
         color: const Color(0xFF333333),
         fontSize: 17.sp,
@@ -128,6 +127,50 @@ class _ChatPageState extends ConsumerState<ChatPage>
       ),
       actions: [
         IconButton(
+          tooltip: '热聊值',
+          iconSize: 40.r,
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+          icon: SizedBox(
+            width: 40.r,
+            height: 40.r,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Flexible(
+                  child: AppImage(
+                    src: 'assets/messages/messages_chat_heat.png',
+                    width: 24.r,
+                    height: 24.r,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Text(
+                  '${thread.heat}°C',
+                  maxLines: 1,
+                  style: TextStyle(
+                    fontSize: 10.sp,
+                    height: 1.1,
+                    color: const Color(0xFFFF6B54),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          onPressed: () => showDialog<void>(
+            context: context,
+            builder: (dialog) => AlertDialog(
+              title: const Text('热聊值'),
+              content: Text('当前热聊值 ${thread.heat}°C\n每发送一条消息或赠送一次礼物，热聊值增加1度。'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(dialog),
+                  child: const Text('知道了'),
+                ),
+              ],
+            ),
+          ),
+        ),
+        IconButton(
           tooltip: '更多操作',
           icon: _icon('more'),
           onPressed: () => _showActions(thread),
@@ -138,6 +181,20 @@ class _ChatPageState extends ConsumerState<ChatPage>
         children: [
           Column(
             children: [
+              Container(
+                width: double.infinity,
+                color: const Color(0xB3FFFFFF),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                child: Text(
+                  '⚠ 聊天时请保护个人信息，谨慎转账；遇到可疑行为，请及时举报或拉黑。',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: const Color(0xFF958B6D),
+                    fontSize: 12.sp,
+                  ),
+                ),
+              ),
               Expanded(
                 child: BusinessRefresh(
                   scope: 'messages',
@@ -148,6 +205,9 @@ class _ChatPageState extends ConsumerState<ChatPage>
                     itemCount: thread.entries.length + 1,
                     itemBuilder: (_, index) {
                       if (index == 0) {
+                        if (thread.peerId != null) {
+                          return _profileCard(thread.peerId!);
+                        }
                         if (thread.entries.isEmpty) {
                           return const AppEmptyState(
                             message: '暂无聊天记录',
@@ -180,6 +240,29 @@ class _ChatPageState extends ConsumerState<ChatPage>
                   ),
                 ),
               ),
+              SizedBox(
+                height: 32.h,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  children: [
+                    for (final text in [
+                      '嗨，聊聊？',
+                      '你在哪儿？',
+                      '兴趣是啥？',
+                      '周末有空吗？',
+                      '一起搭子？',
+                    ])
+                      Padding(
+                        padding: EdgeInsets.only(right: 6.w),
+                        child: ActionChip(
+                          label: Text(text),
+                          onPressed: () => _sendText(text),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
               ChatComposer(
                 controller: _input,
                 voiceMode: _voiceMode,
@@ -192,6 +275,21 @@ class _ChatPageState extends ConsumerState<ChatPage>
                 onVoiceCall: () => _call(thread, video: false),
                 onVideoCall: () => _call(thread, video: true),
                 onEmoji: _chooseEmoji,
+                onGift: () {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                  showModalBottomSheet<void>(
+                    context: context,
+                    isScrollControlled: true,
+                    backgroundColor: const Color(0xFF232323),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(20.r),
+                      ),
+                    ),
+                    builder: (_) =>
+                        ChatGiftSheet(threadId: widget.threadId, onSent: _send),
+                  );
+                },
                 onRecordStart: _startRecording,
                 onRecordMove: (details) {
                   final cancel = details.globalPosition.dy < _startY - 52.h;
@@ -205,6 +303,139 @@ class _ChatPageState extends ConsumerState<ChatPage>
             ],
           ),
           if (_holding) ChatRecordingFeedback(cancel: _cancelRecording),
+        ],
+      ),
+    );
+  }
+
+  Widget _profileCard(String peerId) {
+    final detail = ref.watch(userDetailProvider(peerId)).value;
+    if (detail == null) return const SizedBox.shrink();
+    final person = detail.person;
+    final photos = person.photos.isEmpty ? [person.avatar] : person.photos;
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AppImage(
+            key: const ValueKey('chat-profile-avatar'),
+            src: person.avatar,
+            width: 40.r,
+            height: 40.r,
+            radius: 20.r,
+          ),
+          SizedBox(width: 10.w),
+          Flexible(
+            child: Container(
+              key: const ValueKey('chat-profile-card'),
+              width: 265.w,
+              margin: EdgeInsets.only(bottom: 12.h),
+              padding: EdgeInsets.all(10.w),
+              decoration: BoxDecoration(
+                color: const Color(0xFFFFFAF0),
+                border: Border.all(color: const Color(0xFFFFDDA3)),
+                borderRadius: BorderRadius.circular(18.r),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(12.r),
+                    child: Stack(
+                      alignment: Alignment.bottomLeft,
+                      children: [
+                        AppImage(
+                          src: photos.first,
+                          width: 245.w,
+                          height: 308.h,
+                          fit: BoxFit.cover,
+                        ),
+                        Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.all(10.w),
+                          decoration: const BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Colors.transparent, Colors.black87],
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              if (person.isVerified)
+                                Container(
+                                  key: const ValueKey(
+                                    'chat-profile-real-person-badge',
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 6.w,
+                                    vertical: 2.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFD6F3FF),
+                                    borderRadius: BorderRadius.circular(19.r),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      AppImage(
+                                        src:
+                                            'assets/messages/messages_chat_real_person.svg',
+                                        width: 12.r,
+                                        height: 12.r,
+                                      ),
+                                      SizedBox(width: 4.w),
+                                      Text(
+                                        '真人',
+                                        style: TextStyle(
+                                          color: const Color(0xFF007BFF),
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              SizedBox(height: 4.h),
+                              Text(
+                                '${person.age}岁  ${person.heightCm}cm  ${person.weightKg}kg\n${detail.signature}',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 11.sp,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 6.h),
+                    child: Text('Ta的相册：', style: TextStyle(fontSize: 12.sp)),
+                  ),
+                  Row(
+                    children: [
+                      for (final photo in photos.take(4))
+                        Padding(
+                          padding: EdgeInsets.only(right: 5.w),
+                          child: AppImage(
+                            src: photo,
+                            width: 55.w,
+                            height: 73.h,
+                            fit: BoxFit.cover,
+                            borderRadius: BorderRadius.circular(8.r),
+                          ),
+                        ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -393,43 +624,13 @@ class _ChatPageState extends ConsumerState<ChatPage>
   }
 
   Future<void> _showActions(MessageThread thread) async {
-    final action = await showAppActionSheet<_ChatAction>(
+    await AppNavigator.push(
       context,
-      actions: const [
-        AppSheetAction(
-          value: _ChatAction.block,
-          label: '拉黑',
-          isDestructive: true,
-        ),
-        AppSheetAction(value: _ChatAction.report, label: '举报'),
-      ],
+      page: ChatSettingsPage(threadId: thread.id),
     );
-    if (!mounted || action == null) return;
-    await _handleAction(thread, action);
-  }
-
-  Future<void> _handleAction(MessageThread thread, _ChatAction action) async {
-    if (action == _ChatAction.report) {
-      await AppNavigator.push(
-        context,
-        page: ReportPage(
-          targetId: thread.peerId ?? thread.id,
-          targetAvatar: thread.avatar,
-          targetSummary: thread.preview,
-          targetType: 'chat',
-          targetName: thread.name,
-        ),
-      );
-      return;
+    if (mounted &&
+        !ref.read(messagesProvider).threads.any((t) => t.id == thread.id)) {
+      Navigator.pop(context);
     }
-    final confirmed = await showAppActionSheet<bool>(
-      context,
-      actions: const [
-        AppSheetAction(value: true, label: '确认加入黑名单', isDestructive: true),
-      ],
-    );
-    if (!mounted || confirmed != true) return;
-    ref.read(messagesProvider.notifier).block(thread);
-    Navigator.pop(context);
   }
 }

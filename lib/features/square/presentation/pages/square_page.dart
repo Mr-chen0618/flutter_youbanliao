@@ -1,3 +1,4 @@
+import '../../../messages/presentation/pages/dynamic_notifications_page.dart';
 import '../../../../shared/widgets/layout/app_empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,14 +9,15 @@ import '../../../../app/navigation/app_navigator.dart';
 import '../../../../shared/widgets/images/app_image.dart';
 import '../../../../shared/widgets/layout/companion_page_surface.dart';
 import '../../../../shared/widgets/layout/discovery_header.dart';
-import '../../data/square_repository.dart';
+import '../widgets/square_video_feed.dart';
 import '../providers/square_provider.dart';
 import '../../../activity/presentation/providers/activity_detail_provider.dart';
 import '../widgets/square_post_actions_widget.dart';
 import 'square_publish_page.dart';
 
 class SquarePage extends ConsumerStatefulWidget {
-  const SquarePage({super.key});
+  const SquarePage({super.key, this.isActive = true});
+  final bool isActive;
 
   @override
   ConsumerState<SquarePage> createState() => _SquarePageState();
@@ -47,17 +49,38 @@ class _SquarePageState extends ConsumerState<SquarePage> {
           section: section,
           onSelected: (section) => setState(() => _section = section),
           isDark: isVideo,
-          action: IconButton(
-            tooltip: '发布动态',
-            color: isVideo ? Colors.white : const Color(0xFF333333),
-            onPressed: () =>
-                AppNavigator.push(context, page: const SquarePublishPage()),
-            icon: const Icon(Icons.add_circle_outline),
+          action: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                tooltip: '发布动态',
+                color: isVideo ? Colors.white : const Color(0xFF333333),
+                onPressed: () =>
+                    AppNavigator.push(context, page: const SquarePublishPage()),
+                icon: const Icon(Icons.add_circle_outline),
+              ),
+              IconButton(
+                tooltip: '动态通知',
+                onPressed: () => AppNavigator.push(
+                  context,
+                  page: const DynamicNotificationsPage(),
+                ),
+                icon: Transform.rotate(
+                  angle: 0.5235987756,
+                  child: AppImage(
+                    src: 'assets/messages/messages_square_notification.svg',
+                    width: 20.w,
+                    height: 22.h,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
         Expanded(
           child: isVideo
-              ? _video()
+              ? SquareVideoFeed(isActive: widget.isActive)
               : RefreshIndicator(
                   onRefresh: ref.read(squareProvider.notifier).refresh,
                   child:
@@ -116,77 +139,4 @@ class _SquarePageState extends ConsumerState<SquarePage> {
     }
     return CompanionPageSurface(child: content);
   }
-
-  Widget _video() => Stack(
-    fit: StackFit.expand,
-    children: [
-      AppImage(src: squareAsset('video_cover')),
-      Align(
-        alignment: Alignment.bottomCenter,
-        child: Container(
-          padding: EdgeInsets.all(16.w),
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Colors.transparent, Colors.black87],
-            ),
-          ),
-          child: Row(
-            children: [
-              AppImage(
-                src: squareAsset('video_avatar'),
-                width: 54.r,
-                height: 54.r,
-                radius: 27.r,
-              ),
-              SizedBox(width: 8.w),
-              const Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '用户昵称',
-                      style: TextStyle(color: Colors.white, fontSize: 17),
-                    ),
-                    Text(
-                      '真人认证用户，喜欢咖啡和电影',
-                      style: TextStyle(color: Colors.white70),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-      Positioned(
-        right: 16.w,
-        bottom: 120.h,
-        child: Column(
-          children: [
-            IconButton(
-              tooltip: '喜欢',
-              color: ref.watch(squareProvider).videoLiked
-                  ? Colors.pinkAccent
-                  : Colors.white,
-              icon: const Icon(Icons.thumb_up),
-              onPressed: () =>
-                  ref.read(squareProvider.notifier).toggleVideoLike(),
-            ),
-            IconButton(
-              tooltip: '收藏',
-              color: ref.watch(squareProvider).videoSaved
-                  ? Colors.amber
-                  : Colors.white,
-              icon: const Icon(Icons.star),
-              onPressed: () =>
-                  ref.read(squareProvider.notifier).toggleVideoSave(),
-            ),
-          ],
-        ),
-      ),
-    ],
-  );
 }

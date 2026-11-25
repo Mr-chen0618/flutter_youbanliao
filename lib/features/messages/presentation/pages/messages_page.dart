@@ -1,3 +1,6 @@
+import '../../../../shared/widgets/layout/feed_tab_label.dart';
+import '../../../activity/presentation/providers/activity_detail_provider.dart';
+import '../../../../shared/widgets/layout/companion_backdrop_widget.dart';
 import '../../../../shared/widgets/layout/app_empty_state.dart';
 import '../../../../app/widgets/business_refresh.dart';
 import 'package:flutter/material.dart';
@@ -11,11 +14,35 @@ import '../widgets/messages_page_surface.dart';
 import '../../data/messages_repository.dart';
 import '../providers/messages_provider.dart';
 
-class MessagesPage extends ConsumerWidget {
+class MessagesPage extends ConsumerStatefulWidget {
   const MessagesPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<MessagesPage> createState() => _MessagesPageState();
+}
+
+class _MessagesPageState extends ConsumerState<MessagesPage>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabs;
+  @override
+  void initState() {
+    super.initState();
+    _tabs = TabController(length: 3, vsync: this)..addListener(_tabChanged);
+  }
+
+  void _tabChanged() {
+    if (mounted) setState(() {});
+  }
+
+  @override
+  void dispose() {
+    _tabs.removeListener(_tabChanged);
+    _tabs.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final state = ref.watch(messagesProvider);
     final notifier = ref.read(messagesProvider.notifier);
     int unread(MessageNotice notice) => state.readNotices.contains(notice)
@@ -25,91 +52,149 @@ class MessagesPage extends ConsumerWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Positioned(
+        const Positioned(
           top: 0,
           left: 0,
           right: 0,
-          child: AppImage(
-            src: 'assets/messages/messages_v2_backdrop.svg',
-            height: 255.h,
-            fit: BoxFit.fill,
-          ),
+          child: CompanionBackdropWidget(),
         ),
         SafeArea(
           bottom: false,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Padding(
-                padding: EdgeInsets.only(left: 16.w, right: 10.w),
-                child: Row(
+              SizedBox(
+                height: 48.h,
+                child: TabBar(
+                  controller: _tabs,
+                  isScrollable: true,
+                  tabAlignment: TabAlignment.start,
+                  padding: EdgeInsets.only(left: 16.w),
+                  labelPadding: EdgeInsets.only(right: 16.w),
+                  dividerColor: Colors.transparent,
+                  indicator: const BoxDecoration(),
+                  overlayColor: const WidgetStatePropertyAll(
+                    Colors.transparent,
+                  ),
+                  tabs: [
+                    for (final item in [(0, '消息'), (1, '好友'), (2, '通话记录')])
+                      Tab(
+                        key: ValueKey('messages-tab-${item.$1}'),
+                        height: 48.h,
+                        child: FeedTabLabel(
+                          label: item.$2,
+                          selected: _tabs.index == item.$1,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: TabBarView(
+                  controller: _tabs,
                   children: [
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              '聊天',
-                              style: TextStyle(
-                                fontSize: 17.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            AppImage(
-                              src:
-                                  'assets/messages/messages_v2_title_accent.svg',
-                              width: 24.w,
-                              height: 8.h,
-                              fit: BoxFit.contain,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    PopupMenuButton<MessageNotice>(
-                      tooltip: '消息通知',
-                      icon: _UnreadBadge(
-                        count: MessageNotice.values.fold<int>(
-                          0,
-                          (sum, notice) => sum + unread(notice),
-                        ),
-                        child: const Icon(Icons.notifications_none_rounded),
-                      ),
-                      itemBuilder: (_) => [
-                        for (final notice in MessageNotice.values)
-                          PopupMenuItem(
-                            value: notice,
-                            child: Row(
-                              children: [
-                                _UnreadBadge(
-                                  count: unread(notice),
-                                  child: AppImage(
-                                    src: messagesAsset('${notice.icon}_icon'),
-                                    width: 26.r,
-                                    height: 26.r,
+                    Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              for (final notice in MessageNotice.values)
+                                SizedBox(
+                                  width: 93.w,
+                                  height: 97.h,
+                                  child: Stack(
+                                    children: [
+                                      const Positioned.fill(
+                                        child: AppImage(
+                                          src:
+                                              'assets/messages/messages_notice_surface.svg',
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ),
+                                      Material(
+                                        color: Colors.transparent,
+                                        child: InkWell(
+                                          key: ValueKey(
+                                            'message-notice-${notice.name}',
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            12.r,
+                                          ),
+                                          onTap: () {
+                                            notifier.readNotice(notice);
+                                            AppNavigator.push(
+                                              context,
+                                              page: _NoticePage(notice: notice),
+                                              name:
+                                                  'message-notice-${notice.name}',
+                                            );
+                                          },
+                                          child: SizedBox.expand(
+                                            child: Column(
+                                              children: [
+                                                SizedBox(height: 10.h),
+                                                _UnreadBadge(
+                                                  count: unread(notice),
+                                                  child: AppImage(
+                                                    src:
+                                                        'assets/messages/messages_notice_${notice.icon}.svg',
+                                                    width: 52.r,
+                                                    height: 52.r,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
+                                                SizedBox(height: 8.h),
+                                                Text(
+                                                  notice.label,
+                                                  style: TextStyle(
+                                                    fontSize: 12.sp,
+                                                    color: const Color(
+                                                      0xFF333333,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                SizedBox(width: 16.w),
-                                Text(notice.label),
-                              ],
-                            ),
+                            ],
                           ),
+                        ),
+                        Expanded(child: _ThreadList(threads: state.threads)),
                       ],
-                      onSelected: (notice) {
-                        notifier.readNotice(notice);
-                        AppNavigator.push(
-                          context,
-                          page: _NoticePage(notice: notice),
-                          name: 'message-notice-${notice.name}',
-                        );
-                      },
+                    ),
+                    _ThreadList(
+                      threads: state.threads
+                          .where(
+                            (thread) =>
+                                ref
+                                    .watch(followedActivityPublisherIdsProvider)
+                                    .value
+                                    ?.contains(thread.peerId) ??
+                                false,
+                          )
+                          .toList(),
+                    ),
+                    _ThreadList(
+                      threads: state.threads
+                          .where(
+                            (thread) => thread.entries.any(
+                              (entry) =>
+                                  entry.kind == ChatEntryKind.voiceCall ||
+                                  entry.kind == ChatEntryKind.videoCall,
+                            ),
+                          )
+                          .toList(),
                     ),
                   ],
                 ),
               ),
-              Expanded(child: _ThreadList(threads: state.threads)),
             ],
           ),
         ),
@@ -213,7 +298,7 @@ class _ThreadList extends ConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                thread.name,
+                                thread.displayName,
                                 style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,

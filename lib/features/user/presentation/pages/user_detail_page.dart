@@ -1,3 +1,4 @@
+import '../providers/growth_provider.dart';
 import '../../../../shared/widgets/layout/app_empty_state.dart';
 import '../../../report/presentation/pages/report_page.dart';
 import '../../../../shared/widgets/feedback/app_action_sheet.dart';
@@ -52,6 +53,7 @@ class UserDetailPage extends ConsumerStatefulWidget {
 }
 
 class _UserDetailPageState extends ConsumerState<UserDetailPage> {
+  bool _discoveryRecorded = false;
   int _photo = 0;
   int _play = 0;
   bool _saving = false;
@@ -104,6 +106,19 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
   /// 组合照片、资料和用户发布的内容。
   Widget _content(UserDetail detail) {
     final person = detail.person;
+    if (!detail.isSelf && !_discoveryRecorded) {
+      _discoveryRecorded = true;
+      final growth = ref.read(growthRepositoryProvider);
+      Future.microtask(() async {
+        try {
+          await growth.recordDiscovery();
+          if (mounted) ref.invalidate(growthProvider);
+        } catch (_) {
+          /* 奖励记录失败不影响详情展示 */
+        }
+      });
+    }
+
     if (detail.isSelf) {
       ref.listen(profileProvider, (previous, next) {
         if (previous?.hasValue == true &&
@@ -564,6 +579,7 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
     MessageThread? blocked,
   }) async {
     final person = detail.person;
+
     final action = await showAppActionSheet<String>(
       context,
       actions: [
@@ -766,6 +782,7 @@ class _UserDetailPageState extends ConsumerState<UserDetailPage> {
 
   Widget _basicProfile(UserDetail detail) {
     final person = detail.person;
+
     final fields = [
       if (person.age > 0) '年龄：${person.age}岁',
       if (person.heightCm > 0) '身高：${person.heightCm}cm',

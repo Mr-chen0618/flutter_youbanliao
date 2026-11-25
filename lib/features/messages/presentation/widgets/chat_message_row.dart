@@ -65,6 +65,70 @@ class ChatMessageRow extends StatelessWidget {
   }
 
   Widget _bubble(BuildContext context) {
+    if (entry.kind == ChatEntryKind.gift && entry.gift != null) {
+      return Container(
+        width: 229.w,
+        height: 72.h,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          color: const Color(0xFFFFFBEB),
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              right: -12.w,
+              bottom: -10.h,
+              child: Opacity(
+                opacity: .2,
+                child: AppImage(
+                  src: 'assets/messages/messages_gift_card_decoration.png',
+                  width: 70.w,
+                  height: 63.h,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(12.r),
+              child: Row(
+                children: [
+                  AppImage(
+                    src: entry.gift!.asset,
+                    width: 48.r,
+                    height: 48.r,
+                    fit: BoxFit.contain,
+                  ),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          entry.isMine ? '送出礼物' : '收到礼物',
+                          style: TextStyle(
+                            fontSize: 11.sp,
+                            color: const Color(0xFFCCCCCC),
+                          ),
+                        ),
+                        Text(
+                          '${entry.gift!.name}x${entry.giftQuantity}',
+                          style: TextStyle(
+                            fontSize: 15.sp,
+                            color: const Color(0xFF333333),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
     if (entry.kind == ChatEntryKind.photo) {
       return GestureDetector(
         onTap: () => showDialog<void>(

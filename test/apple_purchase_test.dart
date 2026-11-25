@@ -147,7 +147,7 @@ void main() {
         'youbanliao.coins.60',
         'youbanliao.coins.320',
         'youbanliao.coins.820',
-        'youbanliao.vip.1months',
+        'youbanliao.vip.1month',
         'youbanliao.vip.3months',
         'youbanliao.vip.12months',
       });

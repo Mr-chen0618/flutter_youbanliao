@@ -13,11 +13,14 @@ class MessageThread {
     this.historyLabel,
     this.initialPreview,
     this.peerId,
+    this.remark = '',
   });
 
   final String id;
   final String? peerId;
   final String name;
+  final String remark;
+  String get displayName => remark.isEmpty ? name : remark;
   final String avatar;
   final List<ChatEntry> entries;
   final int unread;
@@ -26,11 +29,22 @@ class MessageThread {
   final String? historyLabel;
   final String? initialPreview;
 
+  /// 每条主动发送的消息或礼物只计一次；系统话单不参与热聊。
+  int get heat => entries
+      .where(
+        (entry) =>
+            entry.isMine &&
+            entry.kind != ChatEntryKind.voiceCall &&
+            entry.kind != ChatEntryKind.videoCall,
+      )
+      .length;
+
   String get preview {
     if (initialPreview case final preview?) return preview;
     if (entries.isEmpty) return '打个招呼，开启聊天吧';
     final last = entries.last;
     return switch (last.kind) {
+      ChatEntryKind.gift => '[礼物] ${last.content}',
       ChatEntryKind.text => last.content,
       ChatEntryKind.photo => '[图片]',
       ChatEntryKind.voice => '[语音]',
@@ -42,6 +56,7 @@ class MessageThread {
 
   MessageThread copyWith({
     String? peerId,
+    String? remark,
     List<ChatEntry>? entries,
     int? unread,
     String? time,
@@ -49,6 +64,7 @@ class MessageThread {
     id: id,
     peerId: peerId ?? this.peerId,
     name: name,
+    remark: remark ?? this.remark,
     avatar: avatar,
     entries: entries ?? this.entries,
     unread: unread ?? this.unread,
@@ -61,6 +77,7 @@ class MessageThread {
     id: json['id'] as String,
     peerId: json['peerId'] as String?,
     name: json['name'] as String,
+    remark: json['remark'] as String? ?? '',
     avatar: json['avatar'] as String,
     entries: List.unmodifiable(
       (json['entries'] as List? ?? const []).map(
@@ -78,6 +95,7 @@ class MessageThread {
     'id': id,
     'peerId': peerId,
     'name': name,
+    'remark': remark,
     'avatar': avatar,
     'entries': entries.map((item) => item.toJson()).toList(),
     'unread': unread,

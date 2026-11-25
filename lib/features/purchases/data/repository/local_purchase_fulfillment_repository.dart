@@ -14,8 +14,10 @@ class LocalPurchaseFulfillmentRepository
     this.store,
     this.verifier, {
     DateTime Function()? now,
+    this.initialCoins = 10000,
   }) : _now = now ?? DateTime.now;
   final PurchaseLedgerStore store;
+  final int initialCoins;
   final LocalAppleTransactionVerifier verifier;
   final DateTime Function() _now;
   @override
@@ -24,16 +26,32 @@ class LocalPurchaseFulfillmentRepository
   Map<String, dynamic> _account(Map<String, dynamic> ledger, String id) {
     if (id.isEmpty) throw StateError('请先登录');
     final accounts = ledger['accounts'] as Map<String, dynamic>;
-    return (accounts.putIfAbsent(
-              id,
-              () => <String, dynamic>{
-                'token': _uuid(),
-                'activeEnvironment': 'Production',
-                'environments': <String, dynamic>{},
-              },
-            )
-            as Map)
-        .cast<String, dynamic>();
+    final account =
+        (accounts.putIfAbsent(
+                  id,
+                  () => <String, dynamic>{
+                    'token': _uuid(),
+                    'activeEnvironment': 'Production',
+                    'environments': <String, dynamic>{},
+                  },
+                )
+                as Map)
+            .cast<String, dynamic>();
+    // 每账号仅初始化一次；保留已有充值与消费，重启不会补满余额。
+    if (account['initialCoinsGranted'] != true) {
+      final environment = account['activeEnvironment'] as String;
+      final environments = account['environments'] as Map<String, dynamic>;
+      final wallet =
+          environments.putIfAbsent(
+                environment,
+                () => <String, dynamic>{'coins': 0, 'vipExpiresAt': null},
+              )
+              as Map;
+      wallet['coins'] = (wallet['coins'] as int? ?? 0) + initialCoins;
+      account['initialCoinsGranted'] = true;
+      accounts[id] = account;
+    }
+    return account;
   }
 
   @override
